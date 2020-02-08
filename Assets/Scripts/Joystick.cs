@@ -39,13 +39,13 @@ public class Joystick : MonoBehaviour
         if (touchStart) {
             Vector2 offset = pointB - pointA;
             Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
+            print(direction);
             moveCharacter(direction);
         }
     }
 
     void moveCharacter(Vector2 direction) {
 
-
-        player.Translate(Vector2.ClampMagnitude((direction).normalized * Time.deltaTime,speed));
+        player.Translate(Vector2.ClampMagnitude(direction.normalized * speed * Time.deltaTime, speed));
     }
 }

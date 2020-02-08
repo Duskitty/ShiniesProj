@@ -164,7 +164,7 @@ MonoBehaviour:
   m_RefResolutionX: 320
   m_RefResolutionY: 200
   m_UpscaleRT: 0
-  m_PixelSnapping: 0
+  m_PixelSnapping: 1
   m_CropFrameX: 1
   m_CropFrameY: 1
   m_StretchFill: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 843953936}
-  speed: 5
+  speed: 3
 --- !u!1 &843953934
 GameObject:
   m_ObjectHideFlags: 0
