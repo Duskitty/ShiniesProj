@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Carmera : MonoBehaviour
+public class Camera : MonoBehaviour
 {
     public GameObject objectToFollow;
     public float speed = 2.0f;

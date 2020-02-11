@@ -22,12 +22,12 @@ public class Joystick : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            pointA = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
+           // pointA = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
         }
         if (Input.GetMouseButton(0))
         {
             touchStart = true;
-            pointB = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
+           // pointB = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
         }
         else {
             touchStart = false;
