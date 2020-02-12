@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class ShieldBash : MonoBehaviour
 {
-
+    
+    public int maxHeath = 100;//both variables used for the enemy heath
+    int currentHeath;
+    private void Start()
+    {
+        currentHeath = maxHeath;
+    }
     //public Animator animator;
 
     public Transform attackPoint;
@@ -36,7 +42,9 @@ public class ShieldBash : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit " + enemy.name);
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            //   enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            TakeDamage(attackDamage, enemy);
+         
         }
     }
     
@@ -48,6 +56,17 @@ public class ShieldBash : MonoBehaviour
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-    
+    void TakeDamage(int damage, Collider2D enemy)//takes the current enemy and applies damage to it, if the current heath <=0 then destroy  the object 
+    {
+
+        currentHeath -= damage;
+        //play the hurt animation
+        if (currentHeath <= 0) {
+            //play death animation 
+            Destroy(enemy);
+        
+        }
+
+    }
 }
 
