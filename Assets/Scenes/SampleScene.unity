@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420035}
   - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
@@ -255,18 +254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 843953934}
   speed: 2
---- !u!114 &519420035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a54afa813ee204d4ba8b7ce60c1471b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &749873705
 GameObject:
   m_ObjectHideFlags: 0
@@ -14357,9 +14344,8 @@ GameObject:
   - component: {fileID: 843953935}
   - component: {fileID: 843953938}
   - component: {fileID: 843953937}
-  - component: {fileID: 843953940}
-  - component: {fileID: 843953939}
   - component: {fileID: 843953941}
+  - component: {fileID: 843953939}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -14466,26 +14452,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &843953939
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843953934}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &843953940
+--- !u!114 &843953939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14494,16 +14461,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 843953934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5832170c3c569d0489106e3e7d08faa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3890ede0da20e0d459cfa31d8223ffda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 100
-  attackPoint: {fileID: 749873706}
-  attackRange: 0.5
-  enemyLayers:
+  startTimeBtwAttack: 0.3
+  attackPos: {fileID: 749873706}
+  attackRange: 2
+  whatisEnemies:
     serializedVersion: 2
-    m_Bits: 4294967295
-  attackDamage: 50
+    m_Bits: 256
+  damage: 20
 --- !u!61 &843953941
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14585,7 +14552,8 @@ GameObject:
   - component: {fileID: 1445101563}
   - component: {fileID: 1445101562}
   - component: {fileID: 1445101564}
-  m_Layer: 0
+  - component: {fileID: 1445101565}
+  m_Layer: 8
   m_Name: redsquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14649,7 +14617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445101561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.09, y: 6.05, z: 0}
+  m_LocalPosition: {x: 11.24, y: 4.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14681,3 +14649,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.17, y: 3.94}
   m_EdgeRadius: 0
+--- !u!114 &1445101565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445101561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db3899c19d6fe29408f5775c268789ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
