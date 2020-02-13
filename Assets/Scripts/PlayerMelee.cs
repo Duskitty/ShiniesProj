@@ -10,7 +10,8 @@ public class PlayerMelee : MonoBehaviour
     public float attackRange;
     public LayerMask whatisEnemies;
     public int damage;
-
+    public float knockbackAmount;
+    public GameObject player;
     // Update is called once per frame
     void Update()
     {
@@ -19,6 +20,7 @@ public class PlayerMelee : MonoBehaviour
             if (Input.GetKey(KeyCode.Space)) {
                 Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatisEnemies);//gets the enemies to put in a array to damage them
                 for (int i = 0; i < enemy.Length; ++i) {//go through the above array
+
                     enemy[i].GetComponent<Enemy>().TakeDamage(damage);
 
                 }

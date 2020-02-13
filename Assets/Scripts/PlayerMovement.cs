@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 
 {
-    public float speed = 0f; 
+    public float speed = 0f;
 
-   
 
     // Update is called once per frame
     void FixedUpdate()
@@ -36,4 +35,5 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+ 
 }

@@ -14471,6 +14471,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   damage: 20
+  knockbackAmount: 5
+  player: {fileID: 843953934}
 --- !u!61 &843953941
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14662,3 +14664,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
+  knockBackAmount: 20
+  rb: {fileID: 843953938}
