@@ -20,8 +20,8 @@ public class light : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RayCastHit2D hit = Physics2D.Raycast(transform.position, transform.up);
-        Debug.DrawLine(transform.position, attackpoint);
+        //RayCastHit2D hit = Physics2D.Raycast(transform.position, transform.up);
+        //Debug.DrawLine(transform.position, attackpoint);
 
     }
 }
