@@ -11,7 +11,7 @@ public class Light : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lineRenderer =GetComponent<LineRenderer>();
+        lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
         lineRenderer.useWorldSpace = true;
         
@@ -20,12 +20,18 @@ public class Light : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(0.0f,-1.0f));
         Debug.DrawLine(transform.position, hit.point);
         lightHit.position = hit.point;
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, lightHit.position);
-        if(Input.GetKey(KeyCode.Q))
+        if(hit.collider != null)
+        {
+            print(hit.collider.name);
+        }
+        
+        /*
+        if(e)
         {
             lineRenderer.enabled = true;
         }
@@ -33,5 +39,6 @@ public class Light : MonoBehaviour
         {
             lineRenderer.enabled = false;
         }
+        */
     }
 }
