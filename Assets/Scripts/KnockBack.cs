@@ -7,7 +7,7 @@ public class KnockBack : MonoBehaviour
     public float thrust;
     public Rigidbody2D player;
 
-    public void OnCollision2DEnter(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("enemy"))
         {
