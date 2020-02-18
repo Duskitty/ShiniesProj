@@ -6,9 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
     int currentHealth;
-    public int knockBackAmount = 0;
-   public Rigidbody2D rb;
-    private bool isKnockBack = false;
+    public Rigidbody2D player;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +16,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        KnockBack();//apply knock back to the player
+        Debug.Log("D2");
+
         //play hurt animation
 
         if (currentHealth <= 0)
@@ -35,9 +34,15 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void KnockBack() {
-        isKnockBack = true;
-        rb.AddForce(new Vector2(-knockBackAmount, 0f));
-        rb.AddForce(new Vector2(0f, 0f));        
-    }
+
+
+    
+
+
+
+    
+
+
+
+
 }
