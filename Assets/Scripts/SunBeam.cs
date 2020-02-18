@@ -25,11 +25,11 @@ public class SunBeam : MonoBehaviour
         lineRenderer.SetPosition(1, lightHit.position);
         if (hit.collider != null)
         {
-            print(hit.collider.name);
+            //print(hit.collider.name);
         }
 
         /*
-        if()
+        if(Collider2D.)
         {
             lineRenderer.enabled = true;
         }
@@ -38,5 +38,13 @@ public class SunBeam : MonoBehaviour
             lineRenderer.enabled = false;
         }
         */
+        
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+
+        //Stuff that happens when the collider collides with something
+        lineRenderer.enabled = true;
+
     }
 }
