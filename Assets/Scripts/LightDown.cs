@@ -31,7 +31,7 @@ public class Light : MonoBehaviour
         }
         
         /*
-        if(e)
+        if()
         {
             lineRenderer.enabled = true;
         }
