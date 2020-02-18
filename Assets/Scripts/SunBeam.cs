@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Light : MonoBehaviour
+public class SunBeam : MonoBehaviour
 {
     private LineRenderer lineRenderer;
-    public Transform lightHits;
-
+    public Transform lightHit;
 
     // Start is called before the first frame update
     void Start()
@@ -14,22 +13,21 @@ public class Light : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = true;
         lineRenderer.useWorldSpace = true;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(0.0f,-1.0f));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(0.0f, -1.0f));
         Debug.DrawLine(transform.position, hit.point);
-        lightHits.position = hit.point;
+        lightHit.position = hit.point;
         lineRenderer.SetPosition(0, transform.position);
-        lineRenderer.SetPosition(1, lightHits.position);
-        if(hit.collider != null)
+        lineRenderer.SetPosition(1, lightHit.position);
+        if (hit.collider != null)
         {
             print(hit.collider.name);
         }
-        
+
         /*
         if()
         {
