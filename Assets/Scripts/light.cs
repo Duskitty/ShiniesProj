@@ -12,7 +12,7 @@ public class Light : MonoBehaviour
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.enabled = false;
+        lineRenderer.enabled = true;
         lineRenderer.useWorldSpace = true;
         
     }
