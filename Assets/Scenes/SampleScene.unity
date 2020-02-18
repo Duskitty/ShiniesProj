@@ -228,7 +228,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &368221960
 MonoBehaviour:
@@ -659,7 +659,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &625637259
 GameObject:
@@ -847,7 +847,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &698217965
 MonoBehaviour:
@@ -14972,6 +14972,7 @@ GameObject:
   - component: {fileID: 843953937}
   - component: {fileID: 843953941}
   - component: {fileID: 843953939}
+  - component: {fileID: 843953940}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -15042,7 +15043,7 @@ Transform:
   m_Children:
   - {fileID: 749873706}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &843953937
 MonoBehaviour:
@@ -15058,6 +15059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   textBoxAnimator: {fileID: 1660281158}
+  player: {fileID: 0}
 --- !u!50 &843953938
 Rigidbody2D:
   serializedVersion: 4
@@ -15093,13 +15095,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTimeBtwAttack: 0.3
   attackPos: {fileID: 749873706}
-  attackRange: 0.3
+  attackRange: 100
   whatisEnemies:
     serializedVersion: 2
     m_Bits: 256
   damage: 20
   knockbackAmount: 5
   player: {fileID: 843953934}
+--- !u!114 &843953940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843953934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e86010dec6010b4d859e11beb8eec65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 3
+  player: {fileID: 843953938}
 --- !u!61 &843953941
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15323,7 +15339,7 @@ RectTransform:
   m_Children:
   - {fileID: 1660281157}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15519,9 +15535,9 @@ GameObject:
   - component: {fileID: 1445101562}
   - component: {fileID: 1445101564}
   - component: {fileID: 1445101565}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: redsquare
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15587,7 +15603,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1445101564
 BoxCollider2D:
@@ -15599,7 +15615,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -15628,8 +15644,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
-  knockBackAmount: 20
-  rb: {fileID: 843953938}
 --- !u!1 &1446082393
 GameObject:
   m_ObjectHideFlags: 0
