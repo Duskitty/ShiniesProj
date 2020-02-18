@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
     int currentHealth;
-    public Rigidbody2D player;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +15,6 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("D2");
 
         //play hurt animation
 
