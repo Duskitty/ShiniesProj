@@ -15117,6 +15117,7 @@ MonoBehaviour:
   thrust: 3
   player: {fileID: 843953938}
   badGuy: {fileID: 1445101561}
+  knockTime: 0.5
 --- !u!61 &843953941
 BoxCollider2D:
   m_ObjectHideFlags: 0
