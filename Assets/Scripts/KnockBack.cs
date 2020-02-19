@@ -7,9 +7,10 @@ public class KnockBack : MonoBehaviour
     public float thrust;
     public Rigidbody2D player;
 
-    public void OnCollisionEnter(Collider2D other)
+
+    public void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("enemy"))
+        if (other.gameObject.tag=="enemy")
         {
 
 
@@ -19,9 +20,10 @@ public class KnockBack : MonoBehaviour
             player.AddForce(difference, ForceMode2D.Impulse);
             player.isKinematic = true;
         }
-
-
     }
-    }
+
+   
+    
+}
 
 
