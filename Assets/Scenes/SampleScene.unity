@@ -15131,7 +15131,7 @@ MonoBehaviour:
   animator: {fileID: 843953942}
   speed: 5
   textBoxAnimator: {fileID: 1660281158}
-  player: {fileID: 0}
+  player: {fileID: 843953938}
 --- !u!50 &843953938
 Rigidbody2D:
   serializedVersion: 4

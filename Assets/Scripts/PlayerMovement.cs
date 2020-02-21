@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class PlayerMovement : MonoBehaviour
@@ -17,38 +15,57 @@ public class PlayerMovement : MonoBehaviour
     {
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
+        verticalMove = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
         //animator.SetFloat("Speed", Mathf.Abs(verticalMove));
-        if (textBoxAnimator.GetBool("isOpen")){
+        if (textBoxAnimator.GetBool("isOpen"))
+        {
             return;
 
         }
-        if (Input.GetKey(KeyCode.W)) {
-            transform.Translate(new Vector3(0f, speed * Time.deltaTime,0f));
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(new Vector3(0f, speed * Time.deltaTime, 0f));
 
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(new Vector3(0f, -speed * Time.deltaTime,0f));
-
+            transform.Translate(new Vector3(0f, -speed * Time.deltaTime, 0f));
+            animator.SetBool("isDown", true);
+            animator.SetBool("isRight", false);
+            animator.SetBool("isLeft", false);
+           
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(new Vector3(-speed*Time.deltaTime,0f,0f));
-            animator.SetBool("isLeft", true);
-            if (horizontalMove < 0.01) {
+            transform.Translate(new Vector3(-speed * Time.deltaTime, 0f, 0f));
+            
                 animator.SetBool("isLeft", true);
+                animator.SetBool("isRight", false);
+                 animator.SetBool("isDown", false);
 
 
-            }
+
+
 
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(new Vector3(speed*Time.deltaTime,0f,0f));
-            animator.SetBool("isRight", true);
+            transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
+           
+
+                animator.SetBool("isRight", true);
+                animator.SetBool("isLeft", false);
+                 animator.SetBool("isDown", false);
+
+
 
 
         }
+        if (player.velocity.y == 0)
+        {
+            animator.SetFloat("Speed", -1);
+            animator.SetBool("isDown", false);
+
+        }
     }
- 
 }
