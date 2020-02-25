@@ -10,6 +10,6 @@ public class DialogueCollider : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D thing)
   {
     trigger.startConversation();
-    Debug.Log("collision detected");
+    //Debug.Log("collision detected");
   }
 }
