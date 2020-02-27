@@ -62,17 +62,17 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("isRight", true);
                 animator.SetBool("isLeft", false);
                  animator.SetBool("isDown", false);
-            animator.SetBool("isUp", false);
+                animator.SetBool("isUp", false);
 
 
 
 
         }
-        /*  if (player.velocity.y == 0)
-          {
-              animator.SetFloat("Speed", -1);
-              animator.SetBool("isDown", false);
+        if (!(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))) {//no input 
 
-          }*/
+
+
+        }
+       
     }
 }
