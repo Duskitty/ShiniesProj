@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 0f;
     public Animator textBoxAnimator;
     public Rigidbody2D player;
+    public bool bridgeSafe = false;
     // Update is called once per frame
     void FixedUpdate()
     {
