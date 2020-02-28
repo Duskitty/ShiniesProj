@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     bool isMovingLeft = false;
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     
         
     
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isLeft", false);
             animator.SetBool("isRight", false);
             animator.SetBool("isMoving", true);
-            animator.SetBool("isIdleUp", false);
+           
             isMovingUp = true;
             isMovingDown = false;
             isMovingLeft = false;
@@ -100,8 +100,12 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
-        if (!(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))) {//no input 
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D)) {//no input 
             if (isMovingUp == true) {
+                animator.SetBool("isIdleUp", true);
+                animator.SetBool("isIdleDown", false);
+                animator.SetBool("isIdleRight", false);
+                animator.SetBool("isIdleLeft", false);
              animator.SetBool("isMoving", false);
                 animator.SetBool("isUp", false);
                 Debug.Log("Not Moving");
