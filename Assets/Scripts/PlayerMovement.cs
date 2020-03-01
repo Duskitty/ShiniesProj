@@ -108,18 +108,42 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("isIdleLeft", false);
              animator.SetBool("isMoving", false);
                 animator.SetBool("isUp", false);
-                Debug.Log("Not Moving");
+                Debug.Log("Not Moving Up");
 
             }
             if (isMovingDown == true) { 
             
             }
-            if (isMovingLeft == true) { 
-            
+            if (isMovingLeft == true) {
+
+                animator.SetBool("isIdleUp", false);
+                animator.SetBool("isIdleDown", false);
+                animator.SetBool("isIdleRight", false);
+                animator.SetBool("isIdleLeft", true);
+                animator.SetBool("isMoving", false);
+                animator.SetBool("isUp", false);
+                Debug.Log("Not Moving Left");
+
             }
             if (isMovingRight == true) {
-            
-            
+                animator.SetBool("isIdleUp", false);
+                animator.SetBool("isIdleDown", false);
+                animator.SetBool("isIdleRight", true);
+                animator.SetBool("isIdleLeft", false);
+                animator.SetBool("isMoving", false);
+                animator.SetBool("isUp", false);
+                Debug.Log("Not Moving Right");
+
+
+            }
+            if (isMovingDown == true) {
+                animator.SetBool("isIdleUp", false);
+                animator.SetBool("isIdleDown", true);
+                animator.SetBool("isIdleRight", false);
+                animator.SetBool("isIdleLeft", false);
+                animator.SetBool("isMoving", false);
+                animator.SetBool("isUp", false);
+
             }
 
 
