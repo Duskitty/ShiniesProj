@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameControlScript : MonoBehaviour
 {
-    public GameObject heart1, heart2, heart3, gameOver;
+    public GameObject heart1, heart2, heart3; //, gameOver;
     public static int health;
 
     void Start()
@@ -13,7 +13,7 @@ public class GameControlScript : MonoBehaviour
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
-        gameOver.gameObject.SetActive(false);
+       // gameOver.gameObject.SetActive(false);
     }
 
     void Update()
@@ -42,8 +42,8 @@ public class GameControlScript : MonoBehaviour
                 heart1.gameObject.SetActive(false);
                 heart2.gameObject.SetActive(false);
                 heart3.gameObject.SetActive(false);
-                gameOver.gameObject.SetActive(true);
-                Time.timeScale = 0;
+               // gameOver.gameObject.SetActive(true);
+                Time.timeScale = 0; // makes game stop when all 3 lives are lost
                 break;
 
         }
