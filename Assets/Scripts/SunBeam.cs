@@ -4,53 +4,51 @@ using UnityEngine;
 
 public class SunBeam : MonoBehaviour
 {
-    
-    public Transform beam1;
-    public Transform beam2;
-    public Transform beam3;
-    public SunlightTrigger sunPatch1;
-    private Animator playerDirection;
-    private RaycastHit2D hit;
-    // Up direction hitpoint, spawn, and linerenderer
-    public Transform lightSpawnUp;
-    private LineRenderer lightLineUp;
-    public Transform hitPointUp;
-    // Right direction hitpoint, spawn, and linerenderer
-    public Transform lightSpawnRight;
-    private LineRenderer lightLineRight;
-    public Transform hitPointRight;
-    // Left direction hitpoint, spawn, and linerenderer
-    public Transform lightSpawnLeft;
-    private LineRenderer lightLineLeft;
-    public Transform hitPointLeft;
-    // Down direction hitpoint, spawn, and linerenderer
-    public Transform lightSpawnDown;
-    private LineRenderer lightLineDown;
-    public Transform hitPointDown;
+
+
+  public SunlightTrigger sunPatch1;
+  public Animator playerDirection;
+  private RaycastHit2D hit;
+
+  public Transform[] objects;
+
+  // Up direction hitpoint, spawn, and linerenderer
+  public Transform lightSpawnUp;
+  private LineRenderer lightLineUp;
+  public Transform hitPointUp;
+  // Right direction hitpoint, spawn, and linerenderer
+  public Transform lightSpawnRight;
+  private LineRenderer lightLineRight;
+  public Transform hitPointRight;
+  // Left direction hitpoint, spawn, and linerenderer
+  public Transform lightSpawnLeft;
+  private LineRenderer lightLineLeft;
+  public Transform hitPointLeft;
+  // Down direction hitpoint, spawn, and linerenderer
+  public Transform lightSpawnDown;
+  private LineRenderer lightLineDown;
+  public Transform hitPointDown;
 
   // Start is called before the first frame update
   void Start()
-    {
-        lightLineUp = lightSpawnUp.GetComponent<LineRenderer>();
-        lightLineUp.enabled = true;
-        lightLineUp.useWorldSpace = true;
+  {
+    lightLineUp = lightSpawnUp.GetComponent<LineRenderer>();
+    lightLineUp.enabled = true;
+    lightLineUp.useWorldSpace = true;
 
-        lightLineRight = lightSpawnRight.GetComponent<LineRenderer>();
-        lightLineRight.enabled = true;
-        lightLineRight.useWorldSpace = true;
+    lightLineRight = lightSpawnRight.GetComponent<LineRenderer>();
+    lightLineRight.enabled = true;
+    lightLineRight.useWorldSpace = true;
 
-        lightLineLeft = lightSpawnLeft.GetComponent<LineRenderer>();
-        lightLineLeft.enabled = true;
-        lightLineLeft.useWorldSpace = true;
+    lightLineLeft = lightSpawnLeft.GetComponent<LineRenderer>();
+    lightLineLeft.enabled = true;
+    lightLineLeft.useWorldSpace = true;
 
-        lightLineDown = lightSpawnDown.GetComponent<LineRenderer>();
-        lightLineDown.enabled = true;
-        lightLineDown.useWorldSpace = true;
+    lightLineDown = lightSpawnDown.GetComponent<LineRenderer>();
+    lightLineDown.enabled = true;
+    lightLineDown.useWorldSpace = true;
 
-        beam1.GetComponent<Renderer>().enabled = false;
-        beam2.GetComponent<Renderer>().enabled = false;
-        beam3.GetComponent<Renderer>().enabled = false;
-        playerDirection = transform.GetComponent<Animator>();
+
   }
 
   // Update is called once per frame
@@ -121,15 +119,18 @@ public class SunBeam : MonoBehaviour
         }
 
 
-        if (hit.collider.name == "Red Man")
+        if (hit.collider.name == objects[0].name)
         {
-          beam1.GetComponent<Renderer>().enabled = true;
-          beam2.GetComponent<Renderer>().enabled = true;
-          beam3.GetComponent<Renderer>().enabled = true;
+          lightLineUp.SetPosition(2, objects[1].position);
+          lightLineUp.SetPosition(3, objects[2].position);
+          lightLineUp.SetPosition(4, objects[3].position);
         }
+
         else
         {
-
+          lightLineUp.SetPosition(2, hitPointUp.position);
+          lightLineUp.SetPosition(3, hitPointUp.position);
+          lightLineUp.SetPosition(4, hitPointUp.position);
         }
       }
     }
@@ -139,9 +140,6 @@ public class SunBeam : MonoBehaviour
       lightLineRight.enabled = false;
       lightLineLeft.enabled = false;
       lightLineDown.enabled = false;
-      beam1.GetComponent<Renderer>().enabled = false;
-      beam2.GetComponent<Renderer>().enabled = false;
-      beam3.GetComponent<Renderer>().enabled = false;
     }
   }
 }
