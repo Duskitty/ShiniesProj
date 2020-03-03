@@ -111,9 +111,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Not Moving Up");
 
             }
-            if (isMovingDown == true) { 
             
-            }
             if (isMovingLeft == true) {
 
                 animator.SetBool("isIdleUp", false);
