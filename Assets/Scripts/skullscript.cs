@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class skullscript : MonoBehaviour
 { 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         GameControlScript.health -= 1;
         Debug.Log("Player is hit");
