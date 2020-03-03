@@ -68,7 +68,55 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
+<<<<<<< HEAD
         if (!(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))) {//no input 
+=======
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D)) {//no input 
+            if (isMovingUp == true) {
+                animator.SetBool("isIdleUp", true);
+                animator.SetBool("isIdleDown", false);
+                animator.SetBool("isIdleRight", false);
+                animator.SetBool("isIdleLeft", false);
+             animator.SetBool("isMoving", false);
+                animator.SetBool("isUp", false);
+                Debug.Log("Not Moving Up");
+
+            }
+            if (isMovingDown == true) { 
+            
+            }
+            if (isMovingLeft == true) {
+
+                animator.SetBool("isIdleUp", false);
+                animator.SetBool("isIdleDown", false);
+                animator.SetBool("isIdleRight", false);
+                animator.SetBool("isIdleLeft", true);
+                animator.SetBool("isMoving", false);
+                animator.SetBool("isUp", false);
+                Debug.Log("Not Moving Left");
+
+            }
+            if (isMovingRight == true) {
+                animator.SetBool("isIdleUp", false);
+                animator.SetBool("isIdleDown", false);
+                animator.SetBool("isIdleRight", true);
+                animator.SetBool("isIdleLeft", false);
+                animator.SetBool("isMoving", false);
+                animator.SetBool("isUp", false);
+                Debug.Log("Not Moving Right");
+
+
+            }
+            if (isMovingDown == true) {
+                animator.SetBool("isIdleUp", false);
+                animator.SetBool("isIdleDown", true);
+                animator.SetBool("isIdleRight", false);
+                animator.SetBool("isIdleLeft", false);
+                animator.SetBool("isMoving", false);
+                animator.SetBool("isUp", false);
+
+            }
+>>>>>>> parent of 273e7ac... animations good
 
 
 
