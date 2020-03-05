@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 179229504}
   - component: {fileID: 179229503}
   - component: {fileID: 179229506}
+  - component: {fileID: 179229507}
   m_Layer: 0
   m_Name: ShroomBoi_Exploder_0
   m_TagString: Untagged
@@ -496,6 +497,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4958bfd3e61a434f89352517ada9573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 179229503}
+--- !u!58 &179229507
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179229502}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.591506
 --- !u!1 &368221958
 GameObject:
   m_ObjectHideFlags: 0
@@ -15933,7 +15951,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   player: {fileID: 843953938}
-  badGuy: {fileID: 1445101561}
   knockTime: 0.5
 --- !u!61 &843953941
 BoxCollider2D:
@@ -16392,7 +16409,6 @@ GameObject:
   - component: {fileID: 1036501134}
   - component: {fileID: 1036501133}
   - component: {fileID: 1036501136}
-  - component: {fileID: 1036501137}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -16493,22 +16509,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 843953936}
---- !u!58 &1036501137
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036501132}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.035777688, y: -0.007155478}
-  serializedVersion: 2
-  m_Radius: 0.31395537
 --- !u!1 &1100468378
 GameObject:
   m_ObjectHideFlags: 0

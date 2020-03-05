@@ -57,8 +57,9 @@ public class MushMove : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        anim.SetBool("Explode", true);
+        
         GameControlScript.health -= 1;
+        anim.SetBool("Explode", true);
         Destroy(gameObject, 1);
         transform.Translate(new Vector3(100, 100, 0));
     }
