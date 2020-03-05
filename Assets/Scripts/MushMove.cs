@@ -56,6 +56,7 @@ public class MushMove : MonoBehaviour
     {
         anim.SetBool("Explode", true);
         GameControlScript.health -= 1;
+<<<<<<< HEAD
         if(anim.GetBool("Explode"))
         {
             Destroy(gameObject, 1);
@@ -66,5 +67,10 @@ public class MushMove : MonoBehaviour
 =======
 >>>>>>> parent of f694c62... Update MushMove.cs
 
+=======
+        Destroy(gameObject,1);
+   
+        
+>>>>>>> parent of 233071a... Update MushMove.cs
     }
 }
