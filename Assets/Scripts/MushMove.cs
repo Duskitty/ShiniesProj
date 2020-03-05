@@ -56,8 +56,13 @@ public class MushMove : MonoBehaviour
     {
         anim.SetBool("Explode", true);
         GameControlScript.health -= 1;
-        Destroy(gameObject,1);
-   
-        
+        if(anim.GetBool("Explode"))
+        {
+            Destroy(gameObject, 1);
+            //this is here because the enemy is still there for a second so this is to make sure it can not hit you twice
+            transform.Translate(new Vector3(100,100,0));
+        }
+
+
     }
 }
