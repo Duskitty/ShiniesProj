@@ -6,17 +6,18 @@ public class KnockBack : MonoBehaviour
 {
     public float thrust;
     public Rigidbody2D player;
-    public GameObject badGuy;
+    private GameObject badGuy;
     public float knockTime;
    
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "enemy") {
-            Debug.Log("Hit");
+            Debug.Log("Hit enemy");
+            badGuy = other.transform.gameObject;
             player.isKinematic = false;
             Vector2 difference = (player.transform.position - badGuy.transform.position);
             difference = difference.normalized * thrust;
-            player.AddForce(difference, ForceMode2D.Impulse);
+           player.AddForce(difference, ForceMode2D.Impulse);
             StartCoroutine(KnockCo());
         }
 
@@ -25,7 +26,7 @@ public class KnockBack : MonoBehaviour
 
         yield return new WaitForSeconds(knockTime);  //knocktime is the amount of time the game will "pause" for the knock back
         player.velocity = Vector2.zero;
-      //  player.isKinematic = true;
+        player.isKinematic = true;
     }
    
 }
