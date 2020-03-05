@@ -59,6 +59,7 @@ public class SunBeam : MonoBehaviour
       if (playerDirection.GetBool("isUp"))
       {
         hit = Physics2D.Raycast(lightSpawnUp.position, lightSpawnUp.TransformDirection(Vector3.up));
+        Debug.DrawRay(lightSpawnUp.position, lightSpawnUp.TransformDirection(Vector3.up));
       }
       else if (playerDirection.GetBool("isRight"))
       {
