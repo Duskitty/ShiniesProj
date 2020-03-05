@@ -50,8 +50,8 @@ public class MushMove : MonoBehaviour
             anim.SetBool("Down", true);
 
         }
-    }
 
+<<<<<<< HEAD
     private void OnCollisionEnter2D(Collision2D collision)
     {
         anim.SetBool("Explode", true);
@@ -63,6 +63,8 @@ public class MushMove : MonoBehaviour
             transform.Translate(new Vector3(100,100,0));
         }
 
+=======
+>>>>>>> parent of f694c62... Update MushMove.cs
 
     }
 }
