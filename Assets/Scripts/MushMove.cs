@@ -50,7 +50,14 @@ public class MushMove : MonoBehaviour
             anim.SetBool("Down", true);
 
         }
+    }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        anim.SetBool("Explode", true);
+        GameControlScript.health -= 1;
+        Destroy(gameObject,1);
+   
+        
     }
 }
