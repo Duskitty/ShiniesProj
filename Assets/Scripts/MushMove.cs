@@ -54,13 +54,13 @@ public class MushMove : MonoBehaviour
 
         }
 
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            anim.SetBool("Explode", true);
-            GameControlScript.health -= 1;
-            Destroy(gameObject, 1);
-            transform.Translate(new Vector3(100, 100, 0));
-        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        anim.SetBool("Explode", true);
+        GameControlScript.health -= 1;
+        Destroy(gameObject, 1);
+        transform.Translate(new Vector3(100, 100, 0));
     }
 }
 
