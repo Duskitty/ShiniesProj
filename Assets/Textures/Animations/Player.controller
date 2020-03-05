@@ -621,15 +621,6 @@ AnimatorController:
   m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters:
-<<<<<<< HEAD
-  - m_Name: Speed
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-=======
->>>>>>> origin/BBSprint3
   - m_Name: isLeft
     m_Type: 4
     m_DefaultFloat: 0
@@ -654,8 +645,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-<<<<<<< HEAD
-=======
   - m_Name: isMoving
     m_Type: 4
     m_DefaultFloat: 0
@@ -686,7 +675,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
->>>>>>> origin/BBSprint3
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
