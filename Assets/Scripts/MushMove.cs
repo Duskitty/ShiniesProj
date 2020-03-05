@@ -14,7 +14,8 @@ public class MushMove : MonoBehaviour
         verticalMovment = Input.GetAxis("Vertical");
 
 
-        if (horizontalMovment > 0) {
+        if (horizontalMovment > 0)
+        {
             anim.SetBool("Right", true);
             anim.SetBool("Moving", true);
             anim.SetBool("Left", false);
@@ -24,7 +25,8 @@ public class MushMove : MonoBehaviour
 
 
         }
-        if (horizontalMovment < 0) {
+        if (horizontalMovment < 0)
+        {
             anim.SetBool("Left", true);
             anim.SetBool("Moving", true);
             anim.SetBool("Right", false);
@@ -33,7 +35,8 @@ public class MushMove : MonoBehaviour
 
 
         }
-        if (verticalMovment > 0) {
+        if (verticalMovment > 0)
+        {
             anim.SetBool("Left", false);
             anim.SetBool("Moving", true);
             anim.SetBool("Right", false);
@@ -41,7 +44,7 @@ public class MushMove : MonoBehaviour
             anim.SetBool("Down", false);
 
         }
-        if (verticalMovment <0)
+        if (verticalMovment < 0)
         {
             anim.SetBool("Left", false);
             anim.SetBool("Moving", true);
@@ -50,14 +53,15 @@ public class MushMove : MonoBehaviour
             anim.SetBool("Down", true);
 
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        anim.SetBool("Explode", true);
-        GameControlScript.health -= 1;
-        Destroy(gameObject,1);
-   
-        
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            anim.SetBool("Explode", true);
+            GameControlScript.health -= 1;
+            Destroy(gameObject, 1);
+            transform.Translate(new Vector3(100, 100, 0));
+        }
     }
 }
+
+
