@@ -4,52 +4,55 @@ using UnityEngine;
 
 public class newMovement : MonoBehaviour
 {
-    private float horizontalMovment = 0f;
-    private float verticalMovment = 0f;
-    public Animator anim;
-    //animations script for mushroom man
+    private float horizontal = 0f;
+    private float vertical = 0f;
+    public Animator animat;
+    // animations for mushroom man
 
-    // Update is called once per frame
     void Update()
     {
-        if (horizontalMovment > 0)
+        horizontal = Input.GetAxis("Horizontal");
+        vertical= Input.GetAxis("Vertical");
+
+        if(horizontal > 0)
         {
-            anim.SetBool("Right", true);
-            anim.SetBool("Moving", true);
-            anim.SetBool("Left", false);
-            anim.SetBool("Up", false);
-            anim.SetBool("Down", false);
-
-
-
+            animat.SetBool("Right", true);
+            animat.SetBool("Moving", true);
+            animat.SetBool("Left", false);
+            animat.SetBool("Up", false);
+            animat.SetBool("Down", false);
         }
-        if (horizontalMovment < 0)
+        if (horizontal < 0)
         {
-            anim.SetBool("Left", true);
-            anim.SetBool("Moving", true);
-            anim.SetBool("Right", false);
-            anim.SetBool("Up", false);
-            anim.SetBool("Down", false);
-
-
+            animat.SetBool("Right", false);
+            animat.SetBool("Moving", true);
+            animat.SetBool("Left", true);
+            animat.SetBool("Up", false);
+            animat.SetBool("Down", false);
         }
-        if (verticalMovment > 0)
+        if (vertical > 0)
         {
-            anim.SetBool("Left", false);
-            anim.SetBool("Moving", true);
-            anim.SetBool("Right", false);
-            anim.SetBool("Up", true);
-            anim.SetBool("Down", false);
-
+            animat.SetBool("Right", false);
+            animat.SetBool("Moving", true);
+            animat.SetBool("Left", false);
+            animat.SetBool("Up", true);
+            animat.SetBool("Down", false);
         }
-        if (verticalMovment < 0)
+        if (vertical < 0)
         {
-            anim.SetBool("Left", false);
-            anim.SetBool("Moving", true);
-            anim.SetBool("Right", false);
-            anim.SetBool("Up", false);
-            anim.SetBool("Down", true);
-
+            animat.SetBool("Right", false);
+            animat.SetBool("Moving", true);
+            animat.SetBool("Left", false);
+            animat.SetBool("Up", false);
+            animat.SetBool("Down", true);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameControlScript.health -= 1;
+        animat.SetBool("Explode", true);
+        Destroy(gameObject, 1);
+        transform.Translate(new Vector3(100, 100, 0));
+
     }
 }
