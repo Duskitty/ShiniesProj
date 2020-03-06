@@ -40,10 +40,10 @@ public class RockLightManager : MonoBehaviour
       inPosition2 = new bool[4];
       inPosition3 = new bool[4];
 
-      rocks[0] = GameObject.Find("pushObject00");
-      rocks[1] = GameObject.Find("pushObject01");
-      rocks[2] = GameObject.Find("pushObject02");
-      rocks[3] = GameObject.Find("pushObject03");
+      rocks[0] = GameObject.Find("rock00");
+      rocks[1] = GameObject.Find("rock01");
+      rocks[2] = GameObject.Find("rock02");
+      rocks[3] = GameObject.Find("rock03");
 
       inPosition1[0] = false;
       inPosition1[1] = false;
@@ -225,7 +225,7 @@ public class RockLightManager : MonoBehaviour
 
           if (hits[3].collider.name == rocks[0].name)
           {
-            Debug.Log("You Win!!!");
+            //Debug.Log("You Win!!!");
           }
         }
       }
