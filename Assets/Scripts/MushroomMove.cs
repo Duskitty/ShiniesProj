@@ -7,6 +7,7 @@ public class MushroomMove : MonoBehaviour
     private float horizontal = 0f;
     private float vertical = 0f;
     public Animator animat;
+    public float Delay;
     // animations for mushroom man
 
     void Update()
@@ -47,12 +48,18 @@ public class MushroomMove : MonoBehaviour
             animat.SetBool("Down", true);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        GameControlScript.health -= 1;
+        //double delay = .3.
         animat.SetBool("Explode", true);
-        Destroy(gameObject, 1);
-        transform.Translate(new Vector3(100, 100, 0));
+        GameControlScript.health -= 1;
 
+        StartCoroutine(Die());
+        //transform.Translate(new Vector3(100, 100, 0));
+    }
+    public IEnumerator Die()
+    {
+        yield return new WaitForSeconds(Delay);
+        Destroy(gameObject);
     }
 }

@@ -17455,9 +17455,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03442192}
+  m_Offset: {x: 0, y: -0.025906086}
   serializedVersion: 2
-  m_Radius: 0.34510237
+  m_Radius: 0.54096377
 --- !u!95 &1682550347
 Animator:
   serializedVersion: 3
@@ -17490,6 +17490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animat: {fileID: 1682550347}
+  Delay: 0.3
 --- !u!1 &1692808869
 GameObject:
   m_ObjectHideFlags: 0
