@@ -52,26 +52,40 @@ public class BridgePuzzleManager : MonoBehaviour
     {
       if (checkInSunlight())
       {
-        if (playerDirection.GetBool("isUp") || playerDirection.GetBool("isIdleUp"))
+
+        if (playerDirection.GetBool("isMoving"))
+        {
+          Debug.Log("moving");
+          for (int i = 0; i < reflectObjs.Length; i++)
+          {
+            reflectObjs[i].transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
+          }
+          return;
+        }
+
+        if (playerDirection.GetBool("isIdleUp"))
         {
           playerHitPoint = player.transform.GetChild(5);
           playerRaySpawn = player.transform.GetChild(1);
           beamDirection = playerRaySpawn.TransformDirection(Vector3.up);
           beamDirectionNum = 3;
+          //Debug.Log("player up");
         }
-        else if (playerDirection.GetBool("isRight"))
+        else if (playerDirection.GetBool("isIdleRight"))
         {
           playerHitPoint = player.transform.GetChild(6);
           playerRaySpawn = player.transform.GetChild(2);
           beamDirection = playerRaySpawn.TransformDirection(Vector3.right);
           beamDirectionNum = 2;
+          //Debug.Log("player right");
         }
-        else if (playerDirection.GetBool("isDown"))
+        else if (playerDirection.GetBool("isIdleDown"))
         {
           playerHitPoint = player.transform.GetChild(8);
           playerRaySpawn = player.transform.GetChild(4);
           beamDirection = playerRaySpawn.TransformDirection(Vector3.down);
           beamDirectionNum = 1;
+          //Debug.Log("player down");
         }
         else
         {
@@ -79,7 +93,9 @@ public class BridgePuzzleManager : MonoBehaviour
           playerRaySpawn = player.transform.GetChild(3);
           beamDirection = playerRaySpawn.TransformDirection(Vector3.left);
           beamDirectionNum = 0;
+          //Debug.Log("player left");
         }
+        
 
         playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection);
         Debug.DrawRay(playerRaySpawn.position, beamDirection);
@@ -141,7 +157,6 @@ public class BridgePuzzleManager : MonoBehaviour
     Transform hitObjLightSpawn;
     LineRenderer hitObjBeam;
     RaycastHit2D objRayHit;
-
 
     if (checkObjHit(objectHitName))
     {
