@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class newMovement : MonoBehaviour
+public class MushroomMove : MonoBehaviour
 {
     private float horizontal = 0f;
     private float vertical = 0f;
