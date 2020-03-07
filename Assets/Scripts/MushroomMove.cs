@@ -47,6 +47,8 @@ public class MushroomMove : MonoBehaviour
             animat.SetBool("Up", false);
             animat.SetBool("Down", true);
         }
+
+        
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
