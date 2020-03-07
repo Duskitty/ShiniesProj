@@ -15,12 +15,14 @@ public class PlayerMovement : MonoBehaviour
     bool isMovingDown = false;
     bool isMovingRight = false;
     bool isMovingLeft = false;
+    private AudioSource audioSrc;
 
+    private void Start()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
-    private void FixedUpdate()
-    
-        
-    
+    private void Update()
     {
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
@@ -45,6 +47,13 @@ public class PlayerMovement : MonoBehaviour
             isMovingDown = false;
             isMovingLeft = false;
             isMovingRight = false;
+        
+                if(!audioSrc.isPlaying)
+                {
+                    audioSrc.Play();
+                }
+            
+            
 
         }
         if (Input.GetKey(KeyCode.S))
@@ -61,6 +70,14 @@ public class PlayerMovement : MonoBehaviour
             isMovingLeft = false;
             isMovingRight = false;
 
+            
+                if (!audioSrc.isPlaying)
+                {
+                    audioSrc.Play();
+                }
+           
+            
+        
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -77,7 +94,13 @@ public class PlayerMovement : MonoBehaviour
             isMovingLeft = true;
             isMovingRight = false;
 
-
+           
+                if (!audioSrc.isPlaying)
+                {
+                    audioSrc.Play();
+                }
+            
+            
 
 
         }
@@ -97,10 +120,17 @@ public class PlayerMovement : MonoBehaviour
             isMovingLeft = false;
             isMovingRight = true;
 
-
+          
+                if (!audioSrc.isPlaying)
+                {
+                    audioSrc.Play();
+                }
+             
+            
 
         }
         if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D)) {//no input 
+            audioSrc.Stop();
             if (isMovingUp == true) {
                 animator.SetBool("isIdleUp", true);
                 animator.SetBool("isIdleDown", false);
