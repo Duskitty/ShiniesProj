@@ -32168,7 +32168,7 @@ GameObject:
   - component: {fileID: 732959840}
   - component: {fileID: 732959839}
   - component: {fileID: 732959838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bridgeSunPatch01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32185,7 +32185,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.02040863, y: -0.47624302}
@@ -77310,6 +77310,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bridgeSunPatch00
+      objectReference: {fileID: 0}
+    - target: {fileID: 255631738223855414, guid: e4963dfe758fc9346974d5469477665f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 255631738223855410, guid: e4963dfe758fc9346974d5469477665f,
         type: 3}

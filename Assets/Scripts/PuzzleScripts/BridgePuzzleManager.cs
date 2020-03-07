@@ -16,6 +16,7 @@ public class BridgePuzzleManager : MonoBehaviour
     private Vector3 beamDirection;
     private int beamDirectionNum;
     private RaycastHit2D playerHit;
+    //private LayerMask patches;
 
     // Object Variables
     public GameObject[] reflectObjs;
@@ -33,6 +34,7 @@ public class BridgePuzzleManager : MonoBehaviour
       playerBeam = playerLightSpawn.GetComponent<LineRenderer>();
       playerBeam.enabled = false;
       playerDirection = player.GetComponent<Animator>();
+      //patches = LayerMask.GetMask("SunPatch");
 
       //objBeams = new LineRenderer[reflectObjs.Length];
       //objLightSpawns = new Transform[reflectObjs.Length];
@@ -40,11 +42,11 @@ public class BridgePuzzleManager : MonoBehaviour
       //objRaySpawns = new Transform[reflectObjs.Length];
       //objBeamDirections = new int[reflectObjs.Length];
 
-      /*for(int i = 0; i < reflectObjs.Length; i++)
-      {
-        objLightSpawns[i] = reflectObjs[i].transform.GetChild(0);
-        objBeams[i] = objLightSpawns[i].GetComponent<LineRenderer>();
-      }*/
+    /*for(int i = 0; i < reflectObjs.Length; i++)
+    {
+      objLightSpawns[i] = reflectObjs[i].transform.GetChild(0);
+      objBeams[i] = objLightSpawns[i].GetComponent<LineRenderer>();
+    }*/
     }
 
     // Update is called once per frame
