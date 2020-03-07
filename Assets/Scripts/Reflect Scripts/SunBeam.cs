@@ -78,6 +78,11 @@ public class SunBeam : MonoBehaviour
       {
         //Debug.DrawRay(lightSpawnUp.position, lightSpawnUp.TransformDirection(Vector3.up));
 
+        if(hit.transform.tag == "enemy")
+        {
+          Debug.Log("Enemy Hit");
+        }
+
         if (playerDirection.GetBool("isUp"))
         {
           hitPointUp.position = hit.point;

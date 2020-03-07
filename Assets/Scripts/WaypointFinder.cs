@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaypointFinder : MonoBehaviour
+public class WaypointFinder: MonoBehaviour
 {
     //Array of waypoints from which the enemy walks from one to the next one
     [SerializeField]

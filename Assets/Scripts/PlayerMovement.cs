@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private float verticalMove = 0f;
     public Animator animator;
     public float speed = 0f;
-    public Animator textBoxAnimator;
+    //public Animator textBoxAnimator;
     public Rigidbody2D player;
     public bool bridgeSafe = false;
     private bool isMovingUp = false;
@@ -26,11 +26,11 @@ public class PlayerMovement : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
         verticalMove = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
         //animator.SetFloat("Speed", Mathf.Abs(verticalMove));
-        if (textBoxAnimator.GetBool("isOpen"))
+        /*if (textBoxAnimator.GetBool("isOpen"))
         {
             return;
 
-        }
+        }*/
         if (Input.GetKey(KeyCode.W))
         {
             

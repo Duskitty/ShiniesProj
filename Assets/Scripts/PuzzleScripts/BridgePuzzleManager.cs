@@ -160,9 +160,20 @@ public class BridgePuzzleManager : MonoBehaviour
     LineRenderer hitObjBeam;
     RaycastHit2D objRayHit;
 
+    objectHit = GameObject.Find(objectHitName);
+
+    if(objectHit.transform.tag == "enemy")
+    {
+      Debug.Log("Enemy Hit");
+      objectHit.GetComponent<StunEnemy>().stun(objectHit);
+      //StunEnemy stunEnemy = new StunEnemy();
+      //stunEnemy.stun(objectHit);
+      //objectHit.Stun.stunEnemy();
+    }
+
     if (checkObjHit(objectHitName))
     {
-      objectHit = GameObject.Find(objectHitName);
+      
       hitObjLightSpawn = objectHit.transform.GetChild(0);  
       hitObjBeam = hitObjLightSpawn.GetComponent<LineRenderer>();
 
