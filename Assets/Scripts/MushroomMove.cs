@@ -50,12 +50,11 @@ public class MushroomMove : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        //double delay = .3.
         animat.SetBool("Explode", true);
         GameControlScript.health -= 1;
 
         StartCoroutine(Die());
-        //transform.Translate(new Vector3(100, 100, 0));
+        
     }
     public IEnumerator Die()
     {
