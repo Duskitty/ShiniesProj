@@ -16,11 +16,10 @@ public class PlayerMovement : MonoBehaviour
     bool isMovingRight = false;
     bool isMovingLeft = false;
     private AudioSource audioSrc;
+    private bool isSprinting;
+    public float walkSpeed;
+    public float sprintSpeed;
 
-    private void Start()
-    {
-        audioSrc = GetComponent<AudioSource>();
-    }
     // Update is called once per frame
     private void Update()
     {
@@ -35,25 +34,32 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            
+
             transform.Translate(new Vector3(0f, speed * Time.deltaTime, 0f));
             animator.SetBool("isUp", true);
             animator.SetBool("isDown", false);
             animator.SetBool("isLeft", false);
             animator.SetBool("isRight", false);
             animator.SetBool("isMoving", true);
-           
+
             isMovingUp = true;
             isMovingDown = false;
             isMovingLeft = false;
             isMovingRight = false;
-        
-               /* if(!audioSrc.isPlaying)
-                {
-                    audioSrc.Play();
-                }*/
-            
-            
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                Debug.Log("Sprinting");
+                transform.Translate(new Vector3(0f, sprintSpeed * Time.deltaTime, 0f));
+                GetComponent<PlayerMelee>().setSprint(true);
+
+            }
+            else {
+               GetComponent<PlayerMelee>().setSprint(false);
+
+
+            }
+
 
         }
         if (Input.GetKey(KeyCode.S))
@@ -70,19 +76,25 @@ public class PlayerMovement : MonoBehaviour
             isMovingLeft = false;
             isMovingRight = false;
 
-            
-              /*  if (!audioSrc.isPlaying)
-                {
-                    audioSrc.Play();
-                }*/
-           
-            
-        
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                transform.Translate(new Vector3(0f, -sprintSpeed * Time.deltaTime, 0f));
+                GetComponent<PlayerMelee>().setSprint(true);
+
+            }
+            else {
+                GetComponent<PlayerMelee>().setSprint(false);
+
+            }
+
+
+
+
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(new Vector3(-speed * Time.deltaTime, 0f, 0f));
-            
+
             animator.SetBool("isLeft", true);
             animator.SetBool("isRight", false);
             animator.SetBool("isDown", false);
@@ -94,13 +106,19 @@ public class PlayerMovement : MonoBehaviour
             isMovingLeft = true;
             isMovingRight = false;
 
-           
-             /*   if (!audioSrc.isPlaying)
-                {
-                    audioSrc.Play();
-                }*/
-            
-            
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                transform.Translate(new Vector3(-sprintSpeed * Time.deltaTime, 0f, 0f));
+                GetComponent<PlayerMelee>().setSprint(true);
+
+            }
+            else {
+
+                GetComponent<PlayerMelee>().setSprint(false);
+
+            }
+
+
 
 
         }
@@ -120,17 +138,24 @@ public class PlayerMovement : MonoBehaviour
             isMovingLeft = false;
             isMovingRight = true;
 
-          
-              /*  if (!audioSrc.isPlaying)
-                {
-                    audioSrc.Play();
-                }*/
-             
-            
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                transform.Translate(new Vector3(sprintSpeed * Time.deltaTime, 0f, 0f));
+                GetComponent<PlayerMelee>().setSprint(true);
+
+            }
+            else {
+               GetComponent<PlayerMelee>().setSprint(false);
+
+
+            }
+
+
 
         }
+
         if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D)) {//no input 
-            audioSrc.Stop();
             if (isMovingUp == true) {
                 animator.SetBool("isIdleUp", true);
                 animator.SetBool("isIdleDown", false);
@@ -138,10 +163,11 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("isIdleLeft", false);
              animator.SetBool("isMoving", false);
                 animator.SetBool("isUp", false);
-             //   Debug.Log("Not Moving Up");
+                   Debug.Log("Not Moving Up");
+
 
             }
-            
+
             if (isMovingLeft == true) {
 
                 animator.SetBool("isIdleUp", false);
@@ -150,7 +176,8 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("isIdleLeft", true);
                 animator.SetBool("isMoving", false);
                 animator.SetBool("isUp", false);
-              //  Debug.Log("Not Moving Left");
+                //  Debug.Log("Not Moving Left");
+
 
             }
             if (isMovingRight == true) {
@@ -160,7 +187,8 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("isIdleLeft", false);
                 animator.SetBool("isMoving", false);
                 animator.SetBool("isUp", false);
-               // Debug.Log("Not Moving Right");
+                // Debug.Log("Not Moving Right");
+
 
 
             }
@@ -177,6 +205,8 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
-       
+        
+      
+
     }
 }

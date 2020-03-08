@@ -50,9 +50,9 @@ public class MushroomMove : MonoBehaviour
 
         
     }
-    private void OnCollisionEnter2D(Collision2D col)
+   private void OnCollisionEnter2D(Collision2D col)
     {
-        animat.SetBool("Explode", true);
+       animat.SetBool("Explode", true);
         GameControlScript.health -= 1;
 
         StartCoroutine(Die());
@@ -62,5 +62,13 @@ public class MushroomMove : MonoBehaviour
     {
         yield return new WaitForSeconds(Delay);
         Destroy(gameObject);
+    }
+    public void SheildBash() {
+        animat.SetBool("Explode", true);
+        Debug.Log("about to sheild bash");
+
+        StartCoroutine(Die());
+
+
     }
 }
