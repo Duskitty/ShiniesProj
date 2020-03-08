@@ -16,6 +16,7 @@ public class BridgePuzzleManager : MonoBehaviour
     private Vector3 beamDirection;
     private int beamDirectionNum;
     private RaycastHit2D playerHit;
+    private LayerMask layerMask;
     //private LayerMask patches;
 
     // Object Variables
@@ -34,7 +35,7 @@ public class BridgePuzzleManager : MonoBehaviour
       playerBeam = playerLightSpawn.GetComponent<LineRenderer>();
       playerBeam.enabled = false;
       playerDirection = player.GetComponent<Animator>();
-      //patches = LayerMask.GetMask("SunPatch");
+      layerMask = LayerMask.GetMask("SunPatch");
 
       //objBeams = new LineRenderer[reflectObjs.Length];
       //objLightSpawns = new Transform[reflectObjs.Length];
@@ -99,7 +100,7 @@ public class BridgePuzzleManager : MonoBehaviour
         }
         
 
-        playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection);
+        playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection, 50.0f, ~layerMask);
         Debug.DrawRay(playerRaySpawn.position, beamDirection);
 
         if (playerHit.collider != null)
@@ -218,7 +219,7 @@ public class BridgePuzzleManager : MonoBehaviour
         direction = 2;
       }
 
-      objRayHit = Physics2D.Raycast(hitObjRaySpawn.position, directionToCast);
+      objRayHit = Physics2D.Raycast(hitObjRaySpawn.position, directionToCast, 50.0f, ~layerMask);
       Debug.DrawRay(hitObjRaySpawn.position, directionToCast);
 
       if(objRayHit.collider != null)

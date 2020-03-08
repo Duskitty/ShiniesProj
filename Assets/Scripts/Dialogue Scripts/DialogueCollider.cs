@@ -7,7 +7,8 @@ using UnityEngine;
 public class DialogueCollider : MonoBehaviour
 {
   public DialogueTrigger trigger;
-    public void OnCollisionEnter2D(Collision2D thing)
+
+  public void OnCollisionEnter2D(Collision2D thing)
   {
     trigger.startConversation();
     //Debug.Log("collision detected");

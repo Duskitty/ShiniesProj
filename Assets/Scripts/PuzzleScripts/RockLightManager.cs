@@ -225,7 +225,9 @@ public class RockLightManager : MonoBehaviour
 
           if (hits[3].collider.name == rocks[0].name)
           {
-            //Debug.Log("You Win!!!");
+            GameObject.Find("Bush").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("Bush").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.Find("Shield").GetComponent<BoxCollider2D>().enabled = true;
           }
         }
       }
