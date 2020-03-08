@@ -48,10 +48,10 @@ public class PlayerMovement : MonoBehaviour
             isMovingLeft = false;
             isMovingRight = false;
         
-                if(!audioSrc.isPlaying)
+               /* if(!audioSrc.isPlaying)
                 {
                     audioSrc.Play();
-                }
+                }*/
             
             
 
@@ -71,10 +71,10 @@ public class PlayerMovement : MonoBehaviour
             isMovingRight = false;
 
             
-                if (!audioSrc.isPlaying)
+              /*  if (!audioSrc.isPlaying)
                 {
                     audioSrc.Play();
-                }
+                }*/
            
             
         
@@ -95,10 +95,10 @@ public class PlayerMovement : MonoBehaviour
             isMovingRight = false;
 
            
-                if (!audioSrc.isPlaying)
+             /*   if (!audioSrc.isPlaying)
                 {
                     audioSrc.Play();
-                }
+                }*/
             
             
 
@@ -121,10 +121,10 @@ public class PlayerMovement : MonoBehaviour
             isMovingRight = true;
 
           
-                if (!audioSrc.isPlaying)
+              /*  if (!audioSrc.isPlaying)
                 {
                     audioSrc.Play();
-                }
+                }*/
              
             
 
