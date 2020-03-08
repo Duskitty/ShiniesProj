@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MushroomMove : MonoBehaviour
 {
     private float horizontal = 0f;
@@ -9,7 +9,7 @@ public class MushroomMove : MonoBehaviour
     public Animator animat;
     public float Delay;
     // animations for mushroom man
-
+    public string scenetoload;
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
@@ -62,13 +62,17 @@ public class MushroomMove : MonoBehaviour
     {
         yield return new WaitForSeconds(Delay);
         Destroy(gameObject);
+
     }
     public void SheildBash() {
         animat.SetBool("Explode", true);
         Debug.Log("about to sheild bash");
 
         StartCoroutine(Die());
-
+        ChangeScene();
+    }
+    void ChangeScene() {
+        SceneManager.LoadScene(scenetoload);
 
     }
 }
