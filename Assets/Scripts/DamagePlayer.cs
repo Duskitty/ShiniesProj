@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class skullscript : MonoBehaviour
+public class DamagePlayer : MonoBehaviour
 { 
     void OnCollisionEnter2D(Collision2D col)
     {
