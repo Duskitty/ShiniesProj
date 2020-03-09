@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     bool isMovingRight = false;
     bool isMovingLeft = false;
     private AudioSource audioSrc;
-
+    public float sprinting;
     private void Start()
     {
         audioSrc = GetComponent<AudioSource>();
@@ -48,10 +48,7 @@ public class PlayerMovement : MonoBehaviour
             isMovingLeft = false;
             isMovingRight = false;
         
-               /* if(!audioSrc.isPlaying)
-                {
-                    audioSrc.Play();
-                }*/
+      
             
             
 
@@ -71,10 +68,7 @@ public class PlayerMovement : MonoBehaviour
             isMovingRight = false;
 
             
-              /*  if (!audioSrc.isPlaying)
-                {
-                    audioSrc.Play();
-                }*/
+         
            
             
         
@@ -95,10 +89,7 @@ public class PlayerMovement : MonoBehaviour
             isMovingRight = false;
 
            
-             /*   if (!audioSrc.isPlaying)
-                {
-                    audioSrc.Play();
-                }*/
+           
             
             
 
@@ -121,10 +112,6 @@ public class PlayerMovement : MonoBehaviour
             isMovingRight = true;
 
           
-              /*  if (!audioSrc.isPlaying)
-                {
-                    audioSrc.Play();
-                }*/
              
             
 
