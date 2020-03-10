@@ -20,14 +20,26 @@ public class PlayerMelee : MonoBehaviour
     {
       if (Input.GetKey(KeyCode.Space) && isSprint == true)
       {
-        Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatisEnemies);//gets the enemies to put in a array to damage them
-        for (int i = 0; i < enemy.Length; ++i)
-        {//go through the above array
-          enemy[i].GetComponent<MushroomMove>().SheildBash();
-          // enemy[i].GetComponent<Enemy>().TakeDamage(damage);
-          setSprint(false);
-          Debug.Log("about to sheild bash");
 
+                Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatisEnemies);//gets the enemies to put in a array to damage them
+                for (int i = 0; i < enemy.Length; ++i) {
+                    if (enemy[i].gameObject.name == "BreakableRock")
+                    {
+                        Debug.Log("im am about to sheild bash the rock");
+                      enemy[i].gameObject.GetComponent<RockSmash>().OnCollisionEnter2D(
+
+
+                    }
+                    else
+                    {
+                        //its a mushroom
+                        Debug.Log("im am about to sheild bash the mushroom");
+
+                        enemy[i].GetComponent<MushroomMove>().SheildBash();
+
+                            setSprint(false);
+                        
+                    }
         }
 
       }
