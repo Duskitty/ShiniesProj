@@ -6,7 +6,7 @@ public class WaypointFinder: MonoBehaviour
 {
     //Array of waypoints from which the enemy walks from one to the next one
     [SerializeField]
-    private Transform[] waypoints;
+    public Transform[] waypoints;
     //movement speed
     [SerializeField]
     private float moveSpeed = 2f;
