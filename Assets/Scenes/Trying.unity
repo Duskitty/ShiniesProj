@@ -312,6 +312,40 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7790677710069555045}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &101289404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101289403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d92ce39bad709f4e9694e4463b29a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animat: {fileID: 101289405}
+  Delay: 0
+  isShieldBahsing: 0
+--- !u!95 &101289405 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7790677709481872372, guid: 75162156ea0789541ade776081d3477e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7790677710069555045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &101289406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101289403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db3899c19d6fe29408f5775c268789ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
 --- !u!61 &101289407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17702,7 +17736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1682550344
 Transform:
   m_ObjectHideFlags: 0
