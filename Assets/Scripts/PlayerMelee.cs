@@ -26,8 +26,7 @@ public class PlayerMelee : MonoBehaviour
                     if (enemy[i].gameObject.name == "BreakableRock")
                     {
                         Debug.Log("im am about to sheild bash the rock");
-
-                      GameObject.Find("BreakableRock").GetComponent<RockSmash>().SetIsBashing(true);
+                      enemy[i].gameObject.GetComponent<RockSmash>().OnCollisionEnter2D(
 
 
                     }
