@@ -26,6 +26,7 @@ public class WaypointFinder: MonoBehaviour
         if (wpIndex < waypoints.Length)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[wpIndex].transform.position, moveSpeed * Time.deltaTime);
+            print(transform.position);
             if (transform.position == waypoints[wpIndex].transform.position)
             {
                 if (wpIndex == 0)
