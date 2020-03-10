@@ -11,7 +11,7 @@ public class RockSmash : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D col)
     {
-        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift)) { 
+        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift) && pickUpMirror.hasSheild==true) { 
             
                 animi.SetBool("Break", true);
                 StartCoroutine(RockDie());
