@@ -83,7 +83,7 @@ public class MushroomMove : MonoBehaviour
     Debug.Log("about to sheild bash");
 
     StartCoroutine(Die());
-    ChangeScene();
+   // ChangeScene();
   }
   void ChangeScene()
   {
