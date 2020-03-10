@@ -22,8 +22,6 @@ public class WaypointFinder: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //WHEN REFLECTION & STUN IS IMPLEMENTED, HAVE AN IF STATEMENT TO SEE IF THE ENEMY IS STUNNED
-        //print(wpIndex);
         //move enemy towards next waypoint
         if (wpIndex < waypoints.Length)
         {
