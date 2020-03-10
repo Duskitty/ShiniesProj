@@ -53,23 +53,28 @@ public class MushroomMove : MonoBehaviour
   }
   private void OnTriggerEnter2D(Collider2D col)
   {
-    animat.SetBool("Explode", true);
-    if (isShieldBahsing)
-    {
-      //no damage taken
-    }
-    else
-    {
-      // no shield bash = 1 less heart
-      GameControlScript.health -= 1;
-            print(col.name);
-      StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
+        if (col.gameObject.CompareTag("Player"))
+        {
+            animat.SetBool("Explode", true);
+            if (isShieldBahsing)
+            {
+                //no damage taken
+            }
+            else
+            {
+                // no shield bash = 1 less heart
+                GameControlScript.health -= 1;
+                print(col.name);
+                    StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
 
 
-    }
-    GetComponentInParent<Pathfinding.AIPath>().canMove = false;
-    StartCoroutine(Die());
+            }
 
+            {
+                GetComponentInParent<Pathfinding.AIPath>().canMove = false;
+                StartCoroutine(Die());
+            }
+        }
   }
   public IEnumerator Die()
   {
