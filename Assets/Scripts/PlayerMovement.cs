@@ -25,12 +25,12 @@ public class PlayerMovement : MonoBehaviour
   // Update is called once per frame
   private void Update()
   {
-    if (hasShield == true)
+    /*if (animator.GetBool("hasShield"))
     { animator.SetBool("HasShield", true); }
-    else if (hasShield == false)
+    else
     {
       animator.SetBool("HasShield", false);
-    }
+    }*/
 
     horizontalMove = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
     verticalMove = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;

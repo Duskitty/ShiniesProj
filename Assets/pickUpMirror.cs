@@ -8,7 +8,7 @@ public class pickUpMirror : MonoBehaviour
   {
     Debug.Log("Picked Up the mirror!");
     //Change player sprite here
-    //GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
+    GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
     this.GetComponent<Renderer>().enabled = false;
   }
 }
