@@ -110,6 +110,27 @@ TextureImporter:
   - first:
       213: -8629943685580320344
     second: ShroomTiles2_35
+  - first:
+      213: 334464216503093105
+    second: ShroomTiles2_36
+  - first:
+      213: 3716002247603081845
+    second: ShroomTiles2_37
+  - first:
+      213: 2127164813278492614
+    second: ShroomTiles2_38
+  - first:
+      213: -2314608884198459827
+    second: ShroomTiles2_39
+  - first:
+      213: 7409225887166880206
+    second: ShroomTiles2_40
+  - first:
+      213: -352491187754670314
+    second: ShroomTiles2_41
+  - first:
+      213: 4930901887189136592
+    second: ShroomTiles2_42
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -209,10 +230,10 @@ TextureImporter:
       name: ShroomTiles2_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 98
-        width: 15
-        height: 22
+        x: 0
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,7 +241,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6ac042bc610f254fb913e114a2b262a
+      spriteID: e24c625d7d5b4c44c951f0ceba5e5e65
       internalID: 587346957076477975
       vertices: []
       indices: 
@@ -230,10 +251,10 @@ TextureImporter:
       name: ShroomTiles2_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 105
-        width: 12
-        height: 20
+        x: 16
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,7 +262,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d686d8301a789b14dbbae049c05c6b7d
+      spriteID: d539b85371f423345bd1f9af65eca554
       internalID: 6941371074068411673
       vertices: []
       indices: 
@@ -251,10 +272,10 @@ TextureImporter:
       name: ShroomTiles2_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 113
-        width: 12
-        height: 12
+        x: 32
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,7 +283,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d873c9a6dc096a248a217819dd5665b0
+      spriteID: d003537991bf7f041bfcdcf30e3cc2da
       internalID: -2597590227721889696
       vertices: []
       indices: 
@@ -272,10 +293,10 @@ TextureImporter:
       name: ShroomTiles2_3
       rect:
         serializedVersion: 2
-        x: 50
-        y: 113
-        width: 12
-        height: 14
+        x: 48
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,7 +304,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad1c8cdc6d2bdf6428e7a67362a7795e
+      spriteID: b1a2616cf1412164ab16e55a1e29d7da
       internalID: -3336347500248564662
       vertices: []
       indices: 
@@ -293,10 +314,10 @@ TextureImporter:
       name: ShroomTiles2_4
       rect:
         serializedVersion: 2
-        x: 68
-        y: 98
-        width: 56
-        height: 27
+        x: 64
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,7 +325,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67aa34253906e8044b986a78fdb1f4a3
+      spriteID: d6d4cc63f2ca2e14ea2b08b800da0d66
       internalID: 292996191770779155
       vertices: []
       indices: 
@@ -314,10 +335,10 @@ TextureImporter:
       name: ShroomTiles2_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 97
-        width: 8
-        height: 10
+        x: 80
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,7 +346,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7b56aeda54d6de46a1cddd3a8d087fb
+      spriteID: f1eef7c240ae9894cb56c5d04efe51e8
       internalID: 8881205916384649178
       vertices: []
       indices: 
@@ -335,10 +356,10 @@ TextureImporter:
       name: ShroomTiles2_6
       rect:
         serializedVersion: 2
-        x: 38
-        y: 102
-        width: 4
-        height: 5
+        x: 96
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,7 +367,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfca2562befaacf489474601db196e67
+      spriteID: bcfc52baf015de844b9bcf31f47014ed
       internalID: -2529549226168912222
       vertices: []
       indices: 
@@ -356,10 +377,10 @@ TextureImporter:
       name: ShroomTiles2_7
       rect:
         serializedVersion: 2
-        x: 44
-        y: 105
-        width: 4
-        height: 5
+        x: 112
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,7 +388,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a508b42e79237164a8e98aff30bca25f
+      spriteID: acf5d2f85e26db54a9da67240ebf7fcc
       internalID: -1009225634535361312
       vertices: []
       indices: 
@@ -377,10 +398,10 @@ TextureImporter:
       name: ShroomTiles2_8
       rect:
         serializedVersion: 2
-        x: 49
-        y: 102
-        width: 5
-        height: 5
+        x: 0
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,7 +409,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e99fc7755ce432459fb76a991b854d4
+      spriteID: 32c1f22096438884bba91af96c7770c4
       internalID: 2697595203043995693
       vertices: []
       indices: 
@@ -398,10 +419,10 @@ TextureImporter:
       name: ShroomTiles2_9
       rect:
         serializedVersion: 2
-        x: 34
-        y: 97
-        width: 4
-        height: 5
+        x: 16
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,7 +430,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1bb48cb4c4c8e418f53ff694affb79
+      spriteID: 1265d3276f19f004eb8663da2cde9607
       internalID: 7624829916166908185
       vertices: []
       indices: 
@@ -419,10 +440,10 @@ TextureImporter:
       name: ShroomTiles2_10
       rect:
         serializedVersion: 2
-        x: 42
-        y: 98
-        width: 5
-        height: 5
+        x: 32
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,7 +451,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70f1b0cd134b6e2488ad8f71d01043c8
+      spriteID: 68dc51ecc37b9514e97eb5602fa4e011
       internalID: -7936488978034499532
       vertices: []
       indices: 
@@ -440,10 +461,10 @@ TextureImporter:
       name: ShroomTiles2_11
       rect:
         serializedVersion: 2
-        x: 51
+        x: 48
         y: 96
-        width: 5
-        height: 5
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -451,7 +472,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c994689167324e94f9e9e53233a90a5d
+      spriteID: 30a3757ea97c5304eb0e72d214d43f4f
       internalID: -5311902676382803257
       vertices: []
       indices: 
@@ -461,10 +482,10 @@ TextureImporter:
       name: ShroomTiles2_12
       rect:
         serializedVersion: 2
-        x: 58
-        y: 95
-        width: 4
-        height: 5
+        x: 64
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,7 +493,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb33dbb610f6b5b439c72b40d39c8b68
+      spriteID: 13f420c85b5f96f41a39819776903d03
       internalID: -3548867477187395771
       vertices: []
       indices: 
@@ -482,10 +503,10 @@ TextureImporter:
       name: ShroomTiles2_13
       rect:
         serializedVersion: 2
-        x: 16
-        y: 66
-        width: 14
-        height: 26
+        x: 80
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -493,7 +514,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee16387a198c53149849a62c997dd2fd
+      spriteID: c894da1a32f81154facaddeaee3815ca
       internalID: -5990745014493256204
       vertices: []
       indices: 
@@ -503,10 +524,10 @@ TextureImporter:
       name: ShroomTiles2_14
       rect:
         serializedVersion: 2
-        x: 36
-        y: 91
-        width: 4
-        height: 5
+        x: 96
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -514,7 +535,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d8c5f30462e6844ba16625398c504e9
+      spriteID: b9acb7dade3dea5498a653c063c1cf65
       internalID: 7946050864699272095
       vertices: []
       indices: 
@@ -524,10 +545,10 @@ TextureImporter:
       name: ShroomTiles2_15
       rect:
         serializedVersion: 2
-        x: 44
-        y: 88
-        width: 4
-        height: 5
+        x: 112
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -535,7 +556,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12539d2868b52654d97014f5595dbc10
+      spriteID: fefd5e363bba09145bb5e6bd06496849
       internalID: -5869668664968337081
       vertices: []
       indices: 
@@ -545,10 +566,10 @@ TextureImporter:
       name: ShroomTiles2_16
       rect:
         serializedVersion: 2
-        x: 49
-        y: 90
-        width: 5
-        height: 5
+        x: 0
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -556,7 +577,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a48388da14ad4bf48b787f6f283af94c
+      spriteID: 6445726b830b17e44b75e2b1bd5b7f1f
       internalID: 8717612395162566650
       vertices: []
       indices: 
@@ -566,10 +587,10 @@ TextureImporter:
       name: ShroomTiles2_17
       rect:
         serializedVersion: 2
-        x: 55
-        y: 87
-        width: 4
-        height: 5
+        x: 16
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -577,7 +598,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dbabee0be1934c43b9bb25b4bd6a0fa
+      spriteID: 10f9d4cfc6085bf4b9ecfa6a63a2cb00
       internalID: -4462682931925952144
       vertices: []
       indices: 
@@ -587,10 +608,10 @@ TextureImporter:
       name: ShroomTiles2_18
       rect:
         serializedVersion: 2
-        x: 2
-        y: 66
-        width: 13
-        height: 20
+        x: 32
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -598,7 +619,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ee5bc2b432cca047ac13b05b78dca2f
+      spriteID: fefc5c360350fe44dbde0199f89380ad
       internalID: -3857354383761679176
       vertices: []
       indices: 
@@ -608,10 +629,10 @@ TextureImporter:
       name: ShroomTiles2_19
       rect:
         serializedVersion: 2
-        x: 38
-        y: 85
-        width: 4
-        height: 5
+        x: 48
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -619,7 +640,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8588cc6a8e38c24e87a3faf634f9cac
+      spriteID: 3ae127b1cd116174d80bb7944613d0bb
       internalID: 3275066468339792350
       vertices: []
       indices: 
@@ -630,9 +651,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 50
-        width: 14
-        height: 40
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -640,7 +661,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11878d0fe60f2974ea98587031ea05c6
+      spriteID: f4c42c41244004945860ea982f840279
       internalID: 156354542126188897
       vertices: []
       indices: 
@@ -650,10 +671,10 @@ TextureImporter:
       name: ShroomTiles2_21
       rect:
         serializedVersion: 2
-        x: 81
-        y: 50
-        width: 15
-        height: 40
+        x: 80
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -661,7 +682,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f79e3520bde3f5c44b3e4d81e45b0219
+      spriteID: 6ce3545794ec84a4cb370c7a0fbf386f
       internalID: 7575996705776133443
       vertices: []
       indices: 
@@ -671,10 +692,10 @@ TextureImporter:
       name: ShroomTiles2_22
       rect:
         serializedVersion: 2
-        x: 35
-        y: 66
-        width: 9
-        height: 12
+        x: 0
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -682,7 +703,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15671c8fa0f8dd3438f6d3ca8338dc0e
+      spriteID: de2fbeb806e23c74ea0d90888e46c2e6
       internalID: 6714479203071284235
       vertices: []
       indices: 
@@ -692,10 +713,10 @@ TextureImporter:
       name: ShroomTiles2_23
       rect:
         serializedVersion: 2
-        x: 51
-        y: 66
-        width: 9
-        height: 12
+        x: 16
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -703,7 +724,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a412f79c064550445a52790c1319e885
+      spriteID: 8784d3d8da5d6cb49a75a3879754caf4
       internalID: 5230525405486367368
       vertices: []
       indices: 
@@ -713,10 +734,10 @@ TextureImporter:
       name: ShroomTiles2_24
       rect:
         serializedVersion: 2
-        x: 2
-        y: 33
-        width: 60
-        height: 25
+        x: 32
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -724,7 +745,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 228ee7fdf5c1de245b39766ac08511ca
+      spriteID: 896315b0b6eb7184daa40ab1409eaf5b
       internalID: -2654043685029622462
       vertices: []
       indices: 
@@ -734,10 +755,10 @@ TextureImporter:
       name: ShroomTiles2_25
       rect:
         serializedVersion: 2
-        x: 1
-        y: 18
-        width: 13
-        height: 13
+        x: 48
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -745,7 +766,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d80e00a02e2969f4c862b26a7038b9ae
+      spriteID: e32ec9a50c09e5748be1a0c0e87f3b86
       internalID: -8788075060131288895
       vertices: []
       indices: 
@@ -755,10 +776,10 @@ TextureImporter:
       name: ShroomTiles2_26
       rect:
         serializedVersion: 2
-        x: 16
-        y: 24
-        width: 8
-        height: 8
+        x: 64
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -766,7 +787,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de7cf0f18a1959f4fa078fe6407163ca
+      spriteID: 3de4f09f73a73c845ab691de08c1e387
       internalID: 623461553953427703
       vertices: []
       indices: 
@@ -776,10 +797,10 @@ TextureImporter:
       name: ShroomTiles2_27
       rect:
         serializedVersion: 2
-        x: 26
-        y: 20
-        width: 5
-        height: 9
+        x: 80
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -787,7 +808,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac86362db96d60645b866b853fc781eb
+      spriteID: 399c95ecc2f6cbd4a95681e2c9fc6052
       internalID: 5753945271645044691
       vertices: []
       indices: 
@@ -797,10 +818,10 @@ TextureImporter:
       name: ShroomTiles2_28
       rect:
         serializedVersion: 2
-        x: 32
-        y: 21
+        x: 0
+        y: 48
         width: 16
-        height: 10
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -808,7 +829,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0096c2e0af4e2ff429a49275b68c0f03
+      spriteID: 05f2c8bf905483f42a11b203dc517ef6
       internalID: -6596865103788247875
       vertices: []
       indices: 
@@ -818,10 +839,10 @@ TextureImporter:
       name: ShroomTiles2_29
       rect:
         serializedVersion: 2
-        x: 19
-        y: 17
-        width: 4
-        height: 4
+        x: 16
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -829,7 +850,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49708794322f84145b3f57425e3d47ed
+      spriteID: 4477ecb98c78fc241965fc5b82c2c495
       internalID: -6634156842672919510
       vertices: []
       indices: 
@@ -839,10 +860,10 @@ TextureImporter:
       name: ShroomTiles2_30
       rect:
         serializedVersion: 2
-        x: 28
-        y: 12
-        width: 8
-        height: 8
+        x: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -850,7 +871,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f395292bac1b71b4d9663f178a7f2176
+      spriteID: e883ac9c1f2197f44889054b465c6086
       internalID: 1717547556880327442
       vertices: []
       indices: 
@@ -860,10 +881,10 @@ TextureImporter:
       name: ShroomTiles2_31
       rect:
         serializedVersion: 2
-        x: 33
-        y: 2
-        width: 14
-        height: 18
+        x: 48
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -871,7 +892,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b47541f9288dfda46a5dea01ad9b7926
+      spriteID: 4875e1b7c90f40049809daa3359c12c7
       internalID: -3759111491416462032
       vertices: []
       indices: 
@@ -881,10 +902,10 @@ TextureImporter:
       name: ShroomTiles2_32
       rect:
         serializedVersion: 2
-        x: 17
-        y: 1
-        width: 7
-        height: 14
+        x: 64
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -892,7 +913,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b616801221870b48a87863add2aecf7
+      spriteID: 35f7ac25593070d49b460be4c295850e
       internalID: 453129317964525523
       vertices: []
       indices: 
@@ -902,10 +923,10 @@ TextureImporter:
       name: ShroomTiles2_33
       rect:
         serializedVersion: 2
-        x: 34
-        y: 9
-        width: 4
-        height: 4
+        x: 80
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -913,7 +934,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4a04120eead0ee488b24f995e48b64e
+      spriteID: bffdbfb116bce704982ceb650fde44bc
       internalID: 6978613924659189244
       vertices: []
       indices: 
@@ -923,10 +944,10 @@ TextureImporter:
       name: ShroomTiles2_34
       rect:
         serializedVersion: 2
-        x: 26
-        y: 1
-        width: 4
-        height: 4
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -934,7 +955,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e9fa2055a4b76f46b586f4fbaf63431
+      spriteID: 782f847c2b141b441a0e4f1c60787ff6
       internalID: -3361311989622679361
       vertices: []
       indices: 
@@ -944,10 +965,10 @@ TextureImporter:
       name: ShroomTiles2_35
       rect:
         serializedVersion: 2
-        x: 44
-        y: 0
-        width: 4
-        height: 4
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -955,8 +976,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1afc3736c266af42bcdd5e3365e92c6
+      spriteID: a908c5212a1f68041991b5622a22dc80
       internalID: -8629943685580320344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShroomTiles2_36
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c13eca8955afe64a93736a4dab4f3ef
+      internalID: 334464216503093105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShroomTiles2_37
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101d23b2f7865a04bb7fed7f3b131055
+      internalID: 3716002247603081845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShroomTiles2_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b263c4cf5958e6f4da97df89cdedbd59
+      internalID: 2127164813278492614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShroomTiles2_39
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd41db1a001081d47bbb6e02d5906ed0
+      internalID: -2314608884198459827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShroomTiles2_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3872efe3fa5b06042a2cd5a35f371dc7
+      internalID: 7409225887166880206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShroomTiles2_41
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94df6600d8d31d44db8edfce5681795c
+      internalID: -352491187754670314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShroomTiles2_42
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ebd74ce1e921e42831cb3f08f616b5
+      internalID: 4930901887189136592
       vertices: []
       indices: 
       edges: []
