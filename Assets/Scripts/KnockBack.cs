@@ -15,7 +15,7 @@ public class KnockBack : MonoBehaviour
     if (other.gameObject.CompareTag("enemy"))
     {
       Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
-
+       
 
       if (hit != null)
       {

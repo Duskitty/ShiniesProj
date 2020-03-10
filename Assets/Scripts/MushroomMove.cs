@@ -62,6 +62,7 @@ public class MushroomMove : MonoBehaviour
     {
       // no shield bash = 1 less heart
       GameControlScript.health -= 1;
+            print(col.name);
       StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
 
 
