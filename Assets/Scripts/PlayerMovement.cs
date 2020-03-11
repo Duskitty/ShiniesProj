@@ -183,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isIdleLeft", false);
         animator.SetBool("isMoving", false);
         animator.SetBool("isUp", false);
-        Debug.Log("Not Moving Up");
+        //Debug.Log("Not Moving Up");
 
 
       }

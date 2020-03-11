@@ -7,6 +7,6 @@ public class nextLevelTrigger : MonoBehaviour
 {
   public void OnTriggerEnter2D(Collider2D thing)
   {
-    SceneManager.LoadScene("YouWin");
+    SceneManager.LoadScene("World_1_Boss");
   }
 }
