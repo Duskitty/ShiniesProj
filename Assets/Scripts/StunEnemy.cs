@@ -5,10 +5,12 @@ using UnityEngine;
 public class StunEnemy: MonoBehaviour
 {
   public int stunTime;
+  private bool isStunned;
 
   public void stun(GameObject enemy)
   {
-    Debug.Log("Enemy stunned");
+    //Debug.Log("Enemy stunned");
+    isStunned = true;
     enemy.GetComponent<WaypointFinder>().enabled = false;
     StartCoroutine(holdStun(enemy));
   }
@@ -17,5 +19,11 @@ public class StunEnemy: MonoBehaviour
   {
     yield return new WaitForSeconds(stunTime);
     enemy.GetComponent<WaypointFinder>().enabled = true;
+    isStunned = false;
+  }
+
+  public bool checkIsStunned()
+  {
+    return isStunned;
   }
 }

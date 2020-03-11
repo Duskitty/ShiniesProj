@@ -21,7 +21,7 @@ public class BridgeOut : MonoBehaviour
             bridge.enabled = true;
         }
 
-        if(boxOut == false)
+        if(boxOut && GameObject.Find("AntMan").GetComponent<StunEnemy>().checkIsStunned())
         {
             box.enabled = false;
         }
@@ -34,11 +34,11 @@ public class BridgeOut : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
         GameObject.Find("Player").GetComponent<PlayerMovement>().bridgeSafe = true;
-        GameObject.Find("ChasmColliderMiddle").GetComponent<BoxCollider2D>().enabled = false;
+        //GameObject.Find("ChasmColliderMiddle").GetComponent<BoxCollider2D>().enabled = false;
     }
     void OnTriggerExit2D(Collider2D other)
     {
         GameObject.Find("Player").GetComponent<PlayerMovement>().bridgeSafe = false;
-        GameObject.Find("ChasmColliderMiddle").GetComponent<BoxCollider2D>().enabled = true;
+        //GameObject.Find("ChasmColliderMiddle").GetComponent<BoxCollider2D>().enabled = true;
     }
 }
