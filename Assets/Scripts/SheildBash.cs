@@ -19,7 +19,6 @@ public class SheildBash : MonoBehaviour
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
             PlayerDirection();
 
-           // player.GetComponent<PlayerMovement>().enabled = true;//enable player input
 
 
 
