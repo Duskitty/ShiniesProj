@@ -28,7 +28,7 @@ public class SheildBash : MonoBehaviour
 
 
     }
-    public void PlayerDirection() {//figure out what way the player is facing then apply the right foce
+    public void PlayerDirection() {//figure out what way the player is facing then apply the right force
         if (horzMov < 0)
         {
             controller.AddForce(new Vector2(-speed, 0f));
