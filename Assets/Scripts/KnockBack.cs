@@ -41,7 +41,7 @@ public class KnockBack : MonoBehaviour
   {
     yield return new WaitForSeconds(knockTime);  //knocktime is the amount of time the game will "pause" for the knock back
     player.velocity = Vector2.zero;
-    player.isKinematic = true;
+    player.isKinematic = false;
   }
 }
 

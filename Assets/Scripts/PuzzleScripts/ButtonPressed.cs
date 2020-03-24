@@ -25,7 +25,7 @@ public class ButtonPressed : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().buttonPressed = true;
-        GameObject.Find("Bridge_Out").GetComponent<SpriteRenderer>().sortingOrder = 4;
+        GameObject.Find("Bridge_Out").GetComponent<Renderer>().enabled = true;
         GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().boxOut = true;
     }
 
@@ -38,7 +38,7 @@ public class ButtonPressed : MonoBehaviour
     {
         pressed = false;
         GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().buttonPressed = false;
-        GameObject.Find("Bridge_Out").GetComponent<SpriteRenderer>().sortingOrder = 1;
+        GameObject.Find("Bridge_Out").GetComponent<Renderer>().enabled = false;
         GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().boxOut = false;
     }
 }

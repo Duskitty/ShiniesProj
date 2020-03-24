@@ -6,7 +6,7 @@ public class WaypointFinder: MonoBehaviour
 {
     //Array of waypoints from which the enemy walks from one to the next one
     [SerializeField]
-    private Transform[] waypoints;
+    public Transform[] waypoints;
     //movement speed
     [SerializeField]
     private float moveSpeed = 2f;
@@ -26,6 +26,7 @@ public class WaypointFinder: MonoBehaviour
         if (wpIndex < waypoints.Length)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[wpIndex].transform.position, moveSpeed * Time.deltaTime);
+            print(transform.position);
             if (transform.position == waypoints[wpIndex].transform.position)
             {
                 if (wpIndex == 0)
