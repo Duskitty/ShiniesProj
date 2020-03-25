@@ -27,6 +27,9 @@ public class Level2Puzzle1Manager : MonoBehaviour
   private LineRenderer pyramid1Beam;
   private RaycastHit2D p1Hit;
 
+  public Sprite litOrb;
+  private SpriteRenderer orb;
+
 
   // Start is called before the first frame update
   void Start()
@@ -47,6 +50,7 @@ public class Level2Puzzle1Manager : MonoBehaviour
       pyramid1RaySpawn = pyramid1.transform.GetChild(1);
       pyramid1LightSpawn = pyramid1.transform.GetChild(0);
       pyramid1Beam = pyramid1LightSpawn.GetComponent<LineRenderer>();
+      orb = GameObject.Find("orb00").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -108,6 +112,7 @@ public class Level2Puzzle1Manager : MonoBehaviour
             pyramid1Beam.SetPosition(0, pyramid1LightSpawn.position);
             pyramid1Beam.SetPosition(1, pyramid1HitPoint.position);
             pyramid1Beam.enabled = true;
+            orb.sprite = litOrb;
           }
 
         }

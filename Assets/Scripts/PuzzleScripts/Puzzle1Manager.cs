@@ -7,6 +7,9 @@ public class Puzzle1Manager : MonoBehaviour
     private GameObject frozenRock;
     private GameObject stairs;
     private RaycastHit2D hit;
+    private SpriteRenderer orb;
+
+    public Sprite litOrb;
 
     void Start()
     {
@@ -16,6 +19,7 @@ public class Puzzle1Manager : MonoBehaviour
       frozenRock.transform.GetChild(1).position = hit.point;
       frozenRock.transform.GetChild(0).GetComponent<LineRenderer>().SetPosition(0, frozenRock.transform.GetChild(0).position);
       frozenRock.transform.GetChild(0).GetComponent<LineRenderer>().SetPosition(1, frozenRock.transform.GetChild(1).position);
+      orb = GameObject.Find("Puzzle1Button").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class Puzzle1Manager : MonoBehaviour
       {
         stairs.GetComponent<BoxCollider2D>().enabled = false;
         stairs.GetComponent<SpriteRenderer>().enabled = true;
+        orb.sprite = litOrb;
       }
     }
 }
