@@ -10,13 +10,14 @@ public class SheildBash : MonoBehaviour
     private float horzMov;
     private float verticalMov;
   public  Rigidbody2D controller;
-    
+    public static bool isSheildBashing = false;
     void Update()
     {
         horzMov = Input.GetAxis("Horizontal");
         verticalMov = Input.GetAxis("Vertical");
-        if (Input.GetKey(KeyCode.Space)) {
+        if (Input.GetKey(KeyCode.Space)&& pickUpMirror.hasSheild == true) {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
+            isSheildBashing = true;
             PlayerDirection();
 
 
@@ -49,5 +50,12 @@ public class SheildBash : MonoBehaviour
 
 
         }
+    }
+ public  void RestoreMovment() {
+        if (isSheildBashing == false) {
+            player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
+
+        }
+
     }
 }

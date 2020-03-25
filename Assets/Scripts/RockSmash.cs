@@ -11,23 +11,21 @@ public class RockSmash : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D col)
     {
-        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift) && pickUpMirror.hasSheild==true) { 
+        if (SheildBash.isSheildBashing==true  && pickUpMirror.hasSheild==true) { 
             
                 animi.SetBool("Break", true);
                 StartCoroutine(RockDie());
-            
+            SheildBash.isSheildBashing = false;
+            GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
+
+
 
         }
     }
 
 
 
-    public void SetIsBashing(bool bashing) {
-        Debug.Log("made it to the setter");
-        isBashing = bashing;
-        Debug.Log(isBashing);
-    }
-
+ 
     public IEnumerator RockDie() {
         yield return new WaitForSeconds(rockDelay);
         Destroy(gameObject);
