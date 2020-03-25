@@ -66,11 +66,11 @@ public class SheildBash : MonoBehaviour
         }
     }
     public  void RestoreMovment() {
-        if (isSheildBashing == false) {
+         
             player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
             controller.velocity = Vector2.zero;//remove the "sheild bash" force
             hasSpaceBeenPressed = false;
-        }
+        isSheildBashing = false;
 
     }
 }

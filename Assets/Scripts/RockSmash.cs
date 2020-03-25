@@ -14,8 +14,6 @@ public class RockSmash : MonoBehaviour
             
                 animi.SetBool("Break", true);
                 StartCoroutine(RockDie());
-            SheildBash.isSheildBashing = false;
-            GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
 
 
 
@@ -29,6 +27,8 @@ public class RockSmash : MonoBehaviour
         yield return new WaitForSeconds(rockDelay);
         Destroy(gameObject);
         animi.SetBool("Break", false);
+        GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
+
 
     }
 }
