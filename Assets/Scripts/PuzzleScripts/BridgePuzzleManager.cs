@@ -17,6 +17,7 @@ public class BridgePuzzleManager : MonoBehaviour
     private int beamDirectionNum;
     private RaycastHit2D playerHit;
     private LayerMask layerMask;
+    private Collider2D hitCollider;
 
     // Object Variables
     public GameObject[] reflectObjs;
@@ -43,70 +44,30 @@ public class BridgePuzzleManager : MonoBehaviour
     {
       if (checkInSunlight())
       {
-
-        if (playerDirection.GetBool("isMoving"))
-        {
-          Debug.Log("moving");
-          for (int i = 0; i < reflectObjs.Length; i++)
-          {
-            reflectObjs[i].transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
-          }
-          return;
-        }
-
         if (playerDirection.GetBool("isIdleUp"))
         {
-          playerHitPoint = player.transform.GetChild(5);
-          playerRaySpawn = player.transform.GetChild(1);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.up);
           beamDirectionNum = 3;
-          //Debug.Log("player up");
         }
         else if (playerDirection.GetBool("isIdleRight"))
         {
-          playerHitPoint = player.transform.GetChild(6);
-          playerRaySpawn = player.transform.GetChild(2);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.right);
           beamDirectionNum = 2;
-          //Debug.Log("player right");
         }
         else if (playerDirection.GetBool("isIdleDown"))
         {
-          playerHitPoint = player.transform.GetChild(8);
-          playerRaySpawn = player.transform.GetChild(4);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.down);
           beamDirectionNum = 1;
-          //Debug.Log("player down");
         }
         else
         {
-          playerHitPoint = player.transform.GetChild(7);
-          playerRaySpawn = player.transform.GetChild(3);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.left);
           beamDirectionNum = 0;
-          //Debug.Log("player left");
         }
-        
+        hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+        reflect(hitCollider.name, beamDirectionNum);
 
-        playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection, 50.0f, ~layerMask);
-        Debug.DrawRay(playerRaySpawn.position, beamDirection);
-
-        if (playerHit.collider != null)
-        {
-          playerHitPoint.position = playerHit.point;
-          playerBeam.SetPosition(0, playerLightSpawn.position);
-          playerBeam.SetPosition(1, playerHitPoint.position);
-          playerBeam.enabled = true;
-
-          reflect(playerHit.collider.name, beamDirectionNum);
-          
-        }
-        //Debug.Log("in sun");
       }
       else
       {
         playerBeam.enabled = false;
-        for(int i = 0; i < reflectObjs.Length; i++)
+        for (int i = 0; i < reflectObjs.Length; i++)
         {
           reflectObjs[i].transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
         }
