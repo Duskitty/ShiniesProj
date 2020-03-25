@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RockSmash : MonoBehaviour
 {
-    private bool isBashing = false;
-    public float rockDelay;
+    public float rockDelay=0f;
     public Animator animi;
 
 

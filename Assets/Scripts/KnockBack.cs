@@ -7,8 +7,8 @@ public class KnockBack : MonoBehaviour
   public Rigidbody2D player;
   private GameObject badGuy;
   private Vector2 playervel;
-  [SerializeField] private float knockTime;
-  [SerializeField] private float thrust;
+  [SerializeField] public float knockTime;
+  [SerializeField] public float thrust;
 
   private void OnTriggerEnter2D(Collider2D other)
   {
