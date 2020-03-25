@@ -60,8 +60,13 @@ public class SheildBash : MonoBehaviour
             //do nothing
 
         }
-        else {
-            isSheildBashing = false;
+        else if (collision.gameObject.name == "Bush") {
+
+            RestoreMovment();
+
+        }
+        else
+        {
             RestoreMovment();
         }
     }

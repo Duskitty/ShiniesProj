@@ -6950,6 +6950,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.6005554
       objectReference: {fileID: 0}
+    - target: {fileID: 2365698916093338600, guid: 3d0235d086aac5b428ae051261696d2a,
+        type: 3}
+      propertyPath: rockDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0235d086aac5b428ae051261696d2a, type: 3}
 --- !u!1 &316049198
@@ -83805,12 +83810,12 @@ PrefabInstance:
     - target: {fileID: 7397618167806854475, guid: a8631ca132447794da57641a558d9449,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -163
+      value: -148.6
       objectReference: {fileID: 0}
     - target: {fileID: 7397618167806854475, guid: a8631ca132447794da57641a558d9449,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 7397618167806854475, guid: a8631ca132447794da57641a558d9449,
         type: 3}
