@@ -34,7 +34,7 @@ public class PlayerMelee : MonoBehaviour
                         //its a mushroom
                         Debug.Log("im am about to sheild bash the mushroom");
 
-                        enemy[i].GetComponent<MushroomMove>().SheildBash();
+                      //  enemy[i].GetComponent<MushroomMove>().SheildBash();
 
                             setSprint(false);
                         

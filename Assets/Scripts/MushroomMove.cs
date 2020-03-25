@@ -8,7 +8,6 @@ public class MushroomMove : MonoBehaviour
   private float vertical = 0f;
   public Animator animat;
   public float Delay;
-  public bool isShieldBahsing = false;
   // animations for mushroom man
   public string scenetoload;
   void Update()
@@ -51,38 +50,38 @@ public class MushroomMove : MonoBehaviour
 
 
   }
-  private void OnTriggerEnter2D(Collider2D col)
+   public void OnTriggerEnter2D(Collider2D col)
   {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == true)
         {
+            Debug.Log("Im sheild bashing " + gameObject.name);
             animat.SetBool("Explode", true);
-            if (isShieldBahsing)
-            {
-                //no damage taken
-            }
-            else
-            {
-                // no shield bash = 1 less heart
-                GameControlScript.health -= 1;
-                print(col.name);
-                    StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
+            SheildBash.isSheildBashing = false;
+            GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
+            StartCoroutine(Die());
+            //this is when the player is sheild bashing
+            //dont do damage 
 
 
-            }
-
-            {
-                GetComponentInParent<Pathfinding.AIPath>().canMove = false;
-                StartCoroutine(Die());
-            }
         }
-  }
+        else if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == false) {
+            Debug.Log("Im not sheild bashing " + gameObject.name);
+
+            animat.SetBool("Explode", true);
+            GameControlScript.health -= 1;
+            StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
+            StartCoroutine(Die());
+
+
+        }
+    }
   public IEnumerator Die()
   {
     yield return new WaitForSeconds(Delay);
     Destroy(gameObject);
 
   }
-  public void SheildBash()
+  public void Bash()
   {
     animat.SetBool("Explode", true);
     Debug.Log("about to sheild bash");

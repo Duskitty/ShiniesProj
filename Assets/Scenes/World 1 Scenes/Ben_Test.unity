@@ -83862,5 +83862,29 @@ PrefabInstance:
       propertyPath: textBoxAnimator
       value: 
       objectReference: {fileID: 497322910}
+    - target: {fileID: 7397618167806854478, guid: a8631ca132447794da57641a558d9449,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397618167806854472, guid: a8631ca132447794da57641a558d9449,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397618167806854479, guid: a8631ca132447794da57641a558d9449,
+        type: 3}
+      propertyPath: thrust
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397618167806854479, guid: a8631ca132447794da57641a558d9449,
+        type: 3}
+      propertyPath: knockTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 572514272, guid: a8631ca132447794da57641a558d9449, type: 3}
+      propertyPath: speed
+      value: 550
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8631ca132447794da57641a558d9449, type: 3}
