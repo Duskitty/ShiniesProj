@@ -51,10 +51,22 @@ public class SheildBash : MonoBehaviour
 
         }
     }
- public  void RestoreMovment() {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "BreakableRock" || collision.gameObject.name == "ShroomBoi_Exploder_0")
+        {
+            //do nothing
+
+        }
+        else {
+            isSheildBashing = false;
+            RestoreMovment();
+        }
+    }
+    public  void RestoreMovment() {
         if (isSheildBashing == false) {
             player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
-
+            controller.velocity = Vector2.zero;//remove the "sheild bash" force
         }
 
     }
