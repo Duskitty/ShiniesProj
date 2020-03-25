@@ -5,15 +5,11 @@ using UnityEngine;
 public class Level2Puzzle1Manager : MonoBehaviour
 {
   private GameObject player;
-  private Animator playerDirection;
-  private Transform playerLightSpawn;
   private LineRenderer playerBeam;
-  private Transform playerHitPoint;
-  private Transform playerRaySpawn;
-  private Vector3 beamDirection;
-  private int beamDirectionNum;
-  private RaycastHit2D playerHit;
   private LayerMask layerMask;
+  private RaycastHit2D playerHit;
+  private Animator playerDirection;
+  private LineRenderer[] hittableObjBeams;
   private GameObject pyramid0;
   private Transform pyramid0HitPoint;
   private Transform pyramid0RaySpawn;
@@ -35,8 +31,7 @@ public class Level2Puzzle1Manager : MonoBehaviour
   void Start()
     {
       player = GameObject.Find("Player");
-      playerLightSpawn = player.transform.GetChild(10);
-      playerBeam = playerLightSpawn.GetComponent<LineRenderer>();
+      playerBeam = player.transform.GetChild(10).GetComponent<LineRenderer>();
       playerBeam.enabled = false;
       playerDirection = player.GetComponent<Animator>();
       layerMask = LayerMask.GetMask("SunPatch");
@@ -51,77 +46,50 @@ public class Level2Puzzle1Manager : MonoBehaviour
       pyramid1LightSpawn = pyramid1.transform.GetChild(0);
       pyramid1Beam = pyramid1LightSpawn.GetComponent<LineRenderer>();
       orb = GameObject.Find("orb00").GetComponent<SpriteRenderer>();
+      hittableObjBeams = new LineRenderer[2];
+      hittableObjBeams[0] = pyramid0Beam;
+      hittableObjBeams[1] = pyramid1Beam;
     }
 
     // Update is called once per frame
     void Update()
     {
-      if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight)
+      if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light*/)
       {
-        if (playerDirection.GetBool("isMoving"))
-        {
-          pyramid0Beam.enabled = false;
-          pyramid1Beam.enabled = false;
-        }
+        player.transform.GetChild(10).GetComponent<castBeam>().reflect();
+      }
 
-        if (playerDirection.GetBool("isIdleUp"))
+      else if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire*/)
+      {
+        //cast fire and burn things
+      }
+      else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light && button pressed*/)
+      {
+        if (player.transform.GetChild(10).GetComponent<castBeam>().reflect().name == pyramid0.name)
         {
-          playerHitPoint = player.transform.GetChild(5);
-          playerRaySpawn = player.transform.GetChild(1);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.up);
-        }
-        else if (playerDirection.GetBool("isIdleRight"))
-        {
-          playerHitPoint = player.transform.GetChild(6);
-          playerRaySpawn = player.transform.GetChild(2);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.right);
-        }
-        else if (playerDirection.GetBool("isIdleDown"))
-        {
-          playerHitPoint = player.transform.GetChild(8);
-          playerRaySpawn = player.transform.GetChild(4);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.down);
-        }
-        else
-        {
-          playerHitPoint = player.transform.GetChild(7);
-          playerRaySpawn = player.transform.GetChild(3);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.left);
-        }
-
-
-        playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection, 50.0f, ~layerMask);
-        Debug.DrawRay(playerRaySpawn.position, beamDirection);
-
-        if (playerHit.collider != null)
-        {
-          playerHitPoint.position = playerHit.point;
-          playerBeam.SetPosition(0, playerLightSpawn.position);
-          playerBeam.SetPosition(1, playerHitPoint.position);
-          playerBeam.enabled = true;
-
-          if (playerHit.collider.name == pyramid0.name)
-          {
-            p0Hit = Physics2D.Raycast(pyramid0RaySpawn.position, pyramid0RaySpawn.TransformDirection(Vector3.up), 50.0f, ~layerMask);
-            pyramid0HitPoint.position = p0Hit.point;
-            pyramid0Beam.SetPosition(0, pyramid0LightSpawn.position);
-            pyramid0Beam.SetPosition(1, pyramid0HitPoint.position);
-            pyramid0Beam.enabled = true;
-            p1Hit = Physics2D.Raycast(pyramid1RaySpawn.position, pyramid1RaySpawn.TransformDirection(Vector3.left), 50.0f, ~layerMask);
-            pyramid1HitPoint.position = p1Hit.point;
-            pyramid1Beam.SetPosition(0, pyramid1LightSpawn.position);
-            pyramid1Beam.SetPosition(1, pyramid1HitPoint.position);
-            pyramid1Beam.enabled = true;
-            orb.sprite = litOrb;
-          }
-
+          p0Hit = Physics2D.Raycast(pyramid0RaySpawn.position, pyramid0RaySpawn.TransformDirection(Vector3.up), 50.0f, ~layerMask);
+          pyramid0HitPoint.position = p0Hit.point;
+          pyramid0Beam.SetPosition(0, pyramid0LightSpawn.position);
+          pyramid0Beam.SetPosition(1, pyramid0HitPoint.position);
+          pyramid0Beam.enabled = true;
+          p1Hit = Physics2D.Raycast(pyramid1RaySpawn.position, pyramid1RaySpawn.TransformDirection(Vector3.left), 50.0f, ~layerMask);
+          pyramid1HitPoint.position = p1Hit.point;
+          pyramid1Beam.SetPosition(0, pyramid1LightSpawn.position);
+          pyramid1Beam.SetPosition(1, pyramid1HitPoint.position);
+          pyramid1Beam.enabled = true;
+          orb.sprite = litOrb;
         }
       }
-      else
+      else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire && button pressed*/)
       {
-        pyramid0Beam.enabled = false;
-        pyramid1Beam.enabled = false;
+        // cast fire, if hit cacti then burn them
+      }
+    else
+      {
         playerBeam.enabled = false;
+        pyramid1Beam.enabled = false;
+        pyramid0Beam.enabled = false;
       }
     }
+ 
 }

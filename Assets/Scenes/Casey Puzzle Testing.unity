@@ -263,8 +263,7 @@ SpriteRenderer:
   m_SortingLayerID: -306525221
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5964326828335049086, guid: 7c21439fd2e85d940988e909a678ebe0,
-    type: 3}
+  m_Sprite: {fileID: 987549147876203383, guid: c1933214d4b6f0a48b60952be82d7f8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -309,7 +308,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.575}
+    oldSize: {x: 0.9375, y: 0.78125}
     newSize: {x: 0.6, y: 0.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -766,6 +765,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &331183921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6479389968686246951, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6479389968531485162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &331183924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331183921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4061ac4eb7128c548a187dea9157ba36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &333444027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1246,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5997831897550183687, guid: 7c21439fd2e85d940988e909a678ebe0,
+  m_Sprite: {fileID: -4410852546484004729, guid: c1933214d4b6f0a48b60952be82d7f8b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1275,7 +1292,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.575}
+    oldSize: {x: 0.9375, y: 0.78125}
     newSize: {x: 0.75, y: 0.575}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -61399,12 +61416,12 @@ PrefabInstance:
     - target: {fileID: 255631738223855410, guid: e4963dfe758fc9346974d5469477665f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -147.74
+      value: -147.806
       objectReference: {fileID: 0}
     - target: {fileID: 255631738223855410, guid: e4963dfe758fc9346974d5469477665f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.2
+      value: 11.095
       objectReference: {fileID: 0}
     - target: {fileID: 255631738223855410, guid: e4963dfe758fc9346974d5469477665f,
         type: 3}

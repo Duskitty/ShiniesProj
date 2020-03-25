@@ -17,15 +17,10 @@ public class BridgePuzzleManager : MonoBehaviour
     private int beamDirectionNum;
     private RaycastHit2D playerHit;
     private LayerMask layerMask;
-    //private LayerMask patches;
 
     // Object Variables
     public GameObject[] reflectObjs;
-    //private int[] objBeamDirections; 
-    //private LineRenderer[] objBeams;
-    //private Transform[] objLightSpawns;
-    //private Transform[] objHitPoints;
-    //private Transform[] objRaySpawns;
+    private LineRenderer[] hittableObjBeams;
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +31,11 @@ public class BridgePuzzleManager : MonoBehaviour
       playerBeam.enabled = false;
       playerDirection = player.GetComponent<Animator>();
       layerMask = LayerMask.GetMask("SunPatch");
-
-      //objBeams = new LineRenderer[reflectObjs.Length];
-      //objLightSpawns = new Transform[reflectObjs.Length];
-      //objHitPoints = new Transform[reflectObjs.Length];
-      //objRaySpawns = new Transform[reflectObjs.Length];
-      //objBeamDirections = new int[reflectObjs.Length];
-
-    /*for(int i = 0; i < reflectObjs.Length; i++)
-    {
-      objLightSpawns[i] = reflectObjs[i].transform.GetChild(0);
-      objBeams[i] = objLightSpawns[i].GetComponent<LineRenderer>();
-    }*/
+      hittableObjBeams = new LineRenderer[reflectObjs.Length];
+      for(int i = 0; i < hittableObjBeams.Length; i++)
+      {
+        hittableObjBeams[i] = reflectObjs[i].transform.GetChild(0).GetComponent<LineRenderer>();
+      }
     }
 
     // Update is called once per frame
@@ -151,7 +139,6 @@ public class BridgePuzzleManager : MonoBehaviour
 
   void reflect(string objectHitName, int direction)
   {
-    //Debug.Log("Name: " + objectHitName + " Direction: " + direction);
     // 0 is right, 1 is up, 2 is left, 3 is down
     Transform hitObjRaySpawn;
     Transform hitObjHitPoint;
@@ -167,9 +154,6 @@ public class BridgePuzzleManager : MonoBehaviour
     {
       Debug.Log("Enemy Hit");
       objectHit.GetComponent<StunEnemy>().stun(objectHit);
-      //StunEnemy stunEnemy = new StunEnemy();
-      //stunEnemy.stun(objectHit);
-      //objectHit.Stun.stunEnemy();
     }
 
     if (checkObjHit(objectHitName))
@@ -177,14 +161,6 @@ public class BridgePuzzleManager : MonoBehaviour
       
       hitObjLightSpawn = objectHit.transform.GetChild(0);  
       hitObjBeam = hitObjLightSpawn.GetComponent<LineRenderer>();
-
-      /*if(playerHit.collider.name != currentHitObjects[0].name)
-      {
-        for(int i = 0; i < currHitObjIndex; i++)
-        {
-          currentHitObjects[i].transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
-        }
-      }*/
 
       // if beam comes from the right then the next beam will go up
       if (direction == 0)
