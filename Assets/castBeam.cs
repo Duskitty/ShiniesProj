@@ -33,9 +33,9 @@ public class castBeam : MonoBehaviour
       //Debug.Log("is moving");
       for (int i = 0; i < hittableObjBeams.Length; i++)
       {
-        Debug.Log("in loop");
+        //Debug.Log("in loop");
         hittableObjBeams[i].enabled = false;
-        Debug.Log(i + " " + hittableObjBeams[i].enabled);
+        //Debug.Log(i + " " + hittableObjBeams[i].enabled);
       }
       playerBeam.enabled = false;
       return null;
