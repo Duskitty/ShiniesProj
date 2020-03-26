@@ -26,6 +26,8 @@ public class Level2Puzzle1Manager : MonoBehaviour
   public Sprite litOrb;
   private SpriteRenderer orb;
 
+  private Collider2D playerHitObj;
+
 
   // Start is called before the first frame update
   void Start()
@@ -65,7 +67,9 @@ public class Level2Puzzle1Manager : MonoBehaviour
       }
       else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light && button pressed*/)
       {
-        if (player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams).name == pyramid0.name)
+        playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+
+        if (playerHitObj != null && playerHitObj.name == pyramid0.name)
         {
           p0Hit = Physics2D.Raycast(pyramid0RaySpawn.position, pyramid0RaySpawn.TransformDirection(Vector3.up), 50.0f, ~layerMask);
           pyramid0HitPoint.position = p0Hit.point;
