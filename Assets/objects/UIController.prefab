@@ -407,8 +407,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 902f3abd34d16884eab235e13c5d1820, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 572514272, guid: a8631ca132447794da57641a558d9449, type: 3}
+        m_MethodName: AttackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
