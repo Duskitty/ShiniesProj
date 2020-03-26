@@ -50,32 +50,32 @@ public class MushroomMove : MonoBehaviour
 
 
   }
-   public void OnTriggerEnter2D(Collider2D col)
-  {
-        if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == true)
-        {
-            Debug.Log("Im sheild bashing " + gameObject.name);
-            animat.SetBool("Explode", true);
-            SheildBash.isSheildBashing = false;
-            GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
-            StartCoroutine(Die());
-            //this is when the player is sheild bashing
-            //dont do damage 
+      public void OnTriggerEnter2D(Collider2D col)
+     {
+           if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == true)
+           {
+               Debug.Log("Im sheild bashing " + gameObject.name);
+               animat.SetBool("Explode", true);
+               SheildBash.isSheildBashing = false;
+               GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
+               StartCoroutine(Die());
+               //this is when the player is sheild bashing
+               //dont do damage 
 
 
-        }
-        else if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == false) {
-            Debug.Log("Im not sheild bashing " + gameObject.name);
+           }
+           else if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == false) {
+               Debug.Log("Im not sheild bashing " + gameObject.name);
 
-            animat.SetBool("Explode", true);
-            GameControlScript.health -= 1;
-            StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
-            StartCoroutine(Die());
+               animat.SetBool("Explode", true);
+               GameControlScript.health -= 1;
+               StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
+               StartCoroutine(Die());
 
 
-        }
-    }
-  public IEnumerator Die()
+           }
+       }
+    public IEnumerator Die()
   {
     yield return new WaitForSeconds(Delay);
     Destroy(gameObject);
