@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Invulnerablility : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public float invin;
+    public GameObject shroom;
+    private Animator shroomAnimator;
+    private void Start()
     {
-        
+        shroomAnimator = shroom.GetComponent<Animator>();
+    }
+    private void Update()
+    {
+        invin -= Time.deltaTime;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if ((collision.gameObject.name == "ShroomBoi_Exploder_0") && (invin > 0 || SheildBash.isSheildBashing == true|| collision.gameObject.CompareTag("bush")|| collision.gameObject.CompareTag("sheild")))
+        {
+            shroomAnimator.SetBool("Explode", true);
+            Debug.Log("No damage");
+            StartCoroutine(shroom.GetComponent<MushroomMove>().Die());
+
+        }
+        else {
+            invin = 1f;
+            StartCoroutine(GetComponent<KnockBack>().KnockCo());
+           // GameControlScript.health -= 1;
+            Debug.Log("Damage");
+            shroomAnimator.SetBool("Explode", true);
+           StartCoroutine( shroom.GetComponent<MushroomMove>().Die());
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
