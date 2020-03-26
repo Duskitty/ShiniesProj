@@ -80,7 +80,7 @@ public class SheildBash : MonoBehaviour
             isSheildBashing = true;
             hasSpaceBeenPressed = true;
             PlayerDirection();
-            RestoreMovment();
+          //  RestoreMovment();
         }
     }
 }
