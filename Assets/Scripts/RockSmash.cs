@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RockSmash : MonoBehaviour
 {
-    public float rockDelay=0f;
+    public float rockDelay = 0f;
     public Animator animi;
 
 
@@ -19,8 +19,6 @@ public class RockSmash : MonoBehaviour
 
         }
     }
-
-
 
  
     public IEnumerator RockDie() {
