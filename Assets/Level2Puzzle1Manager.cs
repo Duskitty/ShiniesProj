@@ -58,15 +58,16 @@ public class Level2Puzzle1Manager : MonoBehaviour
     {
       if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light*/)
       {
-        player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+        //player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+        player.transform.GetChild(10).GetComponent<castBeam>().castFire();
       }
 
       else if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire*/)
       {
         //cast fire and burn things
       }
-      else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light && button pressed*/)
-      {
+      //else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light && button pressed*/)
+      /*{
         playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
 
         if (playerHitObj != null && playerHitObj.name == pyramid0.name)
@@ -83,12 +84,12 @@ public class Level2Puzzle1Manager : MonoBehaviour
           pyramid1Beam.enabled = true;
           orb.sprite = litOrb;
         }
-      }
+      }*/
       else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire && button pressed*/)
       {
         // cast fire, if hit cacti then burn them
       }
-    else
+      else
       {
         playerBeam.enabled = false;
         pyramid1Beam.enabled = false;
