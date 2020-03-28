@@ -227,7 +227,7 @@ public class RockLightManager : MonoBehaviour
           {
             GameObject.Find("Bush").GetComponent<SpriteRenderer>().enabled = false;
             GameObject.Find("Bush").GetComponent<BoxCollider2D>().enabled = false;
-            GameObject.Find("Shield").GetComponent<BoxCollider2D>().enabled = true;
+            GameObject.Find("Shield").GetComponent<BoxCollider>().enabled = true;
           }
         }
       }

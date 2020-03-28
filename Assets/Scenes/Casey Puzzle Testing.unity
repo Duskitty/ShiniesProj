@@ -61968,6 +61968,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LargeCacti_1
       objectReference: {fileID: 0}
+    - target: {fileID: 7681089322515026325, guid: f8158470b6bc77e40a0fd54516ba8f2b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 7681089322515026321, guid: f8158470b6bc77e40a0fd54516ba8f2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -62037,15 +62042,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: LargeCacti_2
       objectReference: {fileID: 0}
+    - target: {fileID: 7990017528599370437, guid: 46029ab24b877ce4e9492f0b604b5fee,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cactus
+      objectReference: {fileID: 0}
     - target: {fileID: 7990017528599370457, guid: 46029ab24b877ce4e9492f0b604b5fee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -149.686
+      value: -147.8
       objectReference: {fileID: 0}
     - target: {fileID: 7990017528599370457, guid: 46029ab24b877ce4e9492f0b604b5fee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.762
+      value: 11.84
       objectReference: {fileID: 0}
     - target: {fileID: 7990017528599370457, guid: 46029ab24b877ce4e9492f0b604b5fee,
         type: 3}
@@ -62243,6 +62253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LargeCacti_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8812411472200755846, guid: 489c809e7d7a54c4cacbf2c5699a6059,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cactus
       objectReference: {fileID: 0}
     - target: {fileID: 8812411472200755843, guid: 489c809e7d7a54c4cacbf2c5699a6059,
         type: 3}

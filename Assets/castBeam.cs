@@ -19,13 +19,14 @@ public class castBeam : MonoBehaviour
     private RaycastHit2D[] fireHits;
     private Vector2 fireDirection;
     private Vector3 fireEndMod;
+  private GameObject hitObj;
 
     // Start is called before the first frame update
     void Start()
     {
       player = GameObject.Find("Player");
       playerLightSpawn = this.transform;
-      playerFireSpawn = player.transform.GetChild(11);
+      //playerFireSpawn = player.transform.GetChild(11);
       playerBeam = this.GetComponent<LineRenderer>();
       playerFireBeam = playerFireSpawn.GetComponent<LineRenderer>();
       playerBeam.enabled = false;
@@ -132,9 +133,23 @@ public class castBeam : MonoBehaviour
     {
       if(fireHits[i] != null)
       {
-        Debug.Log(fireHits[i].collider.name);
+        hitObj = GameObject.Find(fireHits[i].collider.name);
+        if (hitObj.tag == "Cactus")
+        {
+          Destroy(hitObj);
+        }
       }
     }
     
+  }
+
+  public void disableFire()
+  {
+    playerFireBeam.enabled = false;
+  }
+
+  public void disableLight()
+  {
+    playerBeam.enabled = false;
   }
 }
