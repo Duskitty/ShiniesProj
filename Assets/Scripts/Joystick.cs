@@ -88,7 +88,7 @@ public class Joystick : MonoBehaviour
         {
             Vector2 offset = pointB - pointA;
             Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
-            moveCharacter(direction * -1);
+            moveCharacter(direction );
 
             circle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y) * -1;
         }

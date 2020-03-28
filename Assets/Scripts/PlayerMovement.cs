@@ -4,49 +4,46 @@
 public class PlayerMovement : MonoBehaviour
 //1 is up, 2 is down, 3 is left and 4 is right
 {
-  private float horizontalMove = 0f;
-  private float verticalMove = 0f;
-  public Animator animator;
-  public float speed = 0f;
-  public Animator textBoxAnimator;
-  public Rigidbody2D player;
-  public bool bridgeSafe = false;
-  private bool isMovingUp = false;
-  public bool hasShield = false;
-  bool isMovingDown = false;
-  bool isMovingRight = false;
-  bool isMovingLeft = false;
+    private float horizontalMove = 0f;
+    private float verticalMove = 0f;
+    public Animator animator;
+    public float speed = 0f;
+    public Animator textBoxAnimator;
+    public Rigidbody2D player;
+    public bool bridgeSafe = false;
+    private bool isMovingUp = false;
+    public bool hasShield = false;
+    bool isMovingDown = false;
+    bool isMovingRight = false;
+    bool isMovingLeft = false;
 
-  private AudioSource audioSrc;
-  private bool isSprinting;
-  public float walkSpeed;
-  public float sprintSpeed;
+    private AudioSource audioSrc;
+    private bool isSprinting;
+    public float walkSpeed;
+    public float sprintSpeed;
+    private float xAxis;
+    private float yAxis;
 
-  // Update is called once per frame
-  private void Update()
-  {
-    /*if (animator.GetBool("hasShield"))
-    { animator.SetBool("HasShield", true); }
-    else
+    // Update is called once per frame
+    private void Update()
     {
-      animator.SetBool("HasShield", false);
-    }*/
+        xAxis =  Input.GetAxis("Horizontal");//moblie input
+        yAxis = Input.GetAxis("Vertical");//moblie input
+      //  horizontalMove = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
+       // verticalMove = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
+            Touch touch = Input.touches[0];
+            xAxis = touch.deltaPosition.x;
+            yAxis = touch.deltaPosition.y;
+        
+        }
+        Debug.Log(xAxis);
+        if (textBoxAnimator.GetBool("textboxOpen"))
+        {
+            return;
+        }
 
-    horizontalMove = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
-    verticalMove = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
-    //animator.SetFloat("Speed", Mathf.Abs(verticalMove));
-    //if (textBoxAnimator.GetBool("isOpen"))
-    //{
-    //return;
-
-    //}
-
-    if (textBoxAnimator.GetBool("textboxOpen"))
-    {
-      return;
-    }
-
-    if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)|| yAxis>0)
     {
 
       transform.Translate(new Vector3(0f, speed * Time.deltaTime, 0f));
@@ -77,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-    if (Input.GetKey(KeyCode.S))
+    if (Input.GetKey(KeyCode.S)|| yAxis >0)
     {
       transform.Translate(new Vector3(0f, -speed * Time.deltaTime, 0f));
       animator.SetBool("isDown", true);
