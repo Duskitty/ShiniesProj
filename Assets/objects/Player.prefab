@@ -67,7 +67,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -306525221
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -198,15 +198,15 @@ GameObject:
   - component: {fileID: 1401568904558848001}
   - component: {fileID: 1401568904558848030}
   - component: {fileID: 1401568904558848003}
+  - component: {fileID: -7358238990684129104}
   - component: {fileID: 1401568904558848000}
   - component: {fileID: 1401568904558848004}
   - component: {fileID: 1401568904558848009}
-  - component: {fileID: 1401568904558848002}
   - component: {fileID: 1401568904558848005}
   - component: {fileID: 1401568904558848007}
   - component: {fileID: 1401568904558848008}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,6 +306,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7358238990684129104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401568904558848031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a86a10c88730c4fbf441217006c500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 10
+  controller: {fileID: 1401568904558848003}
 --- !u!114 &1401568904558848000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +337,10 @@ MonoBehaviour:
   speed: 5
   textBoxAnimator: {fileID: 0}
   player: {fileID: 1401568904558848003}
+  bridgeSafe: 0
+  hasShield: 0
+  walkSpeed: 0
+  sprintSpeed: 0
 --- !u!61 &1401568904558848004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -360,27 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450d16717da06dd41993157b2eaa3a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1401568904558848002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401568904558848031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3890ede0da20e0d459cfa31d8223ffda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTimeBtwAttack: 0.3
-  attackPos: {fileID: 1401568904660727099}
-  attackRange: 3
-  whatisEnemies:
-    serializedVersion: 2
-    m_Bits: 256
-  damage: 20
-  knockbackAmount: 5
-  player: {fileID: 1401568904558848031}
 --- !u!114 &1401568904558848005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,10 +391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e86010dec6010b4d859e11beb8eec65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 3
   player: {fileID: 1401568904558848003}
-  badGuy: {fileID: 0}
   knockTime: 0.5
+  thrust: 3
 --- !u!95 &1401568904558848007
 Animator:
   serializedVersion: 3
@@ -428,10 +425,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9995130ef0be1d4eac8460061386e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beam1: {fileID: 0}
-  beam2: {fileID: 0}
-  beam3: {fileID: 0}
   sunPatch1: {fileID: 0}
+  playerDirection: {fileID: 0}
+  objects: []
   lightSpawnUp: {fileID: 1401568903862041247}
   hitPointUp: {fileID: 1401568904997272843}
   lightSpawnRight: {fileID: 1401568904777832811}
@@ -564,7 +560,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -306525221
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -721,7 +717,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -306525221
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -848,7 +844,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -306525221
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}

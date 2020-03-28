@@ -6950,6 +6950,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.6005554
       objectReference: {fileID: 0}
+    - target: {fileID: 2365698916093338600, guid: 3d0235d086aac5b428ae051261696d2a,
+        type: 3}
+      propertyPath: rockDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0235d086aac5b428ae051261696d2a, type: 3}
 --- !u!1 &316049198
@@ -7659,7 +7664,7 @@ GameObject:
   - component: {fileID: 381882206}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: sheild
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8447,6 +8452,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1386364802734070123, guid: 7504f2e983f20524ab5d788d5e0b1049,
     type: 3}
   m_PrefabInstance: {fileID: 1783867875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &495343602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6030589748708374329, guid: f15362801e946004681474fd02074cf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6030589748667797113}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &497322910 stripped
 Animator:
@@ -9393,6 +9404,33 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7397618168649691739}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &572514280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572514271}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a31e0d69ffdd447a257517d893da34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shroomBoi: {fileID: 495343602}
+--- !u!114 &572514281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572514271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 826f4529ce0d11343a2b9647108b2774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invin: 1
+  shroom: {fileID: 0}
 --- !u!1 &601193877
 GameObject:
   m_ObjectHideFlags: 0
@@ -36107,7 +36145,7 @@ GameObject:
   - component: {fileID: 789038816}
   m_Layer: 0
   m_Name: Bush
-  m_TagString: Untagged
+  m_TagString: bush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75444,7 +75482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACQn+s4EzRGcwIAABkFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVEtzmzAQ/isenWsG/CCmt5Y4Tg95TNxOLlxktBiNhcRIIraT8X/vSoCh7snrb1/ffrvii3Bpasit0hvN2ZNiQL5PiLPJt8ngfIQT3Su55Z/Qx7xzZksXRH3MG7VcIR65NKMqsJrnP+ReuOAQwUbyQulqzfaQKmMNwgUVBtCllXXZEqGvCTnhzzRxKWe0ZnfO+kQrCScXNHOQFvQoNFosg2SWLOfLLiUOZvNwtYripMucroLFIgyj9TS88zUamQta1cDcQEOpKAxWq75vGCxWPljiwF1cGESxo6CE4KYjTOy59oKktDYNjosBjFMUwLOMgjkCJfB9aV3ZcfpLURiwnT6anu+5RiXbuuSnauWtqDm0FD+oaFynyNNqSz7955227kKr6rHvGoWugy15fnij55waO1J/DN+PiHudjlQc6E7AewnyWW20aiRDp9WNS20MzO6Hv9fB0hLyw4C3VG/Aph6E75fdr9rNcPGzn1LBq52XftECW6G83v5CQONyfiFhfz+mK4GoY/HHwG+6Hx9a53jg2lh0dVNKR2+nGu1Cydpr5qZpbKq0BA93pGuQVNjzK5axtwu88Y3a3ngeqHtSXfPO17+UmxQPD/FheON6Vcfrskypjk9gypfGCi5hIO0cz6hTqqRs72usSZ+2bXRB81HavuHs39Mii4SxKL4r8nmRx+GKTWcRSwCWcRxCTJNkSfztcYlzUvHaEu3kwa3JobjEO+u/NJONprW/dabpccM/KzWSnMtCbXMNIF/aClfioLEJPky2ZhwF2oK1XPp9k6+MCJUfgGXXQpmfdH2ymmZDlYzU/ENZh2Qk9Z+WjFzI5S9QSwMEFAAACAgAAJCf61r97zNtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTSUVBKL0osyCgGihiCOKWZKSB2tJKJZUqKoZl5WrJxWrKZgUWKrpFhimVqqqmZmUGqWaKlpalSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAJCf6zgTNEZzAgAAGQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJCf61r97zNtAAAAeAAAAAkAJAAAAAAAAAAAAAAAwAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAB4AwAAAAA=
+    dataString: UEsDBBQAAAgIAACQn+t0p86ZeAIAAB4FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenWsGcMCmt5Y4Tg/5mLidXLjIaDEag8RIIraT8X/vSoChri8Wb3ef3r5d+CJc6AZyI9VGcfYkGZDvM2LP5NtsDD7Cie6l2PJPGHLeOTOlTaIu540aLhEPbJmWNRjF8x9iX9lkH8FW8EKqes32kEptNMIFrTRgSEljqwVCXzNywr95YkvOeAqX9vSJp8SfXfCYgzCgJqnBXeQlYRItor4kCL0o8lfLZdxXht4qDvwwXs/9peNoRV7RugFmGxqpAt9brXqSpbdaJPiLV65CYNd9su8FljiXVcV1r5qYc+NcSWmjW+wZExin6IKTGngLBErg+9JYPdPyl6LQYHqTFD3fc4V2drzkp+w8rqk+dDo/aNXamwInq6N8+i8678KFkvXjcGvg2xtMyfPDGz3nVJvJCKbw/US4M+tIqwPdVfBegniWGyVbwTBoVGtLWw3h/fh4bSwtIT+MeCf1Bmyb0f1h4sO8bQ8X1/sprXi9c9bfdcC2ks5vtyagcDi/ULBbIt1TIGpV/NHwm+6n29YHHrjSBkN9l8LK28lW2VSydp7ZblqTSiXAwb3oBgStzPkVacztAG9ik2tvIg/Uvlf95X1seF1uShw85vv+TehVHq/D0qU8PoEuX1pTcQGjaBt4Rp9SKUS3X1NPhrJtqwqaT8r2LWf/rha5SxgL4mWRL4o89ldsHgYsAYji2IeYJklE3O5xgX3S6rUT2tuDUxMjucA9Gz43s42ijdt1puhxwz9rObGci0JucwUgXjqGq3BQeAm+mGzNOBq0BWO4cPMmXxmpZH4All2JMtfp+mQUzUaWjDT8QxqLZCR135eMXMjlL1BLAwQUAAAICAAAkJ/rWv3vM20AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNJRUEovSizIKAaKGII4pZkpIHa0kollSoqhmXlasnFaspmBRYqukWGKZWqqqZmZQapZoqWlqVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAkJ/rdKfOmXgCAAAeBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAkJ/rWv3vM20AAAB4AAAACQAkAAAAAAAAAAAAAADFAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAH0DAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -83788,6 +83826,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6030589748708374331, guid: f15362801e946004681474fd02074cf7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6030589748708374331, guid: f15362801e946004681474fd02074cf7,
+        type: 3}
+      propertyPath: Delay
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f15362801e946004681474fd02074cf7, type: 3}
 --- !u!1001 &7397618168649691739
@@ -83805,12 +83853,12 @@ PrefabInstance:
     - target: {fileID: 7397618167806854475, guid: a8631ca132447794da57641a558d9449,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -163
+      value: -148.6
       objectReference: {fileID: 0}
     - target: {fileID: 7397618167806854475, guid: a8631ca132447794da57641a558d9449,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 7397618167806854475, guid: a8631ca132447794da57641a558d9449,
         type: 3}
@@ -83862,5 +83910,29 @@ PrefabInstance:
       propertyPath: textBoxAnimator
       value: 
       objectReference: {fileID: 497322910}
+    - target: {fileID: 7397618167806854478, guid: a8631ca132447794da57641a558d9449,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397618167806854472, guid: a8631ca132447794da57641a558d9449,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397618167806854479, guid: a8631ca132447794da57641a558d9449,
+        type: 3}
+      propertyPath: thrust
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397618167806854479, guid: a8631ca132447794da57641a558d9449,
+        type: 3}
+      propertyPath: knockTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 572514272, guid: a8631ca132447794da57641a558d9449, type: 3}
+      propertyPath: speed
+      value: 550
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8631ca132447794da57641a558d9449, type: 3}

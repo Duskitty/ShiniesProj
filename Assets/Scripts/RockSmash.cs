@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RockSmash : MonoBehaviour
 {
-    private bool isBashing = false;
-    public float rockDelay;
+    public float rockDelay = 0f;
     public Animator animi;
 
 
@@ -15,21 +14,19 @@ public class RockSmash : MonoBehaviour
             
                 animi.SetBool("Break", true);
                 StartCoroutine(RockDie());
-            SheildBash.isSheildBashing = false;
-            GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
 
 
 
         }
     }
 
-
-
  
     public IEnumerator RockDie() {
         yield return new WaitForSeconds(rockDelay);
         Destroy(gameObject);
         animi.SetBool("Break", false);
+        GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
+
 
     }
 }

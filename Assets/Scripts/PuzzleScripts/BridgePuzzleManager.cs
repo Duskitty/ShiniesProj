@@ -17,15 +17,11 @@ public class BridgePuzzleManager : MonoBehaviour
     private int beamDirectionNum;
     private RaycastHit2D playerHit;
     private LayerMask layerMask;
-    //private LayerMask patches;
+    private Collider2D hitCollider;
 
     // Object Variables
     public GameObject[] reflectObjs;
-    //private int[] objBeamDirections; 
-    //private LineRenderer[] objBeams;
-    //private Transform[] objLightSpawns;
-    //private Transform[] objHitPoints;
-    //private Transform[] objRaySpawns;
+    private LineRenderer[] hittableObjBeams;
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +32,11 @@ public class BridgePuzzleManager : MonoBehaviour
       playerBeam.enabled = false;
       playerDirection = player.GetComponent<Animator>();
       layerMask = LayerMask.GetMask("SunPatch");
-
-      //objBeams = new LineRenderer[reflectObjs.Length];
-      //objLightSpawns = new Transform[reflectObjs.Length];
-      //objHitPoints = new Transform[reflectObjs.Length];
-      //objRaySpawns = new Transform[reflectObjs.Length];
-      //objBeamDirections = new int[reflectObjs.Length];
-
-    /*for(int i = 0; i < reflectObjs.Length; i++)
-    {
-      objLightSpawns[i] = reflectObjs[i].transform.GetChild(0);
-      objBeams[i] = objLightSpawns[i].GetComponent<LineRenderer>();
-    }*/
+      hittableObjBeams = new LineRenderer[reflectObjs.Length];
+      for(int i = 0; i < hittableObjBeams.Length; i++)
+      {
+        hittableObjBeams[i] = reflectObjs[i].transform.GetChild(0).GetComponent<LineRenderer>();
+      }
     }
 
     // Update is called once per frame
@@ -55,70 +44,30 @@ public class BridgePuzzleManager : MonoBehaviour
     {
       if (checkInSunlight())
       {
-
-        if (playerDirection.GetBool("isMoving"))
-        {
-          Debug.Log("moving");
-          for (int i = 0; i < reflectObjs.Length; i++)
-          {
-            reflectObjs[i].transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
-          }
-          return;
-        }
-
         if (playerDirection.GetBool("isIdleUp"))
         {
-          playerHitPoint = player.transform.GetChild(5);
-          playerRaySpawn = player.transform.GetChild(1);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.up);
           beamDirectionNum = 3;
-          //Debug.Log("player up");
         }
         else if (playerDirection.GetBool("isIdleRight"))
         {
-          playerHitPoint = player.transform.GetChild(6);
-          playerRaySpawn = player.transform.GetChild(2);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.right);
           beamDirectionNum = 2;
-          //Debug.Log("player right");
         }
         else if (playerDirection.GetBool("isIdleDown"))
         {
-          playerHitPoint = player.transform.GetChild(8);
-          playerRaySpawn = player.transform.GetChild(4);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.down);
           beamDirectionNum = 1;
-          //Debug.Log("player down");
         }
         else
         {
-          playerHitPoint = player.transform.GetChild(7);
-          playerRaySpawn = player.transform.GetChild(3);
-          beamDirection = playerRaySpawn.TransformDirection(Vector3.left);
           beamDirectionNum = 0;
-          //Debug.Log("player left");
         }
-        
+        hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+        reflect(hitCollider.name, beamDirectionNum);
 
-        playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection, 50.0f, ~layerMask);
-        Debug.DrawRay(playerRaySpawn.position, beamDirection);
-
-        if (playerHit.collider != null)
-        {
-          playerHitPoint.position = playerHit.point;
-          playerBeam.SetPosition(0, playerLightSpawn.position);
-          playerBeam.SetPosition(1, playerHitPoint.position);
-          playerBeam.enabled = true;
-
-          reflect(playerHit.collider.name, beamDirectionNum);
-          
-        }
-        //Debug.Log("in sun");
       }
       else
       {
         playerBeam.enabled = false;
-        for(int i = 0; i < reflectObjs.Length; i++)
+        for (int i = 0; i < reflectObjs.Length; i++)
         {
           reflectObjs[i].transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
         }
@@ -151,7 +100,6 @@ public class BridgePuzzleManager : MonoBehaviour
 
   void reflect(string objectHitName, int direction)
   {
-    //Debug.Log("Name: " + objectHitName + " Direction: " + direction);
     // 0 is right, 1 is up, 2 is left, 3 is down
     Transform hitObjRaySpawn;
     Transform hitObjHitPoint;
@@ -167,9 +115,6 @@ public class BridgePuzzleManager : MonoBehaviour
     {
       Debug.Log("Enemy Hit");
       objectHit.GetComponent<StunEnemy>().stun(objectHit);
-      //StunEnemy stunEnemy = new StunEnemy();
-      //stunEnemy.stun(objectHit);
-      //objectHit.Stun.stunEnemy();
     }
 
     if (checkObjHit(objectHitName))
@@ -177,14 +122,6 @@ public class BridgePuzzleManager : MonoBehaviour
       
       hitObjLightSpawn = objectHit.transform.GetChild(0);  
       hitObjBeam = hitObjLightSpawn.GetComponent<LineRenderer>();
-
-      /*if(playerHit.collider.name != currentHitObjects[0].name)
-      {
-        for(int i = 0; i < currHitObjIndex; i++)
-        {
-          currentHitObjects[i].transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
-        }
-      }*/
 
       // if beam comes from the right then the next beam will go up
       if (direction == 0)
