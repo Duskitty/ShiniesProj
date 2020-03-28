@@ -104,4 +104,4 @@ public class Joystick : MonoBehaviour
         player.Translate(direction * speed * Time.deltaTime);
     }
 }
-}
+
