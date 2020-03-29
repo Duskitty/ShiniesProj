@@ -26,7 +26,7 @@ public class castBeam : MonoBehaviour
     {
       player = GameObject.Find("Player");
       playerLightSpawn = this.transform;
-      //playerFireSpawn = player.transform.GetChild(11);
+      playerFireSpawn = player.transform.GetChild(11);
       playerBeam = this.GetComponent<LineRenderer>();
       playerFireBeam = playerFireSpawn.GetComponent<LineRenderer>();
       playerBeam.enabled = false;
