@@ -11,10 +11,12 @@ public class L2P2Manager : MonoBehaviour
   private GameObject pyramid0;
   private LineRenderer pyramid0Beam;
   private Collider2D p0Hit;
+  private string currP0Direction;
 
   private GameObject pyramid1;
   private LineRenderer pyramid1Beam;
   private Collider2D p1Hit;
+  private string currP1Direction;
 
   private GameObject pyramid;
   private Transform pyramidHitPoint;
@@ -32,8 +34,10 @@ public class L2P2Manager : MonoBehaviour
   private Transform orbLightSpawn;
   private LineRenderer orbBeam;
   private RaycastHit2D orbHit;
+
   private Collider2D playerHitObj;
   private GameObject player;
+  private Animator playerDirection;
 
   // Start is called before the first frame update
   void Start()
@@ -42,10 +46,12 @@ public class L2P2Manager : MonoBehaviour
     pyramid0 = GameObject.Find("miragePyramid00");
     pyramid0Beam = pyramid0.transform.GetChild(0).GetComponent<LineRenderer>();
     pyramid0Beam.enabled = false;
+    currP0Direction = null;
 
     pyramid1 = GameObject.Find("miragePyramid01");
     pyramid1Beam = pyramid1.transform.GetChild(0).GetComponent<LineRenderer>();
     pyramid1Beam.enabled = false;
+    currP1Direction = null;
 
     orb0 = GameObject.Find("mirageOrb00");
     orb0.transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
@@ -58,6 +64,7 @@ public class L2P2Manager : MonoBehaviour
     hittableObjBeams[1] = pyramid1Beam;
 
     player = GameObject.Find("Player");
+    playerDirection = player.GetComponent<Animator>();
   }
 
     // Update is called once per frame
@@ -88,13 +95,35 @@ public class L2P2Manager : MonoBehaviour
           {
             orb1Hit = setOrbLight(orb1);
           }
-          else if (playerHitObj.name == pyramid0.name)
+          else if (playerHitObj.name == pyramid0.name && playerDirection.GetBool("isIdleUp") && !pyramid0Beam.enabled)
           {
-            p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.right));
+            currP0Direction = "right";
+            p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.right), 2, 1);
           }
-          else if (playerHitObj.name == pyramid1.name)
+          else if (playerHitObj.name == pyramid0.name && playerDirection.GetBool("isIdleLeft") && !pyramid0Beam.enabled)
           {
-            p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.left));
+            currP0Direction = "down";
+            p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(3).TransformDirection(Vector3.down), 4, 3);
+          }
+          else if (playerHitObj.name == pyramid0.name && (playerDirection.GetBool("isIdleRight") || playerDirection.GetBool("isIdleDown")))
+          {
+            currP0Direction = null;
+            p0Hit = null;
+          }
+          else if (playerHitObj.name == pyramid1.name && playerDirection.GetBool("isIdleUp") && !pyramid1Beam.enabled)
+          {
+            currP1Direction = "left";
+            p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.left), 2, 1);
+          }
+          else if (playerHitObj.name == pyramid1.name && playerDirection.GetBool("isIdleRight") && !pyramid1Beam.enabled)
+          {
+            currP1Direction = "down";
+            p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
+          }
+          else if (playerHitObj.name == pyramid1.name && (playerDirection.GetBool("isIdleLeft") || playerDirection.GetBool("isIdleDown")))
+          {
+            currP1Direction = null;
+            p1Hit = null;
           }
         }
       }
@@ -109,24 +138,33 @@ public class L2P2Manager : MonoBehaviour
         pyramid0Beam.enabled = false;
       }
 
-      if(orb0Hit.name == pyramid0.name || orb1Hit.name == pyramid0.name)
+      if ((orb0Hit != null && orb0Hit.name == pyramid0.name) || (orb1Hit != null && orb1Hit.name == pyramid0.name))
       {
-        p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.right));
+        p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.right), 2, 1);
       }
-      if(orb0Hit.name == pyramid1.name || orb1Hit.name == pyramid1.name)
+      if((orb0Hit != null && orb0Hit.name == pyramid1.name) || (orb1Hit != null && orb1Hit.name == pyramid1.name))
       {
-        p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.left));
-      }
-      if(orb0Hit.name != pyramid0.name && orb1Hit.name != pyramid0.name && playerHitObj.collider.name == pyramid0.name)
-      {
-        pyramid0Beam.enabled = false;
-      }
-      if (orb0Hit.name != pyramid1.name && orb1Hit.name != pyramid1.name && playerHitObj.collider.name == pyramid1.name)
-      {
-        pyramid1Beam.enabled = false;
+        p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.left), 2, 1);
       }
 
-    if (orb0.transform.GetChild(0).GetComponent<LineRenderer>().enabled)
+      if(orb0Hit != null && orb1Hit != null && playerHitObj != null)
+      {
+        if (orb0Hit.name != pyramid0.name && orb1Hit.name != pyramid0.name && playerHitObj.GetComponent<BoxCollider2D>().name == pyramid0.name)
+        {
+          pyramid0Beam.enabled = false;
+          p0Hit = null;
+          currP0Direction = null;
+        }
+        if (orb0Hit.name != pyramid1.name && orb1Hit.name != pyramid1.name && playerHitObj.GetComponent<BoxCollider2D>().name == pyramid1.name)
+        {
+          pyramid1Beam.enabled = false;
+          p1Hit = null;
+          currP1Direction = null;
+        }
+      }
+     
+
+      if (orb0.transform.GetChild(0).GetComponent<LineRenderer>().enabled)
       {
         orb0Hit = setOrbLight(orb0);
       }
@@ -134,13 +172,21 @@ public class L2P2Manager : MonoBehaviour
       {
         orb1Hit = setOrbLight(orb1);
       }
-      if (pyramid0Beam.enabled)
+      if (pyramid0Beam.enabled && currP0Direction == "right")
       {
-        p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.right));
+        p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.right), 2, 1);
       }
-      if (pyramid1Beam.enabled)
+      else if (pyramid0Beam.enabled && currP0Direction == "down")
       {
-        p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.left));
+        p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
+      }
+      if (pyramid1Beam.enabled && currP1Direction == "left")
+      {
+        p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.left), 2, 1);
+      }
+      if (pyramid1Beam.enabled && currP1Direction == "down")
+      {
+        p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
       }
     }
 
@@ -162,11 +208,11 @@ public class L2P2Manager : MonoBehaviour
     return orbHit.collider;
   }
 
-  private Collider2D setPyramidLight(GameObject pyramid, Vector3 direction)
+  private Collider2D setPyramidLight(GameObject pyramid, Vector3 direction, int hitPoint, int raySpawn)
   {
     //Debug.Log("here");
-    pyramidHitPoint = pyramid.transform.GetChild(2);
-    pyramidRaySpawn = pyramid.transform.GetChild(1);
+    pyramidHitPoint = pyramid.transform.GetChild(hitPoint);
+    pyramidRaySpawn = pyramid.transform.GetChild(raySpawn);
     pyramidLightSpawn = pyramid.transform.GetChild(0);
     pyramidBeam = pyramidLightSpawn.GetComponent<LineRenderer>();
 
