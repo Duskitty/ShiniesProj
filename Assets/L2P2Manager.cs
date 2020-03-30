@@ -38,6 +38,8 @@ public class L2P2Manager : MonoBehaviour
   private Collider2D playerHitObj;
   private GameObject player;
   private Animator playerDirection;
+  private GameObject mirage;
+  private Animator mirageAnimator;
 
   // Start is called before the first frame update
   void Start()
@@ -65,6 +67,9 @@ public class L2P2Manager : MonoBehaviour
 
     player = GameObject.Find("Player");
     playerDirection = player.GetComponent<Animator>();
+
+    mirage = GameObject.Find("Mirage");
+    mirageAnimator = mirage.GetComponent<Animator>();
   }
 
     // Update is called once per frame
@@ -187,6 +192,34 @@ public class L2P2Manager : MonoBehaviour
       if (pyramid1Beam.enabled && currP1Direction == "down")
       {
         p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
+      }
+
+      if(mirage != null)
+      {
+        // if only one light beam hits the mirage then set the mirage animator to 1 hit
+        if ((playerHitObj != null && playerHitObj.name == mirage.name && (p0Hit == null || p0Hit.name != mirage.name) && (p1Hit == null || p1Hit.name != mirage.name))
+            || ((playerHitObj == null || playerHitObj.name != mirage.name) && p0Hit != null && p0Hit.name == mirage.name && (p1Hit == null || p1Hit.name != mirage.name))
+            || ((playerHitObj == null || playerHitObj.name != mirage.name) && (p0Hit == null || p0Hit.name != mirage.name) && p1Hit != null && p1Hit.name == mirage.name))
+        {
+          mirageAnimator.SetInteger("numHits", 1);
+        }
+        // If two of the beams hit the mirage then set the animator to 2 hits
+        else if ((playerHitObj != null && playerHitObj.name == mirage.name && p0Hit != null && p0Hit.name == mirage.name && (p1Hit == null || p1Hit.name != mirage.name))
+                || (playerHitObj != null && playerHitObj.name == mirage.name && p1Hit != null && p1Hit.name == mirage.name && (p0Hit == null || p0Hit.name != mirage.name))
+                || (p0Hit != null && p0Hit.name == mirage.name && p1Hit != null & p1Hit.name == mirage.name && (playerHitObj == null || playerHitObj.name != mirage.name)))
+             {
+                mirageAnimator.SetInteger("numHits", 2);
+             }
+        // if all three beams hit the mirage then destroy it
+        else if (playerHitObj != null && playerHitObj.name == mirage.name && p0Hit != null && p0Hit.name == mirage.name && p1Hit != null && p1Hit.name == mirage.name)
+        {
+          Destroy(mirage);
+          // activate enemy and the collider for the fire gem
+        }
+        else
+        {
+          mirageAnimator.SetInteger("numHits", 0);
+        }
       }
     }
 
