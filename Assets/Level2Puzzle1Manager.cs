@@ -58,13 +58,15 @@ public class Level2Puzzle1Manager : MonoBehaviour
     {
       if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light*/)
       {
-        //player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
-        player.transform.GetChild(10).GetComponent<castBeam>().castFire();
+        player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+        player.transform.GetChild(10).GetComponent<castBeam>().disableFire();
       }
 
       else if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire*/)
       {
         //cast fire and burn things
+        player.transform.GetChild(10).GetComponent<castBeam>().castFire();
+        player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
       }
       //else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light && button pressed*/)
       /*{
@@ -87,7 +89,7 @@ public class Level2Puzzle1Manager : MonoBehaviour
       }*/
       else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire && button pressed*/)
       {
-        // cast fire, if hit cacti then burn them
+        // cast fire
       }
       else
       {
