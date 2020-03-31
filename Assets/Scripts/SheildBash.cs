@@ -19,6 +19,7 @@ public class SheildBash : MonoBehaviour
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
             isSheildBashing = true;
             PlayerDirection();
+
             RestoreMovment();
 
 
@@ -52,10 +53,10 @@ public class SheildBash : MonoBehaviour
         }
     }
  public  void RestoreMovment() {
-        if (isSheildBashing == false) {
+      
             player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
-
-        }
+        isSheildBashing = false;
+        
 
     }
 }
