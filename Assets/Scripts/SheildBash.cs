@@ -55,7 +55,7 @@ public class SheildBash : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("enemy"))
+        if (col.gameObject.CompareTag("enemy")|| col.gameObject.CompareTag("bridge"))
         {
             //do nothing else statment is to pervent sticking to things 
 
@@ -64,8 +64,15 @@ public class SheildBash : MonoBehaviour
             RestoreMovment();
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("bridge")) {
+
+            RestoreMovment();
+        }
+    }
     public  void RestoreMovment() {
-      
+        controller.velocity = Vector2.zero;//remove the forces of the sheild bash
             player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
         isSheildBashing = false;
         hasPressedBar = false;
