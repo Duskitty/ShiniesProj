@@ -84,17 +84,6 @@ public class SheildBash : MonoBehaviour
         hasPressedBar = false;
 
     }
-    /*
-    public void AttackButton()
-    {
-        if (pickUpMirror.hasSheild == true)
-        {
-            player.GetComponent<PlayerMovement>().enabled = false;//disable player input
-            isSheildBashing = true;
-            PlayerDirection();
-        }
- 
- 
-    }
-    */
+   
 }
+
