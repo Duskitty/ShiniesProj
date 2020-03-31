@@ -24,18 +24,24 @@ public class RockLightManager2 : MonoBehaviour
     private Transform zeroPosLightSpawn;
     private LineRenderer zeroPosBeam;
     private Vector3 zeroPosBeamDirection;
+    private string zeroPosDirectionName;
+    private int zeroPosRayNum;
+
     private GameObject firstPos;
     private Transform firstPosRaySpawn;
     private Transform firstPosHitPoint;
     private Transform firstPosLightSpawn;
     private LineRenderer firstPosBeam;
     private Vector3 firstPosBeamDirection;
+    private int firstPosRayNum;
+
     private GameObject secondPos;
     private Transform secondPosRaySpawn;
     private Transform secondPosHitPoint;
     private Transform secondPosLightSpawn;
     private LineRenderer secondPosBeam;
     private Vector3 secondPosBeamDirection;
+    private int secondPosRayNum;
 
     // Start is called before the first frame update
     void Start()
@@ -87,6 +93,8 @@ public class RockLightManager2 : MonoBehaviour
         inPosition0[1] = false;
         inPosition0[2] = false;
         zeroPosBeamDirection = zeroPos.transform.GetChild(1).TransformDirection(Vector3.right);
+        zeroPosDirectionName = "right";
+        zeroPosRayNum = 1;
       }
       else if (orbHit.collider.name == rocks[1].name)
       {
@@ -94,7 +102,9 @@ public class RockLightManager2 : MonoBehaviour
         inPosition0[0] = false;
         inPosition0[1] = true;
         inPosition0[2] = false;
-        zeroPosBeamDirection = zeroPos.transform.GetChild(1).TransformDirection(Vector3.down);
+        zeroPosBeamDirection = zeroPos.transform.GetChild(3).TransformDirection(Vector3.left);
+        zeroPosDirectionName = "left";
+        zeroPosRayNum = 3;
       }
       else if (orbHit.collider.name == rocks[2].name)
       {
@@ -102,7 +112,13 @@ public class RockLightManager2 : MonoBehaviour
         inPosition0[0] = false;
         inPosition0[1] = false;
         inPosition0[2] = true;
+        return;
+        /*zeroPos = rocks[2];
+        inPosition0[0] = false;
+        inPosition0[1] = false;
+        inPosition0[2] = true;
         zeroPosBeamDirection = zeroPos.transform.GetChild(1).TransformDirection(Vector3.left);
+        */
       }
       else
       {
@@ -120,49 +136,60 @@ public class RockLightManager2 : MonoBehaviour
         }
       }
 
-      if (orbHit.collider.name == rocks[0].name || orbHit.collider.name == rocks[1].name || orbHit.collider.name == rocks[2].name)
+    if (orbHit.collider.name == rocks[0].name || orbHit.collider.name == rocks[1].name || orbHit.collider.name == rocks[2].name)
+    {
+      zeroPosLightSpawn = zeroPos.transform.GetChild(0);
+      zeroPosHitPoint = zeroPos.transform.GetChild(2);
+      zeroPosRaySpawn = zeroPos.transform.GetChild(zeroPosRayNum);
+      zeroPosBeam = zeroPosLightSpawn.GetComponent<LineRenderer>();
+
+      hits[0] = Physics2D.Raycast(zeroPosRaySpawn.position, zeroPosBeamDirection);
+      zeroPosHitPoint.position = hits[0].point;
+      zeroPosBeam.enabled = true;
+      zeroPosBeam.SetPosition(0, zeroPosLightSpawn.position);
+      zeroPosBeam.SetPosition(1, zeroPosHitPoint.position);
+
+      if (hits[0].collider.name == rocks[0].name)
       {
-        zeroPosLightSpawn = zeroPos.transform.GetChild(0);
-        zeroPosHitPoint = zeroPos.transform.GetChild(2);
-        zeroPosRaySpawn = zeroPos.transform.GetChild(1);
-        zeroPosBeam = zeroPosLightSpawn.GetComponent<LineRenderer>();
+        firstPos = rocks[0];
+        inPosition1[0] = true;
+        inPosition1[1] = false;
+        inPosition1[2] = false;
+        firstPosBeamDirection = firstPos.transform.GetChild(3).TransformDirection(Vector3.down);
+        firstPosRayNum = 3;
+      }
+      else if (hits[0].collider.name == rocks[1].name)
+      {
+        firstPos = rocks[1];
+        inPosition1[0] = false;
+        inPosition1[1] = true;
+        inPosition1[2] = false;
+        firstPosBeamDirection = firstPos.transform.GetChild(1).TransformDirection(Vector3.down);
+        firstPosRayNum = 1;
+      }
+      else if (hits[0].collider.name == rocks[2].name)
+      {
+        firstPos = rocks[2];
+        inPosition1[0] = false;
+        inPosition1[1] = false;
+        inPosition1[2] = true;
 
-        hits[0] = Physics2D.Raycast(zeroPosRaySpawn.position, zeroPosBeamDirection);
-        zeroPosHitPoint.position = hits[0].point;
-        zeroPosBeam.enabled = true;
-        zeroPosBeam.SetPosition(0, zeroPosLightSpawn.position);
-        zeroPosBeam.SetPosition(1, zeroPosHitPoint.position);
-
-        if (hits[0].collider.name == rocks[0].name)
+        if (zeroPosDirectionName == "right")
         {
-          firstPos = rocks[0];
-          inPosition1[0] = true;
-          inPosition1[1] = false;
-          inPosition1[2] = false;
-          firstPosBeamDirection = firstPos.transform.GetChild(1).TransformDirection(Vector3.right);
-        }
-        else if (hits[0].collider.name == rocks[1].name)
-        {
-          firstPos = rocks[1];
-          inPosition1[0] = false;
-          inPosition1[1] = true;
-          inPosition1[2] = false;
-          firstPosBeamDirection = firstPos.transform.GetChild(1).TransformDirection(Vector3.down);
-        }
-        else if (hits[0].collider.name == rocks[2].name)
-        {
-          firstPos = rocks[2];
-          inPosition1[0] = false;
-          inPosition1[1] = false;
-          inPosition1[2] = true;
-          firstPosBeamDirection = firstPos.transform.GetChild(1).TransformDirection(Vector3.left);
+          firstPosBeamDirection = firstPos.transform.GetChild(3).TransformDirection(Vector3.up);
+          firstPosRayNum = 3;
         }
         else
         {
-          inPosition1[0] = false;
-          inPosition1[1] = false;
-          inPosition1[2] = false;
+          return;
         }
+      }
+      else
+      {
+        inPosition1[0] = false;
+        inPosition1[1] = false;
+        inPosition1[2] = false;
+      }
 
         for (int i = 0; i < 3; i++)
         {
@@ -177,7 +204,7 @@ public class RockLightManager2 : MonoBehaviour
             //Debug.Log("hewwo");
             firstPosLightSpawn = firstPos.transform.GetChild(0);
             firstPosHitPoint = firstPos.transform.GetChild(2);
-            firstPosRaySpawn = firstPos.transform.GetChild(1);
+            firstPosRaySpawn = firstPos.transform.GetChild(firstPosRayNum);
             firstPosBeam = firstPosLightSpawn.GetComponent<LineRenderer>();
 
             hits[1] = Physics2D.Raycast(firstPosRaySpawn.position, firstPosBeamDirection);
@@ -193,6 +220,7 @@ public class RockLightManager2 : MonoBehaviour
               inPosition2[1] = false;
               inPosition2[2] = false;
               secondPosBeamDirection = secondPos.transform.GetChild(1).TransformDirection(Vector3.right);
+              secondPosRayNum = 1;
             }
             else if (hits[1].collider.name == rocks[1].name)
             {
@@ -200,7 +228,8 @@ public class RockLightManager2 : MonoBehaviour
               inPosition2[0] = false;
               inPosition2[1] = true;
               inPosition2[2] = false;
-              secondPosBeamDirection = secondPos.transform.GetChild(1).TransformDirection(Vector3.down);
+              secondPosBeamDirection = secondPos.transform.GetChild(3).TransformDirection(Vector3.left);
+              secondPosRayNum = 3;
             }
             else if (hits[1].collider.name == rocks[2].name)
             {
@@ -209,6 +238,7 @@ public class RockLightManager2 : MonoBehaviour
               inPosition2[1] = false;
               inPosition2[2] = true;
               secondPosBeamDirection = secondPos.transform.GetChild(1).TransformDirection(Vector3.left);
+              secondPosRayNum = 1;
             }
             else
             {
@@ -229,7 +259,7 @@ public class RockLightManager2 : MonoBehaviour
             {
                 secondPosLightSpawn = secondPos.transform.GetChild(0);
                 secondPosHitPoint = secondPos.transform.GetChild(2);
-                secondPosRaySpawn = secondPos.transform.GetChild(1);
+                secondPosRaySpawn = secondPos.transform.GetChild(secondPosRayNum);
                 secondPosBeam = secondPosLightSpawn.GetComponent<LineRenderer>();
 
                 hits[2] = Physics2D.Raycast(secondPosRaySpawn.position, secondPosBeamDirection);

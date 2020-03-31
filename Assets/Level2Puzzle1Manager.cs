@@ -84,7 +84,7 @@ public class Level2Puzzle1Manager : MonoBehaviour
           pyramid1Beam.SetPosition(0, pyramid1LightSpawn.position);
           pyramid1Beam.SetPosition(1, pyramid1HitPoint.position);
           pyramid1Beam.enabled = true;
-          orb.sprite = litOrb;
+          orb.GetComponent<Animator>.SetBool("isLit", true);
         }
       }*/
       else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire && button pressed*/)

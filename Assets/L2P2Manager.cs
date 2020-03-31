@@ -108,7 +108,7 @@ public class L2P2Manager : MonoBehaviour
           else if (playerHitObj.name == pyramid0.name && playerDirection.GetBool("isIdleLeft") && !pyramid0Beam.enabled)
           {
             currP0Direction = "down";
-            p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(3).TransformDirection(Vector3.down), 4, 3);
+            p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
           }
           else if (playerHitObj.name == pyramid0.name && (playerDirection.GetBool("isIdleRight") || playerDirection.GetBool("isIdleDown")))
           {
@@ -236,7 +236,7 @@ public class L2P2Manager : MonoBehaviour
     orbBeam.SetPosition(1, orbHitPoint.position);
 
     orbBeam.enabled = true;
-    orb.GetComponent<SpriteRenderer>().sprite = litOrb;
+    orb.GetComponent<Animator>().SetBool("isLit", true);
 
     return orbHit.collider;
   }
