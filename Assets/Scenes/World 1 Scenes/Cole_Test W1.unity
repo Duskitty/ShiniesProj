@@ -9441,6 +9441,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a86a10c88730c4fbf441217006c500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &572514274 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7397618167806854477, guid: a8631ca132447794da57641a558d9449,
+    type: 3}
+  m_PrefabInstance: {fileID: 7397618168649691739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &601193877
 GameObject:
   m_ObjectHideFlags: 0
@@ -38521,6 +38527,7 @@ MonoBehaviour:
   speed: 6
   circle: {fileID: 1261842224}
   outerCircle: {fileID: 1062371884}
+  animator: {fileID: 572514274}
 --- !u!114 &961154182
 MonoBehaviour:
   m_ObjectHideFlags: 0

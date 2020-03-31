@@ -55,10 +55,11 @@ public class Joystick : MonoBehaviour
     private bool touchStart = false;
     private Vector2 pointA;
     private Vector2 pointB;
-
+    Vector2 direction;
     public Transform circle;
     public Transform outerCircle;
-
+    private Vector2 movmentDirection;
+    public Animator animator;
     // Update is called once per frame
     void Update()
     {
@@ -82,12 +83,13 @@ public class Joystick : MonoBehaviour
         }
 
     }
+    //take what ever they touched and compare it to the inital point of the joystick
     private void FixedUpdate()
     {
         if (touchStart)
         {
             Vector2 offset = pointB - pointA;
-            Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
+          direction = Vector2.ClampMagnitude(offset, 1.0f);
             moveCharacter(direction );
 
             circle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y) * -1;
@@ -98,10 +100,50 @@ public class Joystick : MonoBehaviour
             outerCircle.GetComponent<SpriteRenderer>().enabled = false;
         }
 
+        PlayerAnimator(direction);
     }
     void moveCharacter(Vector2 direction)
     {
         player.Translate(direction * speed * Time.deltaTime);
+    }
+    void PlayerAnimator(Vector2 direction) {
+        //figure out what way the joystick was moved
+    //    Vector2 movmentX = direction.x - circle.transform.position.x;
+        if (direction.x > 0) {//looking right
+            animator.SetBool("isRight", true);
+            animator.SetBool("isLeft", false);
+            animator.SetBool("isDown", false);
+            animator.SetBool("isUp", false);
+            animator.SetBool("isMoving", true);
+
+        }
+        if (direction.x < 0)//looking left
+        {
+            animator.SetBool("isLeft", true);
+            animator.SetBool("isRight", false);
+            animator.SetBool("isDown", false);
+            animator.SetBool("isUp", false);
+            animator.SetBool("isMoving", true);
+
+        }
+        if (direction.y > 0)//looking up
+        {
+            animator.SetBool("isUp", true);
+            animator.SetBool("isDown", false);
+            animator.SetBool("isLeft", false);
+            animator.SetBool("isRight", false);
+            animator.SetBool("isMoving", true);
+
+        }
+        if (direction.y < 0)//looking down
+        {
+            animator.SetBool("isDown", true);
+            animator.SetBool("isRight", false);
+            animator.SetBool("isLeft", false);
+            animator.SetBool("isUp", false);
+            animator.SetBool("isMoving", true);
+
+        }
     }
 }
 

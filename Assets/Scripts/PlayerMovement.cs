@@ -29,22 +29,21 @@ public class PlayerMovement : MonoBehaviour
     {
         xAxis =  Input.GetAxis("Horizontal");//moblie input
         yAxis = Input.GetAxis("Vertical");//moblie input
-      //  horizontalMove = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
-       // verticalMove = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
-            Touch touch = Input.touches[0];
-            xAxis = touch.deltaPosition.x;
-            yAxis = touch.deltaPosition.y;
-        
-        }
+                                          
+        /*   if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
+               Touch touch = Input.touches[0];
+               xAxis = touch.deltaPosition.x;   
+               yAxis = touch.deltaPosition.y;
+
+           }*/
         Debug.Log(xAxis);
         if (textBoxAnimator.GetBool("textboxOpen"))
         {
             return;
         }
 
-        if (Input.GetKey(KeyCode.W)|| yAxis>0)
-    {
+        if (Input.GetKey(KeyCode.W))//yAxis>0 supposed to be me testing if moving down will play move up animation
+        {
 
       transform.Translate(new Vector3(0f, speed * Time.deltaTime, 0f));
       animator.SetBool("isUp", true);
@@ -74,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-    if (Input.GetKey(KeyCode.S)|| yAxis >0)
+    if (Input.GetKey(KeyCode.S))//yAxis>0 supposed to be me testing if moving down will play move down animation
     {
       transform.Translate(new Vector3(0f, -speed * Time.deltaTime, 0f));
       animator.SetBool("isDown", true);
