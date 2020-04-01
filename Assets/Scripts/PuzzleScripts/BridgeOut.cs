@@ -7,89 +7,89 @@ public class BridgeOut : MonoBehaviour
     //public SpriteRenderer bridge;
     //public BoxCollider2D box;
     public bool buttonPressed;
-    private bool bridgeComplete = false;
+    private int bridgeState;
+    //private bool bridgeComplete = false;
     //public bool boxOut;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-      if (buttonPressed)
-      {
-        StartCoroutine(openBridge());
-      }
-      else
-      {
-        Debug.Log("HERE");
-        StartCoroutine(closeBridge());
-      }
+      bridgeState = 0;
+      StartCoroutine(bridgeCoroutine());
+    }
 
-        /*if(boxOut && GameObject.Find("AntMan").GetComponent<StunEnemy>().checkIsStunned())
+    IEnumerator bridgeCoroutine()
+    {
+      while (true)
+      {
+        if (buttonPressed)
         {
-            //box.enabled = false;
+          extendBridge();
         }
         else
         {
-            //box.enabled = true;
-        }*/
-    }
-
-    IEnumerator openBridge()
-    {
-      if (!bridgeComplete)
-      {
-        for (int i = 1; i < 5; i++)
-        {
-          if (!GameObject.Find("Bridge_0" + i).GetComponent<SpriteRenderer>().enabled)
-          {
-            GameObject.Find("Bridge_0" + i).GetComponent<SpriteRenderer>().enabled = true;
-          }
-          if (i != 4)
-          {
-            yield return new WaitForSeconds(0.7f);
-          }
+          retractBridge();
         }
+
         if (GameObject.Find("AntMan").GetComponent<StunEnemy>().checkIsStunned())
         {
           GameObject.Find("Bridge").GetComponent<BoxCollider2D>().enabled = false;
-          bridgeComplete = true;
         }
         else
         {
-          bridgeComplete = false;
+          GameObject.Find("Bridge").GetComponent<BoxCollider2D>().enabled = true;
         }
+
+        yield return new WaitForSeconds(0.1f);
       }
-      yield return null;
     }
 
-    IEnumerator closeBridge()
-    {
-      if (bridgeComplete)
+    public void extendBridge()
+    { 
+      if(bridgeState == 0)
       {
-        GameObject.Find("Bridge").GetComponent<BoxCollider2D>().enabled = true;
-        for (int i = 4; i > 0; i--)
-        {
-          if (GameObject.Find("Bridge_0" + i).GetComponent<SpriteRenderer>().enabled)
-          {
-            GameObject.Find("Bridge_0" + i).GetComponent<SpriteRenderer>().enabled = false;
-          }
-          if (i != 1)
-          {
-            yield return new WaitForSeconds(0.7f);
-          }
-        }
+        GameObject.Find("Bridge_01").GetComponent<SpriteRenderer>().enabled = true;
       }
-      bridgeComplete = false;
-      yield return null;
+      else if (bridgeState == 1)
+      {
+        GameObject.Find("Bridge_02").GetComponent<SpriteRenderer>().enabled = true;
+      }
+      else if (bridgeState == 2)
+      {
+        GameObject.Find("Bridge_03").GetComponent<SpriteRenderer>().enabled = true;
+      }
+      else if (bridgeState == 3)
+      {
+        GameObject.Find("Bridge_04").GetComponent<SpriteRenderer>().enabled = true;
+      }
+
+      if (bridgeState >= 0 && bridgeState <= 3)
+      {
+        bridgeState++;
+      }
     }
 
-  void OnTriggerStay2D(Collider2D other)
+    public void retractBridge()
     {
-        //GameObject.Find("Player").GetComponent<PlayerMovement>().bridgeSafe = true;
-        //GameObject.Find("ChasmColliderMiddle").GetComponent<BoxCollider2D>().enabled = false;
-    }
-    void OnTriggerExit2D(Collider2D other)
-    {
-        //GameObject.Find("Player").GetComponent<PlayerMovement>().bridgeSafe = false;
-        //GameObject.Find("ChasmColliderMiddle").GetComponent<BoxCollider2D>().enabled = true;
+      if (bridgeState == 4)
+      {
+        GameObject.Find("Bridge_04").GetComponent<SpriteRenderer>().enabled = false;
+      }
+      else if (bridgeState == 3)
+      {
+        GameObject.Find("Bridge_03").GetComponent<SpriteRenderer>().enabled = false;
+      }
+      else if (bridgeState == 2)
+      {
+        GameObject.Find("Bridge_02").GetComponent<SpriteRenderer>().enabled = false;
+      }
+      else if (bridgeState == 1)
+      {
+        GameObject.Find("Bridge_01").GetComponent<SpriteRenderer>().enabled = false;
+      }
+
+      if(bridgeState > 0)
+      {
+        bridgeState--;
+      }
     }
 }
