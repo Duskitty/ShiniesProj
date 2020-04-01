@@ -9,7 +9,6 @@ public class pickUpMirror : MonoBehaviour
   {
     Debug.Log("Picked Up the mirror!");
     hasSheild = true;
-    //Change player sprite here
     GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
     Destroy(GameObject.Find("Shield"));
   }

@@ -34,7 +34,7 @@ public class Puzzle1Manager : MonoBehaviour
       {
         stairs.GetComponent<BoxCollider2D>().enabled = false;
         stairs.GetComponent<SpriteRenderer>().enabled = true;
-        orb.sprite = litOrb;
+        orb.GetComponent<Animator>().SetBool("isLit", true);
       }
     }
 }

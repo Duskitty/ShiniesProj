@@ -215,6 +215,7 @@ public class L2P2Manager : MonoBehaviour
         {
           Destroy(mirage);
           // activate enemy and the collider for the fire gem
+          GameObject.Find("FireGem").GetComponent<CircleCollider2D>().enabled = true;
         }
         else
         {

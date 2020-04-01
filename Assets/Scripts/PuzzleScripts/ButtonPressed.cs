@@ -24,9 +24,9 @@ public class ButtonPressed : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().buttonPressed = true;
-        GameObject.Find("Bridge_Out").GetComponent<Renderer>().enabled = true;
-        GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().boxOut = true;
+        GameObject.Find("Bridge").GetComponent<BridgeOut>().buttonPressed = true;
+        /*GameObject.Find("Bridge_Out").GetComponent<Renderer>().enabled = true;
+        GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().boxOut = true;*/
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -37,8 +37,8 @@ public class ButtonPressed : MonoBehaviour
     void OnTriggerExit2D (Collider2D other)
     {
         pressed = false;
-        GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().buttonPressed = false;
-        GameObject.Find("Bridge_Out").GetComponent<Renderer>().enabled = false;
-        GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().boxOut = false;
+        GameObject.Find("Bridge").GetComponent<BridgeOut>().buttonPressed = false;
+        /*GameObject.Find("Bridge_Out").GetComponent<Renderer>().enabled = false;
+        GameObject.Find("Bridge_Out").GetComponent<BridgeOut>().boxOut = false;*/
     }
 }
