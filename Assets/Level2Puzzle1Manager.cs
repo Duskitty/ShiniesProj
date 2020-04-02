@@ -23,7 +23,7 @@ public class Level2Puzzle1Manager : MonoBehaviour
   private LineRenderer pyramid1Beam;
   private RaycastHit2D p1Hit;
 
-  public Sprite litOrb;
+  public bool pressed;
   private SpriteRenderer orb;
 
   private Collider2D playerHitObj;
@@ -56,15 +56,15 @@ public class Level2Puzzle1Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light*/)
-      {
-        player.transform.GetChild(10).GetComponent<castBeam>().castFire();
-        player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
-        //player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
-        //player.transform.GetChild(10).GetComponent<castBeam>().disableFire();
-      }
-      //else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light && button pressed*/)
-      /*{
+    if (pressed)
+    {
+      player.transform.GetChild(10).GetComponent<castBeam>().castFire();
+      player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
+      //player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+      //player.transform.GetChild(10).GetComponent<castBeam>().disableFire();
+    }
+    else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light && button pressed*/)
+        {
         playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
 
         if (playerHitObj != null && playerHitObj.name == pyramid0.name)
@@ -79,13 +79,13 @@ public class Level2Puzzle1Manager : MonoBehaviour
           pyramid1Beam.SetPosition(0, pyramid1LightSpawn.position);
           pyramid1Beam.SetPosition(1, pyramid1HitPoint.position);
           pyramid1Beam.enabled = true;
-          orb.GetComponent<Animator>.SetBool("isLit", true);
+          orb.GetComponent<Animator>().SetBool("isLit", true);
         }
-      }*/
+      }
       else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire && button pressed*/)
       {
-        player.transform.GetChild(10).GetComponent<castBeam>().castFire();
-        player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
+        //player.transform.GetChild(10).GetComponent<castBeam>().castFire();
+        //player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
       }
       else
       {
