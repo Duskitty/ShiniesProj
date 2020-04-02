@@ -68,9 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
-<<<<<<< HEAD
-        if (!(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))) {//no input 
-=======
+
         if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D)) {//no input 
             if (isMovingUp == true) {
                 animator.SetBool("isIdleUp", true);
@@ -116,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("isUp", false);
 
             }
->>>>>>> parent of 273e7ac... animations good
+
 
 
 
