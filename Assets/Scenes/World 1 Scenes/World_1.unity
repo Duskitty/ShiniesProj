@@ -9475,7 +9475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 572514271}
-  speed: 100
+  speed: 550
   controller: {fileID: 572514278}
 --- !u!1 &601193877
 GameObject:
@@ -79662,6 +79662,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385351044643698322, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 572514280}
+    - target: {fileID: 4385351044643698322, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AttackButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7504f2e983f20524ab5d788d5e0b1049, type: 3}
