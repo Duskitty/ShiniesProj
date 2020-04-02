@@ -9466,6 +9466,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8795878810390453527}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &572514272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2069583985641369772, guid: b9c2e64e94eadd6408daa896a2b85ba9,
+    type: 3}
+  m_PrefabInstance: {fileID: 8795878810390453527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572514271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a86a10c88730c4fbf441217006c500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &573988839
 GameObject:
   m_ObjectHideFlags: 0
@@ -79497,6 +79509,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385351044643698322, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 572514272}
+    - target: {fileID: 4385351044643698322, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AttackButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7504f2e983f20524ab5d788d5e0b1049, type: 3}
