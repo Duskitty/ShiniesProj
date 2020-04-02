@@ -100,7 +100,7 @@ public class Joystick : MonoBehaviour
             outerCircle.GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        PlayerAnimator(direction);
+       PlayerAnimator(direction);
     }
     void moveCharacter(Vector2 direction)
     {
@@ -108,8 +108,10 @@ public class Joystick : MonoBehaviour
     }
     void PlayerAnimator(Vector2 direction) {
         //figure out what way the joystick was moved
-    //    Vector2 movmentX = direction.x - circle.transform.position.x;
-        if (direction.x > 0) {//looking right
+        var circleDirectionX = direction.x - circle.transform.position.x;
+        var cirlceDirectionY = direction.y - circle.transform.position.y;
+       // var circleDirection = outerCircle.transform.position - circle.transform.position;
+        if (circleDirectionX>0) {//looking right
             animator.SetBool("isRight", true);
             animator.SetBool("isLeft", false);
             animator.SetBool("isDown", false);
@@ -117,7 +119,7 @@ public class Joystick : MonoBehaviour
             animator.SetBool("isMoving", true);
 
         }
-        if (direction.x < 0)//looking left
+        if (circleDirectionX < 0)//looking left
         {
             animator.SetBool("isLeft", true);
             animator.SetBool("isRight", false);
@@ -126,7 +128,7 @@ public class Joystick : MonoBehaviour
             animator.SetBool("isMoving", true);
 
         }
-        if (direction.y > 0)//looking up
+       if (cirlceDirectionY > 0)//looking up
         {
             animator.SetBool("isUp", true);
             animator.SetBool("isDown", false);
@@ -135,7 +137,7 @@ public class Joystick : MonoBehaviour
             animator.SetBool("isMoving", true);
 
         }
-        if (direction.y < 0)//looking down
+        if (cirlceDirectionY < 0)//looking down
         {
             animator.SetBool("isDown", true);
             animator.SetBool("isRight", false);
