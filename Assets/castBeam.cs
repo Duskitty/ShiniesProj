@@ -18,8 +18,9 @@ public class castBeam : MonoBehaviour
     private LayerMask layerMask;
     private RaycastHit2D[] fireHits;
     private Vector2 fireDirection;
-    private Vector3 fireEndMod;
-  private GameObject hitObj;
+    //private Vector3 fireEndMod;
+    private GameObject hitObj;
+    private GameObject fireBall;
 
     // Start is called before the first frame update
     void Start()
@@ -95,51 +96,58 @@ public class castBeam : MonoBehaviour
 
   public void castFire()
   {
-    if (playerDirection.GetBool("isIdleUp"))
+    /*if (playerDirection.GetBool("isIdleUp"))
     {
       playerHitPoint = player.transform.GetChild(5);
       playerRaySpawn = player.transform.GetChild(1);
       fireDirection = new Vector2(0, 1);
-      fireEndMod = new Vector3(0, 3, 0);
+      fireBall = GameObject.Find("FireUp");
+      //fireEndMod = new Vector3(0, 3, 0);
     }
     else if (playerDirection.GetBool("isIdleRight"))
     {
       playerHitPoint = player.transform.GetChild(6);
       playerRaySpawn = player.transform.GetChild(2);
       fireDirection = new Vector2(1, 0);
-      fireEndMod = new Vector3(3, 0, 0);
+      fireBall = GameObject.Find("FireRight");
+      //fireEndMod = new Vector3(3, 0, 0);
     }
     else if (playerDirection.GetBool("isIdleDown"))
     {
       playerHitPoint = player.transform.GetChild(8);
       playerRaySpawn = player.transform.GetChild(4);
       fireDirection = new Vector2(0, -1);
-      fireEndMod = new Vector3(0, -3, 0);
+      fireBall = GameObject.Find("FireDown");
+      //fireEndMod = new Vector3(0, -3, 0);
     }
     else
     {
       playerHitPoint = player.transform.GetChild(7);
       playerRaySpawn = player.transform.GetChild(3);
       fireDirection = new Vector2(-1, 0);
-      fireEndMod = new Vector3(-3, 0, 0);
-    }
+      fireBall = GameObject.Find("FireLeft");
+      //fireEndMod = new Vector3(-1, 0, 0);
+    }*/
 
-    fireHits = Physics2D.BoxCastAll(playerRaySpawn.position, new Vector2(1, 1.5f), 0f, fireDirection, 1f, ~layerMask);
-    playerFireBeam.SetPosition(0, playerFireSpawn.position);
-    playerFireBeam.SetPosition(1, playerFireSpawn.position + fireEndMod);
-    playerFireBeam.enabled = true;
+    //fireHits = Physics2D.BoxCastAll(playerRaySpawn.position, new Vector2(1, 0.5f), 0f, fireDirection, 1f, ~layerMask);
+    //playerFireBeam.SetPosition(0, playerFireSpawn.position);
+    //playerFireBeam.SetPosition(1, playerFireSpawn.position + fireEndMod);
+    //playerFireBeam.enabled = true;
+    //fireBall.GetComponent<SpriteRenderer>().enabled = true;
+    StartCoroutine(fireBurst());
 
-    for (int i = 0; i < fireHits.Length; i++)
+    /*for (int i = 0; i < fireHits.Length; i++)
     {
       if(fireHits[i] != null)
       {
         hitObj = GameObject.Find(fireHits[i].collider.name);
         if (hitObj.tag == "Cactus")
         {
-          Destroy(hitObj);
+          StartCoroutine(burnCactus());
+          //Destroy(hitObj);
         }
       }
-    }
+    }*/
     
   }
 
@@ -151,5 +159,64 @@ public class castBeam : MonoBehaviour
   public void disableLight()
   {
     playerBeam.enabled = false;
+  }
+
+  IEnumerator burnCactus()
+  {
+    if(hitObj != null)
+    {
+      hitObj.GetComponent<Animator>().SetBool("isBurned", true);
+      yield return new WaitForSeconds(0.35f);
+      Destroy(hitObj);
+    }
+    yield return null;
+  }
+
+  IEnumerator fireBurst()
+  {
+    while (true)
+    {
+      if (playerDirection.GetBool("isIdleUp"))
+      {
+        playerHitPoint = player.transform.GetChild(5);
+        playerRaySpawn = player.transform.GetChild(1);
+        fireDirection = new Vector2(0, 1);
+        fireBall = GameObject.Find("FireUp");
+        //fireEndMod = new Vector3(0, 3, 0);
+      }
+      else if (playerDirection.GetBool("isIdleRight"))
+      {
+        playerHitPoint = player.transform.GetChild(6);
+        playerRaySpawn = player.transform.GetChild(2);
+        fireDirection = new Vector2(1, 0);
+        fireBall = GameObject.Find("FireRight");
+        //fireEndMod = new Vector3(3, 0, 0);
+      }
+      else if (playerDirection.GetBool("isIdleDown"))
+      {
+        playerHitPoint = player.transform.GetChild(8);
+        playerRaySpawn = player.transform.GetChild(4);
+        fireDirection = new Vector2(0, -1);
+        fireBall = GameObject.Find("FireDown");
+        //fireEndMod = new Vector3(0, -3, 0);
+      }
+      else
+      {
+        playerHitPoint = player.transform.GetChild(7);
+        playerRaySpawn = player.transform.GetChild(3);
+        fireDirection = new Vector2(-1, 0);
+        fireBall = GameObject.Find("FireLeft");
+        //fireEndMod = new Vector3(-1, 0, 0);
+      }
+
+      fireHits = Physics2D.BoxCastAll(playerRaySpawn.position, new Vector2(1, 0.5f), 0f, fireDirection, 1f, ~layerMask);
+      fireBall.GetComponent<SpriteRenderer>().enabled = true;
+
+      fireBall.GetComponent<Animator>().SetBool("isActive", true);
+      yield return new WaitForSeconds(0.1f);
+      fireBall.GetComponent<SpriteRenderer>().enabled = false;
+      fireBall.GetComponent<Animator>().SetBool("isActive", false);
+    }
+    yield return null;
   }
 }

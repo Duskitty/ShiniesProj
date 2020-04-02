@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 71cd1f38c11e2394fa296eeeb2879250
+guid: ae30ed02099ba3b42898af889dfe723e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -200677589290297742
-    second: CactusBurn3_0
+      213: -300391380020526834
+    second: FireBurstAnimation_Right_0
   - first:
-      213: -5112549742279172270
-    second: CactusBurn3_1
+      213: 227625452036640587
+    second: FireBurstAnimation_Right_1
   - first:
-      213: -6640410712295936676
-    second: CactusBurn3_2
+      213: 1351734792696106114
+    second: FireBurstAnimation_Right_2
   - first:
-      213: 6286212356536412495
-    second: CactusBurn3_3
+      213: 8894059901615784659
+    second: FireBurstAnimation_Right_3
+  - first:
+      213: 8214470841923653595
+    second: FireBurstAnimation_Right_4
+  - first:
+      213: -3963089169439270812
+    second: FireBurstAnimation_Right_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -57,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +116,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CactusBurn3_0
+      name: FireBurstAnimation_Right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b444df3b47cef09479c1b156955e969d
+      internalID: -300391380020526834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBurstAnimation_Right_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d06970011165d46ad254b0fc3cb20f
+      internalID: 227625452036640587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBurstAnimation_Right_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a950dbc51fd05e41b0d2266acf3d5a9
+      internalID: 1351734792696106114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBurstAnimation_Right_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,41 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c4b786620203de498c6735b7ce0f8ea
-      internalID: -200677589290297742
+      spriteID: 57a30f7897b04ed45ae267c1cb8f0d99
+      internalID: 8894059901615784659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CactusBurn3_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 344d2558453c24b4c93cdc06381df264
-      internalID: -5112549742279172270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CactusBurn3_2
+      name: FireBurstAnimation_Right_4
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 32
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c0a5baa4da950749864299417ce2a3e
-      internalID: -6640410712295936676
+      spriteID: a07655e5de4ab264c95bb86794f7fa57
+      internalID: 8214470841923653595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CactusBurn3_3
+      name: FireBurstAnimation_Right_5
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 32
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94968b2d3e341ae43b08558a61b6d7c0
-      internalID: 6286212356536412495
+      spriteID: d7264058e3196f644b38f540e32ead9d
+      internalID: -3963089169439270812
       vertices: []
       indices: 
       edges: []

@@ -80,12 +80,12 @@ public class L2P2Manager : MonoBehaviour
         player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
         player.transform.GetChild(10).GetComponent<castBeam>().disableFire();
       }
-      else if (GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire*/)
-      {
+      //else if (GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire*/)
+      /*{
         //cast fire and burn things
         player.transform.GetChild(10).GetComponent<castBeam>().castFire();
         player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
-      }
+      }*/
       else if (!GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light && button pressed*/)
       {
         playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
@@ -134,7 +134,8 @@ public class L2P2Manager : MonoBehaviour
       }
       else if (!GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire && button pressed*/)
       {
-        // cast fire
+        player.transform.GetChild(10).GetComponent<castBeam>().castFire();
+        player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
       }
       else
       {
