@@ -38079,10 +38079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471ddafb4ffad704b99789b9501016af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bridge: {fileID: 918581074}
-  box: {fileID: 918581072}
   buttonPressed: 0
-  boxOut: 0
 --- !u!212 &918581074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38573,7 +38570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd097889ab4a7a44ab146ce514b8a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 287222129}
   speed: 3
   circle: {fileID: 0}
   outerCircle: {fileID: 0}
