@@ -193,16 +193,12 @@ public class castBeam : MonoBehaviour
           if (hitObj != null && hitObj.tag == "Cactus")
           {
             StartCoroutine(burnCactus()); 
-            //hitObj.GetComponent<Animator>().SetBool("isBurned", true);
-             //yield return new WaitForSeconds(0.4f);
-             //Destroy(hitObj);
-             //hitObj.GetComponent<Renderer>().enabled = false;
-             //hitObj.GetComponent<BoxCollider2D>().enabled = false;
           }
         }
       }
-      yield return new WaitForSeconds(0.4f);
+      yield return new WaitForSeconds(0.37f);
       disableFire();
+      //StopCoroutine(fireBurst());
     }
     yield return null;
   }
