@@ -134,24 +134,8 @@ public class castBeam : MonoBehaviour
     }
 
     fireHits = Physics2D.BoxCastAll(playerRaySpawn.position + fireEndMod, new Vector2(1, 0.25f), 0f, fireDirection, 1f, ~layerMask);
-    //playerFireBeam.SetPosition(0, playerFireSpawn.position);
-    //playerFireBeam.SetPosition(1, playerFireSpawn.position + fireEndMod);
-    //playerFireBeam.enabled = true;
+    StopCoroutine(fireBurst());
     StartCoroutine(fireBurst());
-
-    /*for (int i = 0; i < fireHits.Length; i++)
-    {
-      if(fireHits[i] != null)
-      {
-        hitObj = GameObject.Find(fireHits[i].collider.name);
-        if (hitObj.tag == "Cactus")
-        {
-          StartCoroutine(burnCactus());
-          //Destroy(hitObj);
-        }
-      }
-    }*/
-    
   }
 
   public void disableFire()
@@ -193,6 +177,12 @@ public class castBeam : MonoBehaviour
           if (hitObj != null && hitObj.tag == "Cactus")
           {
             StartCoroutine(burnCactus()); 
+          }
+          else if (hitObj != null && hitObj.tag == "Torch")
+          {
+            Debug.Log("hit torch");
+            hitObj.GetComponent<Animator>().SetBool("isLit", true);
+            hitObj.transform.GetChild(0).gameObject.SetActive(true);
           }
         }
       }

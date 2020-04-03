@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class L2P2Manager : MonoBehaviour
 {
-  public Sprite litOrb;
   private LayerMask layerMask;
   private LineRenderer[] hittableObjBeams;
 
