@@ -10,4 +10,9 @@ public class DamagePlayer : MonoBehaviour
         Debug.Log(GameControlScript.health);
         //Debug.Log("Player is hit");
     }
+    void Charges()
+    {
+        if(Input.GetKey(KeyCode.M))
+        GameControlScript.charges -= 1;
+    }
 }

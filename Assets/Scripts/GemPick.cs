@@ -36,6 +36,5 @@ public class GemPick : MonoBehaviour
         iceGem = true;
         Debug.Log("Ice gem selected");
 
-
     }
 }

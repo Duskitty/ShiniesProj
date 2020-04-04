@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameControlScript : MonoBehaviour
 {
-    public GameObject heart1, heart2, heart3, chargedGem1, chargedGem2, chargedGem3; //, gameOver;
+    public GameObject heart1, heart2, heart3, chargedGem1, chargedGem2, chargedGem3, unchargedGem1, unchargedGem2, unchargedGem3; //, gameOver;
     public static int health;
     public static int charges;
 
@@ -16,9 +16,13 @@ public class GameControlScript : MonoBehaviour
         heart3.gameObject.SetActive(true);
 
         charges = 3;
-        chargedGem1.gameObject.SetActive(false);
-        chargedGem2.gameObject.SetActive(false);
-        chargedGem3.gameObject.SetActive(false);
+        chargedGem1.gameObject.SetActive(true);
+        chargedGem2.gameObject.SetActive(true);
+        chargedGem3.gameObject.SetActive(true);
+
+        unchargedGem1.gameObject.SetActive(false);
+        unchargedGem2.gameObject.SetActive(false);
+        unchargedGem3.gameObject.SetActive(false);
 
         // gameOver.gameObject.SetActive(false);
     }
@@ -58,6 +62,45 @@ public class GameControlScript : MonoBehaviour
         if (charges > 3)
             charges = 3;
 
-       
+        switch (charges)
+        {
+            case 0:
+                chargedGem1.gameObject.SetActive(false);
+                chargedGem2.gameObject.SetActive(false);
+                chargedGem3.gameObject.SetActive(false);
+                unchargedGem1.gameObject.SetActive(true);
+                unchargedGem2.gameObject.SetActive(true);
+                unchargedGem3.gameObject.SetActive(true);
+                break;
+            case 1:
+                chargedGem1.gameObject.SetActive(true);
+                chargedGem2.gameObject.SetActive(false);
+                chargedGem3.gameObject.SetActive(false);
+                unchargedGem1.gameObject.SetActive(false);
+                unchargedGem2.gameObject.SetActive(true);
+                unchargedGem3.gameObject.SetActive(true);
+
+                break;
+            case 2:
+                chargedGem1.gameObject.SetActive(true);
+                chargedGem2.gameObject.SetActive(true);
+                chargedGem3.gameObject.SetActive(false);
+                unchargedGem1.gameObject.SetActive(false);
+                unchargedGem2.gameObject.SetActive(false);
+                unchargedGem3.gameObject.SetActive(true);
+
+                break;
+            case 3:
+                chargedGem1.gameObject.SetActive(true);
+                chargedGem2.gameObject.SetActive(true);
+                chargedGem3.gameObject.SetActive(true);
+                unchargedGem1.gameObject.SetActive(false);
+                unchargedGem2.gameObject.SetActive(false);
+                unchargedGem3.gameObject.SetActive(false);
+
+                break;
+        }
+
+
     }
 }
