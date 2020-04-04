@@ -33,7 +33,7 @@ public class GameControlScript : MonoBehaviour
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
-        if (sceneName == "Ben_Test_FireGem")
+        if (sceneName == "Ben_Test_FireGem")// "World_1" is what it will be using, but for test purposes using this other scene
         {
             charges = 0;
             unchargedGem1.gameObject.SetActive(false);
