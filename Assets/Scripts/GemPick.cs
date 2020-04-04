@@ -13,13 +13,15 @@ public class GemPick : MonoBehaviour
     private Color iceColor;
 
 
-   public void FireGem() {
+   public void FireGem()
+    {
         fireGem = true;
         reflectGem = false;
         iceGem = false;
         Debug.Log("Fire gem selected");
     }
-  public  void ReflectGem() {
+   public void ReflectGem()
+    {
 
         fireGem = false;
         reflectGem = true;
@@ -27,7 +29,8 @@ public class GemPick : MonoBehaviour
         Debug.Log("Reflect gem selected");
 
     }
-    public void IceGem() {
+    public void IceGem()
+    {
         fireGem = false;
         reflectGem = false;
         iceGem = true;

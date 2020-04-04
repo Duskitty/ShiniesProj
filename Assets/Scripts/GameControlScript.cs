@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GameControlScript : MonoBehaviour
 {
-    public GameObject heart1, heart2, heart3; //, gameOver;
+    public GameObject heart1, heart2, heart3, chargedGem1, chargedGem2, chargedGem3; //, gameOver;
     public static int health;
+    public static int charges;
 
     void Start()
     {
@@ -13,7 +14,13 @@ public class GameControlScript : MonoBehaviour
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
-       // gameOver.gameObject.SetActive(false);
+
+        charges = 3;
+        chargedGem1.gameObject.SetActive(false);
+        chargedGem2.gameObject.SetActive(false);
+        chargedGem3.gameObject.SetActive(false);
+
+        // gameOver.gameObject.SetActive(false);
     }
 
     void Update()
@@ -47,5 +54,10 @@ public class GameControlScript : MonoBehaviour
                 break;
 
         }
+
+        if (charges > 3)
+            charges = 3;
+
+       
     }
 }
