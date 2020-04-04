@@ -1,29 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class StunEnemy: MonoBehaviour
+namespace Pathfinding
 {
-  public int stunTime;
-  private bool isStunned;
+  //using Pathfinding.RVO;
+  using Pathfinding.Util;
 
-  public void stun(GameObject enemy)
+  public class StunEnemy : MonoBehaviour
   {
-    //Debug.Log("Enemy stunned");
-    isStunned = true;
-    enemy.GetComponent<WaypointFinder>().enabled = false;
-    StartCoroutine(holdStun(enemy));
-  }
+    public int stunTime;
+    private bool isStunned;
 
-  IEnumerator holdStun(GameObject enemy)
-  {
-    yield return new WaitForSeconds(stunTime);
-    enemy.GetComponent<WaypointFinder>().enabled = true;
-    isStunned = false;
-  }
+    public void stun(GameObject enemy)
+    {
+      //Debug.Log("Enemy stunned");
+      isStunned = true;
+      if (enemy.GetComponent<WaypointFinder>() != null)
+      {
+        enemy.GetComponent<WaypointFinder>().enabled = false;
+        StartCoroutine(holdStunWayFinder(enemy));
+      }
+      else if (enemy.GetComponent<AIPath>() != null)
+      {
+        enemy.GetComponent<AIPath>().enabled = false;
+        //StartCoroutine(holdStunAIPath(enemy));
+      }
+    }
 
-  public bool checkIsStunned()
-  {
-    return isStunned;
+    IEnumerator holdStunWayFinder(GameObject enemy)
+    {
+      yield return new WaitForSeconds(stunTime);
+      enemy.GetComponent<WaypointFinder>().enabled = true;
+      isStunned = false;
+    }
+
+    /*IEnumerator holdStunAIPath(GameObject enemy)
+    {
+      yield return new WaitForSeconds(stunTime);
+      enemy.GetComponent<Seeker>().enabled = true;
+      isStunned = false;
+    }
+    */
+    public bool checkIsStunned()
+    {
+      return isStunned;
+    }
   }
 }

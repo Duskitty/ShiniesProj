@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BridgePuzzleManager : MonoBehaviour
+namespace Pathfinding
 {
+  //using Pathfinding.RVO;
+  using Pathfinding.Util;
+
+  public class BridgePuzzleManager : MonoBehaviour
+  {
     public SunlightTrigger[] sunPatches;
 
     // Player Variables
@@ -33,7 +37,7 @@ public class BridgePuzzleManager : MonoBehaviour
       playerDirection = player.GetComponent<Animator>();
       layerMask = LayerMask.GetMask("SunPatch");
       hittableObjBeams = new LineRenderer[reflectObjs.Length];
-      for(int i = 0; i < hittableObjBeams.Length; i++)
+      for (int i = 0; i < hittableObjBeams.Length; i++)
       {
         hittableObjBeams[i] = reflectObjs[i].transform.GetChild(0).GetComponent<LineRenderer>();
       }
@@ -76,7 +80,7 @@ public class BridgePuzzleManager : MonoBehaviour
 
     private bool checkInSunlight()
     {
-      for(int i = 0; i < sunPatches.Length; i++)
+      for (int i = 0; i < sunPatches.Length; i++)
       {
         if (sunPatches[i].inSunlight)
         {
@@ -88,9 +92,9 @@ public class BridgePuzzleManager : MonoBehaviour
 
     private bool checkObjHit(string hitObjName)
     {
-      for(int i = 0; i < reflectObjs.Length; i++)
+      for (int i = 0; i < reflectObjs.Length; i++)
       {
-        if(reflectObjs[i].name == hitObjName)
+        if (reflectObjs[i].name == hitObjName)
         {
           return true;
         }
@@ -98,75 +102,76 @@ public class BridgePuzzleManager : MonoBehaviour
       return false;
     }
 
-  void reflect(string objectHitName, int direction)
-  {
-    // 0 is right, 1 is up, 2 is left, 3 is down
-    Transform hitObjRaySpawn;
-    Transform hitObjHitPoint;
-    Vector3 directionToCast;
-    GameObject objectHit;
-    Transform hitObjLightSpawn;
-    LineRenderer hitObjBeam;
-    RaycastHit2D objRayHit;
-
-    objectHit = GameObject.Find(objectHitName);
-
-    if(objectHit.transform.tag == "enemy")
+    void reflect(string objectHitName, int direction)
     {
-      Debug.Log("Enemy Hit");
-      objectHit.GetComponent<StunEnemy>().stun(objectHit);
-    }
+      // 0 is right, 1 is up, 2 is left, 3 is down
+      Transform hitObjRaySpawn;
+      Transform hitObjHitPoint;
+      Vector3 directionToCast;
+      GameObject objectHit;
+      Transform hitObjLightSpawn;
+      LineRenderer hitObjBeam;
+      RaycastHit2D objRayHit;
 
-    if (checkObjHit(objectHitName))
-    {
-      
-      hitObjLightSpawn = objectHit.transform.GetChild(0);  
-      hitObjBeam = hitObjLightSpawn.GetComponent<LineRenderer>();
+      objectHit = GameObject.Find(objectHitName);
 
-      // if beam comes from the right then the next beam will go up
-      if (direction == 0)
+      if (objectHit.transform.tag == "enemy")
       {
-        hitObjRaySpawn = objectHit.transform.GetChild(1);
-        hitObjHitPoint = objectHit.transform.GetChild(2);
-        directionToCast = hitObjRaySpawn.TransformDirection(Vector3.up);
-        direction = 3;
-      }
-      // if beam comes from the top then the next beam will go left
-      else if (direction == 1)
-      {
-        hitObjRaySpawn = objectHit.transform.GetChild(7);
-        hitObjHitPoint = objectHit.transform.GetChild(8);
-        directionToCast = hitObjRaySpawn.TransformDirection(Vector3.left);
-        direction = 0;
-      }
-      // if beam comes from the left then the next beam will go down
-      else if (direction == 2)
-      {
-        hitObjRaySpawn = objectHit.transform.GetChild(5);
-        hitObjHitPoint = objectHit.transform.GetChild(6);
-        directionToCast = hitObjRaySpawn.TransformDirection(Vector3.down);
-        direction = 1;
-      }
-      // if beam comes from the bottom then the next beam will go right
-      else
-      {
-        hitObjRaySpawn = objectHit.transform.GetChild(3);
-        hitObjHitPoint = objectHit.transform.GetChild(4);
-        directionToCast = hitObjRaySpawn.TransformDirection(Vector3.right);
-        direction = 2;
+        Debug.Log("Enemy Hit");
+        objectHit.GetComponent<StunEnemy>().stun(objectHit);
       }
 
-      objRayHit = Physics2D.Raycast(hitObjRaySpawn.position, directionToCast, 50.0f, ~layerMask);
-      Debug.DrawRay(hitObjRaySpawn.position, directionToCast);
-
-      if(objRayHit.collider != null)
+      if (checkObjHit(objectHitName))
       {
-        hitObjHitPoint.position = objRayHit.point;
-        hitObjBeam.SetPosition(0, hitObjLightSpawn.position);
-        hitObjBeam.SetPosition(1, hitObjHitPoint.position);
-        hitObjBeam.enabled = true;
 
-        reflect(objRayHit.collider.name, direction);
+        hitObjLightSpawn = objectHit.transform.GetChild(0);
+        hitObjBeam = hitObjLightSpawn.GetComponent<LineRenderer>();
+
+        // if beam comes from the right then the next beam will go up
+        if (direction == 0)
+        {
+          hitObjRaySpawn = objectHit.transform.GetChild(1);
+          hitObjHitPoint = objectHit.transform.GetChild(2);
+          directionToCast = hitObjRaySpawn.TransformDirection(Vector3.up);
+          direction = 3;
+        }
+        // if beam comes from the top then the next beam will go left
+        else if (direction == 1)
+        {
+          hitObjRaySpawn = objectHit.transform.GetChild(7);
+          hitObjHitPoint = objectHit.transform.GetChild(8);
+          directionToCast = hitObjRaySpawn.TransformDirection(Vector3.left);
+          direction = 0;
+        }
+        // if beam comes from the left then the next beam will go down
+        else if (direction == 2)
+        {
+          hitObjRaySpawn = objectHit.transform.GetChild(5);
+          hitObjHitPoint = objectHit.transform.GetChild(6);
+          directionToCast = hitObjRaySpawn.TransformDirection(Vector3.down);
+          direction = 1;
+        }
+        // if beam comes from the bottom then the next beam will go right
+        else
+        {
+          hitObjRaySpawn = objectHit.transform.GetChild(3);
+          hitObjHitPoint = objectHit.transform.GetChild(4);
+          directionToCast = hitObjRaySpawn.TransformDirection(Vector3.right);
+          direction = 2;
+        }
+
+        objRayHit = Physics2D.Raycast(hitObjRaySpawn.position, directionToCast, 50.0f, ~layerMask);
+        Debug.DrawRay(hitObjRaySpawn.position, directionToCast);
+
+        if (objRayHit.collider != null)
+        {
+          hitObjHitPoint.position = objRayHit.point;
+          hitObjBeam.SetPosition(0, hitObjLightSpawn.position);
+          hitObjBeam.SetPosition(1, hitObjHitPoint.position);
+          hitObjBeam.enabled = true;
+
+          reflect(objRayHit.collider.name, direction);
+        }
       }
     }
   }

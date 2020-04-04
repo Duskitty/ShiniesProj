@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BridgeOut : MonoBehaviour
+namespace Pathfinding
 {
+  //using Pathfinding.RVO;
+  using Pathfinding.Util;
+
+  public class BridgeOut : MonoBehaviour
+  {
     //public SpriteRenderer bridge;
     //public BoxCollider2D box;
     public bool buttonPressed;
@@ -44,8 +48,8 @@ public class BridgeOut : MonoBehaviour
     }
 
     public void extendBridge()
-    { 
-      if(bridgeState == 0)
+    {
+      if (bridgeState == 0)
       {
         GameObject.Find("Bridge_01").GetComponent<SpriteRenderer>().enabled = true;
       }
@@ -87,9 +91,10 @@ public class BridgeOut : MonoBehaviour
         GameObject.Find("Bridge_01").GetComponent<SpriteRenderer>().enabled = false;
       }
 
-      if(bridgeState > 0)
+      if (bridgeState > 0)
       {
         bridgeState--;
       }
     }
+  }
 }

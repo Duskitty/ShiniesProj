@@ -140,10 +140,13 @@ public class castBeam : MonoBehaviour
 
   public void disableFire()
   {
-    //playerFireBeam.enabled = false;
-    fireBall.GetComponent<Animator>().SetBool("isActive", false);
-    fireBall.GetComponent<SpriteRenderer>().enabled = false;
-    //Destroy(fireBall);
+    if (fireBall != null)
+    {
+      //playerFireBeam.enabled = false;
+      fireBall.GetComponent<Animator>().SetBool("isActive", false);
+      fireBall.GetComponent<SpriteRenderer>().enabled = false;
+      //Destroy(fireBall);
+    }
   }
 
   public void disableLight()
