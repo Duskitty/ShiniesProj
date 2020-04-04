@@ -7466,7 +7466,6 @@ GameObject:
   - component: {fileID: 363930287}
   - component: {fileID: 363930290}
   - component: {fileID: 363930289}
-  - component: {fileID: 363930288}
   m_Layer: 5
   m_Name: ChargeGem3
   m_TagString: Untagged
@@ -7493,25 +7492,6 @@ RectTransform:
   m_AnchoredPosition: {x: -409, y: 266}
   m_SizeDelta: {x: 19, y: 17}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &363930288
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363930286}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5335703d4a7f7845bf3ea73d4f00d3e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &363930289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9640,7 +9620,6 @@ GameObject:
   - component: {fileID: 590987677}
   - component: {fileID: 590987680}
   - component: {fileID: 590987679}
-  - component: {fileID: 590987678}
   m_Layer: 5
   m_Name: ChargeGem2
   m_TagString: Untagged
@@ -9667,25 +9646,6 @@ RectTransform:
   m_AnchoredPosition: {x: -498, y: 267}
   m_SizeDelta: {x: 19, y: 17}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &590987678
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590987676}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5335703d4a7f7845bf3ea73d4f00d3e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &590987679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35906,7 +35866,6 @@ GameObject:
   - component: {fileID: 721091793}
   - component: {fileID: 721091796}
   - component: {fileID: 721091795}
-  - component: {fileID: 721091794}
   m_Layer: 5
   m_Name: unChargeGem3
   m_TagString: Untagged
@@ -35933,25 +35892,6 @@ RectTransform:
   m_AnchoredPosition: {x: -409, y: 266}
   m_SizeDelta: {x: 19, y: 17}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &721091794
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721091792}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5335703d4a7f7845bf3ea73d4f00d3e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &721091795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81062,7 +81002,6 @@ GameObject:
   - component: {fileID: 1884141992}
   - component: {fileID: 1884141995}
   - component: {fileID: 1884141994}
-  - component: {fileID: 1884141993}
   m_Layer: 5
   m_Name: unChargeGem2
   m_TagString: Untagged
@@ -81089,25 +81028,6 @@ RectTransform:
   m_AnchoredPosition: {x: -498, y: 267}
   m_SizeDelta: {x: 19, y: 17}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1884141993
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884141991}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5335703d4a7f7845bf3ea73d4f00d3e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1884141994
 MonoBehaviour:
   m_ObjectHideFlags: 0
