@@ -41,7 +41,10 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-
+        if (Input.GetKey(KeyCode.M))
+        {
+            GameControlScript.charges -= 1;
+        }
         if (Input.GetKey(KeyCode.W))//yAxis>0 supposed to be me testing if moving down will play move up animation
         {
 
