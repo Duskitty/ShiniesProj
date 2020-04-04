@@ -72173,6 +72173,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!1 &1095740537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8368298533325208799, guid: a618b316f65528a418b055d63d0c9c00,
+    type: 3}
+  m_PrefabInstance: {fileID: 8368298532332404872}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1095740538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095740537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd1f716256d1b624aaefa22c7ad313c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunTime: 2
 --- !u!1 &1099505289
 GameObject:
   m_ObjectHideFlags: 0
@@ -78905,6 +78924,12 @@ MonoBehaviour:
   heart1: {fileID: 1184291065}
   heart2: {fileID: 1309404439}
   heart3: {fileID: 491400436}
+  chargedGem1: {fileID: 0}
+  chargedGem2: {fileID: 0}
+  chargedGem3: {fileID: 0}
+  unchargedGem1: {fileID: 0}
+  unchargedGem2: {fileID: 0}
+  unchargedGem3: {fileID: 0}
 --- !u!4 &1708152679
 Transform:
   m_ObjectHideFlags: 0
@@ -79844,6 +79869,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AttackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741704235745009780, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7504f2e983f20524ab5d788d5e0b1049, type: 3}
@@ -84379,15 +84409,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
+        type: 3}
+      propertyPath: textBoxAnimator
+      value: 
+      objectReference: {fileID: 497322910}
+    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
+        type: 3}
+      propertyPath: hasShield
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -162.15
+      value: -145.82
       objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.56
+      value: 8.13
       objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
@@ -84432,21 +84477,6 @@ PrefabInstance:
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
-        type: 3}
-      propertyPath: textBoxAnimator
-      value: 
-      objectReference: {fileID: 497322910}
-    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
-        type: 3}
-      propertyPath: sprintSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
-        type: 3}
-      propertyPath: hasShield
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861375, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
@@ -84502,6 +84532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FreeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368298533325208799, guid: a618b316f65528a418b055d63d0c9c00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8368298533325208787, guid: a618b316f65528a418b055d63d0c9c00,
         type: 3}
@@ -84563,5 +84598,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 287222129}
+    - target: {fileID: 8368298533325208785, guid: a618b316f65528a418b055d63d0c9c00,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a618b316f65528a418b055d63d0c9c00, type: 3}

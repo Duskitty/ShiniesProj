@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class L1Boss : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+  public SunlightTrigger[] sunPatches;
+
+  // Player Variables
+  private GameObject player;
+  //private Animator playerDirection;
+  private Collider2D hitCollider;
+
+  // Object Variables
+  //public GameObject[] reflectObjs;
+  //private LineRenderer[] hittableObjBeams;
+  
+  
+  // Start is called before the first frame update
+  void Start()
     {
-        
+      player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+      // if in sunlight
+      hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
+
+      //if player hit boss
+      //do something here
+
+      //else if player hit mushroom man
+      // then stun it
     }
 }
