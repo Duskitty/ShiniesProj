@@ -76,8 +76,8 @@ public class Joystick : MonoBehaviour
         //either one works
 
         player = GameObject.Find("Player");
-        circle = GameObject.Find("ContinueButton"); 
-         outerCircle = GameObject.Find("D-Pad"); 
+        circle = GameObject.Find("touch"); 
+         outerCircle = GameObject.Find("threshold"); 
          animator = GetComponent<Animator>();
     }
 
