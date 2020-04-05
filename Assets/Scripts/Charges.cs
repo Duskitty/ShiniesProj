@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Charges : MonoBehaviour
 {
-    private void Update()
+     void Update()
     {
-        if (Input.GetKey(KeyCode.M)) {
+        if (Input.GetKey(KeyCode.C)) {
 
             GameControlScript.charges -= 1;//decrmate the charges
             if (GameControlScript.charges < 0) {

@@ -28,6 +28,46 @@ public class GameControlScript : MonoBehaviour
         */
 
         // Create a temporary reference to the current scene.
+
+        charges = 1;
+
+    }
+    void Update()
+    {
+        if (health > 3)
+            health = 3;
+
+        switch (health)
+        {
+            case 3:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(true);
+                heart3.gameObject.SetActive(true);
+                break;
+            case 2:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(true);
+                heart3.gameObject.SetActive(false);
+                break;
+            case 1:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(false);
+                heart3.gameObject.SetActive(false);
+                break;
+            case 0:
+                heart1.gameObject.SetActive(false);
+                heart2.gameObject.SetActive(false);
+                heart3.gameObject.SetActive(false);
+                // gameOver.gameObject.SetActive(true);
+                Time.timeScale = 0; // makes game stop when all 3 lives are lost
+                break;
+                
+
+
+
+        }
+        //testing things
+
         Scene currentScene = SceneManager.GetActiveScene();
 
         // Retrieve the name of this scene.
@@ -43,8 +83,9 @@ public class GameControlScript : MonoBehaviour
             chargedGem2.gameObject.SetActive(false);
             chargedGem3.gameObject.SetActive(false);
         }
-        else if (sceneName == "World_2")
+        else if (sceneName == "World1_Test_ForCharges")//do to change the name before final build
         {
+            
 
             if (charges > 1)
                 charges = 1;
@@ -143,40 +184,6 @@ public class GameControlScript : MonoBehaviour
         */
 
             // gameOver.gameObject.SetActive(false);
-        }
-
-       
-        }
-    void Update()
-    {
-        if (health > 3)
-            health = 3;
-
-        switch (health)
-        {
-            case 3:
-                heart1.gameObject.SetActive(true);
-                heart2.gameObject.SetActive(true);
-                heart3.gameObject.SetActive(true);
-                break;
-            case 2:
-                heart1.gameObject.SetActive(true);
-                heart2.gameObject.SetActive(true);
-                heart3.gameObject.SetActive(false);
-                break;
-            case 1:
-                heart1.gameObject.SetActive(true);
-                heart2.gameObject.SetActive(false);
-                heart3.gameObject.SetActive(false);
-                break;
-            case 0:
-                heart1.gameObject.SetActive(false);
-                heart2.gameObject.SetActive(false);
-                heart3.gameObject.SetActive(false);
-                // gameOver.gameObject.SetActive(true);
-                Time.timeScale = 0; // makes game stop when all 3 lives are lost
-                break;
-
         }
     }
 
