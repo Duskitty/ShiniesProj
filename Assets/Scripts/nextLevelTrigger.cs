@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class nextLevelTrigger : MonoBehaviour
 {
+   
   public void OnTriggerEnter2D(Collider2D thing)
   {
-    SceneManager.LoadScene("YouWin");
+        Debug.Log("entered next level trigger");
+        SceneManager.LoadScene("World_1_Boss", LoadSceneMode.Single);
+        
   }
 }
