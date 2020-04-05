@@ -76,10 +76,10 @@ public class L2P2Manager : MonoBehaviour
     {
       if (GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light*/)
       {
-        player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
-        player.transform.GetChild(10).GetComponent<castBeam>().disableFire();
+        //player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+        //player.transform.GetChild(10).GetComponent<castBeam>().disableFire();
         playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
-        Debug.Log(playerHitObj);
+        //Debug.Log(playerHitObj);
         if (playerHitObj != null)
         {
           if (playerHitObj.name == orb0.name)
@@ -123,11 +123,6 @@ public class L2P2Manager : MonoBehaviour
           }
         }
       }
-      //else if (!GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire && button pressed*/)
-      /*{
-        player.transform.GetChild(10).GetComponent<castBeam>().castFire();
-        player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
-      }*/
       else
       {
         player.transform.GetChild(10).GetComponent<castBeam>().disableLight();

@@ -75,6 +75,8 @@ public class Level2Puzzle1Manager : MonoBehaviour
           pyramid1Beam.enabled = true;
           orb.GetComponent<Animator>().SetBool("isLit", true);
           // Activate stairs
+          GameObject.Find("Stairs").GetComponent<SpriteRenderer>().enabled = true;
+          GameObject.Find("Stairs").GetComponent<BoxCollider2D>().enabled = false;
         }
         else if (playerHitObj != null && playerHitObj.name == pyramid0.name && (playerDirection.GetBool("isIdleDown") || playerDirection.GetBool("isDown")))
         {
@@ -95,6 +97,8 @@ public class Level2Puzzle1Manager : MonoBehaviour
           pyramid1Beam.enabled = true;
           orb.GetComponent<Animator>().SetBool("isLit", true);
           // Activate stairs
+          GameObject.Find("Stairs").GetComponent<SpriteRenderer>().enabled = true;
+          GameObject.Find("Stairs").GetComponent<BoxCollider2D>().enabled = false;
         }
        }
       //else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire && button pressed*/)

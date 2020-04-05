@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1073262825120491844
+--- !u!1 &386136912828472185
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1073262825120491848}
-  - component: {fileID: 1073262825120491849}
-  - component: {fileID: 1073262825120491850}
-  - component: {fileID: 1073262825120491851}
-  - component: {fileID: 1073262825120491855}
+  - component: {fileID: 3655820619960693154}
+  - component: {fileID: 6657969720101667209}
+  - component: {fileID: 698735784702217163}
+  - component: {fileID: 968736403748652878}
+  - component: {fileID: 8072389957800196093}
   m_Layer: 0
   m_Name: LargeCacti_1
   m_TagString: Cactus
@@ -20,27 +20,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1073262825120491848
+--- !u!4 &3655820619960693154
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073262825120491844}
+  m_GameObject: {fileID: 386136912828472185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -146.26, y: 10.85, z: 0}
+  m_LocalPosition: {x: -148.84, y: 9.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1073262825120491849
+--- !u!212 &6657969720101667209
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073262825120491844}
+  m_GameObject: {fileID: 386136912828472185}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,13 +84,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1073262825120491850
+--- !u!61 &698735784702217163
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073262825120491844}
+  m_GameObject: {fileID: 386136912828472185}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 1.2}
+    oldSize: {x: 0.9375, y: 0.84375}
     newSize: {x: 0.75, y: 0.725}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -110,26 +110,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.6777506}
   m_EdgeRadius: 0
---- !u!114 &1073262825120491851
+--- !u!114 &968736403748652878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073262825120491844}
+  m_GameObject: {fileID: 386136912828472185}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1ac674763ea2fc4296d6f51c64abf87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1073262825120491855
+--- !u!95 &8072389957800196093
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073262825120491844}
+  m_GameObject: {fileID: 386136912828472185}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 58583a7a26e9bc745a572ed28edbae4b, type: 2}
