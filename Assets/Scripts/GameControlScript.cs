@@ -145,37 +145,39 @@ public class GameControlScript : MonoBehaviour
             // gameOver.gameObject.SetActive(false);
         }
 
-        void Update()
+       
+        }
+    void Update()
+    {
+        if (health > 3)
+            health = 3;
+
+        switch (health)
         {
-            if (health > 3)
-                health = 3;
+            case 3:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(true);
+                heart3.gameObject.SetActive(true);
+                break;
+            case 2:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(true);
+                heart3.gameObject.SetActive(false);
+                break;
+            case 1:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(false);
+                heart3.gameObject.SetActive(false);
+                break;
+            case 0:
+                heart1.gameObject.SetActive(false);
+                heart2.gameObject.SetActive(false);
+                heart3.gameObject.SetActive(false);
+                // gameOver.gameObject.SetActive(true);
+                Time.timeScale = 0; // makes game stop when all 3 lives are lost
+                break;
 
-            switch (health)
-            {
-                case 3:
-                    heart1.gameObject.SetActive(true);
-                    heart2.gameObject.SetActive(true);
-                    heart3.gameObject.SetActive(true);
-                    break;
-                case 2:
-                    heart1.gameObject.SetActive(true);
-                    heart2.gameObject.SetActive(true);
-                    heart3.gameObject.SetActive(false);
-                    break;
-                case 1:
-                    heart1.gameObject.SetActive(true);
-                    heart2.gameObject.SetActive(false);
-                    heart3.gameObject.SetActive(false);
-                    break;
-                case 0:
-                    heart1.gameObject.SetActive(false);
-                    heart2.gameObject.SetActive(false);
-                    heart3.gameObject.SetActive(false);
-                    // gameOver.gameObject.SetActive(true);
-                    Time.timeScale = 0; // makes game stop when all 3 lives are lost
-                    break;
-
-            }
         }
     }
+
 }
