@@ -6751,6 +6751,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &283773469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4307985032582521218, guid: 87f3cf44298fec34280ea90d76680135,
+    type: 3}
+  m_PrefabInstance: {fileID: 2951074909791892798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &287222129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
@@ -37669,6 +37675,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &882449632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4307985030919917856, guid: 87f3cf44298fec34280ea90d76680135,
+    type: 3}
+  m_PrefabInstance: {fileID: 2951074909791892798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &891939409
 GameObject:
   m_ObjectHideFlags: 0
@@ -71970,6 +71982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc5e54822a5e1d4fb5a8681311cbb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sheild: {fileID: 882449632}
+  beamButton: {fileID: 283773469}
 --- !u!58 &1079258768
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -84060,6 +84074,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4307985030919917856, guid: 87f3cf44298fec34280ea90d76680135,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87f3cf44298fec34280ea90d76680135, type: 3}
 --- !u!1001 &4958242486352735195
@@ -84156,12 +84175,12 @@ PrefabInstance:
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -146.9
+      value: -145.66
       objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.8
+      value: 2.33
       objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
