@@ -42,7 +42,7 @@ public class GameControlScript : MonoBehaviour
             chargedGem1.gameObject.SetActive(false);
             chargedGem2.gameObject.SetActive(false);
             chargedGem3.gameObject.SetActive(false);
-        }/*
+        }
         else if (sceneName == "World_2")
         {
             
@@ -56,18 +56,19 @@ public class GameControlScript : MonoBehaviour
                 chargedGem2.gameObject.SetActive(false);
                 chargedGem3.gameObject.SetActive(false);
                 unchargedGem1.gameObject.SetActive(true);
-                unchargedGem2.gameObject.SetActive(true);
-                unchargedGem3.gameObject.SetActive(true);
+                unchargedGem2.gameObject.SetActive(false);
+                unchargedGem3.gameObject.SetActive(false);
                 break;
             case 1:
                 chargedGem1.gameObject.SetActive(true);
                 chargedGem2.gameObject.SetActive(false);
                 chargedGem3.gameObject.SetActive(false);
                 unchargedGem1.gameObject.SetActive(false);
-                unchargedGem2.gameObject.SetActive(true);
-                unchargedGem3.gameObject.SetActive(true);
+                unchargedGem2.gameObject.SetActive(false);
+                unchargedGem3.gameObject.SetActive(false);
                 break;
         }
+            /*
         }
         else if (sceneName == "World_3")
         {
