@@ -1,55 +1,61 @@
 fileFormatVersion: 2
-guid: 91dcec3d58e08b54fa2c53bbf0df540f
+guid: e9ac973c3b8cf5d4fb709717842f36c2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7120954454532313118
-    second: LargeCacti2_0
+      213: -5518365002366506418
+    second: RuinsArch_0
   - first:
-      213: -1278027099594837791
-    second: LargeCacti2_1
+      213: 2033481976480270914
+    second: RuinsArch_1
   - first:
-      213: 3917109627478005600
-    second: LargeCacti2_2
+      213: 4015255226614653107
+    second: RuinsArch_2
   - first:
-      213: -674788237530403285
-    second: LargeCacti2_3
+      213: 1691379189374604625
+    second: RuinsArch_3
   - first:
-      213: 3838949035145652838
-    second: LargeCacti2_4
+      213: -1829029655641312862
+    second: RuinsArch_4
   - first:
-      213: -1403165920359187641
-    second: LargeCacti2_5
+      213: -909084892937097410
+    second: RuinsArch_5
   - first:
-      213: 8982904050525381741
-    second: LargeCacti2_6
+      213: 3367946913967189848
+    second: RuinsArch_6
   - first:
-      213: -1024166371763101308
-    second: LargeCacti2_7
+      213: -2225428530545690656
+    second: RuinsArch_7
   - first:
-      213: -956687656292984845
-    second: LargeCacti2_8
+      213: -8246654357376879829
+    second: RuinsArch_8
   - first:
-      213: 2502898059057780561
-    second: LargeCacti2_9
+      213: 5158549358016466304
+    second: RuinsArch_9
   - first:
-      213: -6510653876174591699
-    second: LargeCacti2_10
+      213: 1791987850473538906
+    second: RuinsArch_10
   - first:
-      213: -4620475754364946707
-    second: LargeCacti2_11
+      213: 8053539188848501543
+    second: RuinsArch_11
   - first:
-      213: 6313963346586981569
-    second: LargeCacti2_12
+      213: -4424125317500224898
+    second: RuinsArch_12
   - first:
-      213: -6069661190258283230
-    second: LargeCacti2_13
+      213: -8151227936092192206
+    second: RuinsArch_13
   - first:
-      213: -8861630733317028766
-    second: LargeCacti2_14
+      213: 4934472743537035021
+    second: RuinsArch_14
   - first:
-      213: 2036402816930798343
-    second: LargeCacti2_15
+      213: -3425587149022255570
+    second: RuinsArch_15
+  - first:
+      213: 9054542622680713843
+    second: RuinsArch_16
+  - first:
+      213: -6170152873005595909
+    second: RuinsArch_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -79,7 +85,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -146,11 +152,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LargeCacti2_0
+      name: RuinsArch_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -160,18 +166,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ace1c0b740085704fa32aeda0631a77f
-      internalID: 7120954454532313118
+      spriteID: c36233e6a48ac134298ceed77f8948f7
+      internalID: -5518365002366506418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeCacti2_1
+      name: RuinsArch_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -181,102 +187,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 797bfab50055c1d4c8e515fddce23fb0
-      internalID: -1278027099594837791
+      spriteID: e9ffbbf7c38c8a0438ad73bc465b92cc
+      internalID: 2033481976480270914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeCacti2_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c711381111e0770438a719ee80286c23
-      internalID: 3917109627478005600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeCacti2_3
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f4403a04d16fee41b1966f90336e131
-      internalID: -674788237530403285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeCacti2_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: feaa14add37efc24f8ad3c75a6e317bf
-      internalID: 3838949035145652838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeCacti2_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29109eb11f0845e429ec6774a7285f1b
-      internalID: -1403165920359187641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeCacti2_6
+      name: RuinsArch_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -286,17 +208,164 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c87e0cbc0ba69034b8dace692de2cdee
-      internalID: 8982904050525381741
+      spriteID: 1edcdedab2dc59d46ad2a2ce3453aa74
+      internalID: 4015255226614653107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeCacti2_7
+      name: RuinsArch_3
       rect:
         serializedVersion: 2
         x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97774bc220634845a43ea14d676cf96
+      internalID: 1691379189374604625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinsArch_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ae560cd77e3164faf1c9b9639d4978
+      internalID: -1829029655641312862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinsArch_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae3fa6d61240be458756d66e99cb2a2
+      internalID: -909084892937097410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinsArch_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fb8a54692a3ab4eb6e457e0205b43e
+      internalID: 3367946913967189848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinsArch_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252a51ff2354b58489318cfca00ff3a4
+      internalID: -2225428530545690656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinsArch_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ded7201dfbbd24fa738419ca8277fb
+      internalID: -8246654357376879829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinsArch_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff4d88051220d64fa20818c03f6db8f
+      internalID: 5158549358016466304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinsArch_10
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 16
         width: 16
         height: 16
@@ -307,14 +376,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9431113c9c5600c4989759d9cda53180
-      internalID: -1024166371763101308
+      spriteID: 4ccdb9b1770c3ae4eb864cdbfc508b7a
+      internalID: 1791987850473538906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeCacti2_8
+      name: RuinsArch_11
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bc466731f0b554181ad55b5a7de5d0
+      internalID: 8053539188848501543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinsArch_12
       rect:
         serializedVersion: 2
         x: 64
@@ -328,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0639b4f525e06354fb22df8b7f55d4d3
-      internalID: -956687656292984845
+      spriteID: 63c0dc3d86276094b86b258f200579a6
+      internalID: -4424125317500224898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeCacti2_9
+      name: RuinsArch_13
       rect:
         serializedVersion: 2
         x: 80
@@ -349,14 +439,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b551966e633eee449350deaca3fc8e8
-      internalID: 2502898059057780561
+      spriteID: 4ff96cd908938e44ea117502f9b2ef7e
+      internalID: -8151227936092192206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeCacti2_10
+      name: RuinsArch_14
       rect:
         serializedVersion: 2
         x: 0
@@ -370,14 +460,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7455b1c86d8bfe24b8dd584fe23da3a0
-      internalID: -6510653876174591699
+      spriteID: ced8cf95edc5ffc45b710ff502a0d611
+      internalID: 4934472743537035021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeCacti2_11
+      name: RuinsArch_15
       rect:
         serializedVersion: 2
         x: 16
@@ -391,56 +481,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85586c96f6d4a114a913174609592cd6
-      internalID: -4620475754364946707
+      spriteID: a24b009fa3f30cf44a7eecc4ad4f6afe
+      internalID: -3425587149022255570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeCacti2_12
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2506fd656c2dbe947a94e0a35980b60f
-      internalID: 6313963346586981569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeCacti2_13
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab1ce6f0547bbf44899b08a044b8aaf2
-      internalID: -6069661190258283230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeCacti2_14
+      name: RuinsArch_16
       rect:
         serializedVersion: 2
         x: 64
@@ -454,14 +502,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2fb1c6b117ff5547a8325d5572c4303
-      internalID: -8861630733317028766
+      spriteID: cb73b2e2c65181f448b484424e168e04
+      internalID: 9054542622680713843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeCacti2_15
+      name: RuinsArch_17
       rect:
         serializedVersion: 2
         x: 80
@@ -475,8 +523,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e353d955648f5a419c9ab468d8ecd26
-      internalID: 2036402816930798343
+      spriteID: 8a6ad6ddf6250d04aabc62cb5c37b903
+      internalID: -6170152873005595909
       vertices: []
       indices: 
       edges: []
