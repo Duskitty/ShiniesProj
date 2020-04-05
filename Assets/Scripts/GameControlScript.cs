@@ -8,9 +8,13 @@ public class GameControlScript : MonoBehaviour
     public GameObject heart1, heart2, heart3, chargedGem1, chargedGem2, chargedGem3, unchargedGem1, unchargedGem2, unchargedGem3; //, gameOver;
     public static int health;
     public static int charges;
+    
+
 
     void Start()
     {
+       
+
         health = 3;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
@@ -26,10 +30,30 @@ public class GameControlScript : MonoBehaviour
         unchargedGem2.gameObject.SetActive(false);
         unchargedGem3.gameObject.SetActive(false);
         */
-
         // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
 
-        charges = 1;
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+        if (sceneName == "World_1")
+        {
+            charges = 0;
+        }
+        else if (sceneName == "World1_Test_ForCharges") // "World_2"
+        {
+            charges = 1;
+        }
+        /*
+        else if (sceneName == "World_3")
+        {
+            charges = 2;
+        }
+        else if (sceneName == "World_4")
+        {
+            charges = 3;
+        }
+        */
+
 
     }
     void Update()
@@ -68,6 +92,7 @@ public class GameControlScript : MonoBehaviour
         }
         //testing things
 
+        // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
 
         // Retrieve the name of this scene.
@@ -85,8 +110,6 @@ public class GameControlScript : MonoBehaviour
         }
         else if (sceneName == "World1_Test_ForCharges")//do to change the name before final build
         {
-            
-
             if (charges > 1)
                 charges = 1;
 
@@ -143,7 +166,6 @@ public class GameControlScript : MonoBehaviour
         }
         else if (sceneName == "World_4")
         {
-         
             if (charges > 3)
             charges = 3;
         case 0:
@@ -182,8 +204,6 @@ public class GameControlScript : MonoBehaviour
                 break;
         }
         */
-
-            // gameOver.gameObject.SetActive(false);
         }
     }
 
