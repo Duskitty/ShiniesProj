@@ -38,10 +38,9 @@ public class castBeam : MonoBehaviour
     }
 
   public Collider2D reflect(LineRenderer[] hittableObjBeams)
-  { 
+  {
     if (playerDirection.GetBool("isMoving"))
     {
-      //Debug.Log("is moving");
       if (hittableObjBeams != null)
       {
         for (int i = 0; i < hittableObjBeams.Length; i++)
@@ -72,7 +71,7 @@ public class castBeam : MonoBehaviour
       playerRaySpawn = player.transform.GetChild(4);
       beamDirection = playerRaySpawn.TransformDirection(Vector3.down);
     }
-    else
+    else if (playerDirection.GetBool("isIdleLeft"))
     {
       playerHitPoint = player.transform.GetChild(7);
       playerRaySpawn = player.transform.GetChild(3);
