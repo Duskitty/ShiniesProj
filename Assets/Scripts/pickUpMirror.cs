@@ -24,4 +24,13 @@ public class pickUpMirror : MonoBehaviour
         reflectGem.gameObject.SetActive(true);
 
     }
+    private void Update()
+    {
+        if (hasSheild) {
+            sheild.gameObject.SetActive(true);
+            beamButton.gameObject.SetActive(true);
+            reflectGem.gameObject.SetActive(true);
+
+        }
+    }
 }
