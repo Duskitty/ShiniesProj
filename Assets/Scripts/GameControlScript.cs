@@ -43,7 +43,11 @@ public class GameControlScript : MonoBehaviour
         {
             charges = 0;
         }
-        else if (sceneName == "World1_Test_ForCharges") // "World_2"
+        else if (sceneName == "World 2 P1") // "World_2"
+        {
+            charges = 1;
+        }
+        else if (sceneName == "World 2 P2") // "World_2"
         {
             charges = 1;
         }
@@ -112,7 +116,7 @@ public class GameControlScript : MonoBehaviour
             chargedGem2.gameObject.SetActive(false);
             chargedGem3.gameObject.SetActive(false);
         }
-        else if (sceneName == "World1_Test_ForCharges")//do to change the name before final build
+        else if (sceneName == "World 2 P1")//do to change the name before final build
         {
             if (charges > 1)
                 charges = 1;
@@ -136,6 +140,32 @@ public class GameControlScript : MonoBehaviour
                     unchargedGem3.gameObject.SetActive(false);
                     break;
             }
+        }
+        else if (sceneName == "World 2 P2")//do to change the name before final build
+        {
+            if (charges > 1)
+                charges = 1;
+
+            switch (charges)
+            {
+                case 0:
+                    chargedGem1.gameObject.SetActive(false);
+                    chargedGem2.gameObject.SetActive(false);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(true);
+                    unchargedGem2.gameObject.SetActive(false);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
+                case 1:
+                    chargedGem1.gameObject.SetActive(true);
+                    chargedGem2.gameObject.SetActive(false);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(false);
+                    unchargedGem2.gameObject.SetActive(false);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
+            }
+        }
             /*
         }
         else if (sceneName == "World_3")
@@ -208,7 +238,7 @@ public class GameControlScript : MonoBehaviour
                 break;
         }
         */
-        }
+        
     }
 
 }
