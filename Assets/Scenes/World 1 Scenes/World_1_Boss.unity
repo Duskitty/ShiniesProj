@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -23942,7 +23942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c89e383e5cb2c944be2c28f0300ecb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drop: 0
+  chargeGem1: {fileID: 1104163566}
 --- !u!61 &1104163568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24026,7 +24026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104163566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.02, y: 0.77, z: -3598.8691}
+  m_LocalPosition: {x: 3.5, y: 1.54, z: -3598.8691}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -24401,6 +24401,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1386364802109714434, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1386364802109714434, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2244380911907649581, guid: 7504f2e983f20524ab5d788d5e0b1049,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24470,16 +24480,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1386364802109714434, guid: 7504f2e983f20524ab5d788d5e0b1049,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1386364802109714434, guid: 7504f2e983f20524ab5d788d5e0b1049,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1386364801906978823, guid: 7504f2e983f20524ab5d788d5e0b1049,
         type: 3}
@@ -24579,6 +24579,7 @@ MonoBehaviour:
   sheild: {fileID: 0}
   beamButton: {fileID: 0}
   reflectGem: {fileID: 0}
+  fireGem: {fileID: 0}
 --- !u!61 &1666939238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24751,7 +24752,7 @@ MonoBehaviour:
     type: 3}
   tracker: {fileID: 3660190669113380072, guid: 3eb3d5525f27bb14d904279aadb2429f, type: 3}
   anim: {fileID: 1695017122}
-  chargeGem: {fileID: 1104163566}
+  chargeGem: {fileID: 0}
 --- !u!212 &1695017124
 SpriteRenderer:
   m_ObjectHideFlags: 0
