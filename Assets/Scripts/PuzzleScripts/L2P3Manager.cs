@@ -21,5 +21,9 @@ public class L2P3Manager : MonoBehaviour
         player.transform.GetChild(10).GetComponent<castBeam>().castFire();
         player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
       }
+      else
+      {
+       // do light stuff
+      }
     }
 }

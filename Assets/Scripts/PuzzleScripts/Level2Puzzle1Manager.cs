@@ -101,11 +101,6 @@ public class Level2Puzzle1Manager : MonoBehaviour
           GameObject.Find("Stairs").GetComponent<BoxCollider2D>().enabled = false;
         }
        }
-      //else if (!GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to fire && button pressed*/)
-      /*{
-        player.transform.GetChild(10).GetComponent<castBeam>().castFire();
-        player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
-      }*/
       else
       {
         playerBeam.enabled = false;
