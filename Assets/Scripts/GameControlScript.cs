@@ -34,8 +34,12 @@ public class GameControlScript : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
 
         // Retrieve the name of this scene.
-        string sceneName = currentScene.name;
+        string sceneName = currentScene.name; // World 1
         if (sceneName == "World_1")
+        {
+            charges = 0;
+        }
+        if(sceneName == "World_1_Boss") // World 1 Boss 
         {
             charges = 0;
         }
