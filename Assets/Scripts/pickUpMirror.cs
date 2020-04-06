@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pickUpMirror : MonoBehaviour
 {
@@ -26,11 +27,31 @@ public class pickUpMirror : MonoBehaviour
     }
     private void Update()
     {
-        if (hasSheild) {
-            sheild.gameObject.SetActive(true);
-            beamButton.gameObject.SetActive(true);
-            reflectGem.gameObject.SetActive(true);
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
 
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name; // World 1
+       
+        if (sceneName == "World_1_Boss") // World 1 Boss 
+        {
+            hasSheild = true;
         }
+        else if (sceneName == "World1_Test_ForCharges") // "World_2"
+        {
+            hasSheild = true;
+        }
+        /*
+        else if (sceneName == "World_3")
+        {
+            hasSheild = true;
+        }
+        else if (sceneName == "World_4")
+        {
+            hasSheild = true;
+        }
+        */
+
+
     }
 }
