@@ -67,7 +67,6 @@ public class B1ChargeState : State<B1Script>
             stunned = true;
             if(oneStop == true)
             {
-                //GameObject.Find("BeedleBro").GetComponent<Rigidbody2D>().AddForce(-direction);
                 GameObject.Find("Controller").GetComponent<AIPath>().maxSpeed = 0;
                 oneStop = false;
             }

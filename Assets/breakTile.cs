@@ -22,7 +22,10 @@ public class breakTile : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D col)
   {
-    this.GetComponent<SpriteRenderer>().enabled = false;
+    if (this.GetComponent<SpriteRenderer>().enabled)
+    {
+      StartCoroutine(animateTile());
+    }
     //GameControlScript.health -= 1;
     StartCoroutine(playerFall());
     //player.transform.position = respawnPoint.transform.position;
@@ -42,6 +45,16 @@ public class breakTile : MonoBehaviour
     player.transform.position = respawnPoint.transform.position;
     playerSprite.color = psColor;
     player.GetComponent<PlayerMovement>().enabled = true;
+    yield return null;
+  }
+
+  IEnumerator animateTile()
+  {
+    this.GetComponent<Animator>().SetBool("isBroken", true);
+    yield return new WaitForSeconds(0.4f);
+    this.GetComponent<Animator>().SetBool("isBroken", false);
+    this.GetComponent<SpriteRenderer>().enabled = false;
+
     yield return null;
   }
 }
