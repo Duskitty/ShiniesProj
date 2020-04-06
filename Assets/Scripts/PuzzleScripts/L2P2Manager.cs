@@ -40,6 +40,12 @@ public class L2P2Manager : MonoBehaviour
   private GameObject mirage;
   private Animator mirageAnimator;
 
+  private bool inSun;
+  private bool pressed;
+  private bool reflectGem;
+  private bool fireGem;
+  private int charges;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -74,17 +80,19 @@ public class L2P2Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light*/)
+      inSun = GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight;
+      pressed = player.GetComponent<BeamButton>().isPressed();
+      reflectGem = player.GetComponent<GemPick>().returnReflectGem();
+      fireGem = player.GetComponent<GemPick>().returnFireGem();
+      charges = GameControlScript.charges;
+
+      if ((inSun && !pressed) || (inSun && pressed && reflectGem) || (!inSun && pressed && reflectGem))
       {
-        //player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
-        //player.transform.GetChild(10).GetComponent<castBeam>().disableFire();
         playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
-        //Debug.Log(playerHitObj);
         if (playerHitObj != null)
         {
           if (playerHitObj.name == orb0.name)
           {
-            //Debug.Log("hit orb 0");
             orb0Hit = setOrbLight(orb0);
           }
           else if (playerHitObj.name == orb1.name)

@@ -24,9 +24,15 @@ public class Level2Puzzle1Manager : MonoBehaviour
   private RaycastHit2D p1Hit;
 
   public bool pressed;
+
   private SpriteRenderer orb;
 
   private Collider2D playerHitObj;
+
+  private bool inSun;
+  private bool reflectGem;
+  private bool fireGem;
+  private int charges;
 
 
   // Start is called before the first frame update
@@ -56,8 +62,14 @@ public class Level2Puzzle1Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight /* && shield set to light && button pressed*/)
-       {
+      inSun = GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight;
+      pressed = player.GetComponent<BeamButton>().isPressed();
+      reflectGem = player.GetComponent<GemPick>().returnReflectGem();
+      fireGem = player.GetComponent<GemPick>().returnFireGem();
+      charges = GameControlScript.charges;
+
+      if ((inSun && !pressed) || (inSun && pressed && reflectGem) || (!inSun && pressed && reflectGem))
+      {
         playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
 
         if (playerHitObj != null && playerHitObj.name == pyramid0.name && (playerDirection.GetBool("isIdleRight") || playerDirection.GetBool("isRight")))
@@ -103,7 +115,7 @@ public class Level2Puzzle1Manager : MonoBehaviour
        }
       else
       {
-        playerBeam.enabled = false;
+        //playerBeam.enabled = false;
         pyramid1Beam.enabled = false;
         pyramid0Beam.enabled = false;
       }
