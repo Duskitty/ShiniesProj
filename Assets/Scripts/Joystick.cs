@@ -60,8 +60,8 @@ public class Joystick : MonoBehaviour
     private Vector2 pointB;
 
     public GameObject player;
-    public GameObject circle;
-    public GameObject outerCircle;
+    private GameObject circle;
+    private GameObject outerCircle;
     public int invertDirection = 1; //set this to -1 when animation is rotated to keep joystick working right.
 
     public Animator animator;
