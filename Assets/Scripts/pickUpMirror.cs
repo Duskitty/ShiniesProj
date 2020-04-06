@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class pickUpMirror : MonoBehaviour
 {
-    public GameObject sheild, beamButton, reflectGem;
+    public GameObject sheild, beamButton, reflectGem,fireGem;
   public static bool hasSheild = false;
     private void Start()
     {
         sheild.gameObject.SetActive(false);
         beamButton.gameObject.SetActive(false);
         reflectGem.gameObject.SetActive(false);
+        fireGem.gameObject.SetActive(false);
     }
     public void OnCollisionEnter2D(Collision2D thing)
   {
