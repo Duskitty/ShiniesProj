@@ -24,6 +24,8 @@ public class B1Script : MonoBehaviour
     private GameObject trackerCopy;
 
     public Animator anim;
+    public GameObject chargeGem;
+    public static int health = 12;
     
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,8 @@ public class B1Script : MonoBehaviour
         switchTime = 5f;
         waiting = 0f;
         stateMachine = new B1StateControl<B1Script>(this);
+        chargeGem = GameObject.Find("ChargeGem");
+        
     }
 
     // Update is called once per frame
@@ -50,7 +54,6 @@ public class B1Script : MonoBehaviour
             if (waiting >= switchTime)
             {
                 waiting = 0f;
-                //expiremental charge technique
                 trackerCopy = Instantiate(tracker, GameObject.Find("Player").transform);
                 GameObject.Find("Controller").GetComponent<AIDestinationSetter>().target = trackerCopy.transform;
                 stateMachine.ChangeState(B1ChargeState.Instance);
@@ -75,6 +78,11 @@ public class B1Script : MonoBehaviour
                     stateMachine.ChangeState(B1NullState.Instance);
                 }
             }
+            if (health <= 0)
+            {
+                GameObject.Find("Controller").SetActive(false);
+                
+            }
 
             stateMachine.Update();
         }
@@ -85,7 +93,12 @@ public class B1Script : MonoBehaviour
         hit = true;
         if (col.gameObject.CompareTag("Player"))
         {
-            if (SheildBash.isSheildBashing == true || invin > 0 || B1ChargeState.stunned == true)
+            if (SheildBash.isSheildBashing == true)
+            {
+                Debug.Log("boss took damage");
+                health--;
+            }
+            else if (invin > 0 || B1ChargeState.stunned == true)
             {
                 Debug.Log("no damage");
                 //no damage taken
