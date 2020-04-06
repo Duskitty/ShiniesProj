@@ -16,13 +16,16 @@ public class pickUpMirror : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D thing)
   {
-    Debug.Log("Picked Up the mirror!");
-    hasSheild = true;
-    GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
-    Destroy(GameObject.Find("Shield"));
-        sheild.gameObject.SetActive(true);
-        beamButton.gameObject.SetActive(true);
-        reflectGem.gameObject.SetActive(true);
+        if (thing.gameObject.name == "Sheild")
+        {
+            Debug.Log("Picked Up the mirror!");
+            hasSheild = true;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
+            Destroy(GameObject.Find("Shield"));
+            sheild.gameObject.SetActive(true);
+            beamButton.gameObject.SetActive(true);
+            reflectGem.gameObject.SetActive(true);
+        }
 
     }
     private void Update()
@@ -33,15 +36,7 @@ public class pickUpMirror : MonoBehaviour
         // Retrieve the name of this scene.
         string sceneName = currentScene.name; // World 1
        
-        if (sceneName == "World_1_Boss") // World 1 Boss 
-        {
-            hasSheild = true;
-            GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
-            sheild.gameObject.SetActive(true);
-            beamButton.gameObject.SetActive(true);
-            reflectGem.gameObject.SetActive(true);
-        }
-        else if (sceneName == "World1_Test_ForCharges") // "World_2"
+        if (sceneName != "World_1") 
         {
             hasSheild = true;
             GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
