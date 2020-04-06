@@ -36,10 +36,18 @@ public class pickUpMirror : MonoBehaviour
         if (sceneName == "World_1_Boss") // World 1 Boss 
         {
             hasSheild = true;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
+            sheild.gameObject.SetActive(true);
+            beamButton.gameObject.SetActive(true);
+            reflectGem.gameObject.SetActive(true);
         }
         else if (sceneName == "World1_Test_ForCharges") // "World_2"
         {
             hasSheild = true;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
+            sheild.gameObject.SetActive(true);
+            beamButton.gameObject.SetActive(true);
+            reflectGem.gameObject.SetActive(true);
         }
         /*
         else if (sceneName == "World_3")
