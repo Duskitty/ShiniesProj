@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class ChargeGemPickup : MonoBehaviour
 {
-    public bool drop;
-    // Start is called before the first frame update
-    void Start()
+    public GameObject chargeGem1;
+    private void Start()
     {
-        drop = false;
+        chargeGem1.gameObject.SetActive(false);
+
+    }
+    public void DeadBoss()
+    {
+        if (B1Script.health == 0)
+        {
+            chargeGem1.gameObject.SetActive(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnCollisionEnter2D(Collision2D thing)
     {
-        
+        Debug.Log("Picked up Charged Gem!");
+        Destroy(GameObject.Find("chargeGem1"));
     }
 }
