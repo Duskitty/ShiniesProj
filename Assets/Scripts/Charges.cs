@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Charges : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Charges : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
+        /*
         if (col.gameObject.tag.Equals("sunbeam"))
         {
             GameControlScript.charges += 1;
@@ -28,9 +30,10 @@ public class Charges : MonoBehaviour
 
             }
         }
-           
+        */
+
         // cant get this to work for each scene/ world
-        /*
+
         if (col.gameObject.tag.Equals("sunbeam"))
         {
             // Create a temporary reference to the current scene.
@@ -38,9 +41,10 @@ public class Charges : MonoBehaviour
 
             // Retrieve the name of this scene.
             string sceneName = currentScene.name;
+
             if (sceneName == "World_1")
             {
-             GameControlScript.charges = 0; // 0 charged gem in world 1
+                GameControlScript.charges = 0; // 0 charged gem in world 1
             }
             else if (sceneName == "World1_Test_ForCharges") // "World_2"
             {
@@ -51,6 +55,7 @@ public class Charges : MonoBehaviour
 
                 }
             }
+            /*
             else if (sceneName == "World_3")
             {
                 GameControlScript.charges += 2;
@@ -68,8 +73,9 @@ public class Charges : MonoBehaviour
                  GameControlScript.charges = 3; // 2 charged gem in world 3
 
                 }
-            }
-            */
+            }*/
+        }
+            
 
 
     }
