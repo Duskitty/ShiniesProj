@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GemPick : MonoBehaviour
 {
-  public static bool reflectGem = false;
-  public static bool fireGem = false;
-  public static bool iceGem = false;
+  public bool reflectGem = false;
+  public bool fireGem = false;
+  public bool iceGem = false;
   //add other gems later 
   private Color fireColor;
   private Color reflectColor;
