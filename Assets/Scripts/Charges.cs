@@ -46,7 +46,16 @@ public class Charges : MonoBehaviour
             {
                 GameControlScript.charges = 0; // 0 charged gem in world 1
             }
-            else if (sceneName == "World1_Test_ForCharges") // "World_2"
+            else if (sceneName == "World 2 P1") // "World_2"
+            {
+                GameControlScript.charges += 1;
+                if (GameControlScript.charges > 1)
+                {
+                    GameControlScript.charges = 1; // 1 charged gem in world 2
+
+                }
+            }
+            else if (sceneName == "World 2 P2") // "World_2"
             {
                 GameControlScript.charges += 1;
                 if (GameControlScript.charges > 1)
