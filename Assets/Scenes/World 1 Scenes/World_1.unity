@@ -84012,6 +84012,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIController
       objectReference: {fileID: 0}
+    - target: {fileID: 3630266680314301747, guid: 71023889c8238dc47bfbbbe639173c46,
+        type: 3}
+      propertyPath: m_Name
+      value: Shield1
+      objectReference: {fileID: 0}
     - target: {fileID: 4501826882952870115, guid: 71023889c8238dc47bfbbbe639173c46,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84067,6 +84072,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 2951074910456491487, guid: 71023889c8238dc47bfbbbe639173c46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> 3e8a8f73a724560735d971b340d1b227cff20fc8
     - target: {fileID: 3630266680338013255, guid: 71023889c8238dc47bfbbbe639173c46,
         type: 3}
       propertyPath: m_LocalPosition.z
