@@ -65,7 +65,11 @@ namespace Pathfinding
           beamDirectionNum = 0;
         }
         hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
-        reflect(hitCollider.name, beamDirectionNum);
+        if(hitCollider != null)
+        {
+          reflect(hitCollider.name, beamDirectionNum);
+        }
+        
 
       }
       else

@@ -83868,6 +83868,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FreeEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2240265167906248293, guid: 5659957d9128fc84297c96640c33fd0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2240265167906248297, guid: 5659957d9128fc84297c96640c33fd0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84227,12 +84232,12 @@ PrefabInstance:
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -147.35
+      value: -145.64
       objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.54
+      value: 6.59
       objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}

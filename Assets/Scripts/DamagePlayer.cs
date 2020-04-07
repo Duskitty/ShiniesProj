@@ -8,6 +8,7 @@ public class DamagePlayer : MonoBehaviour
     {
         GameControlScript.health -= 1;
         Debug.Log(GameControlScript.health);
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("playerDamage");
         //Debug.Log("Player is hit");
     }
 }

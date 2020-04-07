@@ -208,6 +208,7 @@ public class L2P2Manager : MonoBehaviour
         // if all three beams hit the mirage then destroy it
         else if (playerHitObj != null && playerHitObj.name == mirage.name && p0Hit != null && p0Hit.name == mirage.name && p1Hit != null && p1Hit.name == mirage.name)
         {
+          GameObject.Find("SoundManager").GetComponent<SoundManager>().playSound("mirage");
           Destroy(mirage);
           // activate enemy and the collider for the fire gem
           GameObject.Find("FireGem").GetComponent<CircleCollider2D>().enabled = true;
