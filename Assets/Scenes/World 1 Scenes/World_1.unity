@@ -9630,9 +9630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955e985204129644ea92efda6b1a360c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflectGem: 0
-  fireGem: 0
-  iceGem: 0
 --- !u!50 &572514278 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 6479389968769861368, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
@@ -37435,9 +37432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955e985204129644ea92efda6b1a360c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflectGem: 0
-  fireGem: 0
-  iceGem: 0
 --- !u!1 &869382023
 GameObject:
   m_ObjectHideFlags: 0
@@ -71957,7 +71951,6 @@ MonoBehaviour:
   sheild: {fileID: 534452623}
   beamButton: {fileID: 1675008312}
   reflectGem: {fileID: 1292048045}
-  fireGem: {fileID: 2951074910456491487}
 --- !u!58 &1079258768
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -84019,6 +84012,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIController
       objectReference: {fileID: 0}
+    - target: {fileID: 3630266680314301747, guid: 71023889c8238dc47bfbbbe639173c46,
+        type: 3}
+      propertyPath: m_Name
+      value: Shield1
+      objectReference: {fileID: 0}
     - target: {fileID: 4501826882952870115, guid: 71023889c8238dc47bfbbbe639173c46,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84074,6 +84072,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2951074910456491487, guid: 71023889c8238dc47bfbbbe639173c46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630266680338013255, guid: 71023889c8238dc47bfbbbe639173c46,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71023889c8238dc47bfbbbe639173c46, type: 3}
 --- !u!1 &2951074909130488262 stripped
@@ -84097,12 +84105,6 @@ GameObject:
 --- !u!1 &2951074910359017115 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2951074910359017115, guid: 71023889c8238dc47bfbbbe639173c46,
-    type: 3}
-  m_PrefabInstance: {fileID: 2349630035349178923}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2951074910456491487 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2951074910456491487, guid: 71023889c8238dc47bfbbbe639173c46,
     type: 3}
   m_PrefabInstance: {fileID: 2349630035349178923}
   m_PrefabAsset: {fileID: 0}
