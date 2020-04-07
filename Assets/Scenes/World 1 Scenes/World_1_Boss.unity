@@ -24348,6 +24348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargeGem1: {fileID: 1104163566}
+  gameCharge: {fileID: 1104163566}
+  transition: {fileID: 1260148912}
 --- !u!61 &1104163568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24851,6 +24853,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1260148912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5403889825917253321, guid: 4e112da395c98fd4787bef21641eaa6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1131021422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1261483507 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1386364802109714434, guid: 7504f2e983f20524ab5d788d5e0b1049,
