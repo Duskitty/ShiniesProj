@@ -172,6 +172,7 @@ public class L2P2Manager : MonoBehaviour
       {
         orb1Hit = setOrbLight(orb1);
       }
+
       if (pyramid0Beam.enabled && currP0Direction == "right")
       {
         p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.right), 2, 1);
@@ -189,7 +190,16 @@ public class L2P2Manager : MonoBehaviour
         p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
       }
 
-      if(mirage != null)
+      if(p0Hit != null && p0Hit.collider.name == pyramid1.name)
+      {
+        p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
+      }
+      if (p1Hit != null && p1Hit.collider.name == pyramid0.name)
+      {
+        p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
+      }
+
+    if (mirage != null)
       {
         // if only one light beam hits the mirage then set the mirage animator to 1 hit
         if ((playerHitObj != null && playerHitObj.name == mirage.name && (p0Hit == null || p0Hit.name != mirage.name) && (p1Hit == null || p1Hit.name != mirage.name))
