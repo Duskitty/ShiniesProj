@@ -29,6 +29,7 @@ public class pickUpMirror : MonoBehaviour
     }
     private void Update()
     {
+        
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
 
@@ -43,6 +44,7 @@ public class pickUpMirror : MonoBehaviour
             beamButton.gameObject.SetActive(true);
             reflectGem.gameObject.SetActive(true);
         }
+        
         /*
         else if (sceneName == "World_3")
         {
