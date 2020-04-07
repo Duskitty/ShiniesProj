@@ -5403,6 +5403,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1135119095}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &453612962 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5579137874084681790, guid: 8f73f537e137fa849828358e97d98d47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1135119095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &453612963 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2522878771117758941, guid: 8f73f537e137fa849828358e97d98d47,
@@ -53901,6 +53907,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522878771117758941, guid: 8f73f537e137fa849828358e97d98d47,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 453612961}
+    - target: {fileID: 2522878771117758941, guid: 8f73f537e137fa849828358e97d98d47,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 453612962}
+    - target: {fileID: 2522878771117758941, guid: 8f73f537e137fa849828358e97d98d47,
+        type: 3}
+      propertyPath: speed
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 8282084931969789037, guid: 8f73f537e137fa849828358e97d98d47,
         type: 3}
