@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -250,7 +250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &95397593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,6 +839,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &425960643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425960645}
+  - component: {fileID: 425960644}
+  m_Layer: 0
+  m_Name: BossTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &425960644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425960643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07314d2de4e834e40b14bd49b033c13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunPatches:
+  - {fileID: 1750293304}
+--- !u!4 &425960645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425960643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -140.93832, y: 7.3872724, z: -1106.0565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &447190212
 GameObject:
   m_ObjectHideFlags: 0
@@ -26636,8 +26681,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   player: {fileID: 0}
-  circle: {fileID: 0}
-  outerCircle: {fileID: 0}
   invertDirection: 1
   animator: {fileID: 0}
 --- !u!114 &961154182
@@ -59532,7 +59575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1509307965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59765,7 +59808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1662615945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60019,6 +60062,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268dd434e85a7354cbd058ebb8f95150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1750293304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 255631738223855412, guid: e4963dfe758fc9346974d5469477665f,
+    type: 3}
+  m_PrefabInstance: {fileID: 255631738543762982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cbe0703c7f3004587d1c5ca83621dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1750524922
 GameObject:
   m_ObjectHideFlags: 0
@@ -60145,11 +60200,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIController
       objectReference: {fileID: 0}
-    - target: {fileID: 1386364802349292681, guid: 7504f2e983f20524ab5d788d5e0b1049,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2244380911907649581, guid: 7504f2e983f20524ab5d788d5e0b1049,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60203,6 +60253,11 @@ PrefabInstance:
     - target: {fileID: 2244380911907649581, guid: 7504f2e983f20524ab5d788d5e0b1049,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1386364802349292681, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

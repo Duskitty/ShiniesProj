@@ -6,15 +6,9 @@ public class L1Boss : MonoBehaviour
 {
   public SunlightTrigger[] sunPatches;
 
-  // Player Variables
   private GameObject player;
-  //private Animator playerDirection;
   private Collider2D hitCollider;
-
-  // Object Variables
-  //public GameObject[] reflectObjs;
-  //private LineRenderer[] hittableObjBeams;
-  
+  private GameObject hitObj;
   
   // Start is called before the first frame update
   void Start()
@@ -25,13 +19,37 @@ public class L1Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      // if in sunlight
-      hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
+      if (checkInSunlight())
+      {
+        Debug.Log("in sun");
+        hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
 
-      //if player hit boss
-      //do something here
+        if (hitCollider != null)
+        {
+          hitObj = GameObject.Find(hitCollider.name);
 
-      //else if player hit mushroom man
-      // then stun it
+          if(hitObj.tag == "Boss")
+          {
+            // do something when it hits the boss
+          }
+          else if(hitObj.tag == "enemy")
+          {
+            //hitObj.GetComponent<StunEnemy>().stun(hitObj);
+          }
+        }
+      }
+    }
+
+    private bool checkInSunlight()
+    { 
+      for(int i = 0; i < sunPatches.Length; i++)
+      {
+        if (sunPatches[i].inSunlight)
+        {
+          return true;
+        }
+      }
+
+      return false;
     }
 }

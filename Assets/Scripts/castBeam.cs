@@ -39,6 +39,7 @@ public class castBeam : MonoBehaviour
 
   public Collider2D reflect(LineRenderer[] hittableObjBeams)
   {
+    Debug.Log("here");
     if (playerDirection.GetBool("isMoving"))
     {
       if (hittableObjBeams != null)
