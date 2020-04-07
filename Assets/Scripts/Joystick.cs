@@ -116,17 +116,17 @@ public class Joystick : MonoBehaviour
 
             if (pointB.x > pointA.x && pointB.y > pointA.y) //top right quadrant
             {
-                animator.SetBool("isRight", true);
+                animator.SetBool("isRight", false);
                 animator.SetBool("isLeft", false);
                 animator.SetBool("isDown", false);
-                animator.SetBool("isUp", false);
+                animator.SetBool("isUp", true);
                 animator.SetBool("isMoving", true);
 
                 //checking for idle 
-                isMovingUp = false;
+                isMovingUp = true;
                 isMovingDown = false;
                 isMovingLeft = false;
-                isMovingRight = true;
+                isMovingRight = false;
             }
             else if (pointB.x < pointA.x && pointB.y > pointA.y) //top left quadrant
             {
@@ -153,8 +153,8 @@ public class Joystick : MonoBehaviour
                 //checking for idle
                 isMovingUp = false;
                 isMovingDown = false;
-                isMovingLeft = false;
-                isMovingRight = true;
+                isMovingLeft = true;
+                isMovingRight = false;
             }
             else if (pointB.x < pointA.x && pointB.y < pointA.y) //bottom left quadrant
             {
@@ -181,6 +181,7 @@ public class Joystick : MonoBehaviour
                 isMovingDown = false;
                 isMovingLeft = false;
                 isMovingRight = true;
+
 
             }
             else if (pointB.x < pointA.x) //straight left
@@ -232,6 +233,7 @@ public class Joystick : MonoBehaviour
         }
         else
         {
+            //idle stuff
             circle.GetComponent<SpriteRenderer>().enabled = false;
             outerCircle.GetComponent<SpriteRenderer>().enabled = false;
             // updateAnim(0); //turns idle animation on
