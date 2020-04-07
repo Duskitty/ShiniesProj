@@ -59,9 +59,13 @@ public class SheildBash : MonoBehaviour
             //do nothing else statment is to pervent sticking to things
 
         }
-        else
+        else if (col.gameObject.CompareTag("Cactus") || col.gameObject.CompareTag("rock") || col.gameObject.CompareTag("orb") || col.gameObject.CompareTag("sunbeam") || col.gameObject.CompareTag("mirage"))
         {
             RestoreMovment();
+        }
+        else {//for other things without a tag
+            RestoreMovment();
+
         }
     }
     private void OnTriggerEnter(Collider other)
