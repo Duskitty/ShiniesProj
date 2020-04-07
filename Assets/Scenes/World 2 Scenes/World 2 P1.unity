@@ -24413,6 +24413,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FireGem
       objectReference: {fileID: 0}
+    - target: {fileID: 4403502999856208304, guid: 466328bd9dabbbe4896822575f17196b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1983359567}
+    - target: {fileID: 4403502999856208304, guid: 466328bd9dabbbe4896822575f17196b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AttackButton
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2951074909348046227, guid: 466328bd9dabbbe4896822575f17196b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 466328bd9dabbbe4896822575f17196b, type: 3}
@@ -24977,6 +24987,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 955e985204129644ea92efda6b1a360c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1983359567 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2522878771117758941, guid: 8f73f537e137fa849828358e97d98d47,
+    type: 3}
+  m_PrefabInstance: {fileID: 791616978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983359562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a86a10c88730c4fbf441217006c500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1983359568 stripped
