@@ -147,8 +147,6 @@ public class castBeam : MonoBehaviour
     if (fireBall != null)
     {
       //playerFireBeam.enabled = false;
-      fireBall.GetComponent<Animator>().SetBool("isActive", false);
-      fireBall.GetComponent<SpriteRenderer>().enabled = false;
       //Destroy(fireBall);
     }
   }
@@ -194,8 +192,9 @@ public class castBeam : MonoBehaviour
         }
       }
       yield return new WaitForSeconds(0.37f);
-      disableFire();
-      //StopCoroutine(fireBurst());
+      fireBall.GetComponent<Animator>().SetBool("isActive", false);
+      fireBall.GetComponent<SpriteRenderer>().enabled = false;
+      break;
     }
     yield return null;
   }
