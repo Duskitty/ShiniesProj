@@ -18,6 +18,7 @@ public class breakTile : MonoBehaviour
     playerSprite = player.GetComponent<SpriteRenderer>();
     psColor = playerSprite.color;
     respawnPoint = GameObject.Find("Respawn");
+        GameObject.Find("Player").GetComponent<SheildBash>().enabled = false;//to do delete me after sprint on 4-7-2020
   }
 
   void OnTriggerEnter2D(Collider2D col)
