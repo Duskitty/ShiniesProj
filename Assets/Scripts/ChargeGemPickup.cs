@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class ChargeGemPickup : MonoBehaviour
 {
-    public GameObject chargeGem1;
+    public GameObject chargeGem1, gameCharge;
     private void Start()
     {
         chargeGem1.gameObject.SetActive(false);
-        GameObject.FindWithTag("charge").GetComponent<BoxCollider2D>().enabled = false;
+        //GameObject.charge.GetComponent<BoxCollider2D>().enabled = false;
+        GameObject.gameCharge.GetComponet<BoxCollider2D>().enabled = false;
 
     }
     public void DeadBoss()
     {
         if (B1Script.health == 0)
         {
-            chargeGem1.gameObject.SetActive(true);
-            GameObject.FindWithTag("charge").GetComponent<BoxCollider2D>().enabled = true;
+            GameObject.gameCharge.GetComponet<BoxCollider2D>().enabled = true;
+           chargeGem1.gameObject.SetActive(true);
+           // GameObject.FindWithTag("charge").GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 
