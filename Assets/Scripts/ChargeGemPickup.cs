@@ -8,6 +8,7 @@ public class ChargeGemPickup : MonoBehaviour
     private void Start()
     {
         chargeGem1.gameObject.SetActive(false);
+        GameObject.FindWithTag("charge").GetComponent<BoxCollider2D>().enabled = false;
 
     }
     public void DeadBoss()
@@ -15,6 +16,7 @@ public class ChargeGemPickup : MonoBehaviour
         if (B1Script.health == 0)
         {
             chargeGem1.gameObject.SetActive(true);
+            GameObject.FindWithTag("charge").GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 
