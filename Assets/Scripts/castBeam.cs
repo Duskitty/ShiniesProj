@@ -80,9 +80,11 @@ public class castBeam : MonoBehaviour
     }
 
     
-
-    playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection, 50.0f, ~layerMask);
-    Debug.DrawRay(playerRaySpawn.position, beamDirection);
+    //if(beamDirection != null)
+    //{
+      playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection, 50.0f, ~layerMask);
+      Debug.DrawRay(playerRaySpawn.position, beamDirection);
+    //}
 
     if (playerHit.collider != null)
     {

@@ -24,7 +24,10 @@ public class pickUpMirror : MonoBehaviour
             hasSheild = true;
             GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
             Destroy(mirror);
-            sheild.gameObject.SetActive(true);
+            if (sheild != null)
+            {
+              sheild.gameObject.SetActive(true);
+            }
             beamButton.gameObject.SetActive(true);
             reflectGem.gameObject.SetActive(true);
         //}
@@ -42,7 +45,10 @@ public class pickUpMirror : MonoBehaviour
         {
             hasSheild = true;
             GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
-            sheild.gameObject.SetActive(true);
+            if (sheild != null)
+            {
+              sheild.gameObject.SetActive(true);
+            }
             beamButton.gameObject.SetActive(true);
             reflectGem.gameObject.SetActive(true);
         }
