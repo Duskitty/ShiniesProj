@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
                yAxis = touch.deltaPosition.y;
 
            }*/
-        Debug.Log(xAxis);
         if (textBoxAnimator.GetBool("textboxOpen"))
         {
             return;
