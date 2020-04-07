@@ -23681,6 +23681,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 255631738223855414, guid: e4963dfe758fc9346974d5469477665f,
+        type: 3}
+      propertyPath: m_TagString
+      value: sunbeam
+      objectReference: {fileID: 0}
     - target: {fileID: 255631738223855410, guid: e4963dfe758fc9346974d5469477665f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23754,6 +23759,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 255631738223855414, guid: e4963dfe758fc9346974d5469477665f,
+        type: 3}
+      propertyPath: m_TagString
+      value: sunbeam
       objectReference: {fileID: 0}
     - target: {fileID: 255631738223855410, guid: e4963dfe758fc9346974d5469477665f,
         type: 3}
