@@ -22,5 +22,6 @@ public class ChargeGemPickup : MonoBehaviour
     {
         Debug.Log("Picked up Charged Gem!");
         Destroy(GameObject.Find("chargeGem1"));
+
     }
 }
