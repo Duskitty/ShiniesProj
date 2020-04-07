@@ -84,9 +84,6 @@ public class Charges : MonoBehaviour
                 }
             }*/
         }
-        
-
-
     }
     public void BeamPress()
     {
