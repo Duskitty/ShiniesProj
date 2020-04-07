@@ -74,7 +74,7 @@ public class RockLightManager2 : MonoBehaviour
       inPosition2[1] = false;
       inPosition2[2] = false;
 
-      GameObject.Find("Shield").GetComponent<CircleCollider2D>().enabled = false;
+      GameObject.FindWithTag("shield").GetComponent<CircleCollider2D>().enabled = false;
     }
 
     // Update is called once per frame
@@ -273,10 +273,10 @@ public class RockLightManager2 : MonoBehaviour
                   GameObject.Find("Bush").GetComponent<SpriteRenderer>().enabled = false;
                   GameObject.Find("Bush").GetComponent<BoxCollider2D>().enabled = false;
 
-                  if (GameObject.Find("Shield") != null)
+                  if (GameObject.FindWithTag("shield") != null)
                   {
                       //Debug.Log("here");
-                      GameObject.Find("Shield").GetComponent<CircleCollider2D>().enabled = true;
+                      GameObject.FindWithTag("shield").GetComponent<CircleCollider2D>().enabled = true;
                   }
                 }
             }

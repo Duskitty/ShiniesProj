@@ -6,25 +6,28 @@ using UnityEngine.SceneManagement;
 public class pickUpMirror : MonoBehaviour
 {
     public GameObject sheild, beamButton, reflectGem;
-  public static bool hasSheild = false;
+    public static bool hasSheild = false;
+    private GameObject mirror;
+
     private void Start()
     {
         sheild.gameObject.SetActive(false);
         beamButton.gameObject.SetActive(false);
         reflectGem.gameObject.SetActive(false);
+        mirror = GameObject.Find("Shield");
     }
     public void OnCollisionEnter2D(Collision2D thing)
-  {
-        if (thing.gameObject.name == "Sheild")
-        {
+    {
+        //if (thing.gameObject.name == "Sheild")
+        //{
             Debug.Log("Picked Up the mirror!");
             hasSheild = true;
             GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
-            Destroy(GameObject.Find("Shield"));
+            Destroy(mirror);
             sheild.gameObject.SetActive(true);
             beamButton.gameObject.SetActive(true);
             reflectGem.gameObject.SetActive(true);
-        }
+        //}
 
     }
     private void Update()
