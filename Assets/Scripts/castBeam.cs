@@ -176,7 +176,7 @@ public class castBeam : MonoBehaviour
       //yield return new WaitForSeconds(0.45f);
       for (int i = 0; i < fireHits.Length; i++)
       {
-        if (fireHits[i] != null)
+        if (fireHits[i] != null)//re look at this statment because it saying it going to always return true 
         {
           hitObj = GameObject.Find(fireHits[i].collider.name);
           if (hitObj != null && hitObj.tag == "Cactus")
@@ -194,7 +194,7 @@ public class castBeam : MonoBehaviour
       yield return new WaitForSeconds(0.37f);
       fireBall.GetComponent<Animator>().SetBool("isActive", false);
       fireBall.GetComponent<SpriteRenderer>().enabled = false;
-      break;
+     // break; need to find out were this belongs because its throwing erros 
     }
     yield return null;
   }
