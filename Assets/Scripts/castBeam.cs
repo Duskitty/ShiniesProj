@@ -194,7 +194,6 @@ public class castBeam : MonoBehaviour
       yield return new WaitForSeconds(0.37f);
       fireBall.GetComponent<Animator>().SetBool("isActive", false);
       fireBall.GetComponent<SpriteRenderer>().enabled = false;
-     // break; need to find out were this belongs because its throwing erros 
     }
     yield return null;
   }
