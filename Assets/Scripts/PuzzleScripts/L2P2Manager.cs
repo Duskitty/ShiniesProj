@@ -190,11 +190,11 @@ public class L2P2Manager : MonoBehaviour
         p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
       }
 
-      if(p0Hit != null && p0Hit.collider.name == pyramid1.name)
+      if(p0Hit != null && p0Hit.GetComponent<BoxCollider2D>().name == pyramid1.name)
       {
         p1Hit = setPyramidLight(pyramid1, pyramid1.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
       }
-      if (p1Hit != null && p1Hit.collider.name == pyramid0.name)
+      if (p1Hit != null && p1Hit.GetComponent<BoxCollider2D>().name == pyramid0.name)
       {
         p0Hit = setPyramidLight(pyramid0, pyramid0.transform.GetChild(1).TransformDirection(Vector3.down), 4, 3);
       }
