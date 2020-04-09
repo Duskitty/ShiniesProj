@@ -23462,12 +23462,12 @@ PrefabInstance:
     - target: {fileID: 5579137874084681788, guid: 8f73f537e137fa849828358e97d98d47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -132.75
+      value: -142.43
       objectReference: {fileID: 0}
     - target: {fileID: 5579137874084681788, guid: 8f73f537e137fa849828358e97d98d47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.19
+      value: -5.96
       objectReference: {fileID: 0}
     - target: {fileID: 5579137874084681788, guid: 8f73f537e137fa849828358e97d98d47,
         type: 3}
@@ -25809,7 +25809,6 @@ MonoBehaviour:
   sheild: {fileID: 1663755213}
   beamButton: {fileID: 1663755212}
   reflectGem: {fileID: 1663755211}
-  fireGem: {fileID: 0}
 --- !u!114 &1983359564
 MonoBehaviour:
   m_ObjectHideFlags: 0
