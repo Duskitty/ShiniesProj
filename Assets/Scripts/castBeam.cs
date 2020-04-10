@@ -41,7 +41,6 @@ public class castBeam : MonoBehaviour
 
   public Collider2D reflect(LineRenderer[] hittableObjBeams)
   {
-    Debug.Log("here");
     if (playerDirection.GetBool("isMoving"))
     {
       if (hittableObjBeams != null)
@@ -84,7 +83,7 @@ public class castBeam : MonoBehaviour
     
  
      playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection, 50.0f, ~layerMask);
-     Debug.DrawRay(playerRaySpawn.position, beamDirection);
+     //Debug.DrawRay(playerRaySpawn.position, beamDirection);
 
 
     if (playerHit.collider != null)
