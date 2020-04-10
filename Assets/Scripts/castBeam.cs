@@ -21,6 +21,7 @@ public class castBeam : MonoBehaviour
     private Vector3 fireEndMod;
     private GameObject hitObj;
     private GameObject fireBall;
+    private bool firePlaying;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class castBeam : MonoBehaviour
       playerDirection = player.GetComponent<Animator>();
       layerMask = LayerMask.GetMask("SunPatch");
       fireHits = new RaycastHit2D[10];
+      firePlaying = false;
     }
 
   public Collider2D reflect(LineRenderer[] hittableObjBeams)
@@ -136,10 +138,12 @@ public class castBeam : MonoBehaviour
     {
       return;
     }
-
-    fireHits = Physics2D.BoxCastAll(playerRaySpawn.position + fireEndMod, new Vector2(1, 0.25f), 0f, fireDirection, 1f, ~layerMask);
-    StopCoroutine(fireBurst());
-    StartCoroutine(fireBurst());
+    if (!firePlaying)
+    {
+      fireHits = Physics2D.BoxCastAll(playerRaySpawn.position + fireEndMod, new Vector2(1, 0.25f), 0f, fireDirection, 1f, ~layerMask);
+      //StopCoroutine(fireBurst());
+      StartCoroutine(fireBurst());
+    }
   }
 
   public void disableFire()
@@ -171,6 +175,7 @@ public class castBeam : MonoBehaviour
   {
     if(fireBall != null)
     {
+      firePlaying = true;
       fireBall.GetComponent<SpriteRenderer>().enabled = true;
       fireBall.GetComponent<Animator>().SetBool("isActive", true);
       //yield return new WaitForSeconds(0.45f);
@@ -191,10 +196,12 @@ public class castBeam : MonoBehaviour
           }
         }
       }
-      yield return new WaitForSeconds(0.37f);
-      fireBall.GetComponent<Animator>().SetBool("isActive", false);
-      fireBall.GetComponent<SpriteRenderer>().enabled = false;
     }
+    yield return new WaitForSeconds(.5f);
+    fireBall.GetComponent<SpriteRenderer>().enabled = false;
+    fireBall.GetComponent<Animator>().SetBool("isActive", false);
+    yield return new WaitForSeconds(2);
+    firePlaying = false;
     yield return null;
   }
 }
