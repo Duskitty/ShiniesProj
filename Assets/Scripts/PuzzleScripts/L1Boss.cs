@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class L1Boss : MonoBehaviour
+namespace Pathfinding
 {
-  public SunlightTrigger[] sunPatches;
+  //using Pathfinding.RVO;
+  using Pathfinding.Util;
 
-  private GameObject player;
-  private Collider2D hitCollider;
-  private GameObject hitObj;
-  
-  // Start is called before the first frame update
-  void Start()
+  public class L1Boss : MonoBehaviour
+  {
+    public SunlightTrigger[] sunPatches;
+
+    private GameObject player;
+    private Collider2D hitCollider;
+    private GameObject hitObj;
+
+    // Start is called before the first frame update
+    void Start()
     {
       player = GameObject.Find("Player");
     }
@@ -27,25 +31,25 @@ public class L1Boss : MonoBehaviour
           Debug.Log("collider name: " + hitCollider.name);
           hitObj = GameObject.Find(hitCollider.name);
 
-          if(hitObj.tag == "Boss")
+          if (hitObj.transform.tag == "Boss")
           {
             // do something when it hits the boss
           }
-          else if(hitObj.tag == "enemy")
+          else if (hitObj.transform.tag == "enemy")
           {
-            //hitObj.GetComponent(StunEnemy).stun(hitObj);
+            hitObj.GetComponent <StunEnemy>().stun(hitObj);
           }
         }
         else
         {
-           Debug.Log("collider = null");
+          Debug.Log("collider = null");
         }
       }
     }
 
     private bool checkInSunlight()
-    { 
-      for(int i = 0; i < sunPatches.Length; i++)
+    {
+      for (int i = 0; i < sunPatches.Length; i++)
       {
         if (sunPatches[i].inSunlight)
         {
@@ -55,4 +59,5 @@ public class L1Boss : MonoBehaviour
 
       return false;
     }
+  }
 }
