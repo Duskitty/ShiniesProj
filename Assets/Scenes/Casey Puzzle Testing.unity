@@ -60179,6 +60179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7092e6facda8e4da76eae3ad18c64d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorSprites:
+  - {fileID: 8313316407757157531, guid: 9a2d4d9a64101804fb60917818566bce, type: 3}
+  - {fileID: -9091895456273930693, guid: 9a2d4d9a64101804fb60917818566bce, type: 3}
+  - {fileID: 1716552293390743125, guid: 9a2d4d9a64101804fb60917818566bce, type: 3}
+  - {fileID: 4543037721131477739, guid: 9a2d4d9a64101804fb60917818566bce, type: 3}
+  - {fileID: -7567937897166073302, guid: 9a2d4d9a64101804fb60917818566bce, type: 3}
 --- !u!4 &2068018954
 Transform:
   m_ObjectHideFlags: 0

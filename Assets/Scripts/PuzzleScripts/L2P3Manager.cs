@@ -11,11 +11,16 @@ public class L2P3Manager : MonoBehaviour
     private bool reflectGem;
     private bool fireGem;
     private int charges;
+    public GameObject[] torches;
+    private GameObject door;
+    private bool doorOpening;
 
     // Start is called before the first frame update
     void Start()
     {
       player = GameObject.Find("Player");
+      door = GameObject.Find("RuinsDoor");
+      doorOpening = false;
     }
 
     // Update is called once per frame
@@ -40,5 +45,34 @@ public class L2P3Manager : MonoBehaviour
       {
         player.transform.GetChild(10).GetComponent<LineRenderer>().enabled = false;
       }
+
+      if (checkTorches() && door != null && !doorOpening)
+      {
+        StartCoroutine(openDoor());
+      }
     }
+
+  private bool checkTorches()
+  {
+    for(int i = 0; i < torches.Length; i++)
+    {
+      if (!torches[i].GetComponent<Animator>().GetBool("isLit"))
+      {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  IEnumerator openDoor()
+  {
+    doorOpening = true;
+    door.GetComponent<Animator>().SetBool("isOpening", true);
+    yield return new WaitForSeconds(0.25f);
+    door.GetComponent<Animator>().SetBool("isOpening", false);
+    door.GetComponent<Animator>().SetBool("isOpen", true);
+    door.GetComponent<BoxCollider2D>().enabled = false;
+
+    yield return null;
+  }
 }
