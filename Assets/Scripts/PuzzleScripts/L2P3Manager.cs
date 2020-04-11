@@ -7,13 +7,10 @@ public class L2P3Manager : MonoBehaviour
     //public bool pressed;
     private GameObject player;
     private bool inSun;
-    private bool pressed;
-    private bool reflectGem;
-    private bool fireGem;
-    private int charges;
     public GameObject[] torches;
     private GameObject door;
     private bool doorOpening;
+    private Collider2D playerHit;
 
     // Start is called before the first frame update
     void Start()
@@ -26,13 +23,12 @@ public class L2P3Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      inSun = GameObject.Find("sunPatch00").GetComponent<SunlightTrigger>().inSunlight;
-      pressed = player.GetComponent<BeamButton>().isPressed();
-      reflectGem = player.GetComponent<GemPick>().returnReflectGem();
-      fireGem = player.GetComponent<GemPick>().returnFireGem();
-      charges = GameControlScript.charges;
-
-      if ((inSun && !pressed) || (inSun && pressed && reflectGem) || (!inSun && pressed && reflectGem))
+      playerHit = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
+      if (playerHit != null)
+      {
+        Debug.Log("you hit " + playerHit.name);
+      }
+      /*if ((inSun && !pressed) || (inSun && pressed && reflectGem) || (!inSun && pressed && reflectGem))
       {
         player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
       }
@@ -44,7 +40,7 @@ public class L2P3Manager : MonoBehaviour
       else
       {
         player.transform.GetChild(10).GetComponent<LineRenderer>().enabled = false;
-      }
+      }*/
 
       if (checkTorches() && door != null && !doorOpening)
       {

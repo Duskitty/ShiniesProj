@@ -22,6 +22,10 @@ public class castBeam : MonoBehaviour
     private GameObject hitObj;
     private GameObject fireBall;
     private bool firePlaying;
+    private Collider2D playerHitCollider;
+
+    public LineRenderer[] hittableObjBeams;
+    public SunlightTrigger[] sunPatches;
 
     // Start is called before the first frame update
     void Start()
@@ -143,15 +147,6 @@ public class castBeam : MonoBehaviour
         }
     }
 
-    public void disableFire()
-    {
-        if (fireBall != null)
-        {
-            //playerFireBeam.enabled = false;
-            //Destroy(fireBall);
-        }
-    }
-
     public void disableLight()
     {
         playerBeam.enabled = false;
@@ -201,28 +196,51 @@ public class castBeam : MonoBehaviour
         firePlaying = false;
         yield return null;
     }
+
     public void ButtonPress()
     {
-        if (GemPick.fireGem == true && GameControlScript.charges >= 1)
+        if ((checkInSunlight() && GemPick.fireGem) ||(!checkInSunlight() && GemPick.fireGem && GameControlScript.charges >= 1))
         {
-            player.transform.GetChild(10).GetComponent<castBeam>().castFire();
-            player.transform.GetChild(10).GetComponent<LineRenderer>().enabled = false;
+            castFire();
+            GetComponent<LineRenderer>().enabled = false;
+            if (!checkInSunlight())
+            {
+              GameControlScript.charges -= 1;
+            }
+        }
+        else if ((checkInSunlight() && GemPick.reflectGem) || (!checkInSunlight() && GemPick.reflectGem && GameControlScript.charges >= 1))
+        {
+            playerHitCollider = reflect(hittableObjBeams);
+            if (!checkInSunlight())
+            {
+              GameControlScript.charges -= 1;
+            }
+        }
+        else if ((checkInSunlight() && GemPick.iceGem) || (!checkInSunlight() && GemPick.iceGem && GameControlScript.charges >= 1))
+        {
+          //cast ice
+          GetComponent<LineRenderer>().enabled = false;
+          if (!checkInSunlight())
+          {
             GameControlScript.charges -= 1;
+          }
+        } 
+    }
 
-        }
-        else if (GemPick.reflectGem == true && GameControlScript.charges >= 1)
+    public bool checkInSunlight()
+    {
+      for (int i = 0; i < sunPatches.Length; i++)
+      {
+        if (sunPatches[i].inSunlight)
         {
-            //add stuff later 
-           // player.transform.GetChild(10).GetComponent<castBeam>().reflect();
-            player.transform.GetChild(10).GetComponent<LineRenderer>().enabled = false;
-            GameControlScript.charges -= 1;
+          return true;
+        }
+      }
+      return false;
+    }
 
-        }
-        else if (GemPick.iceGem == true && GameControlScript.charges >= 1)
-        {
-            //add stuff later 
-            GameControlScript.charges -= 1;
-        }
-        
+    public Collider2D getPlayerHitCollider()
+    {
+      return playerHitCollider;
     }
 }
