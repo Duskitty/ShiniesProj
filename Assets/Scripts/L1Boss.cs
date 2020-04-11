@@ -21,11 +21,10 @@ public class L1Boss : MonoBehaviour
     {
       if (checkInSunlight())
       {
-        Debug.Log("in sun");
         hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
-
         if (hitCollider != null)
         {
+          Debug.Log("collider name: " + hitCollider.name);
           hitObj = GameObject.Find(hitCollider.name);
 
           if(hitObj.tag == "Boss")
@@ -36,6 +35,10 @@ public class L1Boss : MonoBehaviour
           {
             //hitObj.GetComponent<StunEnemy>().stun(hitObj);
           }
+        }
+        else
+        {
+           Debug.Log("collider = null");
         }
       }
     }
