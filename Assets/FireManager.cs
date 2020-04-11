@@ -14,6 +14,7 @@ public class FireManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    /*
     void Update()
     {
       pressed = player.GetComponent<BeamButton>().isPressed();
@@ -23,5 +24,14 @@ public class FireManager : MonoBehaviour
         player.transform.GetChild(10).GetComponent<castBeam>().castFire();
         player.transform.GetChild(10).GetComponent<LineRenderer>().enabled = false;
       }
+    }*/
+    public void FireStuff()
+    {
+        fireGem = player.GetComponent<GemPick>().returnFireGem();
+        if (GemPick.fireGem)
+        {
+            player.transform.GetChild(10).GetComponent<castBeam>().castFire();
+            player.transform.GetChild(10).GetComponent<LineRenderer>().enabled = false;
+        }
     }
 }
