@@ -33,7 +33,7 @@ public class L1Boss : MonoBehaviour
           }
           else if(hitObj.tag == "enemy")
           {
-            //hitObj.GetComponent<StunEnemy>().stun(hitObj);
+            //hitObj.GetComponent(StunEnemy).stun(hitObj);
           }
         }
         else

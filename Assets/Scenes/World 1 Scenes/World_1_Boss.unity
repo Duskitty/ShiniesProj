@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -9181,7 +9181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 268178415}
   - component: {fileID: 268178416}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9238,7 +9238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 269313967}
   - component: {fileID: 269313968}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9295,7 +9295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274528509}
   - component: {fileID: 274528510}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9550,7 +9550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475759240}
   - component: {fileID: 475759241}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10229,7 +10229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 811770716}
   - component: {fileID: 811770717}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10286,7 +10286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834548593}
   - component: {fileID: 834548594}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10343,7 +10343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 850804725}
   - component: {fileID: 850804726}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24605,7 +24605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1169919700}
   - component: {fileID: 1169919701}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24981,6 +24981,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1386364802109714434, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1386364802109714434, guid: 7504f2e983f20524ab5d788d5e0b1049,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2244380911907649581, guid: 7504f2e983f20524ab5d788d5e0b1049,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25051,16 +25061,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1386364802109714434, guid: 7504f2e983f20524ab5d788d5e0b1049,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1386364802109714434, guid: 7504f2e983f20524ab5d788d5e0b1049,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1386364801285110650, guid: 7504f2e983f20524ab5d788d5e0b1049,
         type: 3}
       propertyPath: m_Text
@@ -25090,7 +25090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1658598893}
   - component: {fileID: 1658598894}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25686,7 +25686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2055804972}
   - component: {fileID: 2055804973}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
