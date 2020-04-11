@@ -11,11 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public Animator textBoxAnimator;
     public Rigidbody2D player;
     public bool bridgeSafe = false;
-    private bool isMovingUp = false;
+    public static bool isMovingUp = false;
     public bool hasShield = false;
-    bool isMovingDown = false;
-    bool isMovingRight = false;
-    bool isMovingLeft = false;
+    public static bool isMovingDown = true;
+    public static bool  isMovingRight = false;
+   public static bool isMovingLeft = false;
 
     private AudioSource audioSrc;
     private bool isSprinting;

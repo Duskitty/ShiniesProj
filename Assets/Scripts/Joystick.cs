@@ -66,10 +66,7 @@ public class Joystick : MonoBehaviour
 
     public Animator animator;
     //move variables for the animator 
-    private bool isMovingUp = false;
-    bool isMovingDown = false;
-    bool isMovingRight = false;
-    bool isMovingLeft = false;
+  
     private void Start()
     {
         //I prefer to get values here instead of setting them in unity gui
@@ -123,10 +120,10 @@ public class Joystick : MonoBehaviour
                 animator.SetBool("isMoving", true);
 
                 //checking for idle 
-                isMovingUp = true;
-                isMovingDown = false;
-                isMovingLeft = false;
-                isMovingRight = false;
+               PlayerMovement. isMovingUp = true;
+                PlayerMovement.isMovingDown = false;
+                PlayerMovement.isMovingLeft = false;
+                PlayerMovement.isMovingRight = false;
             }
             else if (pointB.x < pointA.x && pointB.y > pointA.y) //top left quadrant
             {
@@ -137,10 +134,10 @@ public class Joystick : MonoBehaviour
                 animator.SetBool("isMoving", true);
 
                 //checking for idle
-                isMovingUp = false;
-                isMovingDown = false;
-                isMovingLeft = true;
-                isMovingRight = false;
+                PlayerMovement.isMovingUp = false;
+                PlayerMovement.isMovingDown = false;
+                PlayerMovement.isMovingLeft = true;
+                PlayerMovement.isMovingRight = false;
 
             }
             else if (pointB.x > pointA.x && pointB.y < pointA.y) //bottom right quadrant
@@ -151,10 +148,10 @@ public class Joystick : MonoBehaviour
                 animator.SetBool("isUp", false);
                 animator.SetBool("isMoving", true);
                 //checking for idle
-                isMovingUp = false;
-                isMovingDown = false;
-                isMovingLeft = true;
-                isMovingRight = false;
+                PlayerMovement.isMovingUp = false;
+                PlayerMovement.isMovingDown = false;
+                PlayerMovement.isMovingLeft = true;
+                PlayerMovement.isMovingRight = false;
             }
             else if (pointB.x < pointA.x && pointB.y < pointA.y) //bottom left quadrant
             {
@@ -164,10 +161,10 @@ public class Joystick : MonoBehaviour
                 animator.SetBool("isUp", false);
                 animator.SetBool("isMoving", true);
 
-                isMovingUp = false;
-                isMovingDown = false;
-                isMovingLeft = true;
-                isMovingRight = false;
+                PlayerMovement.isMovingUp = false;
+                PlayerMovement.isMovingDown = false;
+                PlayerMovement.isMovingLeft = true;
+                PlayerMovement.isMovingRight = false;
             }
             else if (pointB.x > pointA.x) //straight right
             {
@@ -177,10 +174,10 @@ public class Joystick : MonoBehaviour
                 animator.SetBool("isUp", false);
                 animator.SetBool("isMoving", true);
                 //idle stuff
-                isMovingUp = false;
-                isMovingDown = false;
-                isMovingLeft = false;
-                isMovingRight = true;
+                PlayerMovement.isMovingUp = false;
+                PlayerMovement.isMovingDown = false;
+                PlayerMovement.isMovingLeft = false;
+                PlayerMovement.isMovingRight = true;
 
 
             }
@@ -193,10 +190,10 @@ public class Joystick : MonoBehaviour
                 animator.SetBool("isMoving", true);
 
                 //idle
-                isMovingUp = false;
-                isMovingDown = false;
-                isMovingLeft = true;
-                isMovingRight = false;
+                PlayerMovement.isMovingUp = false;
+                PlayerMovement.isMovingDown = false;
+                PlayerMovement.isMovingLeft = true;
+                PlayerMovement.isMovingRight = false;
             }
             else if (pointB.y > pointA.y) //straight up
             {
@@ -206,10 +203,10 @@ public class Joystick : MonoBehaviour
                 animator.SetBool("isRight", false);
                 animator.SetBool("isMoving", true);
                 //idle
-                isMovingUp = true;
-                isMovingDown = false;
-                isMovingLeft = false;
-                isMovingRight = false;
+                PlayerMovement.isMovingUp = true;
+                PlayerMovement.isMovingDown = false;
+                PlayerMovement.isMovingLeft = false;
+                PlayerMovement.isMovingRight = false;
 
             }
             else if (pointB.y < pointA.y) //straight down
@@ -220,10 +217,10 @@ public class Joystick : MonoBehaviour
                 animator.SetBool("isUp", false);
                 animator.SetBool("isMoving", true);
                 //idle 
-                isMovingUp = false;
-                isMovingDown = true;
-                isMovingLeft = false;
-                isMovingRight = false;
+                PlayerMovement.isMovingUp = false;
+                PlayerMovement.isMovingDown = true;
+                PlayerMovement.isMovingLeft = false;
+                PlayerMovement.isMovingRight = false;
             }
             else
             {
@@ -237,7 +234,7 @@ public class Joystick : MonoBehaviour
             circle.GetComponent<SpriteRenderer>().enabled = false;
             outerCircle.GetComponent<SpriteRenderer>().enabled = false;
             // updateAnim(0); //turns idle animation on
-            if (isMovingUp == true)
+            if (PlayerMovement.isMovingUp == true)
             {
                 animator.SetBool("isIdleUp", true);
                 animator.SetBool("isIdleDown", false);
@@ -250,7 +247,7 @@ public class Joystick : MonoBehaviour
 
             }
 
-            if (isMovingLeft == true)
+            if (PlayerMovement.isMovingLeft == true)
             {
 
                 animator.SetBool("isIdleUp", false);
@@ -263,7 +260,7 @@ public class Joystick : MonoBehaviour
 
 
             }
-            if (isMovingRight == true)
+            if (PlayerMovement.isMovingRight == true)
             {
                 animator.SetBool("isIdleUp", false);
                 animator.SetBool("isIdleDown", false);
@@ -276,7 +273,7 @@ public class Joystick : MonoBehaviour
 
 
             }
-            if (isMovingDown == true)
+            if (PlayerMovement.isMovingDown == true)
             {
                 animator.SetBool("isIdleUp", false);
                 animator.SetBool("isIdleDown", true);

@@ -19,6 +19,7 @@ public class SheildBash : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && pickUpMirror.hasSheild == true && hasPressedBar == false)
         {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
+            player.GetComponent<Joystick>().enabled = false;//disable the joystick script
             isSheildBashing = true;
             hasPressedBar = true;
             PlayerDirection();
@@ -30,22 +31,22 @@ public class SheildBash : MonoBehaviour
     }
     public void PlayerDirection()
     {//figure out what way the player is facing then apply the right force
-        if (horzMov < 0)
+        if (PlayerMovement.isMovingLeft)
         {
             controller.AddForce(new Vector2(-speed, 0f));
         }
-        if (horzMov > 0)
+        if (PlayerMovement.isMovingRight)
         {
             controller.AddForce(new Vector2(speed, 0f));
 
 
         }
-        if (verticalMov > 0)
+        if (PlayerMovement.isMovingUp)
         {
             controller.AddForce(new Vector2(0f, speed));
 
         }
-        if (verticalMov < 0)
+        if (PlayerMovement.isMovingDown)
         {
             controller.AddForce(new Vector2(0f, -speed));
 
@@ -80,6 +81,7 @@ public class SheildBash : MonoBehaviour
     {
         controller.velocity = Vector2.zero;//remove the forces of the sheild bash
         player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
+        player.GetComponent<Joystick>().enabled = true;
         isSheildBashing = false;
         hasPressedBar = false;
 
