@@ -44,6 +44,7 @@ public class L3P1Manager : MonoBehaviour
     private Color[] colorOrder;
     private Color[] currentColors;
     private GameObject door;
+    public Sprite[] doorSprites;
 
     // Start is called before the first frame update
     void Start()
@@ -360,16 +361,16 @@ public class L3P1Manager : MonoBehaviour
           }
         }
       }
-      if (rcHit.collider != null && rcHit.collider.name == door.name)
+      if (rcHit.collider != null && door != null && rcHit.collider.name == door.name)
       {
         //Debug.Log(rcHit.collider.name);  
         hitDoor(rcColor);
       }
-      else if (bcHit.collider != null && bcHit.collider.name == door.name)
+      else if (bcHit.collider != null && door != null && bcHit.collider.name == door.name)
       {
         hitDoor(bcColor);
       }
-      else if (gcHit.collider != null && gcHit.collider.name == door.name)
+      else if (gcHit.collider != null && door != null && gcHit.collider.name == door.name)
       {
         hitDoor(gcColor);
       }
@@ -383,17 +384,26 @@ public class L3P1Manager : MonoBehaviour
       Debug.Log(colorName + " lit");
       if(colorName == Color.white)
       {
-        Debug.Log("you win!");
+        if(door != null)
+        {
+          Destroy(door);
+        }
       }
       else
       {
         gemsHit++;
+        door.GetComponent<SpriteRenderer>().sprite = doorSprites[gemsHit];
       }
     }
 
     if(gemsHit == 0 || (colorName != currentColors[gemsHit - 1] && colorName != colorOrder[gemsHit]))
     {
-      Debug.Log("reset door");
+      if(door.GetComponent<SpriteRenderer>().sprite != doorSprites[0])
+      {
+        Debug.Log("reset door");
+        door.GetComponent<SpriteRenderer>().sprite = doorSprites[0];
+        gemsHit = 0;
+      }
     }
   }
 }
