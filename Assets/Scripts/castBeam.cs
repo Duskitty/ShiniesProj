@@ -24,7 +24,7 @@ public class castBeam : MonoBehaviour
     private bool firePlaying;
     private Collider2D playerHitCollider;
 
-    public LineRenderer[] hittableObjBeams;
+    private LineRenderer[] hittableObjBeams;
     public SunlightTrigger[] sunPatches;
 
     // Start is called before the first frame update
@@ -43,22 +43,8 @@ public class castBeam : MonoBehaviour
         firePlaying = false;
     }
 
-    public Collider2D reflect(LineRenderer[] hittableObjBeams)
+    public Collider2D reflect()
     {
-        if (playerDirection.GetBool("isMoving"))
-        {
-            if (hittableObjBeams != null)
-            {
-                for (int i = 0; i < hittableObjBeams.Length; i++)
-                {
-                    //Debug.Log("in loop");
-                    hittableObjBeams[i].enabled = false;
-                    //Debug.Log(i + " " + hittableObjBeams[i].enabled);
-                }
-            }
-            playerBeam.enabled = false;
-            return null;
-        }
         if (playerDirection.GetBool("isIdleUp"))
         {
             playerHitPoint = player.transform.GetChild(5);
@@ -83,8 +69,10 @@ public class castBeam : MonoBehaviour
             playerRaySpawn = player.transform.GetChild(3);
             beamDirection = playerRaySpawn.TransformDirection(Vector3.left);
         }
-
-
+        else
+        {
+          return null;
+        }
 
         playerHit = Physics2D.Raycast(playerRaySpawn.position, beamDirection, 50.0f, ~layerMask);
         //Debug.DrawRay(playerRaySpawn.position, beamDirection);
@@ -210,7 +198,7 @@ public class castBeam : MonoBehaviour
         }
         else if ((checkInSunlight() && GemPick.reflectGem) || (!checkInSunlight() && GemPick.reflectGem && GameControlScript.charges >= 1))
         {
-            playerHitCollider = reflect(hittableObjBeams);
+            playerHitCollider = reflect();
             if (!checkInSunlight())
             {
               GameControlScript.charges -= 1;
@@ -242,5 +230,29 @@ public class castBeam : MonoBehaviour
     public Collider2D getPlayerHitCollider()
     {
       return playerHitCollider;
+    }
+
+    public void setHittableObjBeams(LineRenderer[] hittableObjs)
+    {
+      hittableObjBeams = new LineRenderer[hittableObjs.Length];
+      for (int i = 0; i < hittableObjs.Length; i++)
+      {
+        hittableObjBeams[i] = hittableObjs[i];
+      }
+    }
+
+    public void clearBeams()
+    {
+      if (playerDirection.GetBool("isMoving"))
+      {
+        if (hittableObjBeams != null)
+        {
+          for (int i = 0; i < hittableObjBeams.Length; i++)
+          {
+            hittableObjBeams[i].enabled = false;
+          }
+        }
+        playerBeam.enabled = false;
+      }
     }
 }

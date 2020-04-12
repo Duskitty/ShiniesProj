@@ -23,10 +23,12 @@ public class L2P3Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      playerHit = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
-      if (playerHit != null)
-      {
-        Debug.Log("you hit " + playerHit.name);
+      player.transform.GetChild(10).GetComponent<castBeam>().clearBeams();
+      inSun = GameObject.Find("sunPatch00").GetComponent<SunlightTrigger>().inSunlight;
+
+      if (inSun)
+      {      
+        player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
       }
       /*if ((inSun && !pressed) || (inSun && pressed && reflectGem) || (!inSun && pressed && reflectGem))
       {
