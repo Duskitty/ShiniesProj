@@ -232,16 +232,16 @@ public class castBeam : MonoBehaviour
       return playerHitCollider;
     }
 
-    public void setHittableObjBeams(LineRenderer[] hittableObjs)
+    /*public void setHittableObjBeams(LineRenderer[] hittableObjs)
     {
       hittableObjBeams = new LineRenderer[hittableObjs.Length];
       for (int i = 0; i < hittableObjs.Length; i++)
       {
         hittableObjBeams[i] = hittableObjs[i];
       }
-    }
+    }*/
 
-    public void clearBeams()
+    public void clearBeams(LineRenderer[] hittableObjBeams)
     {
       if (playerDirection.GetBool("isMoving"))
       {
@@ -250,6 +250,7 @@ public class castBeam : MonoBehaviour
           for (int i = 0; i < hittableObjBeams.Length; i++)
           {
             hittableObjBeams[i].enabled = false;
+          Debug.Log(hittableObjBeams[i].enabled);
           }
         }
         playerBeam.enabled = false;

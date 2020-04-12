@@ -34,7 +34,7 @@ public class nextLevelTrigger : MonoBehaviour
     private void Update()
     {
          currentScence = SceneManager.GetActiveScene();
-        Debug.Log(currentScence.name);
+        //Debug.Log(currentScence.name);
       
 
     }

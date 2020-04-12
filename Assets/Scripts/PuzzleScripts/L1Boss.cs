@@ -25,7 +25,7 @@ namespace Pathfinding
     {
       if (checkInSunlight())
       {
-        hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
+        hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
         if (hitCollider != null)
         {
           Debug.Log("collider name: " + hitCollider.name);

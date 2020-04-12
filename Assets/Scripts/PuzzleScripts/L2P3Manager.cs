@@ -23,26 +23,13 @@ public class L2P3Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      player.transform.GetChild(10).GetComponent<castBeam>().clearBeams();
+      player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(null);
       inSun = GameObject.Find("sunPatch00").GetComponent<SunlightTrigger>().inSunlight;
 
       if (inSun)
       {      
-        player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
+        player.transform.GetChild(10).GetComponent<castBeam>().reflect();
       }
-      /*if ((inSun && !pressed) || (inSun && pressed && reflectGem) || (!inSun && pressed && reflectGem))
-      {
-        player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
-      }
-      else if (pressed && fireGem)
-      {
-        player.transform.GetChild(10).GetComponent<castBeam>().castFire();
-        player.transform.GetChild(10).GetComponent<LineRenderer>().enabled = false;
-      }
-      else
-      {
-        player.transform.GetChild(10).GetComponent<LineRenderer>().enabled = false;
-      }*/
 
       if (checkTorches() && door != null && !doorOpening)
       {

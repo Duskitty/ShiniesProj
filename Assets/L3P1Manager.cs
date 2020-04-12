@@ -88,7 +88,7 @@ public class L3P1Manager : MonoBehaviour
     {
       if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight)
       {
-        pHit = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+        pHit = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
       }
       else
       {

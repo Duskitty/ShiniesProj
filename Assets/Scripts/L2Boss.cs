@@ -26,7 +26,7 @@ public class L2Boss : MonoBehaviour
   void Update()
   {
     // if in sunlight && reflect && button
-    hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(null);
+    hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
 
     // else if fire 
     player.transform.GetChild(10).GetComponent<castBeam>().castFire();

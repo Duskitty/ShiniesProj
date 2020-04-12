@@ -37,14 +37,11 @@ public class L2P2Manager : MonoBehaviour
   private Collider2D playerHitObj;
   private GameObject player;
   private Animator playerDirection;
+  private LineRenderer playerBeam;
   private GameObject mirage;
   private Animator mirageAnimator;
 
   private bool inSun;
-  private bool pressed;
-  private bool reflectGem;
-  private bool fireGem;
-  private int charges;
 
   // Start is called before the first frame update
   void Start()
@@ -72,6 +69,7 @@ public class L2P2Manager : MonoBehaviour
 
     player = GameObject.Find("Player");
     playerDirection = player.GetComponent<Animator>();
+    playerBeam = player.transform.GetChild(10).GetComponent<LineRenderer>();
 
     mirage = GameObject.Find("Mirage");
     mirageAnimator = mirage.GetComponent<Animator>();
@@ -81,16 +79,19 @@ public class L2P2Manager : MonoBehaviour
     void Update()
     {
       inSun = GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight;
-      pressed = player.GetComponent<BeamButton>().isPressed();
-      reflectGem = player.GetComponent<GemPick>().returnReflectGem();
-      fireGem = player.GetComponent<GemPick>().returnFireGem();
-      charges = GameControlScript.charges;
+      player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
 
-      if ((inSun && !pressed) || (inSun && pressed && reflectGem) || (!inSun && pressed && reflectGem))
+      if (inSun)
       {
-        playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
-        if (playerHitObj != null)
-        {
+        playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
+      }
+      else
+      {
+        playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
+      }
+
+      if (playerHitObj != null)
+      {
           if (playerHitObj.name == orb0.name)
           {
             orb0Hit = setOrbLight(orb0);
@@ -130,13 +131,6 @@ public class L2P2Manager : MonoBehaviour
             p1Hit = null;
           }
         }
-      }
-      else
-      {
-        player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
-        pyramid1Beam.enabled = false;
-        pyramid0Beam.enabled = false;
-      }
 
       if ((orb0Hit != null && orb0Hit.name == pyramid0.name) || (orb1Hit != null && orb1Hit.name == pyramid0.name))
       {
@@ -228,6 +222,19 @@ public class L2P2Manager : MonoBehaviour
         {
           mirageAnimator.SetInteger("numHits", 0);
         }
+      }
+      if (!playerBeam.enabled)
+      {
+        if((orb0Hit == null || orb0Hit.collider.name != pyramid0.name) && (orb1Hit == null || orb1Hit.collider.name != pyramid0.name))
+        {
+          pyramid0Beam.enabled = false;
+        }
+        if ((orb0Hit == null || orb0Hit.collider.name != pyramid1.name) && (orb1Hit == null || orb1Hit.collider.name != pyramid1.name))
+        {
+          pyramid1Beam.enabled = false;
+        }
+
+        //playerBeam.enabled = false;
       }
     }
 

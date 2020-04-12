@@ -46,6 +46,7 @@ namespace Pathfinding
     // Update is called once per frame
     void Update()
     {
+      player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
       if (checkInSunlight())
       {
         if (playerDirection.GetBool("isIdleUp"))
@@ -64,7 +65,7 @@ namespace Pathfinding
         {
           beamDirectionNum = 0;
         }
-        hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect(hittableObjBeams);
+        hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
         if(hitCollider != null)
         {
           reflect(hitCollider.name, beamDirectionNum);
