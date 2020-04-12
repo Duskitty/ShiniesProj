@@ -225,11 +225,11 @@ public class L2P2Manager : MonoBehaviour
       }
       if (!playerBeam.enabled)
       {
-        if((orb0Hit == null || orb0Hit.collider.name != pyramid0.name) && (orb1Hit == null || orb1Hit.collider.name != pyramid0.name))
+        if((orb0Hit == null || orb0Hit.GetComponent<BoxCollider2D>().name != pyramid0.name) && (orb1Hit == null || orb1Hit.GetComponent<BoxCollider2D>().name != pyramid0.name))
         {
           pyramid0Beam.enabled = false;
         }
-        if ((orb0Hit == null || orb0Hit.collider.name != pyramid1.name) && (orb1Hit == null || orb1Hit.collider.name != pyramid1.name))
+        if ((orb0Hit == null || orb0Hit.GetComponent<BoxCollider2D>().name != pyramid1.name) && (orb1Hit == null || orb1Hit.GetComponent<BoxCollider2D>().name != pyramid1.name))
         {
           pyramid1Beam.enabled = false;
         }

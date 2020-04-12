@@ -140,17 +140,6 @@ public class castBeam : MonoBehaviour
         playerBeam.enabled = false;
     }
 
-    IEnumerator burnCactus()
-    {
-        if (hitObj != null)
-        {
-            hitObj.GetComponent<Animator>().SetBool("isBurned", true);
-            yield return new WaitForSeconds(0.4f);
-            Destroy(hitObj);
-        }
-        yield return null;
-    }
-
     IEnumerator fireBurst()
     {
         if (fireBall != null)
@@ -164,9 +153,10 @@ public class castBeam : MonoBehaviour
                 if (fireHits[i] != null)//re look at this statment because it saying it going to always return true 
                 {
                     hitObj = GameObject.Find(fireHits[i].collider.name);
-                    if (hitObj != null && hitObj.tag == "Cactus")
+                    if (hitObj != null && hitObj.tag == "Cactus" && !hitObj.GetComponent<Animator>().GetBool("isBurned"))
                     {
-                        StartCoroutine(burnCactus());
+                        //StopCoroutine(burnCactus());
+                        StartCoroutine(burnCactus(hitObj));
                     }
                     else if (hitObj != null && hitObj.tag == "Torch")
                     {
@@ -185,7 +175,18 @@ public class castBeam : MonoBehaviour
         yield return null;
     }
 
-    public void ButtonPress()
+    IEnumerator burnCactus(GameObject hitObj)
+    {
+      //Debug.Log(hitObj.name + " " + hitObj.GetComponent<Animator>().GetBool("isBurned"));
+
+      hitObj.GetComponent<Animator>().SetBool("isBurned", true);
+      yield return new WaitForSeconds(0.4f);
+      hitObj.GetComponent<Animator>().SetBool("isBurned", false);
+      Destroy(hitObj);
+      yield return null;
+    }
+
+  public void ButtonPress()
     {
         if ((checkInSunlight() && GemPick.fireGem) ||(!checkInSunlight() && GemPick.fireGem && GameControlScript.charges >= 1))
         {
@@ -250,7 +251,7 @@ public class castBeam : MonoBehaviour
           for (int i = 0; i < hittableObjBeams.Length; i++)
           {
             hittableObjBeams[i].enabled = false;
-          Debug.Log(hittableObjBeams[i].enabled);
+            //Debug.Log(hittableObjBeams[i].enabled);
           }
         }
         playerBeam.enabled = false;
