@@ -72315,6 +72315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4061ac4eb7128c548a187dea9157ba36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sunPatches: []
 --- !u!1 &1159703083
 GameObject:
   m_ObjectHideFlags: 0
@@ -76403,6 +76404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4061ac4eb7128c548a187dea9157ba36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sunPatches: []
 --- !u!120 &1503810649
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -84204,10 +84206,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
+        type: 3}
+      propertyPath: textBoxAnimator
+      value: 
+      objectReference: {fileID: 439848289}
+    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
+        type: 3}
+      propertyPath: hasShield
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -163.64
+      value: -163.9
       objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861370, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}
@@ -84258,21 +84275,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
-        type: 3}
-      propertyPath: textBoxAnimator
-      value: 
-      objectReference: {fileID: 439848289}
-    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
-        type: 3}
-      propertyPath: sprintSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479389968769861371, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
-        type: 3}
-      propertyPath: hasShield
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6479389968769861375, guid: 9c4b88165dd8197428d1cc80bfbc13c6,
         type: 3}

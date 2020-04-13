@@ -47,6 +47,7 @@ namespace Pathfinding
     void Update()
     {
       player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
+
       if (checkInSunlight())
       {
         if (playerDirection.GetBool("isIdleUp"))

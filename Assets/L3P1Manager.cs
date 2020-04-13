@@ -86,14 +86,14 @@ public class L3P1Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
       if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight)
       {
         pHit = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
       }
       else
       {
-        pHit = null;
-        player.transform.GetChild(10).GetComponent<castBeam>().disableLight();
+        pHit = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
       }
 
       if (pHit != null)
