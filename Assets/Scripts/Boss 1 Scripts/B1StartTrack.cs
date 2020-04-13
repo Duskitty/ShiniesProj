@@ -9,8 +9,8 @@ public class B1StartTrack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        GameObject.Find("Controller").GetComponent<AIPath>().enabled = true;
-        GameObject.Find("Controller").GetComponent<AIDestinationSetter>().enabled = true;
+        GameObject.FindGameObjectWithTag("Boss").GetComponent<AIPath>().enabled = true;
+        GameObject.FindGameObjectWithTag("Boss").GetComponent<AIDestinationSetter>().enabled = true;
         fightBegin = true;
     }
 }

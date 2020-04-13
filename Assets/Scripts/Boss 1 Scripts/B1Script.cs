@@ -30,6 +30,7 @@ public class B1Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim.enabled = true;
         invin = 0f;
         switchTime = 5f;
         waiting = 0f;
@@ -97,6 +98,11 @@ public class B1Script : MonoBehaviour
             {
                 Debug.Log("boss took damage");
                 health--;
+                GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((health / 12.0f), 1f, 1f);
+                if(health == 0)
+                {
+                    GameObject.Find("Controller").SetActive(false);
+                }
             }
             else if (invin > 0 || B1ChargeState.stunned == true)
             {
