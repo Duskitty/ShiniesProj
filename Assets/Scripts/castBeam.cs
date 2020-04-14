@@ -23,6 +23,12 @@ public class castBeam : MonoBehaviour
     private GameObject fireBall;
     private bool firePlaying;
     private Collider2D playerHitCollider;
+    public GameObject iceSpawn;
+    private RaycastHit2D[] iceHits;
+    private Transform iceHitPoint;
+    private Transform iceRaySpawn;
+    private Vector2 iceDirection;
+    private Vector3 iceEndMod;
 
     private LineRenderer[] hittableObjBeams;
     public SunlightTrigger[] sunPatches;
@@ -41,6 +47,7 @@ public class castBeam : MonoBehaviour
         layerMask = LayerMask.GetMask("SunPatch");
         fireHits = new RaycastHit2D[10];
         firePlaying = false;
+        
     }
 
     public Collider2D reflect()
@@ -130,9 +137,49 @@ public class castBeam : MonoBehaviour
         if (!firePlaying)
         {
             fireHits = Physics2D.BoxCastAll(playerRaySpawn.position + fireEndMod, new Vector2(1, 0.25f), 0f, fireDirection, 1f, ~layerMask);
-            //StopCoroutine(fireBurst());
             StartCoroutine(fireBurst());
         }
+    }
+
+    public void castIce()
+    {
+      GameObject ice = Instantiate(iceSpawn, player.transform.position, player.transform.rotation);
+      iceHitPoint = ice.transform.GetChild(4);
+
+      if (playerDirection.GetBool("isIdleUp"))
+      {
+        iceRaySpawn = player.transform.GetChild(0);
+        iceDirection = new Vector2(0, 1);
+        iceEndMod = new Vector3(0, 3, 0);
+      }
+      else if (playerDirection.GetBool("isIdleRight"))
+      {
+        iceRaySpawn = player.transform.GetChild(3);
+        iceDirection = new Vector2(1, 0);
+        iceEndMod = new Vector3(3, 0, 0);
+      }
+      else if (playerDirection.GetBool("isIdleDown"))
+      {
+        iceRaySpawn = player.transform.GetChild(2);
+        iceDirection = new Vector2(0, -1);
+        iceEndMod = new Vector3(0, -3, 0);
+      }
+      else if (playerDirection.GetBool("isIdleLeft"))
+      {
+        iceRaySpawn = player.transform.GetChild(1);
+        iceDirection = new Vector2(-1, 0);
+        iceEndMod = new Vector3(-3, 0, 0);
+      }
+      else
+      {
+        return;
+      }
+
+      iceHits = Physics2D.BoxCastAll(iceRaySpawn.position, new Vector2(.5f, 1.5f), 0f, iceDirection, 1f, ~layerMask);
+      ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
+      ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
+      ice.GetComponent<LineRenderer>().enabled = true;
+      StartCoroutine(meltIce(ice));
     }
 
     public void disableLight()
@@ -186,6 +233,13 @@ public class castBeam : MonoBehaviour
       yield return null;
     }
 
+    IEnumerator meltIce(GameObject ice)
+    {
+      yield return new WaitForSeconds(3);
+      Destroy(ice);
+      yield return null;
+    }
+
   public void ButtonPress()
     {
         if ((checkInSunlight() && GemPick.fireGem) ||(!checkInSunlight() && GemPick.fireGem && GameControlScript.charges >= 1))
@@ -214,7 +268,11 @@ public class castBeam : MonoBehaviour
           {
             GameControlScript.charges -= 1;
           }
-        } 
+        }
+        else
+        {
+          castIce();
+        }
     }
 
     public bool checkInSunlight()
