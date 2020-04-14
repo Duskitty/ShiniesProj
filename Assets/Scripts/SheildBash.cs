@@ -55,7 +55,7 @@ public class SheildBash : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("enemy") || col.gameObject.CompareTag("bridge"))
+        if (col.gameObject.CompareTag("enemy") || col.gameObject.CompareTag("bridge")|| col.gameObject.CompareTag("Boss"))
         {
             //do nothing else statment is to pervent sticking to things
 
