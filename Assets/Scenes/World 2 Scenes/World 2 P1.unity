@@ -5015,6 +5015,11 @@ PrefabInstance:
       propertyPath: reflectGem
       value: 
       objectReference: {fileID: 1325030246}
+    - target: {fileID: 2834885300663314857, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1789474016177757691, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
@@ -24618,6 +24623,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 10}
   m_EdgeRadius: 0
+--- !u!1 &1515890042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1789474016177757670, guid: d51aecc35884a8145a1c259ed7f0bc66,
+    type: 3}
+  m_PrefabInstance: {fileID: 361487769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1515890058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515890042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcb652f8deb2d5439d358b8905578c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeofInvincible: 2
 --- !u!1 &1532328231
 GameObject:
   m_ObjectHideFlags: 0

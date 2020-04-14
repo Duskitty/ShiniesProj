@@ -52,7 +52,7 @@ public class MushroomMove : MonoBehaviour
   }
       public void OnTriggerEnter2D(Collider2D col)
      {
-           if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == true)
+           if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == true&& Invincible.isHit==false)
            {
                Debug.Log("Im sheild bashing " + gameObject.name);
                animat.SetBool("Explode", true);
@@ -61,12 +61,12 @@ public class MushroomMove : MonoBehaviour
                StartCoroutine(Die());
                //this is when the player is sheild bashing
                //dont do damage 
-
+               //also the player isnt hit so dont change the Invincible.isHit to true 
 
            }
-           else if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == false) {
+           else if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == false&& Invincible.isHit==false) {
                Debug.Log("Im not sheild bashing " + gameObject.name);
-
+            Invincible.isHit = true;
                animat.SetBool("Explode", true);
                GameControlScript.health -= 1;
                StartCoroutine(col.GetComponent<KnockBack>().KnockCo());

@@ -99,6 +99,7 @@ public class B1Script : MonoBehaviour
                 Debug.Log("boss took damage");
                 health--;
                 GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((health / 12.0f), 1f, 1f);
+                GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
                 if(health == 0)
                 {
                     GameObject.Find("Controller").SetActive(false);

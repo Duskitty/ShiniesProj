@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -67074,6 +67074,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2013977406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013977404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcb652f8deb2d5439d358b8905578c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeofInvincible: 2
 --- !u!1001 &2027016451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69226,11 +69239,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: sunPatches.Array.data[0]
-      value: 
-      objectReference: {fileID: 637921858}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -69291,11 +69299,6 @@ PrefabInstance:
       propertyPath: textBoxAnimator
       value: 
       objectReference: {fileID: 849882614}
-    - target: {fileID: 2834885300663314857, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: sheild
@@ -69311,6 +69314,16 @@ PrefabInstance:
       propertyPath: reflectGem
       value: 
       objectReference: {fileID: 1642666760}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: sunPatches.Array.data[0]
+      value: 
+      objectReference: {fileID: 637921858}
+    - target: {fileID: 2834885300663314857, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1789474016177757691, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
