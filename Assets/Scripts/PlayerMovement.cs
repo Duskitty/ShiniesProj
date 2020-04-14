@@ -98,13 +98,13 @@ public class PlayerMovement : MonoBehaviour
       if (Input.GetKey(KeyCode.LeftShift))
       {
         transform.Translate(new Vector3(-sprintSpeed * Time.deltaTime, 0f, 0f));
-        GetComponent<PlayerMelee>().setSprint(true);
+      //  GetComponent<PlayerMelee>().setSprint(true);
 
       }
       else
       {
 
-        GetComponent<PlayerMelee>().setSprint(false);
+     //   GetComponent<PlayerMelee>().setSprint(false);
 
       }
 
@@ -132,12 +132,12 @@ public class PlayerMovement : MonoBehaviour
       if (Input.GetKey(KeyCode.LeftShift))
       {
         transform.Translate(new Vector3(sprintSpeed * Time.deltaTime, 0f, 0f));
-        GetComponent<PlayerMelee>().setSprint(true);
+      //  GetComponent<PlayerMelee>().setSprint(true);
 
       }
       else
       {
-        GetComponent<PlayerMelee>().setSprint(false);
+       /// GetComponent<PlayerMelee>().setSprint(false);
 
 
       }
