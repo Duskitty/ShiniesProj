@@ -5020,6 +5020,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: sunPatches.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: sunPatches.Array.data[0]
+      value: 
+      objectReference: {fileID: 1200987482}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: sunPatches.Array.data[1]
+      value: 
+      objectReference: {fileID: 1659475843}
     m_RemovedComponents:
     - {fileID: 1789474016177757691, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
@@ -24155,6 +24170,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 229423517}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1200987482 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 255631738223855412, guid: e4963dfe758fc9346974d5469477665f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1297036528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cbe0703c7f3004587d1c5ca83621dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1293975644 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1853778149815956264, guid: 489c809e7d7a54c4cacbf2c5699a6059,
@@ -24629,6 +24656,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 361487769}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1515890043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6176802839701936797, guid: d51aecc35884a8145a1c259ed7f0bc66,
+    type: 3}
+  m_PrefabInstance: {fileID: 361487769}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515890042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 955e985204129644ea92efda6b1a360c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1515890058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24949,6 +24988,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9de0d6c73bcfd45a05371eb95393e7, type: 3}
+--- !u!114 &1659475843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 255631738223855412, guid: e4963dfe758fc9346974d5469477665f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1298007141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cbe0703c7f3004587d1c5ca83621dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1663755209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25236,7 +25287,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1515890043}
         m_MethodName: ReflectGem
         m_Mode: 1
         m_Arguments:
