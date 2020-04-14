@@ -711,7 +711,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2122855003}
-        m_MethodName: newGame
+        m_MethodName: playNewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1009,8 +1009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824d68df717b43b46bc4205ad23a26cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartLevel: World_1
-  LevelSelect: 
 --- !u!1 &2125541880
 GameObject:
   m_ObjectHideFlags: 0

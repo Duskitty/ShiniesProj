@@ -1,23 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    public string StartLevel;
-    public string LevelSelect;
 
-    public void newGame()
+    public void playNewGame()
     {
-        Application.LoadLevel(StartLevel);
+        SceneManager.LoadScene("World_1");
     }
-    public void levelSelect()
-    {
 
-        Application.LoadLevel(LevelSelect);
-    }
-    public void quitGame()
-    {
-        Application.Quit();
-    }
+
 }
