@@ -7,6 +7,7 @@ public class Charges : MonoBehaviour
 {
      void Update()
     {
+        /*
         if (Input.GetKey(KeyCode.C)) {
 
             GameControlScript.charges -= 1;//decrmate the charges
@@ -17,6 +18,7 @@ public class Charges : MonoBehaviour
             }
         
         }
+        */
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
