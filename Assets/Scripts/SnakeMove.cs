@@ -25,7 +25,7 @@ public class SnakeMove : MonoBehaviour
         if (horizontal < 0)
         {
             animat.SetBool("Right", false);
-            animat.SetBool("Moving", true);
+            animat.SetBool("isMoving", true);
             animat.SetBool("Left", true);
             animat.SetBool("Up", false);
             animat.SetBool("Down", false);
@@ -33,7 +33,7 @@ public class SnakeMove : MonoBehaviour
         if (vertical > 0)
         {
             animat.SetBool("Right", false);
-            animat.SetBool("Moving", true);
+            animat.SetBool("isMoving", true);
             animat.SetBool("Left", false);
             animat.SetBool("Up", true);
             animat.SetBool("Down", false);
@@ -41,7 +41,7 @@ public class SnakeMove : MonoBehaviour
         if (vertical < 0)
         {
             animat.SetBool("Right", false);
-            animat.SetBool("Moving", true);
+            animat.SetBool("isMoving", true);
             animat.SetBool("Left", false);
             animat.SetBool("Up", false);
             animat.SetBool("Down", true);
@@ -49,6 +49,46 @@ public class SnakeMove : MonoBehaviour
 
 
     }
+    /*
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == true && Invincible.isHit == false)
+        {
+            Debug.Log("Im sheild bashing " + gameObject.name);
+            SheildBash.isSheildBashing = false;
+            GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
+            StartCoroutine(Die());
+            //this is when the player is sheild bashing
+            //dont do damage 
+            //also the player isnt hit so dont change the Invincible.isHit to true 
+
+        }
+        else if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == false && Invincible.isHit == false)
+        {
+            Debug.Log("Im not sheild bashing " + gameObject.name);
+            Invincible.isHit = true;
+            GameControlScript.health -= 1;
+            StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
+            StartCoroutine(Die());
+
+
+        }
+    }
+    */
+    public IEnumerator Die()
+    {
+        yield return new WaitForSeconds(Delay);
+        Destroy(gameObject);
+
+    }
+    public void Bash()
+    {
+        Debug.Log("about to sheild bash");
+
+        StartCoroutine(Die());
+        // ChangeScene();
+    }
+    /*
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == true && Invincible.isHit == false)
@@ -89,4 +129,5 @@ public class SnakeMove : MonoBehaviour
         StartCoroutine(Die());
         // ChangeScene();
     }
+    */
 }
