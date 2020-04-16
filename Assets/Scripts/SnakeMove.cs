@@ -49,8 +49,8 @@ public class SnakeMove : MonoBehaviour
 
 
     }
-    /*
-    public void OnCollisionEnter2D(Collision2D col)
+    
+    public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == true && Invincible.isHit == false)
         {
@@ -74,7 +74,7 @@ public class SnakeMove : MonoBehaviour
 
         }
     }
-    */
+    
     public IEnumerator Die()
     {
         yield return new WaitForSeconds(Delay);
