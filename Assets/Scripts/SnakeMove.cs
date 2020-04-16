@@ -69,7 +69,7 @@ public class SnakeMove : MonoBehaviour
             Invincible.isHit = true;
             GameControlScript.health -= 1;
             StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
-            StartCoroutine(Die());
+           // StartCoroutine(Die());
 
 
         }
@@ -81,13 +81,7 @@ public class SnakeMove : MonoBehaviour
         Destroy(gameObject);
 
     }
-    public void Bash()
-    {
-        Debug.Log("about to sheild bash");
-
-        StartCoroutine(Die());
-        // ChangeScene();
-    }
+  
     /*
     public void OnTriggerEnter2D(Collider2D col)
     {
