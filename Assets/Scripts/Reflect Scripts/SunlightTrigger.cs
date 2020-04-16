@@ -4,16 +4,37 @@ using UnityEngine;
 
 public class SunlightTrigger : MonoBehaviour
 {
-  public bool inSunlight; 
+  public bool inSunlight;
+    private LineRenderer lightSpawn;
+
+    public void Start()
+    {
+        lightSpawn = GameObject.Find("lightSpawn").GetComponent<LineRenderer>();
+    }
+
   public void OnTriggerEnter2D(Collider2D thing)
   {
-    inSunlight = true;
-    //Debug.Log("In sun");
+        if (thing.tag == "Player")
+        {
+            inSunlight = true;
+            lightSpawn.enabled = true;
+            //Debug.Log("In sun");
+        }
   }
 
   public void OnTriggerExit2D(Collider2D thing)
   {
-    inSunlight = false;
-    //Debug.Log("Not in sun");
+        if (thing.tag == "Player")
+        {
+            inSunlight = false;
+            lightSpawn.enabled = false;
+            //Debug.Log("not in sun");
+        }
+
+  }
+
+  public void removeBeams()
+  {
+
   }
 }

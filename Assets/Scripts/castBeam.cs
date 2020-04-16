@@ -52,6 +52,8 @@ public class castBeam : MonoBehaviour
 
     public Collider2D reflect()
     {
+        Debug.Log("REFLECT GOT CALLED");
+  
         if (playerDirection.GetBool("isIdleUp"))
         {
             playerHitPoint = player.transform.GetChild(5);
@@ -87,7 +89,7 @@ public class castBeam : MonoBehaviour
 
         if (playerHit.collider != null)
         {
-            playerHitPoint.position = playerHit.point;
+            playerHitPoint.position = playerHit.point; //THIS is the line that moves the hitpoint box
             playerBeam.SetPosition(0, playerLightSpawn.position);
             playerBeam.SetPosition(1, playerHitPoint.position);
             playerBeam.enabled = true;
