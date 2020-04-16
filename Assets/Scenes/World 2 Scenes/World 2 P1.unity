@@ -160,7 +160,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19797394}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
   m_Name: 
@@ -239,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19797394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -142.01163, y: 2.0318186, z: 0}
+  m_LocalPosition: {x: -132.63, y: -1.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1323565229}
@@ -24589,12 +24589,12 @@ PrefabInstance:
     - target: {fileID: 3077877359295592062, guid: 64888a6119440054aa5d8cd536763412,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3077877359295592062, guid: 64888a6119440054aa5d8cd536763412,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.56
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3077877359295592062, guid: 64888a6119440054aa5d8cd536763412,
         type: 3}
@@ -24641,6 +24641,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3077877359295592049, guid: 64888a6119440054aa5d8cd536763412,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -472867759
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077877359295592049, guid: 64888a6119440054aa5d8cd536763412,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64888a6119440054aa5d8cd536763412, type: 3}
 --- !u!1 &1323565228 stripped
@@ -24674,9 +24684,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0149947405, y: 0.014990091}
+  m_Offset: {x: -0.033856213, y: 0.029624939}
   serializedVersion: 2
-  m_Radius: 0.28124535
+  m_Radius: 0.29394227
 --- !u!50 &1323565233
 Rigidbody2D:
   serializedVersion: 4
@@ -26144,11 +26154,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f70d79fd34714bf47ac406f7f96d439e,
         type: 3}
-    - target: {fileID: 2199577797272764455, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2199577797272764452, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
         type: 3}
       propertyPath: dialogue.dialogueLines.Array.size
@@ -26173,6 +26178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[3]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199577797272764455, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9de0d6c73bcfd45a05371eb95393e7, type: 3}
