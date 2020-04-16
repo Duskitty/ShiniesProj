@@ -24684,9 +24684,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.033856213, y: 0.029624939}
+  m_Offset: {x: -0.033856213, y: -0.0075195134}
   serializedVersion: 2
-  m_Radius: 0.29394227
+  m_Radius: 0.33108672
 --- !u!50 &1323565233
 Rigidbody2D:
   serializedVersion: 4
@@ -25064,7 +25064,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515890042}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d850562abd2a15941a3474a30b3217df, type: 3}
