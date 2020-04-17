@@ -179,7 +179,7 @@ public class castBeam : MonoBehaviour
       ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
       ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
       ice.GetComponent<LineRenderer>().enabled = true;
-      StartCoroutine(meltIce(ice));
+      //StartCoroutine(meltIce(ice));
     }
 
     public void disableLight()
