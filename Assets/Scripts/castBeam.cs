@@ -175,11 +175,23 @@ public class castBeam : MonoBehaviour
         return;
       }
 
-      iceHits = Physics2D.BoxCastAll(iceRaySpawn.position, new Vector2(.5f, 1.5f), 0f, iceDirection, 1f, ~layerMask);
+      iceHits = Physics2D.BoxCastAll(iceRaySpawn.position, new Vector2(1f, 1.5f), 0f, iceDirection, 1f, ~layerMask);
       ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
       ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
       ice.GetComponent<LineRenderer>().enabled = true;
-      //StartCoroutine(meltIce(ice));
+
+      if(iceHits != null)
+      {
+        for(int i = 0; i < iceHits.Length; i++)
+        {
+          hitObj = GameObject.Find(iceHits[i].collider.name);
+          if (hitObj.tag == "WaterCollider")
+          {
+            hitObj.GetComponent<BoxCollider2D>().enabled = false;
+          }
+        }
+      }
+      StartCoroutine(meltIce(ice));
     }
 
     public void disableLight()
@@ -235,8 +247,19 @@ public class castBeam : MonoBehaviour
 
     IEnumerator meltIce(GameObject ice)
     {
-      yield return new WaitForSeconds(3);
+      yield return new WaitForSeconds(5);
       Destroy(ice);
+      if (iceHits != null)
+      {
+        for (int i = 0; i < iceHits.Length; i++)
+        {
+          hitObj = GameObject.Find(iceHits[i].collider.name);
+          if (hitObj.tag == "WaterCollider")
+          {
+            hitObj.GetComponent<BoxCollider2D>().enabled = true;
+          }
+        }
+      }
       yield return null;
     }
 
