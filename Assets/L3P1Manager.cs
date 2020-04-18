@@ -97,7 +97,7 @@ public class L3P1Manager : MonoBehaviour
   void Update()
   {
     player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
-    if (GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight)
+    if (GameObject.Find("sun").GetComponent<SunlightTrigger>().inSunlight)
     {
       pHit = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
     }
