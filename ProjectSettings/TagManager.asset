@@ -21,6 +21,8 @@ TagManager:
   - mirage
   - HealthBar
   - WaterCollider
+  - IceBlock
+  - EnemyIceBlock
   layers:
   - Default
   - TransparentFX

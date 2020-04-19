@@ -24,6 +24,7 @@ public class castBeam : MonoBehaviour
     private bool firePlaying;
     private Collider2D playerHitCollider;
     public GameObject iceSpawn;
+    public GameObject iceBlock;
     private RaycastHit2D[] iceHits;
     private Transform iceHitPoint;
     private Transform iceRaySpawn;
@@ -200,6 +201,10 @@ public class castBeam : MonoBehaviour
           {
             hitObj.GetComponent<BoxCollider2D>().enabled = false;
           }
+          else if(hitObj.tag == "enemy")
+          {
+            StartCoroutine(meltEnemy(hitObj));
+          }
         }
       }
     }
@@ -233,6 +238,10 @@ public class castBeam : MonoBehaviour
                         hitObj.GetComponent<Animator>().SetBool("isLit", true);
                         hitObj.transform.GetChild(0).gameObject.SetActive(true);
                     }
+                    else if (hitObj != null && hitObj.tag == "IceBlock")
+                    {
+                        StartCoroutine(refreezeIce(hitObj));
+                    }
                 }
             }
         }
@@ -254,32 +263,6 @@ public class castBeam : MonoBehaviour
       Destroy(hitObj);
       yield return null;
     }
-
-    /*IEnumerator meltIce(GameObject ice)
-    {
-      yield return new WaitForSeconds(4);
-      for (float f = 1f; f >= -0.05f; f -= 0.05f)
-      {
-        //Debug.Log("here");
-        Color c = playerSprite.color;
-        c.a = f;
-        playerSprite.color = c;
-        yield return new WaitForSeconds(0.05f);
-      }
-      Destroy(ice);
-      if (iceHits != null)
-      {
-        for (int i = 0; i < iceHits.Length; i++)
-        {
-          hitObj = GameObject.Find(iceHits[i].collider.name);
-          if (hitObj.tag == "WaterCollider")
-          {
-            hitObj.GetComponent<BoxCollider2D>().enabled = true;
-          }
-        }
-      }
-      yield return null;
-    }*/
 
   public void ButtonPress()
     {
@@ -304,16 +287,14 @@ public class castBeam : MonoBehaviour
         else if ((checkInSunlight() && GemPick.iceGem) || (!checkInSunlight() && GemPick.iceGem && GameControlScript.charges >= 1))
         {
           //cast ice
+          castIce();
           GetComponent<LineRenderer>().enabled = false;
           if (!checkInSunlight())
           {
             GameControlScript.charges -= 1;
           }
         }
-        else
-        {
-          castIce();
-        }
+
     }
 
     public bool checkInSunlight()
@@ -360,31 +341,84 @@ public class castBeam : MonoBehaviour
       yield return new WaitForSeconds(.1f);
     }
     yield return new WaitForSeconds(5);
-    for (float f = 1f; f >= -0.05f; f -= 0.05f)
+    if (ice.tag != "EnemyIceBlock")
     {
-      //Debug.Log("here");
-      Color c = iceRaySpawn.GetChild(0).GetComponent<SpriteRenderer>().color;
-      c.a = f;
-      for (int i = 0; i <= 8; i += 2)
+      for (float f = 1f; f >= -0.05f; f -= 0.05f)
       {
-        iceRaySpawn.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().color = c;
-        iceRaySpawn.transform.GetChild(i + 1).gameObject.GetComponent<SpriteRenderer>().color = c;
+        //Debug.Log("here");
+        Color c = iceRaySpawn.GetChild(0).GetComponent<SpriteRenderer>().color;
+        c.a = f;
+        for (int i = 0; i <= 8; i += 2)
+        {
+          iceRaySpawn.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().color = c;
+          iceRaySpawn.transform.GetChild(i + 1).gameObject.GetComponent<SpriteRenderer>().color = c;
+        }
+        yield return new WaitForSeconds(0.05f);
       }
-      yield return new WaitForSeconds(0.05f);
-      
+      Destroy(ice);
     }
-    Destroy(ice);
     if (iceHits != null)
     {
       for (int i = 0; i < iceHits.Length; i++)
       {
         hitObj = GameObject.Find(iceHits[i].collider.name);
-        if (hitObj.tag == "WaterCollider")
+        if (hitObj != null)
         {
-          hitObj.GetComponent<BoxCollider2D>().enabled = true;
+          if (hitObj.tag == "WaterCollider")
+          {
+            hitObj.GetComponent<BoxCollider2D>().enabled = true;
+          }
+          else
+          {
+            continue;
+          }
         }
       }
     }
+    yield return null;
+  }
+
+  IEnumerator meltEnemy(GameObject enemy)
+  {
+    yield return new WaitForSeconds(0.1f);
+    GameObject block = Instantiate(iceBlock, hitObj.transform.position, hitObj.transform.rotation);
+    enemy.SetActive(false);
+    yield return new WaitForSeconds(6f);
+    for (float f = 1f; f >= -0.05f; f -= 0.05f)
+    {
+      //Debug.Log("here");
+      Color c = block.GetComponent<SpriteRenderer>().color;
+      c.a = f;
+      block.GetComponent<SpriteRenderer>().color = c;
+      yield return new WaitForSeconds(0.05f);
+    }
+    enemy.SetActive(true);
+    enemy.transform.position = block.transform.position;
+    Destroy(block);
+    yield return null;
+  }
+
+  IEnumerator refreezeIce(GameObject iceBlock)
+  {
+    Color blockColor = iceBlock.GetComponent<SpriteRenderer>().color;
+    for (float f = 1f; f >= -0.05f; f -= 0.05f)
+    {
+      //Debug.Log("here");
+      Color c = iceBlock.GetComponent<SpriteRenderer>().color;
+      c.a = f;
+      iceBlock.GetComponent<SpriteRenderer>().color = c;
+      yield return new WaitForSeconds(0.05f);
+    }
+    yield return new WaitForSeconds(5);
+    for (float f = 0.5f; f <= 1f; f += 0.05f)
+    {
+      //Debug.Log("here");
+      Color c = iceBlock.GetComponent<SpriteRenderer>().color;
+      c.a = f;
+      iceBlock.GetComponent<SpriteRenderer>().color = c;
+      yield return new WaitForSeconds(0.05f);
+    }
+    //firePlaying = false;
     yield return null;
   }
 
