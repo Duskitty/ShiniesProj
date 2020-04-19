@@ -16,22 +16,15 @@ public class IceControl : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) {
-            isOnIce = true;
-        }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if (isOnIce) {
-            player.GetComponent<PlayerMovement>().enabled = false;
-            player.GetComponent<SheildBash>().enabled = false;
             IceMove();
         }
     }
+    // Update is called once per frame
+   
     void IceMove()
     {
-        float speed = controller.mass;//calucating the friction force 
-        speed *= 9.81f;
+        float speed = 10f;
+        
         if (PlayerMovement.isMovingLeft)
         {
             controller.AddForce(new Vector2(-speed, 0f));
@@ -55,9 +48,9 @@ public class IceControl : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter2D(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        player.GetComponent<PlayerMovement>().enabled = false;
-        player.GetComponent<SheildBash>().enabled = false;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<SheildBash>().enabled = true;
     }
 }
