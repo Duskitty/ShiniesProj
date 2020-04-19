@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     }
     public void world3()
     {
-        SceneManager.LoadScene("World_1");
+        SceneManager.LoadScene("World 3 P1");
     }
 
 

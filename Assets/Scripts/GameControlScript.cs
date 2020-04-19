@@ -8,12 +8,12 @@ public class GameControlScript : MonoBehaviour
     public GameObject heart1, heart2, heart3, chargedGem1, chargedGem2, chargedGem3, unchargedGem1, unchargedGem2, unchargedGem3; //, gameOver;
     public static int health;
     public static int charges;
-    
+
 
 
     void Start()
     {
-       
+
 
         health = 3;
         heart1.gameObject.SetActive(true);
@@ -39,7 +39,7 @@ public class GameControlScript : MonoBehaviour
         {
             charges = 0;
         }
-        if(sceneName == "World_1_Boss") // World 1 Boss 
+        if (sceneName == "World_1_Boss") // World 1 Boss 
         {
             charges = 0;
         }
@@ -51,16 +51,14 @@ public class GameControlScript : MonoBehaviour
         {
             charges = 1;
         }
-        /*
-        else if (sceneName == "World_3")
+        else if (sceneName == "World 3 P1")
         {
             charges = 2;
         }
-        else if (sceneName == "World_4")
+        else if (sceneName == "World 3 P2")
         {
-            charges = 3;
+            charges = 2;
         }
-        */
 
 
     }
@@ -93,7 +91,7 @@ public class GameControlScript : MonoBehaviour
                 // gameOver.gameObject.SetActive(true);
                 Time.timeScale = 0; // makes game stop when all 3 lives are lost
                 break;
-                
+
 
 
 
@@ -106,7 +104,7 @@ public class GameControlScript : MonoBehaviour
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
-        if (sceneName == "World_1")// "World_1" is what it will be using, but for test purposes using this other scene
+        if (sceneName == "World_1")
         {
             charges = 0;
             unchargedGem1.gameObject.SetActive(false);
@@ -116,7 +114,7 @@ public class GameControlScript : MonoBehaviour
             chargedGem2.gameObject.SetActive(false);
             chargedGem3.gameObject.SetActive(false);
         }
-        else if (sceneName == "World_1_Boss") //
+        else if (sceneName == "World_1_Boss") 
         {
             charges = 0;
             unchargedGem1.gameObject.SetActive(false);
@@ -126,7 +124,7 @@ public class GameControlScript : MonoBehaviour
             chargedGem2.gameObject.SetActive(false);
             chargedGem3.gameObject.SetActive(false);
         }
-        else if (sceneName == "World 2 P1")//do to change the name before final build
+        else if (sceneName == "World 2 P1")
         {
             if (charges > 1)
                 charges = 1;
@@ -151,7 +149,7 @@ public class GameControlScript : MonoBehaviour
                     break;
             }
         }
-        else if (sceneName == "World 2 P2")//do to change the name before final build
+        else if (sceneName == "World 2 P2")
         {
             if (charges > 1)
                 charges = 1;
@@ -176,79 +174,74 @@ public class GameControlScript : MonoBehaviour
                     break;
             }
         }
-            /*
-        }
-        else if (sceneName == "World_3")
+        else if (sceneName == "World 3 P1")
         {
             if (charges > 2)
-            charges = 2;
-         case 0:
-                chargedGem1.gameObject.SetActive(false);
-                chargedGem2.gameObject.SetActive(false);
-                chargedGem3.gameObject.SetActive(false);
-                unchargedGem1.gameObject.SetActive(true);
-                unchargedGem2.gameObject.SetActive(true);
-                unchargedGem3.gameObject.SetActive(true);
-                break;
-            case 1:
-                chargedGem1.gameObject.SetActive(true);
-                chargedGem2.gameObject.SetActive(false);
-                chargedGem3.gameObject.SetActive(false);
-                unchargedGem1.gameObject.SetActive(false);
-                unchargedGem2.gameObject.SetActive(true);
-                unchargedGem3.gameObject.SetActive(true);
-                break;
-            case 2:
-                chargedGem1.gameObject.SetActive(true);
-                chargedGem2.gameObject.SetActive(true);
-                chargedGem3.gameObject.SetActive(false);
-                unchargedGem1.gameObject.SetActive(false);
-                unchargedGem2.gameObject.SetActive(false);
-                unchargedGem3.gameObject.SetActive(true);
-                break;
+                charges = 2;
 
+            switch (charges)
+            {
+                case 0:
+                    chargedGem1.gameObject.SetActive(false);
+                    chargedGem2.gameObject.SetActive(false);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(true);
+                    unchargedGem2.gameObject.SetActive(true);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
+                case 1:
+                    chargedGem1.gameObject.SetActive(true);
+                    chargedGem2.gameObject.SetActive(false);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(false);
+                    unchargedGem2.gameObject.SetActive(true);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
+                case 2:
+                    chargedGem1.gameObject.SetActive(true);
+                    chargedGem2.gameObject.SetActive(true);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(false);
+                    unchargedGem2.gameObject.SetActive(false);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
+
+            }
         }
-        else if (sceneName == "World_4")
+        else if (sceneName == "World 3 P2")
         {
-            if (charges > 3)
-            charges = 3;
-        case 0:
-                chargedGem1.gameObject.SetActive(false);
-                chargedGem2.gameObject.SetActive(false);
-                chargedGem3.gameObject.SetActive(false);
-                unchargedGem1.gameObject.SetActive(true);
-                unchargedGem2.gameObject.SetActive(true);
-                unchargedGem3.gameObject.SetActive(true);
-                break;
-            case 1:
-                chargedGem1.gameObject.SetActive(true);
-                chargedGem2.gameObject.SetActive(false);
-                chargedGem3.gameObject.SetActive(false);
-                unchargedGem1.gameObject.SetActive(false);
-                unchargedGem2.gameObject.SetActive(true);
-                unchargedGem3.gameObject.SetActive(true);
-                break;
-            case 2:
-                chargedGem1.gameObject.SetActive(true);
-                chargedGem2.gameObject.SetActive(true);
-                chargedGem3.gameObject.SetActive(false);
-                unchargedGem1.gameObject.SetActive(false);
-                unchargedGem2.gameObject.SetActive(false);
-                unchargedGem3.gameObject.SetActive(true);
+            if (charges > 2)
+                charges = 2;
 
-                break;
-            case 3:
-                chargedGem1.gameObject.SetActive(true);
-                chargedGem2.gameObject.SetActive(true);
-                chargedGem3.gameObject.SetActive(true);
-                unchargedGem1.gameObject.SetActive(false);
-                unchargedGem2.gameObject.SetActive(false);
-                unchargedGem3.gameObject.SetActive(false);
+            switch (charges)
+            {
+                case 0:
+                    chargedGem1.gameObject.SetActive(false);
+                    chargedGem2.gameObject.SetActive(false);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(true);
+                    unchargedGem2.gameObject.SetActive(true);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
+                case 1:
+                    chargedGem1.gameObject.SetActive(true);
+                    chargedGem2.gameObject.SetActive(false);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(false);
+                    unchargedGem2.gameObject.SetActive(true);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
+                case 2:
+                    chargedGem1.gameObject.SetActive(true);
+                    chargedGem2.gameObject.SetActive(true);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(false);
+                    unchargedGem2.gameObject.SetActive(false);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
 
-                break;
+            }
         }
-        */
-        
     }
-
 }
+      
