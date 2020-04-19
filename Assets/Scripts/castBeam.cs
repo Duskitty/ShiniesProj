@@ -29,6 +29,8 @@ public class castBeam : MonoBehaviour
     private Transform iceRaySpawn;
     private Vector2 iceDirection;
     private Vector3 iceEndMod;
+    private GameObject iceBall;
+    private Color iceColor;
 
     private LineRenderer[] hittableObjBeams;
     public SunlightTrigger[] sunPatches;
@@ -151,24 +153,32 @@ public class castBeam : MonoBehaviour
         iceRaySpawn = player.transform.GetChild(0);
         iceDirection = new Vector2(0, 1);
         iceEndMod = new Vector3(0, 3, 0);
+        iceBall = GameObject.Find("iceUp");
+        StartCoroutine(animateIcePath(ice.transform.GetChild(0), ice));
       }
       else if (playerDirection.GetBool("isIdleRight"))
       {
         iceRaySpawn = player.transform.GetChild(3);
         iceDirection = new Vector2(1, 0);
         iceEndMod = new Vector3(3, 0, 0);
+        iceBall = GameObject.Find("iceRight");
+        StartCoroutine(animateIcePath(ice.transform.GetChild(3), ice));
       }
       else if (playerDirection.GetBool("isIdleDown"))
       {
         iceRaySpawn = player.transform.GetChild(2);
         iceDirection = new Vector2(0, -1);
         iceEndMod = new Vector3(0, -3, 0);
+        iceBall = GameObject.Find("iceDown");
+        StartCoroutine(animateIcePath(ice.transform.GetChild(2), ice));
       }
       else if (playerDirection.GetBool("isIdleLeft"))
       {
         iceRaySpawn = player.transform.GetChild(1);
         iceDirection = new Vector2(-1, 0);
         iceEndMod = new Vector3(-3, 0, 0);
+        iceBall = GameObject.Find("iceLeft");
+        StartCoroutine(animateIcePath(ice.transform.GetChild(1), ice));
       }
       else
       {
@@ -176,9 +186,10 @@ public class castBeam : MonoBehaviour
       }
 
       iceHits = Physics2D.BoxCastAll(iceRaySpawn.position, new Vector2(1f, 1.5f), 0f, iceDirection, 1f, ~layerMask);
-      ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
-      ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
-      ice.GetComponent<LineRenderer>().enabled = true;
+      //ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
+      //ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
+      //ice.GetComponent<LineRenderer>().enabled = true;
+      StartCoroutine(iceBurst());
 
       if(iceHits != null)
       {
@@ -191,7 +202,6 @@ public class castBeam : MonoBehaviour
           }
         }
       }
-      StartCoroutine(meltIce(ice));
     }
 
     public void disableLight()
@@ -245,9 +255,17 @@ public class castBeam : MonoBehaviour
       yield return null;
     }
 
-    IEnumerator meltIce(GameObject ice)
+    /*IEnumerator meltIce(GameObject ice)
     {
-      yield return new WaitForSeconds(5);
+      yield return new WaitForSeconds(4);
+      for (float f = 1f; f >= -0.05f; f -= 0.05f)
+      {
+        //Debug.Log("here");
+        Color c = playerSprite.color;
+        c.a = f;
+        playerSprite.color = c;
+        yield return new WaitForSeconds(0.05f);
+      }
       Destroy(ice);
       if (iceHits != null)
       {
@@ -261,7 +279,7 @@ public class castBeam : MonoBehaviour
         }
       }
       yield return null;
-    }
+    }*/
 
   public void ButtonPress()
     {
@@ -315,16 +333,62 @@ public class castBeam : MonoBehaviour
       return playerHitCollider;
     }
 
-    /*public void setHittableObjBeams(LineRenderer[] hittableObjs)
+  IEnumerator iceBurst()
+  {
+    if (iceBall != null)
     {
-      hittableObjBeams = new LineRenderer[hittableObjs.Length];
-      for (int i = 0; i < hittableObjs.Length; i++)
-      {
-        hittableObjBeams[i] = hittableObjs[i];
-      }
-    }*/
+      //firePlaying = true;
+      iceBall.GetComponent<SpriteRenderer>().enabled = true;
+      iceBall.GetComponent<Animator>().SetBool("isActive", true);
+      //yield return new WaitForSeconds(0.45f); 
+    }
+    yield return new WaitForSeconds(.5f);
+    iceBall.GetComponent<SpriteRenderer>().enabled = false;
+    iceBall.GetComponent<Animator>().SetBool("isActive", false);
+    yield return new WaitForSeconds(2);
+    //firePlaying = false;
+    yield return null;
+  }
 
-    public void clearBeams(LineRenderer[] hittableObjBeams)
+  IEnumerator animateIcePath(Transform iceRaySpawn, GameObject ice)
+  {
+    iceColor = iceRaySpawn.GetChild(0).GetComponent<SpriteRenderer>().color;
+    for(int i = 0; i <= 8; i += 2)
+    {
+      iceRaySpawn.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().enabled = true;
+      iceRaySpawn.transform.GetChild(i+1).gameObject.GetComponent<SpriteRenderer>().enabled = true;
+      yield return new WaitForSeconds(.1f);
+    }
+    yield return new WaitForSeconds(5);
+    for (float f = 1f; f >= -0.05f; f -= 0.05f)
+    {
+      //Debug.Log("here");
+      Color c = iceRaySpawn.GetChild(0).GetComponent<SpriteRenderer>().color;
+      c.a = f;
+      for (int i = 0; i <= 8; i += 2)
+      {
+        iceRaySpawn.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().color = c;
+        iceRaySpawn.transform.GetChild(i + 1).gameObject.GetComponent<SpriteRenderer>().color = c;
+      }
+      yield return new WaitForSeconds(0.05f);
+      
+    }
+    Destroy(ice);
+    if (iceHits != null)
+    {
+      for (int i = 0; i < iceHits.Length; i++)
+      {
+        hitObj = GameObject.Find(iceHits[i].collider.name);
+        if (hitObj.tag == "WaterCollider")
+        {
+          hitObj.GetComponent<BoxCollider2D>().enabled = true;
+        }
+      }
+    }
+    yield return null;
+  }
+
+  public void clearBeams(LineRenderer[] hittableObjBeams)
     {
       if (playerDirection.GetBool("isMoving"))
       {

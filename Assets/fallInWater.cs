@@ -21,14 +21,6 @@ public class fallInWater : MonoBehaviour
     //GameObject.Find("Player").GetComponent<SheildBash>().enabled = false;//to do delete me after sprint on 4-7-2020
   }
 
-  void OnTriggerEnter2D(Collider2D col)
-  {
-    if (!isFalling)
-    {
-      StartCoroutine(playerFall());
-    }
-  }
-
   void OnTriggerStay2D(Collider2D col)
   {
     if (!isFalling)
