@@ -29,6 +29,7 @@ public class nextLevelTrigger : MonoBehaviour
             SceneManager.LoadScene("YouWin", LoadSceneMode.Single);
         }
 
+
     }
 
     private void Update()
