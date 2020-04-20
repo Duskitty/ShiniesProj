@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
        
-        if (Input.GetKey(KeyCode.W))//yAxis>0 supposed to be me testing if moving down will play move up animation
+        if (Input.GetKey(KeyCode.W))
         {
 
       transform.Translate(new Vector3(0f, speed * Time.deltaTime, 0f));
@@ -95,18 +95,7 @@ public class PlayerMovement : MonoBehaviour
       isMovingLeft = true;
       isMovingRight = false;
 
-      if (Input.GetKey(KeyCode.LeftShift))
-      {
-        transform.Translate(new Vector3(-sprintSpeed * Time.deltaTime, 0f, 0f));
-      //  GetComponent<PlayerMelee>().setSprint(true);
-
-      }
-      else
-      {
-
-     //   GetComponent<PlayerMelee>().setSprint(false);
-
-      }
+     
 
 
 
@@ -129,18 +118,6 @@ public class PlayerMovement : MonoBehaviour
       isMovingRight = true;
 
 
-      if (Input.GetKey(KeyCode.LeftShift))
-      {
-        transform.Translate(new Vector3(sprintSpeed * Time.deltaTime, 0f, 0f));
-      //  GetComponent<PlayerMelee>().setSprint(true);
-
-      }
-      else
-      {
-       /// GetComponent<PlayerMelee>().setSprint(false);
-
-
-      }
 
 
 
