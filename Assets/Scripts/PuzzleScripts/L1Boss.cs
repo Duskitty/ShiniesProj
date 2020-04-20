@@ -37,7 +37,7 @@ namespace Pathfinding
           }
           else if (hitObj.transform.tag == "enemy")
           {
-            hitObj.GetComponent <StunEnemy>().stun(hitObj);
+            //hitObj.GetComponent <StunEnemy>().stun(hitObj);
           }
         }
         else
