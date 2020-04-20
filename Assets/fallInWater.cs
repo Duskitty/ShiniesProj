@@ -24,13 +24,16 @@ public class fallInWater : MonoBehaviour
 
   void OnTriggerStay2D(Collider2D col)
   {
+    fallingObj = GameObject.Find(col.name);
     if (!isFalling)
     {
-      fallingObj = GameObject.Find(col.name);
       if (fallingObj == player || fallingObj.tag == "IceBlock" || fallingObj.tag == "EnemyIceBlock")
       {
-        psColor = fallingObj.GetComponent<SpriteRenderer>().color;
-        StartCoroutine(playerFall(fallingObj));
+        if (fallingObj.GetComponent<SpriteRenderer>().color.a == 1)
+        {
+          psColor = fallingObj.GetComponent<SpriteRenderer>().color;
+          StartCoroutine(playerFall(fallingObj));
+        }
       }
     }
   }
