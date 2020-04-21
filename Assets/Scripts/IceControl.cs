@@ -43,27 +43,35 @@ public class IceControl : MonoBehaviour
 
 
         }
+     //   RestoreMovment();
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<SheildBash>().enabled = true;
         isOnIce = false;
         controller.velocity = Vector2.zero;
+        //this.GetComponent<Collider2D>().enabled = false;
     }
-    void SetOnIce(bool isOnIce) {
-        this.isOnIce = isOnIce;
-    }
-    private void Update()
-    {
-        if (isOnIce) {
-            IceMove();
-        }
-    }
+   
+  
     private void OnTriggerStay2D(Collider2D collision)
+
     {
+        this.GetComponent<Collider2D>().enabled = true;
+
         IceMove();
 
     }
+    void RestoreMovment() {
+
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<SheildBash>().enabled = true;
+    }
+    public void setTrigger() {
+        this.GetComponent<Collider2D>().enabled = false;
+    }
+
 }
