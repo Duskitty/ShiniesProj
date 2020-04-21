@@ -25,7 +25,7 @@ public class L3P2Manager : MonoBehaviour
       player = GameObject.Find("Player");
       doorOpening = false;
       iceGemAvailable = false;
-      //iceGem = GameObject.Find("iceGem");
+      iceGem = GameObject.Find("iceGem");
       button0 = GameObject.Find("iceRinkButton");
       button1 = GameObject.Find("exitButton0");
       button2 = GameObject.Find("exitButton1");
@@ -47,7 +47,7 @@ public class L3P2Manager : MonoBehaviour
 
       if (button0Pressed && !iceGemAvailable)
       {
-        //iceGem.SetActive(true);
+        iceGem.SetActive(true);
         iceGemAvailable = true;
       }
 

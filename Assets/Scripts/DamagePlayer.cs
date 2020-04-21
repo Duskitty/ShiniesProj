@@ -6,7 +6,7 @@ public class DamagePlayer : MonoBehaviour
 { 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (Invincible.isHit==false)
+        if (Invincible.isHit==false && col.collider.name == "Player")
         {
             Invincible.isHit = true;
             GameControlScript.health -= 1;

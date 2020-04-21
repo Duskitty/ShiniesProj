@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class resetPuzzles : MonoBehaviour
 {
-  private GameObject l2p2Manager;
+  
     // Start is called before the first frame update
     void Start()
     {
-      l2p2Manager = GameObject.Find("L2P2Manager");
+      
     }
 
     // Update is called once per frame
@@ -29,15 +29,20 @@ public class resetPuzzles : MonoBehaviour
 
     public void resetL2P2()
     {
-      /*GameObject.Find("mirageOrb00").GetComponent<Animator>().SetBool("isLit", false);
-      GameObject.Find("mirageOrb01").GetComponent<Animator>().SetBool("isLit", false);*/
-      //GameObject.Find("mirageOrb00").transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
-      //GameObject.Find("mirageOrb01").transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
-
       GameObject.Find("miragePyramid00").transform.position = GameObject.Find("mPyramid00Pos").transform.position;
       GameObject.Find("miragePyramid00").transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
       GameObject.Find("miragePyramid01").transform.position = GameObject.Find("mPyramid01Pos").transform.position;
       GameObject.Find("miragePyramid01").transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
-
     }
+
+  public void resetL3P1()
+  {
+    GameObject.Find("RedCrystal").transform.position = GameObject.Find("RedCrystalPos").transform.position;
+    GameObject.Find("RedCrystal").transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
+    GameObject.Find("BlueCrystal").transform.position = GameObject.Find("BlueCrystalPos").transform.position;
+    GameObject.Find("BlueCrystal").transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
+    GameObject.Find("GreenCrystal").transform.position = GameObject.Find("GreenCrystalPos").transform.position;
+    GameObject.Find("GreenCrystal").transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
+    GameObject.Find("L3P1Manager").GetComponent<L3P1Manager>().resetDoor();
+  }
 }

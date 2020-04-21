@@ -140,7 +140,8 @@ public class L3P1Manager : MonoBehaviour
 
         if (rcHit != null)
         {
-          redCrystalBeam.SetColors(Color.red, Color.red);
+          redCrystalBeam.startColor = Color.red;
+          redCrystalBeam.endColor = Color.red;
           rcColor = Color.red;
           redCrystalHitPoint.position = rcHit.point;
           redCrystalBeam.SetPosition(0, rcLightSpawn.position + rcPosMod);
@@ -157,7 +158,8 @@ public class L3P1Manager : MonoBehaviour
 
             if (bcHit != null)
             {
-              blueCrystalBeam.SetColors(Color.magenta, Color.magenta);
+              blueCrystalBeam.startColor = Color.magenta;
+              blueCrystalBeam.endColor = Color.magenta;
               bcColor = Color.magenta;
               blueCrystalHitPoint.position = bcHit.point;
               blueCrystalBeam.SetPosition(0, bcLightSpawn.position + bcPosMod);
@@ -174,7 +176,8 @@ public class L3P1Manager : MonoBehaviour
 
                 if (gcHit != null)
                 {
-                  greenCrystalBeam.SetColors(Color.white, Color.white);
+                  greenCrystalBeam.startColor = Color.white;
+                  greenCrystalBeam.endColor = Color.white;
                   gcColor = Color.white;
                   greenCrystalHitPoint.position = gcHit.point;
                   greenCrystalBeam.SetPosition(0, gcLightSpawn.position + gcPosMod);
@@ -193,7 +196,8 @@ public class L3P1Manager : MonoBehaviour
             Debug.DrawRay(greenCrystalRaySpawn.position + gcPosMod, greenCrystalBeamDirection);
             if (gcHit != null)
             {
-              greenCrystalBeam.SetColors(Color.yellow, Color.yellow);
+              greenCrystalBeam.startColor = Color.yellow;
+              greenCrystalBeam.endColor = Color.yellow;
               gcColor = Color.yellow;
               greenCrystalHitPoint.position = gcHit.point;
               greenCrystalBeam.SetPosition(0, gcLightSpawn.position + gcPosMod);
@@ -236,7 +240,8 @@ public class L3P1Manager : MonoBehaviour
 
         if (bcHit != null)
         {
-          blueCrystalBeam.SetColors(Color.blue, Color.blue);
+          blueCrystalBeam.startColor = Color.blue;
+          blueCrystalBeam.endColor = Color.blue;
           bcColor = Color.blue;
           blueCrystalHitPoint.position = bcHit.point;
           blueCrystalBeam.SetPosition(0, bcLightSpawn.position + bcPosMod);
@@ -252,7 +257,8 @@ public class L3P1Manager : MonoBehaviour
             Debug.DrawRay(redCrystalRaySpawn.position + rcPosMod, redCrystalBeamDirection);
             if (rcHit != null)
             {
-              redCrystalBeam.SetColors(Color.magenta, Color.magenta);
+              redCrystalBeam.startColor = Color.magenta;
+              redCrystalBeam.endColor = Color.magenta;
               redCrystalHitPoint.position = rcHit.point;
               redCrystalBeam.SetPosition(0, rcLightSpawn.position + rcPosMod);
               redCrystalBeam.SetPosition(1, redCrystalHitPoint.position);
@@ -268,7 +274,8 @@ public class L3P1Manager : MonoBehaviour
             Debug.DrawRay(greenCrystalRaySpawn.position + gcPosMod, greenCrystalBeamDirection);
             if (gcHit != null)
             {
-              greenCrystalBeam.SetColors(Color.cyan, Color.cyan);
+              greenCrystalBeam.startColor = Color.cyan;
+              greenCrystalBeam.endColor = Color.cyan;
               gcColor = Color.cyan;
               greenCrystalHitPoint.position = gcHit.point;
               greenCrystalBeam.SetPosition(0, gcLightSpawn.position + gcPosMod);
@@ -310,7 +317,8 @@ public class L3P1Manager : MonoBehaviour
 
         if (gcHit != null)
         {
-          greenCrystalBeam.SetColors(Color.green, Color.green);
+          greenCrystalBeam.startColor = Color.green;
+          greenCrystalBeam.endColor = Color.green;
           gcColor = Color.green;
           greenCrystalHitPoint.position = gcHit.point;
           greenCrystalBeam.SetPosition(0, gcLightSpawn.position + gcPosMod);
@@ -327,7 +335,8 @@ public class L3P1Manager : MonoBehaviour
 
             if (bcHit != null)
             {
-              blueCrystalBeam.SetColors(Color.cyan, Color.cyan);
+              blueCrystalBeam.startColor = Color.cyan;
+              blueCrystalBeam.endColor = Color.cyan;
               blueCrystalHitPoint.position = bcHit.point;
               blueCrystalBeam.SetPosition(0, bcLightSpawn.position + bcPosMod);
               blueCrystalBeam.SetPosition(1, blueCrystalHitPoint.position);
@@ -342,7 +351,8 @@ public class L3P1Manager : MonoBehaviour
                 Debug.DrawRay(redCrystalRaySpawn.position + rcPosMod, redCrystalBeamDirection);
                 if (rcHit != null)
                 {
-                  redCrystalBeam.SetColors(Color.white, Color.white);
+                  redCrystalBeam.startColor = Color.white;
+                  redCrystalBeam.endColor = Color.white;
                   redCrystalHitPoint.position = rcHit.point;
                   redCrystalBeam.SetPosition(0, rcLightSpawn.position + rcPosMod);
                   redCrystalBeam.SetPosition(1, redCrystalHitPoint.position);
@@ -361,7 +371,8 @@ public class L3P1Manager : MonoBehaviour
 
             if (rcHit != null)
             {
-              redCrystalBeam.SetColors(Color.yellow, Color.yellow);
+              redCrystalBeam.startColor = Color.yellow;
+              redCrystalBeam.endColor = Color.yellow;
               redCrystalHitPoint.position = rcHit.point;
               redCrystalBeam.SetPosition(0, rcLightSpawn.position + rcPosMod);
               redCrystalBeam.SetPosition(1, redCrystalHitPoint.position);
@@ -411,13 +422,7 @@ public class L3P1Manager : MonoBehaviour
     {
       if (doorCrystals[0].GetComponent<SpriteRenderer>().sprite == doorCrystalsLit[0])
       {
-        Debug.Log("reset door");
-        for (int i = 0; i < doorCrystals.Length; i++)
-        {
-          doorCrystals[i].GetComponent<SpriteRenderer>().sprite = doorCrystalsUnlit[i];
-          doorCrystals[i].transform.GetChild(0).gameObject.SetActive(false);
-        }
-        gemsHit = 0;
+        resetDoor();
       }
     }
   }
@@ -429,5 +434,15 @@ public class L3P1Manager : MonoBehaviour
     yield return new WaitForSeconds(0.16f);
     door.GetComponent<Animator>().SetBool("isOpening", false);
     yield return null;
+  }
+
+  public void resetDoor()
+  {
+    for (int i = 0; i < doorCrystals.Length; i++)
+    {
+      doorCrystals[i].GetComponent<SpriteRenderer>().sprite = doorCrystalsUnlit[i];
+      doorCrystals[i].transform.GetChild(0).gameObject.SetActive(false);
+    }
+    gemsHit = 0;
   }
 }
