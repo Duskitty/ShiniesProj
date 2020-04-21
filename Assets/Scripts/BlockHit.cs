@@ -25,6 +25,7 @@ public class BlockHit : MonoBehaviour
             player.GetComponent<SheildBash>().enabled = true;
             // isOnIce = false;
             controller.velocity = Vector2.zero;
+            
            // GameObject.Find("IceTilemap").GetComponent<IceControl>().enabled = false;
 
         }
@@ -35,6 +36,8 @@ public class BlockHit : MonoBehaviour
 
         GameObject.Find("IceTilemap").GetComponent<IceControl>().enabled = true;
         GameObject.Find("IceTilemap").GetComponent<Collider2D>().enabled = true;
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<SheildBash>().enabled = false;
 
 
     }
