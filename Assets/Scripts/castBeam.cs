@@ -25,6 +25,7 @@ public class castBeam : MonoBehaviour
     private Collider2D playerHitCollider;
     public GameObject iceSpawn;
     public GameObject iceBlock;
+    public GameObject enemyIceBlock;
     private RaycastHit2D[] iceHits;
     private Transform iceHitPoint;
     private Transform iceRaySpawn;
@@ -247,6 +248,7 @@ public class castBeam : MonoBehaviour
                     else if (hitObj != null && hitObj.tag == "EnemyIceBlock")
                     {
                       StopCoroutine(meltEnemy(hitObj));
+                      StartCoroutine(meltEnemyWithFire(hitObj));
                     }
                 }
             }
@@ -387,7 +389,8 @@ public class castBeam : MonoBehaviour
   IEnumerator meltEnemy(GameObject enemy)
   {
     yield return new WaitForSeconds(0.1f);
-    GameObject block = Instantiate(iceBlock, hitObj.transform.position, hitObj.transform.rotation);
+    GameObject block = Instantiate(enemyIceBlock, enemy.transform.position, enemy.transform.rotation);
+    block.GetComponent<containsEnemy>().enemy = enemy;
     enemy.SetActive(false);
     yield return new WaitForSeconds(6f);
     for (float f = 1f; f >= -0.05f; f -= 0.05f)
@@ -417,32 +420,21 @@ public class castBeam : MonoBehaviour
       iceBlock.GetComponent<SpriteRenderer>().color = c;
       yield return new WaitForSeconds(0.05f);
     }
-    // add in enemy
+    iceBlock.GetComponent<containsEnemy>().enemy.transform.position = iceBlock.transform.position;
+    iceBlock.GetComponent<containsEnemy>().enemy.SetActive(true);
     Destroy(iceBlock);
     yield return null;
   }
 
   IEnumerator refreezeIce(GameObject iceBlock)
   {
-    Color blockColor = iceBlock.GetComponent<SpriteRenderer>().color;
-    for (float f = 1f; f >= -0.05f; f -= 0.05f)
-    {
-      //Debug.Log("here");
-      Color c = iceBlock.GetComponent<SpriteRenderer>().color;
-      c.a = f;
-      iceBlock.GetComponent<SpriteRenderer>().color = c;
-      yield return new WaitForSeconds(0.05f);
-    }
-    yield return new WaitForSeconds(5);
-    for (float f = 0.5f; f <= 1f; f += 0.05f)
-    {
-      //Debug.Log("here");
-      Color c = iceBlock.GetComponent<SpriteRenderer>().color;
-      c.a = f;
-      iceBlock.GetComponent<SpriteRenderer>().color = c;
-      yield return new WaitForSeconds(0.05f);
-    }
-    //firePlaying = false;
+    iceBlock.GetComponent<Animator>().SetBool("isMelting", true);
+    yield return new WaitForSeconds(0.2f);
+    iceBlock.GetComponent<BoxCollider2D>().enabled = false;
+    yield return new WaitForSeconds(8f);
+    iceBlock.GetComponent<Animator>().SetBool("isMelting", false);
+    iceBlock.GetComponent<BoxCollider2D>().enabled = true;
+
     yield return null;
   }
 
