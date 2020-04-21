@@ -223,7 +223,7 @@ public class L2P2Manager : MonoBehaviour
           mirageAnimator.SetInteger("numHits", 0);
         }
       }
-      if (!playerBeam.enabled)
+      /*if (!playerBeam.enabled)
       {
         if((orb0Hit == null || orb0Hit.GetComponent<BoxCollider2D>().name != pyramid0.name) && (orb1Hit == null || orb1Hit.GetComponent<BoxCollider2D>().name != pyramid0.name))
         {
@@ -235,7 +235,7 @@ public class L2P2Manager : MonoBehaviour
         }
 
         //playerBeam.enabled = false;
-      }
+      }*/
     }
 
   private Collider2D setOrbLight(GameObject orb)
@@ -272,4 +272,5 @@ public class L2P2Manager : MonoBehaviour
 
     return pHit.collider;
   }
+
 }
