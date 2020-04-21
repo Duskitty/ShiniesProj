@@ -32,7 +32,8 @@ public class castBeam : MonoBehaviour
     private Vector3 iceEndMod;
     private GameObject iceBall;
     private Color iceColor;
-
+    //private GameObject[] frozenEnemies;
+    //private GameObject[] iceBlocks;
     private LineRenderer[] hittableObjBeams;
     public SunlightTrigger[] sunPatches;
 
@@ -50,7 +51,8 @@ public class castBeam : MonoBehaviour
         layerMask = LayerMask.GetMask("SunPatch");
         fireHits = new RaycastHit2D[10];
         firePlaying = false;
-        
+        //frozenEnemies = new GameObject[10];
+        //iceBlocks = new GameObject[10];   
     }
 
     public Collider2D reflect()
@@ -242,6 +244,10 @@ public class castBeam : MonoBehaviour
                     {
                         StartCoroutine(refreezeIce(hitObj));
                     }
+                    else if (hitObj != null && hitObj.tag == "EnemyIceBlock")
+                    {
+                      StopCoroutine(meltEnemy(hitObj));
+                    }
                 }
             }
         }
@@ -392,9 +398,27 @@ public class castBeam : MonoBehaviour
       block.GetComponent<SpriteRenderer>().color = c;
       yield return new WaitForSeconds(0.05f);
     }
+
+    //frozenEnemies.Remove(enemy);
+    //iceBlocks.Remove(block);
     enemy.SetActive(true);
     enemy.transform.position = block.transform.position;
     Destroy(block);
+    yield return null;
+  }
+
+  IEnumerator meltEnemyWithFire(GameObject iceBlock)
+  {
+    for (float f = iceBlock.GetComponent<SpriteRenderer>().color.a; f >= -0.05f; f -= 0.05f)
+    {
+      //Debug.Log("here");
+      Color c = iceBlock.GetComponent<SpriteRenderer>().color;
+      c.a = f;
+      iceBlock.GetComponent<SpriteRenderer>().color = c;
+      yield return new WaitForSeconds(0.05f);
+    }
+    // add in enemy
+    Destroy(iceBlock);
     yield return null;
   }
 
