@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -437,7 +437,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pause
+  m_Text: 
 --- !u!222 &129120641
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2048,8 +2048,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7560970821270c54ba56960c38a4806a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3002,6 +3002,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8555565596357876761, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: sheild
@@ -3022,11 +3027,6 @@ PrefabInstance:
       propertyPath: textBoxAnimator
       value: 
       objectReference: {fileID: 1063662793}
-    - target: {fileID: 8555565596357876761, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6176802839145180930, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalRotation.z
