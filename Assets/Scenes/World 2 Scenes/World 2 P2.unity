@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -69842,6 +69842,19 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 453612974}
+    - target: {fileID: 181020974, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7560970821270c54ba56960c38a4806a,
+        type: 3}
+    - target: {fileID: 181020974, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 360045416, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
 --- !u!114 &5579137873583969007 stripped
