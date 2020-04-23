@@ -40,5 +40,12 @@ public class Boss : MonoBehaviour
 		yield return new WaitForSeconds(5);
 		ani.SetTrigger("Walk");
 	}
-
+	public void PlayIce(Animator anim) {
+		ani = anim;
+	}
+	public IEnumerator IceAttack()
+	{
+		yield return new WaitForSeconds(2);
+		ani.SetBool("isWalking", true);
+	}
 }
