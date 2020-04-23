@@ -341,6 +341,7 @@ public class castBeam : MonoBehaviour
 
   IEnumerator animateIcePath(Transform iceRaySpawn, GameObject ice)
   {
+    iceRaySpawn.GetComponent<BoxCollider2D>().enabled = true;
     iceColor = iceRaySpawn.GetChild(0).GetComponent<SpriteRenderer>().color;
     for(int i = 0; i <= 8; i += 2)
     {
@@ -349,6 +350,7 @@ public class castBeam : MonoBehaviour
       yield return new WaitForSeconds(.1f);
     }
     yield return new WaitForSeconds(5);
+    iceRaySpawn.GetComponent<BoxCollider2D>().enabled = false;
     if (ice.tag != "EnemyIceBlock")
     {
       for (float f = 1f; f >= -0.05f; f -= 0.05f)
@@ -363,6 +365,7 @@ public class castBeam : MonoBehaviour
         }
         yield return new WaitForSeconds(0.05f);
       }
+
       Destroy(ice);
     }
     if (iceHits != null)
