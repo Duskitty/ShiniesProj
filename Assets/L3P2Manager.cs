@@ -6,7 +6,6 @@ public class L3P2Manager : MonoBehaviour
 {
     private GameObject player;
     private bool inSun;
-    public GameObject[] torches;
     private GameObject door;
     private bool doorOpening;
     private Collider2D playerHit;
@@ -23,6 +22,7 @@ public class L3P2Manager : MonoBehaviour
     void Start()
     {
       player = GameObject.Find("Player");
+      door = GameObject.Find("CaveDoor");
       doorOpening = false;
       iceGemAvailable = false;
       iceGem = GameObject.Find("iceGem");
@@ -55,6 +55,17 @@ public class L3P2Manager : MonoBehaviour
       {
         // Start coroutine for opening the door
         doorOpening = true;
+        StartCoroutine(openDoor());
       }
     }
+
+
+  IEnumerator openDoor()
+  {
+    door.GetComponent<Animator>().SetBool("isOpening", true);
+    yield return new WaitForSeconds(0.13f);
+
+    Destroy(door);
+    yield return null;
+  }
 }
