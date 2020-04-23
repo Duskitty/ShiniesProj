@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+	Animator ani;
 
-
+	public void SetWalk(Animator animator) {
+		ani = animator;
+		StartCoroutine(IdleToWalk());
+	}
   //script used to rotate the boss 
 
 
@@ -31,6 +35,10 @@ public class Boss : MonoBehaviour
 			isFlipped = true;
 		}
 	}
-
+	public IEnumerator IdleToWalk()
+	{
+		yield return new WaitForSeconds(5);
+		ani.SetTrigger("Walk");
+	}
 
 }
