@@ -87266,9 +87266,10 @@ GameObject:
   - component: {fileID: 1229203376}
   - component: {fileID: 1229203375}
   - component: {fileID: 1229203374}
+  - component: {fileID: 1229203377}
   m_Layer: 0
-  m_Name: Gnome_fireslam 0
-  m_TagString: Untagged
+  m_Name: Gnome
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87356,6 +87357,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1229203377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229203373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87e3aa90577b5845a4cc82a38f4edd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1389852913}
+  isFlipped: 0
 --- !u!1 &1231996284
 GameObject:
   m_ObjectHideFlags: 0
@@ -98374,6 +98389,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.9291115}
   m_EdgeRadius: 0
+--- !u!4 &1389852913 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
+    type: 3}
+  m_PrefabInstance: {fileID: 1033358030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1390407569
 GameObject:
   m_ObjectHideFlags: 0
