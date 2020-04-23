@@ -10,6 +10,8 @@ public class Boss_3_Walk : StateMachineBehaviour
     Transform player;
     Rigidbody2D rb;
     Boss boss;
+    Random ran;
+    int randNumber = 0;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -29,8 +31,16 @@ public class Boss_3_Walk : StateMachineBehaviour
 
         if (Vector2.Distance(player.position, rb.position) <= attackRange)
         {
-            animator.SetTrigger("Ice Attack");
-            animator.SetTrigger("Fire Attack");
+            randNumber = Random.Range(0, 100);
+            if (randNumber % 2 == 0)
+            {
+                animator.SetTrigger("Fire Attack");
+            }
+            else
+            {
+                animator.SetTrigger("Ice Attack");
+            }
+          
         }
         
     }

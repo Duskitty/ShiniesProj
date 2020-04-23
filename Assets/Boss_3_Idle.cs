@@ -17,7 +17,10 @@ public class Boss_3_Idle : StateMachineBehaviour
     {
         GameObject.Find("Gnome").GetComponent<Boss>().SetWalk(animator);
     }
-
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        animator.ResetTrigger("Walk");
+    
+    }
 }
    
 
