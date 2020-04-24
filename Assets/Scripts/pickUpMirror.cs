@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class pickUpMirror : MonoBehaviour
 {
-    public GameObject sheild, beamButton, reflectGem;
+    public GameObject sheild, beamButton, reflectGem, bashbutton;
     public static bool hasSheild = false;
     private GameObject mirror;
 
@@ -14,6 +14,7 @@ public class pickUpMirror : MonoBehaviour
         sheild.gameObject.SetActive(false);
         beamButton.gameObject.SetActive(false);
         reflectGem.gameObject.SetActive(false);
+        bashbutton.gameObject.SetActive(false);
         mirror = GameObject.Find("Shield");
     }
     public void OnCollisionEnter2D(Collision2D thing)
@@ -30,6 +31,7 @@ public class pickUpMirror : MonoBehaviour
             }
             beamButton.gameObject.SetActive(true);
             reflectGem.gameObject.SetActive(true);
+            bashbutton.gameObject.SetActive(true);
         //}
 
     }
@@ -51,6 +53,7 @@ public class pickUpMirror : MonoBehaviour
             }
             beamButton.gameObject.SetActive(true);
             reflectGem.gameObject.SetActive(true);
+            bashbutton.gameObject.SetActive(true);
         }
         /*
         else if (sceneName == "World_3")

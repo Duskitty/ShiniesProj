@@ -72007,6 +72007,7 @@ MonoBehaviour:
   sheild: {fileID: 534452623}
   beamButton: {fileID: 1675008312}
   reflectGem: {fileID: 1292048045}
+  bashbutton: {fileID: 1374591370033330758}
 --- !u!58 &1079258768
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -73372,29 +73373,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: sunPatches.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: iceBlock
-      value: 
-      objectReference: {fileID: 2420306915886529944, guid: b8e1a7ae6fc0b3642882411d3e606983,
-        type: 3}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: enemyIceBlock
-      value: 
-      objectReference: {fileID: 1415605596157866762, guid: 48acc1347d42df145afaa1a9dc1f2145,
-        type: 3}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: iceSpawn
-      value: 
-      objectReference: {fileID: 8837495616301759878, guid: cd629cdde83867044ad51476d27e1c2b,
-        type: 3}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -73450,6 +73428,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: sunPatches.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: iceBlock
+      value: 
+      objectReference: {fileID: 2420306915886529944, guid: b8e1a7ae6fc0b3642882411d3e606983,
+        type: 3}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: enemyIceBlock
+      value: 
+      objectReference: {fileID: 1415605596157866762, guid: 48acc1347d42df145afaa1a9dc1f2145,
+        type: 3}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: iceSpawn
+      value: 
+      objectReference: {fileID: 8837495616301759878, guid: cd629cdde83867044ad51476d27e1c2b,
+        type: 3}
     - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: reflectGem
@@ -83955,6 +83956,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e72a6703e1464d140b6608afe0e758c9, type: 3}
+--- !u!1 &1374591370033330758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 137742210431138090, guid: e72a6703e1464d140b6608afe0e758c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1374591370033330757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1936783368704763961
 PrefabInstance:
   m_ObjectHideFlags: 0
