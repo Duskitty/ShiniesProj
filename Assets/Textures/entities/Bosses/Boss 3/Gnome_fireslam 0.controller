@@ -64,13 +64,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe68acde7d05e143b1e5d99f3297aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  attackRange: 2
+  speed: 1
+  attackRange: 100
 --- !u!1102 &-4669301134516680488
 AnimatorState:
   serializedVersion: 5
@@ -110,16 +110,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8053681599497130656}
-    m_Position: {x: 240, y: 30, z: 0}
+    m_Position: {x: 240, y: -40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7888674199975667692}
-    m_Position: {x: 480, y: 40, z: 0}
+    m_Position: {x: 560, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4669301134516680488}
     m_Position: {x: 220, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5570054374846505816}
-    m_Position: {x: 510, y: 160, z: 0}
+    m_Position: {x: 590, y: 260, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

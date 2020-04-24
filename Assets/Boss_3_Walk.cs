@@ -6,43 +6,29 @@ public class Boss_3_Walk : StateMachineBehaviour
 {
     public float speed;
     public float attackRange;
-
-    Transform player;
-    Rigidbody2D rb;
-    Boss boss;
+    private Transform target;
+    private GameObject boss;
     Random ran;
     int randNumber = 0;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = animator.GetComponent<Rigidbody2D>();
-        boss = animator.GetComponent<Boss>();
+        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        boss = GameObject.FindWithTag("Boss");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        boss.LookAtPlayer();
-        Vector2 target = new Vector2(player.position.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
-        rb.MovePosition(newPos);
-
-        if (Vector2.Distance(player.position, rb.position) <= attackRange)
+       boss. transform.position = Vector2.MoveTowards(boss.transform.position, target.position, speed * Time.fixedDeltaTime);
+        if (Vector2.Distance(boss.transform.position, target.position) > attackRange)
         {
-            randNumber = Random.Range(0, 1);
-            if (randNumber == 0)
-            {
-                animator.SetTrigger("Fire Attack");
-            }
-            else
-            {
-                animator.SetTrigger("Ice Attack");
-            }
-          
+            boss.transform.position = Vector2.MoveTowards(boss.transform.position, target.position, speed * Time.fixedDeltaTime);
         }
-        
+        else { 
+        //attack
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
