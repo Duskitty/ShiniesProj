@@ -9,8 +9,6 @@ public class L3P2Manager : MonoBehaviour
     private GameObject door;
     private bool doorOpening;
     private Collider2D playerHit;
-    private bool button0Pressed;
-    private GameObject button0;
     private bool button1Pressed;
     private GameObject button1;
     private bool button2Pressed;
@@ -26,7 +24,6 @@ public class L3P2Manager : MonoBehaviour
       doorOpening = false;
       iceGemAvailable = false;
       iceGem = GameObject.Find("iceGem");
-      button0 = GameObject.Find("iceRinkButton");
       button1 = GameObject.Find("exitButton0");
       button2 = GameObject.Find("exitButton1");
     }
@@ -38,18 +35,11 @@ public class L3P2Manager : MonoBehaviour
       button1Pressed = button1.GetComponent<pressButton>().getIsPressed();
       button2Pressed = button2.GetComponent<pressButton>().getIsPressed();
       player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(null);
-      //inSun = GameObject.Find("sunPatch00").GetComponent<SunlightTrigger>().inSunlight;
+      inSun = GameObject.Find("sun").GetComponent<SunlightTrigger>().inSunlight;
 
-      //if (inSun)
-      //{
-        player.transform.GetChild(10).GetComponent<castBeam>().reflect();
-      //}
-
-      if (button0Pressed && !iceGemAvailable)
+      if (inSun)
       {
-        iceGem.GetComponent<CircleCollider2D>().enabled = true;
-        iceGem.GetComponent<SpriteRenderer>().enabled = true;
-        iceGemAvailable = true;
+        player.transform.GetChild(10).GetComponent<castBeam>().reflect();
       }
 
       if(button1Pressed && button2Pressed && !doorOpening)

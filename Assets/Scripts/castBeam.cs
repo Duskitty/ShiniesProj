@@ -149,6 +149,7 @@ public class castBeam : MonoBehaviour
 
     public void castIce()
     {
+      disableLight();
       GameObject ice = Instantiate(iceSpawn, player.transform.position, player.transform.rotation);
       iceHitPoint = ice.transform.GetChild(4);
 
