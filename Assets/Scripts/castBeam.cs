@@ -341,16 +341,16 @@ public class castBeam : MonoBehaviour
 
   IEnumerator animateIcePath(Transform iceRaySpawn, GameObject ice)
   {
-    iceRaySpawn.GetComponent<BoxCollider2D>().enabled = true;
+    //iceRaySpawn.GetComponent<BoxCollider2D>().enabled = true;
     iceColor = iceRaySpawn.GetChild(0).GetComponent<SpriteRenderer>().color;
-    for(int i = 0; i <= 8; i += 2)
+    for(int i = 0; i <= 10; i += 2)
     {
       iceRaySpawn.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().enabled = true;
       iceRaySpawn.transform.GetChild(i+1).gameObject.GetComponent<SpriteRenderer>().enabled = true;
       yield return new WaitForSeconds(.1f);
     }
     yield return new WaitForSeconds(5);
-    iceRaySpawn.GetComponent<BoxCollider2D>().enabled = false;
+    //iceRaySpawn.GetComponent<BoxCollider2D>().enabled = false;
     if (ice.tag != "EnemyIceBlock")
     {
       for (float f = 1f; f >= -0.05f; f -= 0.05f)
@@ -358,7 +358,7 @@ public class castBeam : MonoBehaviour
         //Debug.Log("here");
         Color c = iceRaySpawn.GetChild(0).GetComponent<SpriteRenderer>().color;
         c.a = f;
-        for (int i = 0; i <= 8; i += 2)
+        for (int i = 0; i <= 10; i += 2)
         {
           iceRaySpawn.transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().color = c;
           iceRaySpawn.transform.GetChild(i + 1).gameObject.GetComponent<SpriteRenderer>().color = c;
@@ -395,18 +395,9 @@ public class castBeam : MonoBehaviour
     GameObject block = Instantiate(enemyIceBlock, enemy.transform.position, enemy.transform.rotation);
     block.GetComponent<containsEnemy>().enemy = enemy;
     enemy.SetActive(false);
-    yield return new WaitForSeconds(6f);
-    for (float f = 1f; f >= -0.05f; f -= 0.05f)
-    {
-      //Debug.Log("here");
-      Color c = block.GetComponent<SpriteRenderer>().color;
-      c.a = f;
-      block.GetComponent<SpriteRenderer>().color = c;
-      yield return new WaitForSeconds(0.05f);
-    }
 
-    //frozenEnemies.Remove(enemy);
-    //iceBlocks.Remove(block);
+    yield return new WaitForSeconds(8.15f);
+
     enemy.SetActive(true);
     enemy.transform.position = block.transform.position;
     Destroy(block);
@@ -415,14 +406,8 @@ public class castBeam : MonoBehaviour
 
   IEnumerator meltEnemyWithFire(GameObject iceBlock)
   {
-    for (float f = iceBlock.GetComponent<SpriteRenderer>().color.a; f >= -0.05f; f -= 0.05f)
-    {
-      //Debug.Log("here");
-      Color c = iceBlock.GetComponent<SpriteRenderer>().color;
-      c.a = f;
-      iceBlock.GetComponent<SpriteRenderer>().color = c;
-      yield return new WaitForSeconds(0.05f);
-    }
+    iceBlock.GetComponent<Animator>().SetBool("hirWithFire", true);
+    yield return new WaitForSeconds(.45f);
     iceBlock.GetComponent<containsEnemy>().enemy.transform.position = iceBlock.transform.position;
     iceBlock.GetComponent<containsEnemy>().enemy.SetActive(true);
     Destroy(iceBlock);
