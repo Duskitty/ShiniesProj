@@ -31,7 +31,7 @@ public class Boss_3_Walk : StateMachineBehaviour
 
         if (Vector2.Distance(player.position, rb.position) <= attackRange)
         {
-            randNumber = Random.Range(0, 2);
+            randNumber = Random.Range(0, 1);
             if (randNumber == 0)
             {
                 animator.SetTrigger("Fire Attack");
@@ -48,7 +48,7 @@ public class Boss_3_Walk : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-     //   animator.ResetTrigger("Ice Attack");
+        animator.ResetTrigger("Ice Attack");
         animator.ResetTrigger("Fire Attack");
 
     }
