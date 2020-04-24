@@ -42,5 +42,37 @@ public class BlockHit : MonoBehaviour
 
     }
 
+      private void OnTriggerEnter2D(Collider2D col)
+      {
+        if (col.name == "Player")
+        {
+          //Debug.Log(collision.gameObject.name);
+          GameObject.Find("IceTilemap").GetComponent<IceControl>().enabled = false;
+          GameObject.Find("IceTilemap").GetComponent<Collider2D>().enabled = false;
+
+
+          player.GetComponent<PlayerMovement>().enabled = true;
+          player.GetComponent<SheildBash>().enabled = true;
+          // isOnIce = false;
+          controller.velocity = Vector2.zero;
+        }
+      }
+
+  private void OnTriggerExit2D(Collider2D col)
+  {
+    if (col.name == "Player")
+    {
+      //Debug.Log(collision.gameObject.name);
+      GameObject.Find("IceTilemap").GetComponent<IceControl>().enabled = true;
+      GameObject.Find("IceTilemap").GetComponent<Collider2D>().enabled = true;
+
+
+      player.GetComponent<PlayerMovement>().enabled = false;
+      player.GetComponent<SheildBash>().enabled = false; ;
+      // isOnIce = false;
+      //controller.velocity = Vector2.zero;
+    }
+  }
+
 }
 

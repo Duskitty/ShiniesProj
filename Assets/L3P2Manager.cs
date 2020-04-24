@@ -47,7 +47,8 @@ public class L3P2Manager : MonoBehaviour
 
       if (button0Pressed && !iceGemAvailable)
       {
-        iceGem.SetActive(true);
+        iceGem.GetComponent<CircleCollider2D>().enabled = true;
+        iceGem.GetComponent<SpriteRenderer>().enabled = true;
         iceGemAvailable = true;
       }
 
