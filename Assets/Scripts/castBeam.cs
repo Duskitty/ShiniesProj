@@ -142,7 +142,7 @@ public class castBeam : MonoBehaviour
         }
         if (!firePlaying)
         {
-            fireHits = Physics2D.BoxCastAll(playerRaySpawn.position + fireEndMod, new Vector2(1, 0.25f), 0f, fireDirection, 1f, ~layerMask);
+            fireHits = Physics2D.BoxCastAll(playerRaySpawn.position, new Vector2(1, 0.25f), 0f, fireDirection, 1f, ~layerMask);
             StartCoroutine(fireBurst());
         }
     }
