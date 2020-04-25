@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class fallInWater : MonoBehaviour
 {
   private GameObject player;
   private GameObject respawnPoint;
+  private GameObject secondRespawn;
   private SpriteRenderer playerSprite;
   private Color psColor;
   private int spinPos;
@@ -18,6 +20,10 @@ public class fallInWater : MonoBehaviour
     playerSprite = player.GetComponent<SpriteRenderer>();
     //psColor = playerSprite.color;
     respawnPoint = GameObject.Find("Respawn");
+    /*if(SceneManager.GetActiveScene().name == "World 3 P2")
+    {
+      secondRespawn = GameObject.Find("secondRespawn");
+    }*/
     isFalling = false;
     //GameObject.Find("Player").GetComponent<SheildBash>().enabled = false;//to do delete me after sprint on 4-7-2020
   }
@@ -62,7 +68,18 @@ public class fallInWater : MonoBehaviour
       if (fallingObj == player)
       {
         player.GetComponent<PlayerMovement>().enabled = true;
-        player.transform.position = respawnPoint.transform.position;
+        /*if (SceneManager.GetActiveScene().name == "World 3 P2" && player.transform.position.y > 11.5)
+        {
+          Debug.Log("respawn 2");
+          player.transform.position = secondRespawn.transform.position;
+          isFalling = false;
+        StopCoroutine(playerFall(fallingObj));
+        }
+        else
+        {*/
+          //Debug.Log("In else statement");
+          player.transform.position = respawnPoint.transform.position;
+        //}
         playerSprite.color = psColor;
         GameControlScript.health -= 1;
       }
