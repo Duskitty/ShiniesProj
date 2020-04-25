@@ -384,7 +384,7 @@ public class L3P1Manager : MonoBehaviour
     }
     if (rcHit.collider != null && door != null && rcHit.collider.name == door.name)
     {
-      //Debug.Log(rcHit.collider.name);  
+      Debug.Log(rcHit.collider.name);  
       hitDoor(rcColor);
     }
     else if (bcHit.collider != null && door != null && bcHit.collider.name == door.name)
@@ -434,6 +434,7 @@ public class L3P1Manager : MonoBehaviour
     yield return new WaitForSeconds(0.16f);
     door.GetComponent<Animator>().SetBool("isOpening", false);
     yield return null;
+    door.GetComponent<BoxCollider2D>().enabled = false;
   }
 
   public void resetDoor()
