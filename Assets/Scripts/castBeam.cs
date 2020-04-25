@@ -37,6 +37,7 @@ public class castBeam : MonoBehaviour
     //private GameObject[] iceBlocks;
     private LineRenderer[] hittableObjBeams;
     public SunlightTrigger[] sunPatches;
+  private bool fireHitSomething;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,7 @@ public class castBeam : MonoBehaviour
 
     public Collider2D reflect()
     {
+        fireHitSomething = false;
         if (playerDirection.GetBool("isIdleUp"))
         {
             playerHitPoint = player.transform.GetChild(5);
@@ -102,8 +104,9 @@ public class castBeam : MonoBehaviour
         return playerHit.collider;
     }
 
-    public void castFire()
+    public Collider2D castFire()
     {
+        disableLight();
         if (playerDirection.GetBool("isIdleUp"))
         {
             playerHitPoint = player.transform.GetChild(5);
@@ -138,13 +141,25 @@ public class castBeam : MonoBehaviour
         }
         else
         {
-            return;
+            fireHitSomething = false;
+            return null;
         }
         if (!firePlaying)
         {
             fireHits = Physics2D.BoxCastAll(playerRaySpawn.position, new Vector2(1, 0.25f), 0f, fireDirection, 1f, ~layerMask);
             StartCoroutine(fireBurst());
+          for (int i = 0; i < fireHits.Length; i++)
+          {
+            if (fireHits[i].collider.tag == "Boss")
+            {
+              fireHitSomething = true;
+              return fireHits[i].collider;
+            }   
+          }
+   
         }
+      fireHitSomething = false;
+      return null;
     }
 
     public void castIce()
@@ -152,6 +167,7 @@ public class castBeam : MonoBehaviour
       disableLight();
       GameObject ice = Instantiate(iceSpawn, player.transform.position, player.transform.rotation);
       iceHitPoint = ice.transform.GetChild(4);
+      fireHitSomething = false;
 
       if (playerDirection.GetBool("isIdleUp"))
       {
@@ -322,6 +338,22 @@ public class castBeam : MonoBehaviour
     {
       return playerHitCollider;
     }
+
+  public Collider2D getBossColliderFire()
+  {
+    if (fireHitSomething)
+    {
+      for (int i = 0; i < fireHits.Length; i++)
+      {
+        if (fireHits[i].collider.tag == "Boss")
+        {
+          Debug.Log(fireHits[i].collider.name);
+          return fireHits[i].collider;
+        }
+      }
+    }
+    return null;
+  }
 
   IEnumerator iceBurst()
   {
