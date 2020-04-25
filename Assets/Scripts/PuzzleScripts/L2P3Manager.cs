@@ -8,6 +8,7 @@ public class L2P3Manager : MonoBehaviour
     private GameObject player;
     private bool inSun;
     public GameObject[] torches;
+    public SunlightTrigger[] sunPatches;
     private GameObject door;
     private bool doorOpening;
     private Collider2D playerHit;
@@ -24,7 +25,7 @@ public class L2P3Manager : MonoBehaviour
     void Update()
     {
       player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(null);
-      inSun = GameObject.Find("sunPatch00").GetComponent<SunlightTrigger>().inSunlight;
+      inSun = checkInSun();
 
       if (inSun)
       {      
@@ -47,6 +48,18 @@ public class L2P3Manager : MonoBehaviour
       }
     }
     return true;
+  }
+
+  private bool checkInSun()
+  {
+    for (int i = 0; i < sunPatches.Length; i++)
+    {
+      if (sunPatches[i].inSunlight)
+      {
+        return true;
+      }
+    }
+    return false;
   }
 
   IEnumerator openDoor()
