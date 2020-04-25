@@ -9171,6 +9171,80 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &110852571
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6876760610025157726, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_Name
+      value: UIController Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 573.45917
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 267.79907
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1180.0227
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876760610025157727, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014511853046911227, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
 --- !u!1 &268178414
 GameObject:
   m_ObjectHideFlags: 0
@@ -9631,6 +9705,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AttackButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1367647735837187872, guid: 466328bd9dabbbe4896822575f17196b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367647735837187873, guid: 466328bd9dabbbe4896822575f17196b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 466328bd9dabbbe4896822575f17196b, type: 3}
 --- !u!1 &565737618 stripped
@@ -9857,7 +9941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &888428739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9926,7 +10010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &927371528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9934,7 +10018,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927371527}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07314d2de4e834e40b14bd49b033c13f, type: 3}
   m_Name: 
@@ -11977,7 +12061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  stopDistance: 3
+  stopDistance: 2
 --- !u!1 &1065897352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2951074910592583187, guid: 466328bd9dabbbe4896822575f17196b,
@@ -23719,7 +23803,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104163566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c89e383e5cb2c944be2c28f0300ecb3, type: 3}
   m_Name: 
@@ -24044,6 +24128,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 529635248}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1485612379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6014511854496302584, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 110852571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658598892
 GameObject:
   m_ObjectHideFlags: 0
@@ -24135,7 +24225,7 @@ MonoBehaviour:
   sheild: {fileID: 1863751521}
   beamButton: {fileID: 1299323895}
   reflectGem: {fileID: 393687725}
-  bashbutton: {fileID: 0}
+  bashbutton: {fileID: 1485612379}
 --- !u!61 &1666939238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24237,29 +24327,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: sunPatches.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: iceBlock
-      value: 
-      objectReference: {fileID: 2420306915886529944, guid: b8e1a7ae6fc0b3642882411d3e606983,
-        type: 3}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: iceSpawn
-      value: 
-      objectReference: {fileID: 8837495616301759878, guid: cd629cdde83867044ad51476d27e1c2b,
-        type: 3}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: enemyIceBlock
-      value: 
-      objectReference: {fileID: 1415605596157866762, guid: 48acc1347d42df145afaa1a9dc1f2145,
-        type: 3}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24315,6 +24382,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: sunPatches.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: iceBlock
+      value: 
+      objectReference: {fileID: 2420306915886529944, guid: b8e1a7ae6fc0b3642882411d3e606983,
+        type: 3}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: iceSpawn
+      value: 
+      objectReference: {fileID: 8837495616301759878, guid: cd629cdde83867044ad51476d27e1c2b,
+        type: 3}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: enemyIceBlock
+      value: 
+      objectReference: {fileID: 1415605596157866762, guid: 48acc1347d42df145afaa1a9dc1f2145,
+        type: 3}
     - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: sheild
@@ -24330,6 +24420,11 @@ PrefabInstance:
       propertyPath: reflectGem
       value: 
       objectReference: {fileID: 565737618}
+    - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: bashbutton
+      value: 
+      objectReference: {fileID: 1485612379}
     - target: {fileID: 1789474016177757689, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: textBoxAnimator

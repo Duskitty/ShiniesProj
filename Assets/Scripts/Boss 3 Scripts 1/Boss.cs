@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-
+	private Animator animator;
 	Animator ani;
-
+	bool isIceAttack = false;
+	bool isFireAttack = false;
+	private float timer = 0f;
+	public float waitTime = 3f;
+	private bool isAttack = false;
 	public void SetWalk(Animator animator) {
 		ani = animator;
 		StartCoroutine(IdleToWalk());
@@ -19,11 +23,52 @@ public class Boss : MonoBehaviour
 	public bool isFlipped = false;
 	private void Start()
 	{
-		
+		animator = GetComponent<Animator>();
 	}
 	private void Update()
 	{
-		
+		//animator.SetBool("isWalking", true);
+		//animator.ResetTrigger("Ice Attack");
+		GetComponent<BossFollow>().enabled = true;
+
+		LookAtPlayer();
+		timer = 0;
+
+		if (BossFollow.isInStopDistnace == true)
+			//animator.SetBool("isWalking", false);
+		{
+
+			int ranNumber = Random.Range(0, 2);//ran number between 0-1
+			Debug.Log(ranNumber);
+			if (ranNumber == 0)
+			{
+
+				while (waitTime > timer)
+				{
+					timer += Time.deltaTime;
+					isAttack = true;
+					GetComponent<BossFollow>().enabled = false;
+					animator.SetTrigger("Ice Attack");
+
+				}
+			}
+				else if (ranNumber == 1)
+				{
+
+
+					
+
+				}
+
+			if (isAttack) {//to see if the gnome is attacking 
+				animator.SetBool("isWalking", true);
+				animator.ResetTrigger("Ice Attack");
+				isAttack = false;
+				GetComponent<BossFollow>().enabled = true;
+
+			}
+		}
+
 	}
 	public void LookAtPlayer()
 	{
@@ -49,12 +94,23 @@ public class Boss : MonoBehaviour
 		ani.SetTrigger("Walk");
 		GetComponent<BossFollow>().enabled = true;
 	}
-	public void PlayIce(Animator anim) {
-		ani = anim;
-	}
+	
 	public IEnumerator IceAttack()
 	{
+
+		animator.SetTrigger("Ice Attack");
+
 		yield return new WaitForSeconds(2);
-		ani.SetBool("isWalking", true);
+		animator.SetBool("isWalking", true);
+		GetComponent<BossFollow>().enabled = true;
+
+	}
+	public IEnumerator FireAttack()
+	{
+		
+		yield return new WaitForSeconds(2);
+		animator.SetBool("isWalking", true);
+		GetComponent<BossFollow>().enabled = true;
+
 	}
 }
