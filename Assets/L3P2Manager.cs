@@ -31,7 +31,6 @@ public class L3P2Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      button0Pressed = button0.GetComponent<pressButton>().getIsPressed();
       button1Pressed = button1.GetComponent<pressButton>().getIsPressed();
       button2Pressed = button2.GetComponent<pressButton>().getIsPressed();
       player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(null);

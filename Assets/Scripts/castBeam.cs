@@ -397,7 +397,7 @@ public class castBeam : MonoBehaviour
     block.GetComponent<containsEnemy>().enemy = enemy;
     enemy.SetActive(false);
 
-    yield return new WaitForSeconds(8.15f);
+    yield return new WaitForSeconds(75f);
 
     enemy.SetActive(true);
     enemy.transform.position = block.transform.position;
