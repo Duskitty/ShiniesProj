@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+
 	Animator ani;
 
 	public void SetWalk(Animator animator) {
@@ -16,7 +17,14 @@ public class Boss : MonoBehaviour
 	public Transform player;
 
 	public bool isFlipped = false;
-	
+	private void Start()
+	{
+		
+	}
+	private void Update()
+	{
+		
+	}
 	public void LookAtPlayer()
 	{
 		Vector3 flipped = transform.localScale;
@@ -39,6 +47,7 @@ public class Boss : MonoBehaviour
 	{
 		yield return new WaitForSeconds(5);
 		ani.SetTrigger("Walk");
+		GetComponent<BossFollow>().enabled = true;
 	}
 	public void PlayIce(Animator anim) {
 		ani = anim;

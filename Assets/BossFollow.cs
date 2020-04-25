@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class BossFollow : MonoBehaviour
 {
+    Animator animator;
     private Transform target;
     public float speed=3;
     public float stopDistance=3;
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find("Player").GetComponent<Transform>(); 
+        target = GameObject.Find("Player").GetComponent<Transform>();
+        animator = GameObject.Find("Gnome").GetComponent<Animator>();
+        this.GetComponent<BossFollow>().enabled = false;
     }
 
     // Update is called once per frame
@@ -21,4 +24,5 @@ public class BossFollow : MonoBehaviour
 
         }
     }
+
 }
