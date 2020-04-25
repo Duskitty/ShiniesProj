@@ -6,6 +6,7 @@ public class L3P2Manager : MonoBehaviour
 {
     private GameObject player;
     private bool inSun;
+    public SunlightTrigger[] sunPatches;
     private GameObject door;
     private bool doorOpening;
     private Collider2D playerHit;
@@ -34,7 +35,7 @@ public class L3P2Manager : MonoBehaviour
       button1Pressed = button1.GetComponent<pressButton>().getIsPressed();
       button2Pressed = button2.GetComponent<pressButton>().getIsPressed();
       player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(null);
-      inSun = GameObject.Find("sun").GetComponent<SunlightTrigger>().inSunlight;
+      inSun = checkInSun();
 
       if (inSun)
       {
@@ -49,6 +50,17 @@ public class L3P2Manager : MonoBehaviour
       }
     }
 
+  private bool checkInSun()
+  {
+    for(int i = 0; i < sunPatches.Length; i++)
+    {
+      if (sunPatches[i].inSunlight)
+      {
+        return true;
+      }
+    }
+    return false;
+  }
 
   IEnumerator openDoor()
   {
