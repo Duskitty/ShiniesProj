@@ -27,10 +27,7 @@ public class Boss : MonoBehaviour
 	}
 	private void Update()
 	{
-		//animator.SetBool("isWalking", true);
-		//animator.ResetTrigger("Ice Attack");
-		GetComponent<BossFollow>().enabled = true;
-
+		animator.SetBool("isWalking", false);
 		LookAtPlayer();
 		timer = 0;
 
@@ -43,9 +40,8 @@ public class Boss : MonoBehaviour
 			{
 				animator.SetBool("ice", true);
 				GetComponent<BossFollow>().enabled = false;
-				enabled = false;
-
-
+				GetComponent<Boss>().enabled = false;
+				StartCoroutine(IceAttack());
 
 			}
 			else if (ranNumber == 1)
@@ -88,11 +84,13 @@ public class Boss : MonoBehaviour
 	public IEnumerator IceAttack()
 	{
 
-		animator.SetTrigger("Ice Attack");
 
 		yield return new WaitForSeconds(2);
 		animator.SetBool("isWalking", true);
+		animator.SetBool("ice", false);
+
 		GetComponent<BossFollow>().enabled = true;
+		GetComponent<Boss>().enabled = true;
 
 	}
 	public IEnumerator FireAttack()
