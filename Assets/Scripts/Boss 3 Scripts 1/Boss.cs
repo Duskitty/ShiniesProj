@@ -35,38 +35,28 @@ public class Boss : MonoBehaviour
 		timer = 0;
 
 		if (BossFollow.isInStopDistnace == true)
-			//animator.SetBool("isWalking", false);
 		{
 
 			int ranNumber = Random.Range(0, 2);//ran number between 0-1
-			Debug.Log(ranNumber);
+			//Debug.Log(ranNumber);
 			if (ranNumber == 0)
 			{
+				animator.SetBool("ice", true);
+				GetComponent<BossFollow>().enabled = false;
+				enabled = false;
 
-				while (waitTime > timer)
-				{
-					timer += Time.deltaTime;
-					isAttack = true;
-					GetComponent<BossFollow>().enabled = false;
-					animator.SetTrigger("Ice Attack");
 
-				}
+
 			}
-				else if (ranNumber == 1)
+			else if (ranNumber == 1)
 				{
 
 
-					
+					///add stuff here 
 
 				}
 
-			if (isAttack) {//to see if the gnome is attacking 
-				animator.SetBool("isWalking", true);
-				animator.ResetTrigger("Ice Attack");
-				isAttack = false;
-				GetComponent<BossFollow>().enabled = true;
-
-			}
+			
 		}
 
 	}
