@@ -12,12 +12,15 @@ public class L3BossLight : MonoBehaviour
   private Collider2D fireHitObj;
   private Collider2D iceHitObj;
   private bool inSun;
+    //boss variales
+    private GameObject boss;
 
 
   // Start is called before the first frame update
   void Start()
   {
     player = GameObject.Find("Player");
+    boss = GameObject.Find("Gnome");
   }
 
   void Update()
@@ -46,15 +49,23 @@ public class L3BossLight : MonoBehaviour
     // if the boss is hit by fire
     if (fireHitObj != null)
     {
+         //   if (Boss.iceAttack==true)
+           // {
+                Boss.heath -= 1;
+          //  }
       // insert code for how the boss reacts to fire
     }
 
     // if the boss is hit with ice
     if(iceHitObj != null)
     {
-      // insert code for how the boss reacts to ice
+          //  if (Boss.fireAttack==true)
+          //  {
+                Boss.heath -= 1;
+          //  }
+            // insert code for how the boss reacts to ice
+        }
     }
-  }
 
   private bool checkInSun()
   {

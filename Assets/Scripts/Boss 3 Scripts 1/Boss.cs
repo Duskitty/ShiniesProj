@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+	public static bool fireAttack = false;
+	public static bool iceAttack = false;
+    public static bool isSmashed = false;
+	public static int heath = 1;
 	private Animator animator;
 	Animator ani;
-	bool isIceAttack = false;
-	bool isFireAttack = false;
-	private float timer = 0f;
-	public float waitTime = 3f;
 	private bool isAttack = false;
 	public void SetWalk(Animator animator) {
 		ani = animator;
@@ -27,46 +27,41 @@ public class Boss : MonoBehaviour
 	}
 	private void Update()
 	{
-		//animator.SetBool("isWalking", true);
-		//animator.ResetTrigger("Ice Attack");
-		GetComponent<BossFollow>().enabled = true;
-
-		LookAtPlayer();
-		timer = 0;
+		TakeDamage();
+		animator.SetBool("isWalking", false);
+		
+		//	LookAtPlayer();
+		isAttack = false;
 
 		if (BossFollow.isInStopDistnace == true)
-			//animator.SetBool("isWalking", false);
 		{
 
 			int ranNumber = Random.Range(0, 2);//ran number between 0-1
-			Debug.Log(ranNumber);
+			//Debug.Log(ranNumber);
 			if (ranNumber == 0)
 			{
-
-				while (waitTime > timer)
-				{
-					timer += Time.deltaTime;
-					isAttack = true;
-					GetComponent<BossFollow>().enabled = false;
-					animator.SetTrigger("Ice Attack");
-
-				}
-			}
-				else if (ranNumber == 1)
-				{
-
-
-					
-
-				}
-
-			if (isAttack) {//to see if the gnome is attacking 
-				animator.SetBool("isWalking", true);
-				animator.ResetTrigger("Ice Attack");
-				isAttack = false;
-				GetComponent<BossFollow>().enabled = true;
+				iceAttack = true;
+				fireAttack = false;
+				isAttack = true;
+				animator.SetBool("ice", true);
+				GetComponent<BossFollow>().enabled = false;
+				GetComponent<Boss>().enabled = false;
+				StartCoroutine(IceAttack());
 
 			}
+			else if (ranNumber == 1)
+				{
+				fireAttack = true;
+				iceAttack = false;
+				isAttack = true;
+				animator.SetBool("fire", true);
+				GetComponent<BossFollow>().enabled = false;
+				GetComponent<Boss>().enabled = false;
+				StartCoroutine(FireAttack());
+
+			}
+
+
 		}
 
 	}
@@ -98,19 +93,51 @@ public class Boss : MonoBehaviour
 	public IEnumerator IceAttack()
 	{
 
-		animator.SetTrigger("Ice Attack");
 
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(5);
 		animator.SetBool("isWalking", true);
+		animator.SetBool("ice", false);
+
 		GetComponent<BossFollow>().enabled = true;
+		GetComponent<Boss>().enabled = true;
 
 	}
 	public IEnumerator FireAttack()
 	{
 		
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(5);
 		animator.SetBool("isWalking", true);
+		animator.SetBool("fire", false);
+
 		GetComponent<BossFollow>().enabled = true;
+		GetComponent<Boss>().enabled = true;
 
 	}
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player")&& isAttack==true && Invincible.isHit == false) {
+			//do damage 
+			Invincible.isHit = true;
+            isSmashed = true;
+
+			//GameControlScript.health -= 1;
+		}
+	}
+	public void TakeDamage() {
+		
+		Debug.Log("Boss has" + heath);
+		if (heath <= 0) {
+			Destroy(this.gameObject);
+		}
+	}
+    public void PlayerDamaged()
+    {
+        if (isSmashed)
+        {
+            //do damage 
+            GameControlScript.health -= 1;
+            isSmashed = false;
+        }
+    }
+    
 }

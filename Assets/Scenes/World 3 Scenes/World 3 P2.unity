@@ -34448,6 +34448,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sun (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8128510487292177856, guid: eba0c46dedd0d244694ae3e51bb09ee2,
+        type: 3}
+      propertyPath: m_TagString
+      value: sunbeam
+      objectReference: {fileID: 0}
     - target: {fileID: 8128510487292177860, guid: eba0c46dedd0d244694ae3e51bb09ee2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40350,6 +40355,25 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1789474016177757691, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
+--- !u!1 &1033358031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1789474016177757670, guid: d51aecc35884a8145a1c259ed7f0bc66,
+    type: 3}
+  m_PrefabInstance: {fileID: 1033358030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1033358032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033358031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcb652f8deb2d5439d358b8905578c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeofInvincible: 0.5
 --- !u!1 &1034529887
 GameObject:
   m_ObjectHideFlags: 0
@@ -85639,7 +85663,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1033358030}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1033358031}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 955e985204129644ea92efda6b1a360c, type: 3}
@@ -96113,6 +96137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128510487292177856, guid: eba0c46dedd0d244694ae3e51bb09ee2,
+        type: 3}
+      propertyPath: m_TagString
+      value: sunbeam
       objectReference: {fileID: 0}
     - target: {fileID: 8128510487292177860, guid: eba0c46dedd0d244694ae3e51bb09ee2,
         type: 3}

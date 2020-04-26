@@ -323,7 +323,6 @@ public class castBeam : MonoBehaviour
         }
         else if ((checkInSunlight() && GemPick.reflectGem) || (!checkInSunlight() && GemPick.reflectGem && GameControlScript.charges >= 1))
         {
-            Debug.Log("here");
             playerHitCollider = reflect();
             if (!checkInSunlight())
             {
