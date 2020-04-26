@@ -230,14 +230,13 @@ public class castBeam : MonoBehaviour
           {
             StartCoroutine(meltEnemy(hitObj));
           }
-
-          if (hitObj.tag == "Boss")
+          // BEN BOSS 3 HIT BY ICE GOES HERE
+          //
+          //
+          // EEEEEEEEEEEEEE
+          else if (hitObj.tag == "Boss3")
           {
             iceHitSomething = true;
-          }
-          else
-          {
-            iceHitSomething = false;
           }
         }
       }
@@ -280,6 +279,14 @@ public class castBeam : MonoBehaviour
                     {
                       StopCoroutine(meltEnemy(hitObj));
                       StartCoroutine(meltEnemyWithFire(hitObj));
+                    }
+                    //BEN ADD CODE FOR BOSS 3 FIRE HERE
+                    //
+                    //
+                    //
+                    else if (hitObj != null && hitObj.tag == "Boss3")
+                    {
+                      
                     }
                 }
             }
