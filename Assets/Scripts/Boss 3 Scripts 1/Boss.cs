@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+	public static bool fireAttack = false;
+	public static bool iceAttack = false;
 	private int heath = 12;
 	private Animator animator;
 	Animator ani;
@@ -25,6 +27,8 @@ public class Boss : MonoBehaviour
 	private void Update()
 	{
 		animator.SetBool("isWalking", false);
+		iceAttack = false;
+		fireAttack = false;
 		//	LookAtPlayer();
 		isAttack = false;
 
@@ -35,6 +39,7 @@ public class Boss : MonoBehaviour
 			//Debug.Log(ranNumber);
 			if (ranNumber == 0)
 			{
+				iceAttack = true;
 				isAttack = true;
 				animator.SetBool("ice", true);
 				GetComponent<BossFollow>().enabled = false;
@@ -44,7 +49,7 @@ public class Boss : MonoBehaviour
 			}
 			else if (ranNumber == 1)
 				{
-
+				fireAttack = true;
 				isAttack = true;
 				animator.SetBool("fire", true);
 				GetComponent<BossFollow>().enabled = false;
@@ -115,6 +120,7 @@ public class Boss : MonoBehaviour
 	}
 	public void TakeDamage() {
 		heath -= 1;
+		Debug.Log("Boss has" + heath);
 		if (heath <= 0) {
 			Destroy(this.gameObject);
 		
