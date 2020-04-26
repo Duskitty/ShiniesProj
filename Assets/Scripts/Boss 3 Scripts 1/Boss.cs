@@ -6,6 +6,7 @@ public class Boss : MonoBehaviour
 {
 	public static bool fireAttack = false;
 	public static bool iceAttack = false;
+    public static bool isSmashed = false;
 	public static int heath = 1;
 	private Animator animator;
 	Animator ani;
@@ -117,7 +118,9 @@ public class Boss : MonoBehaviour
 		if (collision.gameObject.CompareTag("Player")&& isAttack==true && Invincible.isHit == false) {
 			//do damage 
 			Invincible.isHit = true;
-			GameControlScript.health -= 1;
+            isSmashed = true;
+
+			//GameControlScript.health -= 1;
 		}
 	}
 	public void TakeDamage() {
@@ -125,7 +128,16 @@ public class Boss : MonoBehaviour
 		Debug.Log("Boss has" + heath);
 		if (heath <= 0) {
 			Destroy(this.gameObject);
-		
 		}
 	}
+    public void PlayerDamaged()
+    {
+        if (isSmashed)
+        {
+            //do damage 
+            GameControlScript.health -= 1;
+            isSmashed = false;
+        }
+    }
+    
 }
