@@ -105,4 +105,11 @@ public class Boss : MonoBehaviour
 		GetComponent<Boss>().enabled = true;
 
 	}
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player")) { 
+		
+		
+		}
+	}
 }
