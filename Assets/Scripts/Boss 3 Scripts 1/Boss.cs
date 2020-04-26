@@ -6,7 +6,7 @@ public class Boss : MonoBehaviour
 {
 	public static bool fireAttack = false;
 	public static bool iceAttack = false;
-	public static int heath = 12;
+	public static int heath = 1;
 	private Animator animator;
 	Animator ani;
 	private bool isAttack = false;
@@ -28,8 +28,7 @@ public class Boss : MonoBehaviour
 	{
 		TakeDamage();
 		animator.SetBool("isWalking", false);
-		iceAttack = false;
-		fireAttack = false;
+		
 		//	LookAtPlayer();
 		isAttack = false;
 
@@ -41,6 +40,7 @@ public class Boss : MonoBehaviour
 			if (ranNumber == 0)
 			{
 				iceAttack = true;
+				fireAttack = false;
 				isAttack = true;
 				animator.SetBool("ice", true);
 				GetComponent<BossFollow>().enabled = false;
@@ -51,6 +51,7 @@ public class Boss : MonoBehaviour
 			else if (ranNumber == 1)
 				{
 				fireAttack = true;
+				iceAttack = false;
 				isAttack = true;
 				animator.SetBool("fire", true);
 				GetComponent<BossFollow>().enabled = false;
@@ -92,7 +93,7 @@ public class Boss : MonoBehaviour
 	{
 
 
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(5);
 		animator.SetBool("isWalking", true);
 		animator.SetBool("ice", false);
 
@@ -103,7 +104,7 @@ public class Boss : MonoBehaviour
 	public IEnumerator FireAttack()
 	{
 		
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(5);
 		animator.SetBool("isWalking", true);
 		animator.SetBool("fire", false);
 
