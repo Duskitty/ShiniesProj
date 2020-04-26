@@ -65,7 +65,7 @@ public class L3P2Manager : MonoBehaviour
   IEnumerator openDoor()
   {
     door.GetComponent<Animator>().SetBool("isOpening", true);
-    yield return new WaitForSeconds(0.13f);
+    yield return new WaitForSeconds(0.2f);
 
     Destroy(door);
     yield return null;
