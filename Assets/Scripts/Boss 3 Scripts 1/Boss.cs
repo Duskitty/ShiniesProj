@@ -6,10 +6,7 @@ public class Boss : MonoBehaviour
 {
 	private Animator animator;
 	Animator ani;
-	bool isIceAttack = false;
-	bool isFireAttack = false;
-	private float timer = 0f;
-	public float waitTime = 3f;
+	private bool isAttack = false;
 	public void SetWalk(Animator animator) {
 		ani = animator;
 		StartCoroutine(IdleToWalk());
@@ -27,7 +24,8 @@ public class Boss : MonoBehaviour
 	private void Update()
 	{
 		animator.SetBool("isWalking", false);
-	//	LookAtPlayer();
+		//	LookAtPlayer();
+		isAttack = false;
 
 		if (BossFollow.isInStopDistnace == true)
 		{
@@ -36,6 +34,7 @@ public class Boss : MonoBehaviour
 			//Debug.Log(ranNumber);
 			if (ranNumber == 0)
 			{
+				isAttack = true;
 				animator.SetBool("ice", true);
 				GetComponent<BossFollow>().enabled = false;
 				GetComponent<Boss>().enabled = false;
@@ -45,7 +44,7 @@ public class Boss : MonoBehaviour
 			else if (ranNumber == 1)
 				{
 
-
+				isAttack = true;
 				animator.SetBool("fire", true);
 				GetComponent<BossFollow>().enabled = false;
 				GetComponent<Boss>().enabled = false;
@@ -107,9 +106,10 @@ public class Boss : MonoBehaviour
 	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.CompareTag("Player")) { 
-		
-		
+		if (collision.gameObject.CompareTag("Player")&& isAttack==true && Invincible.isHit == false) {
+			//do damage 
+			Invincible.isHit = true;
+			GameControlScript.health -= 1;
 		}
 	}
 }
