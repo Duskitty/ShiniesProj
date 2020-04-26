@@ -7,7 +7,7 @@ public class Boss : MonoBehaviour
 	public static bool fireAttack = false;
 	public static bool iceAttack = false;
     public static bool isSmashed = false;
-	public static int heath = 1;
+	private int heath = 1;
 	private Animator animator;
 	Animator ani;
 	private bool isAttack = false;
@@ -27,7 +27,6 @@ public class Boss : MonoBehaviour
 	}
 	private void Update()
 	{
-		TakeDamage();
 		animator.SetBool("isWalking", false);
 		
 		//	LookAtPlayer();
@@ -124,10 +123,10 @@ public class Boss : MonoBehaviour
 		}
 	}
 	public void TakeDamage() {
-		
+		heath -= 1;
 		Debug.Log("Boss has" + heath);
 		if (heath <= 0) {
-			Destroy(this.gameObject);
+			StartCoroutine(Death());
 		}
 	}
     public void PlayerDamaged()
@@ -139,5 +138,12 @@ public class Boss : MonoBehaviour
             isSmashed = false;
         }
     }
-    
+	public IEnumerator Death()
+	{
+
+		yield return new WaitForSeconds(3);
+		Destroy(gameObject);
+
+	}
+
 }

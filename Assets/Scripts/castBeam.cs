@@ -360,6 +360,7 @@ public class castBeam : MonoBehaviour
       {
         if (fireHits[i].collider.tag == "Boss")
         {
+                    fireHitSomething = false;
           Debug.Log(fireHits[i].collider.name);
           return fireHits[i].collider;
         }

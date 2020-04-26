@@ -20,7 +20,7 @@ public class L3BossLight : MonoBehaviour
   void Start()
   {
     player = GameObject.Find("Player");
-    boss = GameObject.Find("Gnome");
+    boss = GameObject.FindWithTag("Boss");
   }
 
   void Update()
@@ -49,9 +49,9 @@ public class L3BossLight : MonoBehaviour
     // if the boss is hit by fire
     if (fireHitObj != null)
     {
-         //   if (Boss.iceAttack==true)
-           // {
-                Boss.heath -= 1;
+            //   if (Boss.iceAttack==true)
+            // {
+            boss.GetComponent<Boss>().TakeDamage();
           //  }
       // insert code for how the boss reacts to fire
     }
@@ -59,9 +59,10 @@ public class L3BossLight : MonoBehaviour
     // if the boss is hit with ice
     if(iceHitObj != null)
     {
-          //  if (Boss.fireAttack==true)
-          //  {
-                Boss.heath -= 1;
+            //  if (Boss.fireAttack==true)
+            //  {
+            boss.GetComponent<Boss>().TakeDamage();
+
           //  }
             // insert code for how the boss reacts to ice
         }
