@@ -84,26 +84,16 @@ public class Charges : MonoBehaviour
 
                 }
             }
-            /*
-            else if (sceneName == "World_4")
+            
+            else if (sceneName == "World 3 Boss")
             {
-                GameControlScript.charges += 3;
-                if (GameControlScript.charges > 3)
+                GameControlScript.charges += 2;
+                if (GameControlScript.charges > 2)
                 {
-                 GameControlScript.charges = 3; // 2 charged gem in world 3
+                 GameControlScript.charges = 2; // 2 charged gem in world 3
 
                 }
-            }*/
-        }
-    }
-    public void BeamPress()
-    {
-        GameControlScript.charges -= 1;//decrmate the charges
-
-        if (GameControlScript.charges < 0)
-        {
-            GameControlScript.charges = 0;//make sure charges dont go below zero
-
+            }
         }
     }
 }
