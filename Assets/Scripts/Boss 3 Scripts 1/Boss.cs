@@ -10,7 +10,6 @@ public class Boss : MonoBehaviour
 	bool isFireAttack = false;
 	private float timer = 0f;
 	public float waitTime = 3f;
-	private bool isAttack = false;
 	public void SetWalk(Animator animator) {
 		ani = animator;
 		StartCoroutine(IdleToWalk());
@@ -28,8 +27,7 @@ public class Boss : MonoBehaviour
 	private void Update()
 	{
 		animator.SetBool("isWalking", false);
-		LookAtPlayer();
-		timer = 0;
+	//	LookAtPlayer();
 
 		if (BossFollow.isInStopDistnace == true)
 		{
@@ -48,11 +46,14 @@ public class Boss : MonoBehaviour
 				{
 
 
-					///add stuff here 
+				animator.SetBool("fire", true);
+				GetComponent<BossFollow>().enabled = false;
+				GetComponent<Boss>().enabled = false;
+				StartCoroutine(FireAttack());
 
-				}
+			}
 
-			
+
 		}
 
 	}
@@ -98,7 +99,10 @@ public class Boss : MonoBehaviour
 		
 		yield return new WaitForSeconds(2);
 		animator.SetBool("isWalking", true);
+		animator.SetBool("fire", false);
+
 		GetComponent<BossFollow>().enabled = true;
+		GetComponent<Boss>().enabled = true;
 
 	}
 }
