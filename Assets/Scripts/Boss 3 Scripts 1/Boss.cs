@@ -141,7 +141,7 @@ public class Boss : MonoBehaviour
 	public IEnumerator Death()
 	{
 
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(0.5f);
 		Destroy(gameObject);
 
 	}

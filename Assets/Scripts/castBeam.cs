@@ -237,8 +237,13 @@ public class castBeam : MonoBehaviour
           else if (hitObj.tag == "Boss3")
           {
             iceHitSomething = true;
-          }
-        }
+                    if (Boss.fireAttack == true)
+                    {
+                        GameObject.FindWithTag("Boss3").GetComponent<Boss>().TakeDamage();
+                    }
+
+                }
+            }
       }
     }
 
@@ -286,7 +291,9 @@ public class castBeam : MonoBehaviour
                     //
                     else if (hitObj != null && hitObj.tag == "Boss3")
                     {
-                      
+                        if (Boss.iceAttack == true) {
+                            GameObject.FindWithTag("Boss3").GetComponent<Boss>().TakeDamage();
+                        }
                     }
                 }
             }
