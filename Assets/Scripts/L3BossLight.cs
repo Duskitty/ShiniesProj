@@ -49,20 +49,20 @@ public class L3BossLight : MonoBehaviour
     // if the boss is hit by fire
     if (fireHitObj != null)
     {
-            if (Boss.iceAttack==true)
-            {
+         //   if (Boss.iceAttack==true)
+           // {
                 Boss.heath -= 1;
-            }
+          //  }
       // insert code for how the boss reacts to fire
     }
 
     // if the boss is hit with ice
     if(iceHitObj != null)
     {
-            if (Boss.fireAttack==true)
-            {
+          //  if (Boss.fireAttack==true)
+          //  {
                 Boss.heath -= 1;
-            }
+          //  }
             // insert code for how the boss reacts to ice
         }
     }
