@@ -37,7 +37,8 @@ public class castBeam : MonoBehaviour
     //private GameObject[] iceBlocks;
     private LineRenderer[] hittableObjBeams;
     public SunlightTrigger[] sunPatches;
-  private bool fireHitSomething;
+    private bool fireHitSomething;
+    private bool iceHitSomething;
 
     // Start is called before the first frame update
     void Start()
@@ -54,12 +55,15 @@ public class castBeam : MonoBehaviour
         fireHits = new RaycastHit2D[10];
         firePlaying = false;
         //frozenEnemies = new GameObject[10];
-        //iceBlocks = new GameObject[10];   
+        //iceBlocks = new GameObject[10];  
+        fireHitSomething = false;
+        iceHitSomething = false;
     }
 
     public Collider2D reflect()
     {
         fireHitSomething = false;
+        iceHitSomething = false;
         if (playerDirection.GetBool("isIdleUp"))
         {
             playerHitPoint = player.transform.GetChild(5);
@@ -107,6 +111,7 @@ public class castBeam : MonoBehaviour
     public Collider2D castFire()
     {
         disableLight();
+        iceHitSomething = false;
         if (playerDirection.GetBool("isIdleUp"))
         {
             playerHitPoint = player.transform.GetChild(5);
@@ -224,6 +229,15 @@ public class castBeam : MonoBehaviour
           else if(hitObj.tag == "enemy")
           {
             StartCoroutine(meltEnemy(hitObj));
+          }
+
+          if (hitObj.tag == "Boss")
+          {
+            iceHitSomething = true;
+          }
+          else
+          {
+            iceHitSomething = false;
           }
         }
       }
@@ -349,6 +363,22 @@ public class castBeam : MonoBehaviour
         {
           Debug.Log(fireHits[i].collider.name);
           return fireHits[i].collider;
+        }
+      }
+    }
+    return null;
+  }
+
+  public Collider2D getBossColliderIce()
+  {
+    if (iceHitSomething)
+    {
+      for (int i = 0; i < iceHits.Length; i++)
+      {
+        if (iceHits[i].collider.tag == "Boss")
+        {
+          Debug.Log(iceHits[i].collider.name);
+          return iceHits[i].collider;
         }
       }
     }
