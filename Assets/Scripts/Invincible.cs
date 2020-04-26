@@ -5,7 +5,7 @@ using UnityEngine;
 public class Invincible : MonoBehaviour
 {
     public static bool isHit = false;
-    public float timeofInvincible = 2f;
+    public float timeofInvincible = 0.5f;
 
     private bool invincible = false;
 
@@ -13,7 +13,6 @@ public class Invincible : MonoBehaviour
     private void Update()
     {
         if (isHit) {
-
             StartCoroutine(InvincibleTime());
         }
     }
@@ -27,6 +26,7 @@ public class Invincible : MonoBehaviour
     {
         yield return new WaitForSeconds(timeofInvincible);//changing the time allows for more invincible
         isHit = false;
+
 
     }
 }
