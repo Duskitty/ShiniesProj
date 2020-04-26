@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+	private int heath = 12;
 	private Animator animator;
 	Animator ani;
 	private bool isAttack = false;
@@ -110,6 +111,13 @@ public class Boss : MonoBehaviour
 			//do damage 
 			Invincible.isHit = true;
 			GameControlScript.health -= 1;
+		}
+	}
+	public void TakeDamage() {
+		heath -= 1;
+		if (heath <= 0) {
+			Destroy(this.gameObject);
+		
 		}
 	}
 }

@@ -46,15 +46,18 @@ public class L3BossLight : MonoBehaviour
     // if the boss is hit by fire
     if (fireHitObj != null)
     {
+            GameObject.FindWithTag("Boss").GetComponent<Boss>().TakeDamage();
       // insert code for how the boss reacts to fire
     }
 
     // if the boss is hit with ice
     if(iceHitObj != null)
     {
-      // insert code for how the boss reacts to ice
+            GameObject.FindWithTag("Boss").GetComponent<Boss>().TakeDamage();
+
+            // insert code for how the boss reacts to ice
+        }
     }
-  }
 
   private bool checkInSun()
   {
