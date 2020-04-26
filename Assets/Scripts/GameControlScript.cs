@@ -71,6 +71,7 @@ public class GameControlScript : MonoBehaviour
         if (health > 3)
             health = 3;
 
+
         switch (health)
         {
             case 3:
@@ -107,6 +108,9 @@ public class GameControlScript : MonoBehaviour
 
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
+
+        if(health == 0)
+            SceneManager.LoadScene("Death Scene");
 
         if (sceneName == "World_1")
         {

@@ -54,4 +54,14 @@ public class PauseMenu : MonoBehaviour
             Pause();
         }
     }
+    private int SceneToContinue;
+    public void Continue()
+    {
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+            SceneManager.LoadScene(sceneName);
+    }
 }
