@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1289225903}
+      - m_Target: {fileID: 1289225904}
         m_MethodName: Continue
         m_Mode: 1
         m_Arguments:
@@ -721,6 +721,7 @@ GameObject:
   - component: {fileID: 1289225900}
   - component: {fileID: 1289225899}
   - component: {fileID: 1289225903}
+  - component: {fileID: 1289225904}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -821,6 +822,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 562586122}
+--- !u!114 &1289225904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289225898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e3a32bedb3042429167256efc79500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart1: {fileID: 0}
+  heart2: {fileID: 0}
+  heart3: {fileID: 0}
+  chargedGem1: {fileID: 0}
+  chargedGem2: {fileID: 0}
+  chargedGem3: {fileID: 0}
+  unchargedGem1: {fileID: 0}
+  unchargedGem2: {fileID: 0}
+  unchargedGem3: {fileID: 0}
 --- !u!1 &1320844046
 GameObject:
   m_ObjectHideFlags: 0

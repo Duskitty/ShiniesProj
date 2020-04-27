@@ -63,9 +63,8 @@ public class GameControlScript : MonoBehaviour
         {
             charges = 2;
         }
-
-
     }
+
     void Update()
     {
         if (health > 3)
@@ -105,12 +104,15 @@ public class GameControlScript : MonoBehaviour
 
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
-
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
         if(health == 0)
+        {
+            PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
             SceneManager.LoadScene("Death Scene");
+        }
+            
 
         if (sceneName == "World_1")
         {
