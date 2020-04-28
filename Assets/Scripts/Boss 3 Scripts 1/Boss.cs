@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+	public float attackDistance = 1.5f;
+	private Transform target;
 	public static bool fireAttack = false;
 	public static bool iceAttack = false;
     public static bool isSmashed = false;
@@ -24,6 +26,8 @@ public class Boss : MonoBehaviour
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
+		target = GameObject.Find("Player").GetComponent<Transform>();
+
 	}
 	private void Update()
 	{
@@ -45,6 +49,7 @@ public class Boss : MonoBehaviour
 				animator.SetBool("ice", true);
 				GetComponent<BossFollow>().enabled = false;
 				GetComponent<Boss>().enabled = false;
+				Attacking();
 				StartCoroutine(IceAttack());
 
 			}
@@ -56,6 +61,8 @@ public class Boss : MonoBehaviour
 				animator.SetBool("fire", true);
 				GetComponent<BossFollow>().enabled = false;
 				GetComponent<Boss>().enabled = false;
+				Attacking();
+
 				StartCoroutine(FireAttack());
 
 			}
@@ -93,7 +100,7 @@ public class Boss : MonoBehaviour
 	{
 
 
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(1.5f);
 		animator.SetBool("isWalking", true);
 		animator.SetBool("ice", false);
 
@@ -103,8 +110,7 @@ public class Boss : MonoBehaviour
 	}
 	public IEnumerator FireAttack()
 	{
-		
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(1.5f);
 		animator.SetBool("isWalking", true);
 		animator.SetBool("fire", false);
 
@@ -146,5 +152,12 @@ public class Boss : MonoBehaviour
 		Destroy(gameObject);
 
 	}
-
+	void Attacking() { //area of effect for the player 
+		
+			if (Vector2.Distance(transform.position, target.position) <= attackDistance&& Invincible.isHit==false) {
+				GameControlScript.health -= 1;
+			}
+		
+	
+	}
 }
