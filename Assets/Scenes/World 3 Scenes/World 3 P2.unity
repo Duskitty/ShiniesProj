@@ -65880,6 +65880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1789474016177757691, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
+    - {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
 --- !u!1 &1033358031 stripped
 GameObject:
@@ -65906,6 +65907,22 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1033358030}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1033358034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033358031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc5e54822a5e1d4fb5a8681311cbb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sheild: {fileID: 2071767536}
+  beamButton: {fileID: 1585544097}
+  reflectGem: {fileID: 1240367038}
+  bashbutton: {fileID: 1226120475}
 --- !u!1 &1034529887
 GameObject:
   m_ObjectHideFlags: 0
