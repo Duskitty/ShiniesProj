@@ -68,10 +68,10 @@ public class GameControlScript : MonoBehaviour
     }
     public IEnumerator Death()
     {
-        
-        yield return new WaitForSeconds(Delay);
-        SceneManager.LoadScene("Death Scene");
-        //Destroy(gameObject);
+        animat.SetBool("isDead", true);
+
+        yield return new WaitForSeconds(.45f);
+        Destroy(gameObject);
 
     }
 
@@ -121,10 +121,9 @@ public class GameControlScript : MonoBehaviour
         {
             animat.SetBool("isDead", true);
             StartCoroutine(Death());
-            
 
-            // PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
-
+           // PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("Death Scene");
         }
             
 
