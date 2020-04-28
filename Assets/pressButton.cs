@@ -14,7 +14,7 @@ public class pressButton : MonoBehaviour
       isPressed = false;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
       isPressed = true;
       GetComponent<SpriteRenderer>().sprite = pressed;
