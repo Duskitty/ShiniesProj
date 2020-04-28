@@ -43,7 +43,7 @@ public class IceControl : MonoBehaviour
 
 
         }
-     //   RestoreMovment();
+        RestoreMovment();
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -69,9 +69,12 @@ public class IceControl : MonoBehaviour
 
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<SheildBash>().enabled = true;
-    }
-    public void setTrigger() {
-        this.GetComponent<Collider2D>().enabled = false;
+        controller.velocity = Vector2.zero;
+
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        RestoreMovment();
+    }
 }

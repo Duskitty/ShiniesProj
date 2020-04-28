@@ -15,8 +15,9 @@ public class pickUpIceGem : MonoBehaviour
     {
       if(col.collider.name == "Player")
       {
-         
-        Destroy(this.gameObject);
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+            GameObject.Find("IceTilemap").GetComponent<IceControl>().enabled = false;
+            Destroy(this.gameObject);
         iceGem.gameObject.SetActive(true);
       }
     }

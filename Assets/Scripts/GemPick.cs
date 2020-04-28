@@ -35,7 +35,6 @@ public class GemPick : MonoBehaviour
     reflectGem = false;
     iceGem = true;
     Debug.Log("Ice gem selected");
-
   }
 
   public bool returnReflectGem()
