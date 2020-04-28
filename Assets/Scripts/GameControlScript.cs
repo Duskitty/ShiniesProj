@@ -71,7 +71,7 @@ public class GameControlScript : MonoBehaviour
         animat.SetBool("isDead", true);
 
         yield return new WaitForSeconds(.45f);
-        Destroy(gameObject);
+        SceneManager.LoadScene("Death Scene");
 
     }
 
@@ -123,7 +123,7 @@ public class GameControlScript : MonoBehaviour
             StartCoroutine(Death());
 
            // PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
-            SceneManager.LoadScene("Death Scene");
+           
         }
             
 
