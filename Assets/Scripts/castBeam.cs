@@ -289,11 +289,14 @@ public class castBeam : MonoBehaviour
                     else if (hitObj != null && hitObj.tag == "Boss2")
                     {
                         B2Script.health--;
-                        GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((B2Script.health / 12.0f), 1f, 1f);
+                        Debug.Log(B2Script.health);
+                        GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((B2Script.health / 25.0f), 1f, 1f);
                         if (B2Script.health == 0)
                         {
                             GameObject.Find("Controller").SetActive(false);
+                            SpawnChargeGem.deadBoss = true;
                         }
+                        
                     }
                     //BEN ADD CODE FOR BOSS 3 FIRE HERE
                     //

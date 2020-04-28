@@ -26,7 +26,22 @@ public class nextLevelTrigger : MonoBehaviour
         else if (currentScence.name == "World 2 P2")
         {
             // Debug.Log("entered next level trigger");
-            SceneManager.LoadScene("YouWin", LoadSceneMode.Single);
+            SceneManager.LoadScene("World 2 Boss", LoadSceneMode.Single);
+        }
+        else if (currentScence.name == "World 2 Boss")
+        {
+            // Debug.Log("entered next level trigger");
+            SceneManager.LoadScene("World 3 P1", LoadSceneMode.Single);
+        }
+        else if (currentScence.name == "World 3 P1")
+        {
+            // Debug.Log("entered next level trigger");
+            SceneManager.LoadScene("World 3 P2", LoadSceneMode.Single);
+        }
+        else if (currentScence.name == "World 3 P2")
+        {
+            // Debug.Log("entered next level trigger");
+            SceneManager.LoadScene("World 3 Boss", LoadSceneMode.Single);
         }
 
 

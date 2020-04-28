@@ -66,6 +66,15 @@ public class Charges : MonoBehaviour
 
                 }
             }
+            else if (sceneName == "World 2 Boss") // "World_2"
+            {
+                GameControlScript.charges += 1;
+                if (GameControlScript.charges > 1)
+                {
+                    GameControlScript.charges = 1; // 1 charged gem in world 2
+
+                }
+            }
             else if (sceneName == "World 3 P1")
             {
                 GameControlScript.charges += 2;
