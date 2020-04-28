@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -35620,6 +35620,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FireGem
       objectReference: {fileID: 0}
+    - target: {fileID: 6938940007244699562, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1363524479}
+    - target: {fileID: 6938940007244699562, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IceGem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
 --- !u!1 &372325572
@@ -37773,7 +37783,7 @@ PrefabInstance:
     - target: {fileID: 2199577797272764473, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2199577797272764473, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
         type: 3}
@@ -64099,6 +64109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9092dd1c970024aa23baed77cbdda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iceGem: {fileID: 1474258702}
 --- !u!58 &984214394
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -65712,12 +65723,12 @@ PrefabInstance:
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.2
+      value: -25.21
       objectReference: {fileID: 0}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.46
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
@@ -65747,7 +65758,7 @@ PrefabInstance:
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
@@ -121151,7 +121162,7 @@ PrefabInstance:
     - target: {fileID: 8128510487292177860, guid: eba0c46dedd0d244694ae3e51bb09ee2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8128510487292177860, guid: eba0c46dedd0d244694ae3e51bb09ee2,
         type: 3}
@@ -121258,6 +121269,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.9291115}
   m_EdgeRadius: 0
+--- !u!1 &1474258702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 207068700911590583, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 364373656}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1474525956
 GameObject:
   m_ObjectHideFlags: 0
@@ -135321,7 +135338,7 @@ PrefabInstance:
     - target: {fileID: 8128510487292177860, guid: eba0c46dedd0d244694ae3e51bb09ee2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 8128510487292177860, guid: eba0c46dedd0d244694ae3e51bb09ee2,
         type: 3}
