@@ -124,6 +124,8 @@ public class Boss : MonoBehaviour
 	}
 	public void TakeDamage() {
 		heath -= 1;
+		GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((heath / 12.0f), 1f, 1f);
+
 		if (heath <= 0) {
 			StartCoroutine(Death());
 		}
