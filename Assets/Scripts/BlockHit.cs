@@ -36,8 +36,8 @@ public class BlockHit : MonoBehaviour
 
         GameObject.Find("IceTilemap").GetComponent<IceControl>().enabled = true;
         GameObject.Find("IceTilemap").GetComponent<Collider2D>().enabled = true;
-        player.GetComponent<PlayerMovement>().enabled = false;
-        player.GetComponent<SheildBash>().enabled = false;
+     //   player.GetComponent<PlayerMovement>().enabled = false;
+     //   player.GetComponent<SheildBash>().enabled = false;
 
 
     }
