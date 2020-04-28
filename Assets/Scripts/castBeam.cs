@@ -285,6 +285,11 @@ public class castBeam : MonoBehaviour
                       StopCoroutine(meltEnemy(hitObj));
                       StartCoroutine(meltEnemyWithFire(hitObj));
                     }
+                    //BRENDAN ADD CODE FOR BOSS 2 FIRE HERE
+                    else if (hitObj != null && hitObj.tag == "Boss2")
+                    {
+                        //add code here
+                    }
                     //BEN ADD CODE FOR BOSS 3 FIRE HERE
                     //
                     //
