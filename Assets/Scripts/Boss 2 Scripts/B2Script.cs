@@ -16,12 +16,14 @@ public class B2Script : MonoBehaviour
     public int attackHold; //max time before next attack
     public float spikeTime; // time since last spike
     public int spikeHold; // max time before next spike
+    public float handTime;
 
-    public static int health = 12;
+    public static int health = 25;
 
     public GameObject spike;
     public AIPath selfPath;
     public AIDestinationSetter selfDest;
+    public GameObject hand;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class B2Script : MonoBehaviour
         isPlayerRight = false;
         selfPath = GetComponent<AIPath>();
         selfDest = GetComponent<AIDestinationSetter>();
+        handTime = 0f;
     }
 
     // Update is called once per frame
@@ -52,8 +55,16 @@ public class B2Script : MonoBehaviour
             {
                 invin -= Time.deltaTime;
             }
+            if(handTime > 0)
+            {
+                handTime -= Time.deltaTime;
+                if(handTime <= 0)
+                {
+                    ResetHand();
+                }
+            }
             attackTime += Time.deltaTime;
-            if(attackTime > attackHold)
+            if(attackTime > attackHold && handTime <= 0)
             {
                 attackTime = 0f;
                 Attack();
@@ -66,7 +77,7 @@ public class B2Script : MonoBehaviour
             }
         }
     }
-
+    //FOR A LATER DAY, MAKE THE BOSS ATTACK & SHOOT MORE SPIKES WITH LOWER HP
     public void Attack()
     {
         Transform pl = GameObject.Find("Player").transform;
@@ -75,21 +86,46 @@ public class B2Script : MonoBehaviour
         if(pos < 0)
         {
             isPlayerRight = true;
+            hand = GameObject.Find("CactusRightArm2");
         }
         else
         {
             isPlayerRight = false;
+            hand = GameObject.Find("CactusLeftArm2");
         }
-        //TODO: ACTUALLY ATTACK THE PLAYER
+        hand.GetComponent<AIPath>().maxSpeed = 4;
+        handTime = 1f;
+    }
+
+    public void ResetHand()
+    {
+        hand.GetComponent<AIPath>().maxSpeed = 2;
     }
 
     public void ShootSpike()
     {
-        Vector3 parent = GameObject.FindGameObjectWithTag("Boss2").transform.localPosition;
-        Quaternion rot = Quaternion.Euler(0,0,Random.Range(0, 359));
+        Vector3 parent = transform.localPosition;
+        int theRange = Random.Range(0, 3) * 90;
+        Quaternion rot = Quaternion.Euler(0,0,theRange);
         GameObject spikeForce;
         spikeForce = Instantiate(spike, parent, rot);
-        spikeForce.GetComponent<Rigidbody2D>().AddForce(transform.forward * 800); // test this number
+        Rigidbody2D boi = spikeForce.GetComponent<Rigidbody2D>();
+        if(theRange == 0)
+        {
+            boi.AddForce(transform.up * 4, ForceMode2D.Impulse);
+        }
+        else if(theRange == 90)
+        {
+            boi.AddForce(transform.right * -4, ForceMode2D.Impulse);
+        }
+        else if(theRange == 180)
+        {
+            boi.AddForce(transform.up * -4, ForceMode2D.Impulse);
+        }
+        else if(theRange == 270)
+        {
+            boi.AddForce(transform.right * 4, ForceMode2D.Impulse);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -110,7 +146,7 @@ public class B2Script : MonoBehaviour
                 print(GameControlScript.health);
                 print(col.name);
                 StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
-                GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
+                //GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
             }
         }
     }
