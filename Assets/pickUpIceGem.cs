@@ -15,6 +15,7 @@ public class pickUpIceGem : MonoBehaviour
     {
       if(col.collider.name == "Player")
       {
+         
         Destroy(this.gameObject);
         iceGem.gameObject.SetActive(true);
       }
