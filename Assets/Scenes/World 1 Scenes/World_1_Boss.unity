@@ -25285,29 +25285,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: sunPatches.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: iceBlock
-      value: 
-      objectReference: {fileID: 2420306915886529944, guid: b8e1a7ae6fc0b3642882411d3e606983,
-        type: 3}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: iceSpawn
-      value: 
-      objectReference: {fileID: 8837495616301759878, guid: cd629cdde83867044ad51476d27e1c2b,
-        type: 3}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: enemyIceBlock
-      value: 
-      objectReference: {fileID: 1415605596157866762, guid: 48acc1347d42df145afaa1a9dc1f2145,
-        type: 3}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25363,6 +25340,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: sunPatches.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: iceBlock
+      value: 
+      objectReference: {fileID: 2420306915886529944, guid: b8e1a7ae6fc0b3642882411d3e606983,
+        type: 3}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: iceSpawn
+      value: 
+      objectReference: {fileID: 8837495616301759878, guid: cd629cdde83867044ad51476d27e1c2b,
+        type: 3}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: enemyIceBlock
+      value: 
+      objectReference: {fileID: 1415605596157866762, guid: 48acc1347d42df145afaa1a9dc1f2145,
+        type: 3}
     - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: sheild
@@ -25391,6 +25391,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1789474016177757691, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
+--- !u!95 &1752058735 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1789474016177757694, guid: d51aecc35884a8145a1c259ed7f0bc66,
+    type: 3}
+  m_PrefabInstance: {fileID: 1752058734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1889671906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25572,8 +25578,8 @@ MonoBehaviour:
   unchargedGem1: {fileID: 490935666}
   unchargedGem2: {fileID: 1391966884}
   unchargedGem3: {fileID: 180093075}
-  animat: {fileID: 0}
-  Delay: 0
+  animat: {fileID: 1752058735}
+  Delay: 0.5
 --- !u!4 &1973086670
 Transform:
   m_ObjectHideFlags: 0

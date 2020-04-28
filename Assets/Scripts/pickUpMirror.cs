@@ -55,17 +55,5 @@ public class pickUpMirror : MonoBehaviour
             reflectGem.gameObject.SetActive(true);
             bashbutton.gameObject.SetActive(true);
         }
-        /*
-        else if (sceneName == "World_3")
-        {
-            hasSheild = true;
-        }
-        else if (sceneName == "World_4")
-        {
-            hasSheild = true;
-        }
-        */
-
-
     }
 }

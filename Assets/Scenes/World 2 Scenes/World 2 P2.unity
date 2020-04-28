@@ -62495,6 +62495,8 @@ MonoBehaviour:
   unchargedGem1: {fileID: 1748375540}
   unchargedGem2: {fileID: 132339444}
   unchargedGem3: {fileID: 861064569}
+  animat: {fileID: 2013977412}
+  Delay: 0.5
 --- !u!4 &1622931163
 Transform:
   m_ObjectHideFlags: 0
@@ -68266,6 +68268,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeofInvincible: 0.5
+--- !u!95 &2013977412 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1789474016177757694, guid: d51aecc35884a8145a1c259ed7f0bc66,
+    type: 3}
+  m_PrefabInstance: {fileID: 6176802840154427187}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2013977419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,

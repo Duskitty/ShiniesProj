@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -40337,20 +40337,20 @@ PrefabInstance:
       propertyPath: textBoxAnimator
       value: 
       objectReference: {fileID: 320343495}
+    - target: {fileID: 2834885300663314857, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834885300663314857, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1789474016177757693, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2834885300663314857, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2834885300663314857, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1789474016177757691, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
@@ -40374,6 +40374,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeofInvincible: 0.5
+--- !u!95 &1033358033 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1789474016177757694, guid: d51aecc35884a8145a1c259ed7f0bc66,
+    type: 3}
+  m_PrefabInstance: {fileID: 1033358030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1034529887
 GameObject:
   m_ObjectHideFlags: 0
@@ -110880,6 +110886,16 @@ PrefabInstance:
       propertyPath: heart1
       value: 
       objectReference: {fileID: 1212419436}
+    - target: {fileID: 6065982690199961205, guid: 14be88cc1075b374b8136a0ab32c141a,
+        type: 3}
+      propertyPath: animat
+      value: 
+      objectReference: {fileID: 1033358033}
+    - target: {fileID: 6065982690199961205, guid: 14be88cc1075b374b8136a0ab32c141a,
+        type: 3}
+      propertyPath: Delay
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14be88cc1075b374b8136a0ab32c141a, type: 3}
 --- !u!1 &2008151066
