@@ -11,9 +11,10 @@ public class ContinueScript : MonoBehaviour
         PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
         string sceneName = PlayerPrefs.GetString("lastLoadedScene");
         SceneManager.LoadScene(sceneName);//back to previous scene1?
+         Time.timeScale = 1;
         */
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-        
-    
+
+
 }

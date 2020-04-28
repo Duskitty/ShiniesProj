@@ -12,7 +12,6 @@ public class GameControlScript : MonoBehaviour
     public float Delay;
 
 
-
     void Start()
     {
 
@@ -74,6 +73,13 @@ public class GameControlScript : MonoBehaviour
         SceneManager.LoadScene("Death Scene");
 
     }
+    public void Conintued()
+    {
+        //PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
+        string ScName = PlayerPrefs.GetString("lastLoadedScene");
+        SceneManager.LoadScene(ScName);
+        Time.timeScale = 1;
+    }
 
     void Update()
     {
@@ -102,6 +108,9 @@ public class GameControlScript : MonoBehaviour
                 heart1.gameObject.SetActive(false);
                 heart2.gameObject.SetActive(false);
                 heart3.gameObject.SetActive(false);
+                animat.SetBool("isDead", true);
+                PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
+                StartCoroutine(Death());
                 // gameOver.gameObject.SetActive(true);
                 //Time.timeScale = 0; // makes game stop when all 3 lives are lost
                 break;
@@ -117,15 +126,15 @@ public class GameControlScript : MonoBehaviour
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
+        /*
         if(health == 0)
         {
-            animat.SetBool("isDead", true);
-            StartCoroutine(Death());
+            
 
-           // PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
+           PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
            
         }
-            
+          */  
 
         if (sceneName == "World_1")
         {
