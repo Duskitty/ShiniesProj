@@ -27023,7 +27023,7 @@ PrefabInstance:
     - target: {fileID: 698874864908893423, guid: 80b10182d0fddab488667f7c1ef9aba8,
         type: 3}
       propertyPath: attackDistance
-      value: 1
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 698874864908893420, guid: 80b10182d0fddab488667f7c1ef9aba8,
         type: 3}
@@ -27430,6 +27430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973086670}
   - component: {fileID: 1973086669}
+  - component: {fileID: 1973086671}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -27474,6 +27475,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1973086671
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973086668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9639baa225e438b4288ca8196e0832d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2033204693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2951074910604860417, guid: 466328bd9dabbbe4896822575f17196b,
