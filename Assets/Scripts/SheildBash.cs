@@ -55,12 +55,12 @@ public class SheildBash : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("enemy") || col.gameObject.CompareTag("bridge")|| col.gameObject.CompareTag("Boss"))
+        if (col.gameObject.CompareTag("enemy") || col.gameObject.CompareTag("bridge"))
         {
             //do nothing else statment is to pervent sticking to things
 
         }
-        else if (col.gameObject.CompareTag("Cactus") || col.gameObject.CompareTag("rock") || col.gameObject.CompareTag("orb") || col.gameObject.CompareTag("sunbeam") || col.gameObject.CompareTag("mirage"))
+        else if (col.gameObject.CompareTag("Cactus") || col.gameObject.CompareTag("rock") || col.gameObject.CompareTag("orb") || col.gameObject.CompareTag("sunbeam") || col.gameObject.CompareTag("mirage")|| col.gameObject.CompareTag("Boss3")|| col.gameObject.CompareTag("Boss"))
         {
             RestoreMovment();
         }
