@@ -35477,7 +35477,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -38721,7 +38721,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961154179}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &961154184
 Camera:
   m_ObjectHideFlags: 0
@@ -78853,6 +78853,7 @@ MonoBehaviour:
   unchargedGem1: {fileID: 1543307699}
   unchargedGem2: {fileID: 2951074910996868302}
   unchargedGem3: {fileID: 2951074910359017115}
+  animat: {fileID: 0}
 --- !u!4 &1708152679
 Transform:
   m_ObjectHideFlags: 0

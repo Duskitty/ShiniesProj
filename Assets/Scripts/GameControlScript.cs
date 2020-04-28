@@ -8,6 +8,8 @@ public class GameControlScript : MonoBehaviour
     public GameObject heart1, heart2, heart3, chargedGem1, chargedGem2, chargedGem3, unchargedGem1, unchargedGem2, unchargedGem3; //, gameOver;
     public static int health;
     public static int charges;
+    public Animator animat;
+    public float Delay;
 
 
 
@@ -64,6 +66,12 @@ public class GameControlScript : MonoBehaviour
             charges = 2;
         }
     }
+    public IEnumerator Death()
+    {
+        yield return new WaitForSeconds(.45f);
+        //Destroy(gameObject);
+
+    }
 
     void Update()
     {
@@ -93,7 +101,7 @@ public class GameControlScript : MonoBehaviour
                 heart2.gameObject.SetActive(false);
                 heart3.gameObject.SetActive(false);
                 // gameOver.gameObject.SetActive(true);
-                Time.timeScale = 0; // makes game stop when all 3 lives are lost
+                //Time.timeScale = 0; // makes game stop when all 3 lives are lost
                 break;
 
 
@@ -109,7 +117,10 @@ public class GameControlScript : MonoBehaviour
 
         if(health == 0)
         {
-            PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
+            animat.SetBool("isDead", true);
+            StartCoroutine(Death());
+
+           // PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
             SceneManager.LoadScene("Death Scene");
         }
             
