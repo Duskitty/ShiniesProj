@@ -288,7 +288,12 @@ public class castBeam : MonoBehaviour
                     //BRENDAN ADD CODE FOR BOSS 2 FIRE HERE
                     else if (hitObj != null && hitObj.tag == "Boss2")
                     {
-                        //add code here
+                        B2Script.health--;
+                        GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((B2Script.health / 12.0f), 1f, 1f);
+                        if (B2Script.health == 0)
+                        {
+                            GameObject.Find("Controller").SetActive(false);
+                        }
                     }
                     //BEN ADD CODE FOR BOSS 3 FIRE HERE
                     //

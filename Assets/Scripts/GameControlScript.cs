@@ -52,6 +52,10 @@ public class GameControlScript : MonoBehaviour
         {
             charges = 1;
         }
+        else if (sceneName == "World 2 Boss")
+        {
+            charges = 1;
+        }
         else if (sceneName == "World 3 P1")
         {
             charges = 2;
@@ -186,6 +190,32 @@ public class GameControlScript : MonoBehaviour
             if (charges > 1)
                 charges = 1;
 
+            switch (charges)
+            {
+                case 0:
+                    chargedGem1.gameObject.SetActive(false);
+                    chargedGem2.gameObject.SetActive(false);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(true);
+                    unchargedGem2.gameObject.SetActive(false);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
+                case 1:
+                    chargedGem1.gameObject.SetActive(true);
+                    chargedGem2.gameObject.SetActive(false);
+                    chargedGem3.gameObject.SetActive(false);
+                    unchargedGem1.gameObject.SetActive(false);
+                    unchargedGem2.gameObject.SetActive(false);
+                    unchargedGem3.gameObject.SetActive(false);
+                    break;
+            }
+        }
+        else if (sceneName == "World 2 Boss")
+        {
+            if (charges > 1)
+            {
+                charges = 1;
+            }
             switch (charges)
             {
                 case 0:

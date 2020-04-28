@@ -1,31 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 
-public class B2ArmCheck : MonoBehaviour
+public class B2LegCheck : MonoBehaviour
 {
-    public static bool startTrack = false;
-
-    public AIPath selfPath;
-    public AIDestinationSetter selfDest;
-
-    void Start()
-    {
-        selfPath = GetComponent<AIPath>();
-        selfDest = GetComponent<AIDestinationSetter>();
-    }
-
-    void Update()
-    {
-        if(startTrack == true)
-        {
-            selfPath.enabled = true;
-            selfDest.enabled = true;
-            //startTrack = false;
-        }
-    }
-
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))

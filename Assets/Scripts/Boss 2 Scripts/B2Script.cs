@@ -7,6 +7,9 @@ public class B2Script : MonoBehaviour
 {
 
     public int spikes; // random number that dictates the number of spikes that'll get released
+    public static bool fightBegin = false; // begins fight
+    public static bool startTrack = false; // begins tracking
+    public bool isPlayerRight; // for use with the Attack. sees if the player is to the right of the boss
 
     public static float invin; // invincibility time for player
     public float attackTime; // time since last attack
@@ -17,6 +20,8 @@ public class B2Script : MonoBehaviour
     public static int health = 12;
 
     public GameObject spike;
+    public AIPath selfPath;
+    public AIDestinationSetter selfDest;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +32,21 @@ public class B2Script : MonoBehaviour
         spikes = 1;
         spikeTime = 0f;
         spikeHold = 3;
+        isPlayerRight = false;
+        selfPath = GetComponent<AIPath>();
+        selfDest = GetComponent<AIDestinationSetter>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(B2StartTrack.fightBegin == true)
+        if(startTrack == true)
+        {
+            selfPath.enabled = true;
+            selfDest.enabled = true;
+            //startTrack = false;
+        }
+        if(fightBegin == true)
         {
             if(invin > 0)
             {
@@ -55,7 +69,18 @@ public class B2Script : MonoBehaviour
 
     public void Attack()
     {
-
+        Transform pl = GameObject.Find("Player").transform;
+        Transform bo = GameObject.Find("CactusBody").transform;
+        float pos = bo.localPosition.x - pl.localPosition.x;
+        if(pos < 0)
+        {
+            isPlayerRight = true;
+        }
+        else
+        {
+            isPlayerRight = false;
+        }
+        //TODO: ACTUALLY ATTACK THE PLAYER
     }
 
     public void ShootSpike()
@@ -64,25 +89,14 @@ public class B2Script : MonoBehaviour
         Quaternion rot = Quaternion.Euler(0,0,Random.Range(0, 359));
         GameObject spikeForce;
         spikeForce = Instantiate(spike, parent, rot);
-        spikeForce.GetComponent<Rigidbody2D>().AddForce(transform.forward * 100); // test this number
+        spikeForce.GetComponent<Rigidbody2D>().AddForce(transform.forward * 800); // test this number
     }
 
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            if (SheildBash.isSheildBashing == true) // TODO: change this to fire damage
-            {
-                Debug.Log("boss took damage");
-                health--;
-                GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((health / 12.0f), 1f, 1f);
-                GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
-                if (health == 0)
-                {
-                    GameObject.Find("Controller").SetActive(false);
-                }
-            }
-            else if (invin > 0) // TODO: add stun functionality to boss
+            if (invin > 0)
             {
                 Debug.Log("no damage");
                 //no damage taken
@@ -96,6 +110,7 @@ public class B2Script : MonoBehaviour
                 print(GameControlScript.health);
                 print(col.name);
                 StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
+                GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
             }
         }
     }
