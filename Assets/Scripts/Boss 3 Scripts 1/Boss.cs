@@ -7,7 +7,7 @@ public class Boss : MonoBehaviour
 	public static bool fireAttack = false;
 	public static bool iceAttack = false;
     public static bool isSmashed = false;
-	private int heath = 1;
+	private int heath = 12;
 	private Animator animator;
 	Animator ani;
 	private bool isAttack = false;
@@ -124,7 +124,6 @@ public class Boss : MonoBehaviour
 	}
 	public void TakeDamage() {
 		heath -= 1;
-		Debug.Log("Boss has" + heath);
 		if (heath <= 0) {
 			StartCoroutine(Death());
 		}
