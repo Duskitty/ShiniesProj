@@ -34735,5 +34735,10 @@ PrefabInstance:
       propertyPath: animat
       value: 
       objectReference: {fileID: 1515890051}
+    - target: {fileID: 6065982690199961205, guid: 14be88cc1075b374b8136a0ab32c141a,
+        type: 3}
+      propertyPath: Delay
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14be88cc1075b374b8136a0ab32c141a, type: 3}
