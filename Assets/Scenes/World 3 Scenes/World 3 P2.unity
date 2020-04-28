@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -11362,7 +11362,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000009f170acddbcbbaed519cd0e349750c4f4b39682b
+  m_ApplyToSortingLayers: dbcbbaed519cd0e3
   m_LightCookieSprite: {fileID: 21300000, guid: a3201659a27a76a4892e865de494b18b,
     type: 3}
   m_UseNormalMap: 0
@@ -21738,7 +21738,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000009f170acddbcbbaed519cd0e349750c4f4b39682b
+  m_ApplyToSortingLayers: dbcbbaed519cd0e3
   m_LightCookieSprite: {fileID: 21300000, guid: a3201659a27a76a4892e865de494b18b,
     type: 3}
   m_UseNormalMap: 0
@@ -39259,7 +39259,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000009f170acddbcbbaed519cd0e349750c4f4b39682b
+  m_ApplyToSortingLayers: dbcbbaed519cd0e3
   m_LightCookieSprite: {fileID: 21300000, guid: a3201659a27a76a4892e865de494b18b,
     type: 3}
   m_UseNormalMap: 0
@@ -40569,7 +40569,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000009f170acddbcbbaed519cd0e349750c4f4b39682b
+  m_ApplyToSortingLayers: dbcbbaed519cd0e3
   m_LightCookieSprite: {fileID: 21300000, guid: a3201659a27a76a4892e865de494b18b,
     type: 3}
   m_UseNormalMap: 0
@@ -44021,7 +44021,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000009f170acddbcbbaed519cd0e349750c4f4b39682b
+  m_ApplyToSortingLayers: dbcbbaed519cd0e3
   m_LightCookieSprite: {fileID: 21300000, guid: a3201659a27a76a4892e865de494b18b,
     type: 3}
   m_UseNormalMap: 0
