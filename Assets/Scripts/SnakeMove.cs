@@ -69,7 +69,8 @@ public class SnakeMove : MonoBehaviour
             Invincible.isHit = true;
             GameControlScript.health -= 1;
             StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
-           // StartCoroutine(Die());
+            // StartCoroutine(Die());
+            Invincible.isHit = true;
 
 
         }
