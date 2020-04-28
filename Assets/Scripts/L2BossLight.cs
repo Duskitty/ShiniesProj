@@ -5,6 +5,7 @@ using UnityEngine;
 public class L2BossLight : MonoBehaviour
 {
   public SunlightTrigger[] sunPatches;
+  public GameObject[] torches;
 
   // Player Variables
   private GameObject player;
@@ -17,14 +18,17 @@ public class L2BossLight : MonoBehaviour
   void Start()
   {
     player = GameObject.Find("Player");
+
+    for(int i = 0; i < torches.Length; i++)
+    {
+      torches[i].GetComponent<Animator>().SetBool("isLit", true);
+    }
   }
 
   void Update()
   {
     inSun = checkInSun();
     player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(null);
-    fireHitObj = player.transform.GetChild(10).GetComponent<castBeam>().getBossColliderFire();
-    Debug.Log(fireHitObj);
 
     if (inSun)
     {
@@ -34,19 +38,6 @@ public class L2BossLight : MonoBehaviour
     {
       lightHitObj = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
     }
-
-    // if the boss is hit by light, make sure the boss has the Boss tag
-    if (lightHitObj != null && lightHitObj.tag == "Boss")
-    {
-      // insert code for how the boss reacts to light
-    }
-
-    // if the boss is hit by fire
-    if (fireHitObj != null)
-    {
-      // insert code for how the boss reacts to fire
-    }
-
   }
 
   private bool checkInSun()
