@@ -68,8 +68,10 @@ public class GameControlScript : MonoBehaviour
     }
     public IEnumerator Death()
     {
+        animat.SetBool("isDead", true);
+
         yield return new WaitForSeconds(.45f);
-        //Destroy(gameObject);
+        Destroy(gameObject);
 
     }
 
