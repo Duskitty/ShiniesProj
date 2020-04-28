@@ -9,7 +9,7 @@ public class pickUpIceGem : MonoBehaviour
       if(col.collider.name == "Player")
       {
         Destroy(this.gameObject);
-        //Add in code to ger ice gem on the shield
+        //Add in code to put ice gem on the shield
       }
     }
 }

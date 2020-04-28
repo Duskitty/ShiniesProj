@@ -60,9 +60,10 @@ public class BlockHit : MonoBehaviour
 
   private void OnTriggerExit2D(Collider2D col)
   {
-    if (col.name == "Player")
+    if (col.name == "Player" && player.transform.position.y < 3 && player.transform.position.y > -2.9)
     {
-      //Debug.Log(collision.gameObject.name);
+
+      Debug.Log("on tigger exit");
       GameObject.Find("IceTilemap").GetComponent<IceControl>().enabled = true;
       GameObject.Find("IceTilemap").GetComponent<Collider2D>().enabled = true;
 
