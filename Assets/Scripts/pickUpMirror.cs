@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class pickUpMirror : MonoBehaviour
 {
     public GameObject sheild, beamButton, reflectGem, bashbutton;
-    public static bool hasSheild = false;
+    public static bool hasSheild; 
     private GameObject mirror;
 
     private void Start()
@@ -16,6 +16,20 @@ public class pickUpMirror : MonoBehaviour
         reflectGem.gameObject.SetActive(false);
         bashbutton.gameObject.SetActive(false);
         mirror = GameObject.Find("Shield");
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name; // World 1
+        if (sceneName == "World_1")
+        {
+            hasSheild = false;
+        }
+        else
+        {
+            hasSheild = true;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
+        }
     }
     public void OnCollisionEnter2D(Collision2D thing)
     {
@@ -35,6 +49,7 @@ public class pickUpMirror : MonoBehaviour
         //}
 
     }
+   
     private void Update()
     {
         // Create a temporary reference to the current scene.

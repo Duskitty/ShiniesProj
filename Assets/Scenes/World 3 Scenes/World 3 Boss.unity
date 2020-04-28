@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 487621179}
   m_Layer: 0
   m_Name: Point Light 2D (1)
-  m_TagString: Untagged
+  m_TagString: sunbeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10313,20 +10313,38 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4851130059577802727, guid: 466328bd9dabbbe4896822575f17196b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367647735609072558, guid: 466328bd9dabbbe4896822575f17196b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2951074909514778648, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4403502999856208304, guid: 466328bd9dabbbe4896822575f17196b,
+    - target: {fileID: 283773470, guid: 466328bd9dabbbe4896822575f17196b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 136519187}
+    - target: {fileID: 283773470, guid: 466328bd9dabbbe4896822575f17196b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432255892446803194, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2140291417}
-    - target: {fileID: 4403502999856208304, guid: 466328bd9dabbbe4896822575f17196b,
+      objectReference: {fileID: 1752058735}
+    - target: {fileID: 2432255892446803194, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackButton
+      value: IceGem
       objectReference: {fileID: 0}
     - target: {fileID: 2951074909348046227, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
@@ -10338,19 +10356,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReflectGem
       objectReference: {fileID: 0}
-    - target: {fileID: 1367647735609072558, guid: 466328bd9dabbbe4896822575f17196b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 283773470, guid: 466328bd9dabbbe4896822575f17196b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 136519187}
-    - target: {fileID: 283773470, guid: 466328bd9dabbbe4896822575f17196b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ButtonPress
-      objectReference: {fileID: 0}
     - target: {fileID: 2951074909514778646, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -10361,20 +10366,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FireGem
       objectReference: {fileID: 0}
-    - target: {fileID: 4851130059577802727, guid: 466328bd9dabbbe4896822575f17196b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2432255892446803194, guid: 466328bd9dabbbe4896822575f17196b,
+    - target: {fileID: 4403502999856208304, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1752058735}
-    - target: {fileID: 2432255892446803194, guid: 466328bd9dabbbe4896822575f17196b,
+      objectReference: {fileID: 2140291417}
+    - target: {fileID: 4403502999856208304, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: IceGem
+      value: AttackButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 466328bd9dabbbe4896822575f17196b, type: 3}
@@ -10473,7 +10473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572889624}
   m_LocalRotation: {x: 0, y: 0, z: 0.03018206, w: 0.99954444}
-  m_LocalPosition: {x: 0.06, y: 0.38, z: -342.7748}
+  m_LocalPosition: {x: 0.06, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13951,7 +13951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  stopDistance: 3
+  stopDistance: 1.75
 --- !u!1 &1065897352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2951074910592583187, guid: 466328bd9dabbbe4896822575f17196b,
@@ -25983,7 +25983,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.6862745}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.4745098}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -26405,7 +26405,7 @@ PrefabInstance:
     - target: {fileID: 6561559050115432593, guid: 068a121ff39a7eb44a914171885bb3c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.212
       objectReference: {fileID: 0}
     - target: {fileID: 6561559050115432593, guid: 068a121ff39a7eb44a914171885bb3c9,
         type: 3}
@@ -26860,7 +26860,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.6862745}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.4745098}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -27020,6 +27020,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1161246451}
+    - target: {fileID: 698874864908893423, guid: 80b10182d0fddab488667f7c1ef9aba8,
+        type: 3}
+      propertyPath: attackDistance
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 698874864908893420, guid: 80b10182d0fddab488667f7c1ef9aba8,
         type: 3}
       propertyPath: m_BodyType
@@ -27145,7 +27150,7 @@ GameObject:
   - component: {fileID: 1905644031}
   m_Layer: 0
   m_Name: Point Light 2D (1)
-  m_TagString: Untagged
+  m_TagString: sunbeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27425,6 +27430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973086670}
   - component: {fileID: 1973086669}
+  - component: {fileID: 1973086671}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -27469,6 +27475,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1973086671
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973086668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9639baa225e438b4288ca8196e0832d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2033204693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2951074910604860417, guid: 466328bd9dabbbe4896822575f17196b,
