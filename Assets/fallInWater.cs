@@ -57,7 +57,7 @@ public class fallInWater : MonoBehaviour
       {
         if (fallingObj != null)
         {
-          Debug.Log("here");
+          //Debug.Log("here");
           Color c = fallingObj.GetComponent<SpriteRenderer>().color;
           c.a = f;
           fallingObj.GetComponent<SpriteRenderer>().color = c;
