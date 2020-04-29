@@ -24906,6 +24906,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 574190595}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1618590694 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 137742211083649186, guid: e72a6703e1464d140b6608afe0e758c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 574190595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658598892
 GameObject:
   m_ObjectHideFlags: 0
@@ -24994,10 +25000,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc5e54822a5e1d4fb5a8681311cbb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheild: {fileID: 0}
-  beamButton: {fileID: 0}
-  reflectGem: {fileID: 0}
-  bashbutton: {fileID: 0}
+  sheild: {fileID: 1075662802}
+  beamButton: {fileID: 1518613664}
+  reflectGem: {fileID: 127099172}
+  bashbutton: {fileID: 217799766}
 --- !u!61 &1666939238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25166,7 +25172,7 @@ MonoBehaviour:
   switchTime: 0
   waiting: 0
   state: 0
-  mushroom: {fileID: 8368298533325208799, guid: a618b316f65528a418b055d63d0c9c00,
+  mushroom: {fileID: 8846893800798288045, guid: 685402d14b2aff14f952e8d36b890aad,
     type: 3}
   tracker: {fileID: 3660190669113380072, guid: 3eb3d5525f27bb14d904279aadb2429f, type: 3}
   anim: {fileID: 1695017122}
@@ -25387,7 +25393,7 @@ PrefabInstance:
         type: 3}
       propertyPath: textBoxAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1618590694}
     m_RemovedComponents:
     - {fileID: 1789474016177757691, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}

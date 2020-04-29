@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChargeGemPickup : MonoBehaviour
 {
     public GameObject chargeGem1, gameCharge,transition;
+    public static bool B2Died = false;
     private void Start()
     {
         chargeGem1.gameObject.SetActive(false);
@@ -13,12 +14,12 @@ public class ChargeGemPickup : MonoBehaviour
         transition.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
     }
-    public void DeadBoss()
+    void Update()
     {
-        if (B1Script.health == 0)
+        if (B1Script.health == 0 || B2Script.health <= 0)
         {
+            chargeGem1.gameObject.SetActive(true);
             gameCharge.GetComponent<BoxCollider2D>().enabled = true;
-           chargeGem1.gameObject.SetActive(true);
             transition.gameObject.GetComponent<BoxCollider2D>().enabled = true;
            // GameObject.FindWithTag("charge").GetComponent<BoxCollider2D>().enabled = true;
         }

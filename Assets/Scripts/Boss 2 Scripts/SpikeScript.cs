@@ -10,6 +10,7 @@ public class SpikeScript : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            Debug.Log("made it inside spike script");
             if (B2Script.invin > 0)
             {
                 Debug.Log("no damage");
@@ -28,6 +29,7 @@ public class SpikeScript : MonoBehaviour
         }
         else
         {
+            Debug.Log("poo");
             Destroy(self);
         }
     }
