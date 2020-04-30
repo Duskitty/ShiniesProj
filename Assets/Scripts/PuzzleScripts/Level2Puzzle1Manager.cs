@@ -70,7 +70,40 @@ public class Level2Puzzle1Manager : MonoBehaviour
       
     if (playerHitObj != null)
     {
-      if (playerHitObj.name == pyramid0.name && playerDirection.GetBool("isRight"))
+      if (playerHitObj.name == pyramid0.name)
+      {
+        if (playerDirection.GetBool("isIdleDown"))
+        {
+          Debug.Log("here");
+          pyramid0RaySpawn = pyramid0.transform.GetChild(3);
+          p0Hit = Physics2D.Raycast(pyramid0RaySpawn.position, pyramid0RaySpawn.TransformDirection(Vector3.left), 50.0f, ~layerMask);
+          Debug.DrawRay(pyramid0RaySpawn.position, pyramid0RaySpawn.TransformDirection(Vector3.left));
+          pyramid0HitPoint.position = p0Hit.point;
+          pyramid0Beam.SetPosition(0, pyramid0LightSpawn.position);
+          pyramid0Beam.SetPosition(1, pyramid0HitPoint.position);
+          pyramid0Beam.enabled = true;
+        }
+        else if (playerDirection.GetBool("isIdleRight"))
+        {
+          pyramid0RaySpawn = pyramid0.transform.GetChild(1);
+          p0Hit = Physics2D.Raycast(pyramid0RaySpawn.position, pyramid0RaySpawn.TransformDirection(Vector3.up), 50.0f, ~layerMask);
+          pyramid0HitPoint.position = p0Hit.point;
+          pyramid0Beam.SetPosition(0, pyramid0LightSpawn.position);
+          pyramid0Beam.SetPosition(1, pyramid0HitPoint.position);
+          pyramid0Beam.enabled = true;
+          p1Hit = Physics2D.Raycast(pyramid1RaySpawn.position, pyramid1RaySpawn.TransformDirection(Vector3.left), 50.0f, ~layerMask);
+          pyramid1HitPoint.position = p1Hit.point;
+          pyramid1Beam.SetPosition(0, pyramid1LightSpawn.position);
+          pyramid1Beam.SetPosition(1, pyramid1HitPoint.position);
+          pyramid1Beam.enabled = true;
+          orb.GetComponent<Animator>().SetBool("isLit", true);
+          // Activate stairs
+          Debug.Log("problem spot 1");
+          GameObject.Find("Stairs").GetComponent<SpriteRenderer>().enabled = true;
+          GameObject.Find("Stairs").GetComponent<BoxCollider2D>().enabled = false;
+        }
+      }
+      /*else if (playerHitObj.name == pyramid0.name && playerDirection.GetBool("isIdleRight"))
       {
         pyramid0RaySpawn = pyramid0.transform.GetChild(1);
         p0Hit = Physics2D.Raycast(pyramid0RaySpawn.position, pyramid0RaySpawn.TransformDirection(Vector3.up), 50.0f, ~layerMask);
@@ -85,19 +118,11 @@ public class Level2Puzzle1Manager : MonoBehaviour
         pyramid1Beam.enabled = true;
         orb.GetComponent<Animator>().SetBool("isLit", true);
         // Activate stairs
+        //Debug.Log("problem spot 1");
         GameObject.Find("Stairs").GetComponent<SpriteRenderer>().enabled = true;
         GameObject.Find("Stairs").GetComponent<BoxCollider2D>().enabled = false;
-      }
-      else if (playerHitObj != null && playerHitObj.name == pyramid0.name && (playerDirection.GetBool("isIdleDown") || playerDirection.GetBool("isDown")))
-      {
-        pyramid0RaySpawn = pyramid0.transform.GetChild(3);
-        p0Hit = Physics2D.Raycast(pyramid0RaySpawn.position, pyramid0RaySpawn.TransformDirection(Vector3.left), 50.0f, ~layerMask);
-        pyramid0HitPoint.position = p0Hit.point;
-        pyramid0Beam.SetPosition(0, pyramid0LightSpawn.position);
-        pyramid0Beam.SetPosition(1, pyramid0HitPoint.position);
-        pyramid0Beam.enabled = true;
-      }
-      else if (playerHitObj != null && playerHitObj.name == pyramid1.name)
+      }*/
+      else if (playerHitObj.name == pyramid1.name)
       {
         pyramid1RaySpawn = pyramid1.transform.GetChild(1);
         p1Hit = Physics2D.Raycast(pyramid1RaySpawn.position, pyramid1RaySpawn.TransformDirection(Vector3.left), 50.0f, ~layerMask);
@@ -107,6 +132,7 @@ public class Level2Puzzle1Manager : MonoBehaviour
         pyramid1Beam.enabled = true;
         orb.GetComponent<Animator>().SetBool("isLit", true);
         // Activate stairs
+        Debug.Log("problem spot 2");
         GameObject.Find("Stairs").GetComponent<SpriteRenderer>().enabled = true;
         GameObject.Find("Stairs").GetComponent<BoxCollider2D>().enabled = false;
       }

@@ -178,7 +178,7 @@ public class castBeam : MonoBehaviour
       {
         iceRaySpawn = player.transform.GetChild(0);
         iceDirection = new Vector2(0, 1);
-        iceEndMod = new Vector3(0, 3, 0);
+        iceEndMod = new Vector3(0, 4, 0);
         iceBall = GameObject.Find("iceUp");
         StartCoroutine(animateIcePath(ice.transform.GetChild(0), ice));
       }
@@ -186,7 +186,7 @@ public class castBeam : MonoBehaviour
       {
         iceRaySpawn = player.transform.GetChild(3);
         iceDirection = new Vector2(1, 0);
-        iceEndMod = new Vector3(3, 0, 0);
+        iceEndMod = new Vector3(4, 0, 0);
         iceBall = GameObject.Find("iceRight");
         StartCoroutine(animateIcePath(ice.transform.GetChild(3), ice));
       }
@@ -194,7 +194,7 @@ public class castBeam : MonoBehaviour
       {
         iceRaySpawn = player.transform.GetChild(2);
         iceDirection = new Vector2(0, -1);
-        iceEndMod = new Vector3(0, -3, 0);
+        iceEndMod = new Vector3(0, -4, 0);
         iceBall = GameObject.Find("iceDown");
         StartCoroutine(animateIcePath(ice.transform.GetChild(2), ice));
       }
@@ -202,7 +202,7 @@ public class castBeam : MonoBehaviour
       {
         iceRaySpawn = player.transform.GetChild(1);
         iceDirection = new Vector2(-1, 0);
-        iceEndMod = new Vector3(-3, 0, 0);
+        iceEndMod = new Vector3(-4, 0, 0);
         iceBall = GameObject.Find("iceLeft");
         StartCoroutine(animateIcePath(ice.transform.GetChild(1), ice));
       }
@@ -211,10 +211,10 @@ public class castBeam : MonoBehaviour
         return;
       }
 
-      iceHits = Physics2D.BoxCastAll(iceRaySpawn.position, new Vector2(1f, 1.5f), 0f, iceDirection, 1f, ~layerMask);
-      //ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
-      //ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
-      //ice.GetComponent<LineRenderer>().enabled = true;
+      iceHits = Physics2D.BoxCastAll(player.transform.position, new Vector2(1f, 1.5f), 0f, iceDirection, 1f);
+      ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
+      ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
+      ice.GetComponent<LineRenderer>().enabled = true;
       StartCoroutine(iceBurst());
 
       if(iceHits != null)
@@ -379,37 +379,9 @@ public class castBeam : MonoBehaviour
       return playerHitCollider;
     }
 
-  public Collider2D getBossColliderFire()
+  public void setPlayerHitCollider(Collider2D newCollider)
   {
-    if (fireHitSomething)
-    {
-      for (int i = 0; i < fireHits.Length; i++)
-      {
-        if (fireHits[i].collider.tag == "Boss")
-        {
-                    fireHitSomething = false;
-          Debug.Log(fireHits[i].collider.name);
-          return fireHits[i].collider;
-        }
-      }
-    }
-    return null;
-  }
-
-  public Collider2D getBossColliderIce()
-  {
-    if (iceHitSomething)
-    {
-      for (int i = 0; i < iceHits.Length; i++)
-      {
-        if (iceHits[i].collider.tag == "Boss")
-        {
-          Debug.Log(iceHits[i].collider.name);
-          return iceHits[i].collider;
-        }
-      }
-    }
-    return null;
+    playerHitCollider = newCollider;
   }
 
   IEnumerator iceBurst()
@@ -525,7 +497,7 @@ public class castBeam : MonoBehaviour
           for (int i = 0; i < hittableObjBeams.Length; i++)
           {
             hittableObjBeams[i].enabled = false;
-            //Debug.Log(hittableObjBeams[i].enabled);
+            //Debug.Log(hittableObjBeams[i].name + " " + hittableObjBeams[i].enabled);
           }
         }
         playerBeam.enabled = false;
