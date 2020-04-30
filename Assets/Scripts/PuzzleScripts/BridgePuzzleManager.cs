@@ -67,7 +67,17 @@ namespace Pathfinding
           beamDirectionNum = 0;
         }
         hitCollider = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
-        if(hitCollider != null)
+
+        if(hitCollider.name != "bridgeRock01")
+        {
+          hittableObjBeams[1].enabled = false;
+        }
+        if (hitCollider.name != "bridgeRock06")
+        {
+          hittableObjBeams[6].enabled = false;
+        }
+
+        if (hitCollider != null)
         {
           reflect(hitCollider.name, beamDirectionNum);
         }
@@ -121,15 +131,15 @@ namespace Pathfinding
 
       objectHit = GameObject.Find(objectHitName);
 
-      if (objectHit.transform.tag == "enemy")
+      if (objectHit.transform.tag == "enemy" && objectHit.name != "BreakableRock")
       {
-        Debug.Log("Enemy Hit");
+        //Debug.Log("Enemy Hit");
         objectHit.GetComponent<StunEnemy>().stun(objectHit);
       }
 
       if (checkObjHit(objectHitName))
       {
-
+        player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
         hitObjLightSpawn = objectHit.transform.GetChild(0);
         hitObjBeam = hitObjLightSpawn.GetComponent<LineRenderer>();
 
