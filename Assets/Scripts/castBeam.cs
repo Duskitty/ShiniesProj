@@ -290,13 +290,22 @@ public class castBeam : MonoBehaviour
                     {
                         B2Script.health--;
                         Debug.Log(B2Script.health);
-                        GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((B2Script.health / 25.0f), 1f, 1f);
+                        GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((B2Script.health / 30.0f), 1f, 1f);
                         if (B2Script.health == 0)
                         {
                             GameObject.Find("Controller").SetActive(false);
                             SpawnChargeGem.deadBoss = true;
                         }
-                        
+                        else if (B2Script.health <= 10)
+                        {
+                            B2Script.attackHold = 1.5;
+                            B2Script.spikeHold = 1;
+                        }
+                        else if (B2Script.health <= 20)
+                        {
+                            B2Script.attackHold = 3;
+                            B2Script.spikeHold = 2;
+                        }
                     }
                     //BEN ADD CODE FOR BOSS 3 FIRE HERE
                     //

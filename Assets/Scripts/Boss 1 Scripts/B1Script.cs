@@ -74,7 +74,7 @@ public class B1Script : MonoBehaviour
             if (health <= 0)
             {
                 GameObject.Find("Controller").SetActive(false);
-                
+                SpawnChargeGem.deadBoss = true;
             }
 
         }
@@ -104,6 +104,7 @@ public class B1Script : MonoBehaviour
                 if(health == 0)
                 {
                     GameObject.Find("Controller").SetActive(false);
+                    SpawnChargeGem.deadBoss = true;
                 }
             }
             else if (invin > 0)

@@ -19,6 +19,7 @@ public class SpawnChargeGem : MonoBehaviour
         if(deadBoss == true)
         {
             chargeGem.SetActive(true);
+            deadBoss = false;
         }
     }
 }

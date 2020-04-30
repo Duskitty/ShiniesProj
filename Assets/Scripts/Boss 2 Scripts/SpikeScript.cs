@@ -27,6 +27,10 @@ public class SpikeScript : MonoBehaviour
             }
             Destroy(self);
         }
+        else if(col.gameObject.CompareTag("Boss2"))
+        {
+            //do nothing
+        }
         else
         {
             Debug.Log("poo");

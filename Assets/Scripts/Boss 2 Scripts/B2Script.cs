@@ -13,12 +13,12 @@ public class B2Script : MonoBehaviour
 
     public static float invin; // invincibility time for player
     public float attackTime; // time since last attack
-    public int attackHold; //max time before next attack
+    public static double attackHold; //max time before next attack
     public float spikeTime; // time since last spike
-    public int spikeHold; // max time before next spike
+    public static double spikeHold; // max time before next spike
     public float handTime;
 
-    public static int health = 25;
+    public static int health = 30;
 
     public GameObject spike;
     public AIPath selfPath;
