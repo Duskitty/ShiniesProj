@@ -23,6 +23,10 @@ public class Level2Puzzle1Manager : MonoBehaviour
   private LineRenderer pyramid1Beam;
   private RaycastHit2D p1Hit;
   private bool inSun;
+  private RaycastHit2D up;
+  private RaycastHit2D down;
+  private RaycastHit2D left;
+  private RaycastHit2D right;
 
   private SpriteRenderer orb;
 
@@ -59,6 +63,28 @@ public class Level2Puzzle1Manager : MonoBehaviour
     inSun = GameObject.Find("SunPatch00").GetComponent<SunlightTrigger>().inSunlight;
     player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
 
+    up = Physics2D.Raycast(player.transform.GetChild(1).position, player.transform.GetChild(1).TransformDirection(Vector3.up), 50.0f, ~layerMask);
+    down = Physics2D.Raycast(player.transform.GetChild(4).position, player.transform.GetChild(4).TransformDirection(Vector3.down), 50.0f, ~layerMask);
+    left = Physics2D.Raycast(player.transform.GetChild(3).position, player.transform.GetChild(3).TransformDirection(Vector3.left), 50.0f, ~layerMask);
+    right = Physics2D.Raycast(player.transform.GetChild(2).position, player.transform.GetChild(2).TransformDirection(Vector3.right), 50.0f, ~layerMask);
+
+    if (playerDirection.GetBool("isIdleUp") || playerDirection.GetBool("isUp"))
+    {
+      player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(up.collider);
+    }
+    else if (playerDirection.GetBool("isIdleLeft") || playerDirection.GetBool("isLeft"))
+    {
+      player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(left.collider);
+    }
+    else if (playerDirection.GetBool("isIdleDown") || playerDirection.GetBool("isDown"))
+    {
+      player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(down.collider);
+    }
+    else if (playerDirection.GetBool("isIdleRight") || playerDirection.GetBool("isRight"))
+    {
+      player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(right.collider);
+    }
+
     if (inSun)
     {
       playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
@@ -66,6 +92,11 @@ public class Level2Puzzle1Manager : MonoBehaviour
     else
     {
       playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
+      if (playerHitObj != null && !player.transform.GetChild(10).GetComponent<LineRenderer>().enabled)
+      {
+        Debug.Log("pHit should be null");
+        playerHitObj = null;
+      }
     }
       
     if (playerHitObj != null)
