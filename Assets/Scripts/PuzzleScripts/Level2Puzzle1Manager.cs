@@ -94,7 +94,7 @@ public class Level2Puzzle1Manager : MonoBehaviour
       playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
       if (playerHitObj != null && !player.transform.GetChild(10).GetComponent<LineRenderer>().enabled)
       {
-        Debug.Log("pHit should be null");
+        //Debug.Log("pHit should be null");
         playerHitObj = null;
       }
     }

@@ -46,6 +46,11 @@ namespace Pathfinding
 
     private bool inSun;
 
+    private RaycastHit2D up;
+    private RaycastHit2D down;
+    private RaycastHit2D left;
+    private RaycastHit2D right;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,6 +91,28 @@ namespace Pathfinding
       inSun = GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight;
       player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
 
+      up = Physics2D.Raycast(player.transform.GetChild(1).position, player.transform.GetChild(1).TransformDirection(Vector3.up), 50.0f, ~layerMask);
+      down = Physics2D.Raycast(player.transform.GetChild(4).position, player.transform.GetChild(4).TransformDirection(Vector3.down), 50.0f, ~layerMask);
+      left = Physics2D.Raycast(player.transform.GetChild(3).position, player.transform.GetChild(3).TransformDirection(Vector3.left), 50.0f, ~layerMask);
+      right = Physics2D.Raycast(player.transform.GetChild(2).position, player.transform.GetChild(2).TransformDirection(Vector3.right), 50.0f, ~layerMask);
+
+      if (playerDirection.GetBool("isIdleUp") || playerDirection.GetBool("isUp"))
+      {
+        player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(up.collider);
+      }
+      else if (playerDirection.GetBool("isIdleLeft") || playerDirection.GetBool("isLeft"))
+      {
+        player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(left.collider);
+      }
+      else if (playerDirection.GetBool("isIdleDown") || playerDirection.GetBool("isDown"))
+      {
+        player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(down.collider);
+      }
+      else if (playerDirection.GetBool("isIdleRight") || playerDirection.GetBool("isRight"))
+      {
+        player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(right.collider);
+      }
+
       if (inSun)
       {
         playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
@@ -93,6 +120,11 @@ namespace Pathfinding
       else
       {
         playerHitObj = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
+        if (playerHitObj != null && !player.transform.GetChild(10).GetComponent<LineRenderer>().enabled)
+        {
+          //Debug.Log("pHit should be null");
+          playerHitObj = null;
+        }
       }
 
       if (playerHitObj != null)
