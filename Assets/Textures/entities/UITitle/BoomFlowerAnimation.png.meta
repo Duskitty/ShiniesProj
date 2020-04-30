@@ -1,0 +1,385 @@
+fileFormatVersion: 2
+guid: 75d8b7c85a0e5c24a8b33c56d3ad67b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1875033087190901185
+    second: BoomFlowerAnimation_0
+  - first:
+      213: 7378373039125811301
+    second: BoomFlowerAnimation_1
+  - first:
+      213: -1588279927983726635
+    second: BoomFlowerAnimation_2
+  - first:
+      213: 1957489008666314686
+    second: BoomFlowerAnimation_3
+  - first:
+      213: 2290569126239169191
+    second: BoomFlowerAnimation_4
+  - first:
+      213: -1329026479404361576
+    second: BoomFlowerAnimation_5
+  - first:
+      213: -4487845069365409948
+    second: BoomFlowerAnimation_6
+  - first:
+      213: 5566305610764386946
+    second: BoomFlowerAnimation_7
+  - first:
+      213: -3598794375479300986
+    second: BoomFlowerAnimation_8
+  - first:
+      213: -7477353437246018355
+    second: BoomFlowerAnimation_9
+  - first:
+      213: -997377777345714025
+    second: BoomFlowerAnimation_10
+  - first:
+      213: 6688956970848226795
+    second: BoomFlowerAnimation_11
+  - first:
+      213: 4190580497104628231
+    second: BoomFlowerAnimation_12
+  - first:
+      213: 1168301752367824356
+    second: BoomFlowerAnimation_13
+  - first:
+      213: 6751330934412974833
+    second: BoomFlowerAnimation_14
+  - first:
+      213: -4891555744413737499
+    second: BoomFlowerAnimation_15
+  - first:
+      213: -6841373826926022983
+    second: BoomFlowerAnimation_16
+  - first:
+      213: -2152790095654826471
+    second: BoomFlowerAnimation_17
+  - first:
+      213: 6918315824884276777
+    second: BoomFlowerAnimation_18
+  - first:
+      213: -2789794657593663203
+    second: BoomFlowerAnimation_19
+  - first:
+      213: 4246140053165261375
+    second: BoomFlowerAnimation_20
+  - first:
+      213: -8577684185291701185
+    second: BoomFlowerAnimation_21
+  - first:
+      213: -6166849817735386000
+    second: BoomFlowerAnimation_22
+  - first:
+      213: 5895844044048674789
+    second: BoomFlowerAnimation_23
+  - first:
+      213: -3254590604789328103
+    second: BoomFlowerAnimation_24
+  - first:
+      213: -3387595658554898865
+    second: BoomFlowerAnimation_25
+  - first:
+      213: 3427936373110835236
+    second: BoomFlowerAnimation_26
+  - first:
+      213: 6198674569420161473
+    second: BoomFlowerAnimation_27
+  - first:
+      213: -5399344548306147400
+    second: BoomFlowerAnimation_28
+  - first:
+      213: 7079877801559931519
+    second: BoomFlowerAnimation_29
+  - first:
+      213: 3681417703937183939
+    second: BoomFlowerAnimation_30
+  - first:
+      213: -9051513055429054874
+    second: BoomFlowerAnimation_31
+  - first:
+      213: 3514169877039092868
+    second: BoomFlowerAnimation_32
+  - first:
+      213: 6411939401012264764
+    second: BoomFlowerAnimation_33
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BoomFlowerAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 52
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d5b9fcdda7d2e4da2572a096441640
+      internalID: -1875033087190901185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomFlowerAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 50
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d3b846a0196f94787b81a9046b22fe
+      internalID: 7378373039125811301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomFlowerAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 51
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3433a6da06420384db127e196b223dac
+      internalID: -1588279927983726635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomFlowerAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 49
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6e77d11de457046bb6188e1c126303
+      internalID: 1957489008666314686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomFlowerAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a3e24cfc8ddcf42823f14051f25b37
+      internalID: 2290569126239169191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomFlowerAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ab0983593cac24fb617b4f1a855dab
+      internalID: -1329026479404361576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomFlowerAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 3
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daeb20ea2d2f83c4b8d57fd728037634
+      internalID: -4487845069365409948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomFlowerAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d754525a4cf5f3c4ca6e51db6fb9203f
+      internalID: 5566305610764386946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
