@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -150,8 +151,9 @@ public class Boss : MonoBehaviour
 
 		yield return new WaitForSeconds(0.5f);
 		Destroy(gameObject);
+        SceneManager.LoadScene("You Win Scene");
 
-	}
+    }
 	void Attacking() { //area of effect for the player 
 		
 			if (Vector2.Distance(transform.position, target.position) <= attackDistance&& Invincible.isHit==false) {
