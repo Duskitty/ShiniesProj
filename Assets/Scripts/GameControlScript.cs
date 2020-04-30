@@ -73,7 +73,7 @@ public class GameControlScript : MonoBehaviour
     {
         animat.SetBool("isDead", true);
 
-        yield return new WaitForSeconds(.45f);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Death Scene");
 
     }
