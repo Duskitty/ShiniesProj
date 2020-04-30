@@ -105,10 +105,25 @@ public class L3P1Manager : MonoBehaviour
     inSun = GameObject.Find("sun").GetComponent<SunlightTrigger>().inSunlight;
     
     up = Physics2D.Raycast(player.transform.GetChild(1).position, player.transform.GetChild(1).TransformDirection(Vector3.up), 50.0f, ~layerMask);
+    down = Physics2D.Raycast(player.transform.GetChild(4).position, player.transform.GetChild(4).TransformDirection(Vector3.down), 50.0f, ~layerMask);
+    left = Physics2D.Raycast(player.transform.GetChild(3).position, player.transform.GetChild(3).TransformDirection(Vector3.left), 50.0f, ~layerMask);
+    right = Physics2D.Raycast(player.transform.GetChild(2).position, player.transform.GetChild(2).TransformDirection(Vector3.right), 50.0f, ~layerMask);
 
     if (playerDirection.GetBool("isIdleUp") || playerDirection.GetBool("isUp"))
     {
       player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(up.collider);
+    }
+    else if (playerDirection.GetBool("isIdleLeft") || playerDirection.GetBool("isLeft"))
+    {
+      player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(left.collider);
+    }
+    else if (playerDirection.GetBool("isIdleDown") || playerDirection.GetBool("isDown"))
+    {
+      player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(down.collider);
+    }
+    else if (playerDirection.GetBool("isIdleRight") || playerDirection.GetBool("isRight"))
+    {
+      player.transform.GetChild(10).GetComponent<castBeam>().setPlayerHitCollider(right.collider);
     }
 
     if (inSun)
@@ -139,7 +154,7 @@ public class L3P1Manager : MonoBehaviour
           redCrystalBeamDirection = redCrystalRaySpawn.TransformDirection(Vector3.up);
           rcPosMod = new Vector3(player.transform.position.x - redCrystal.transform.position.x, 0, 0);
         }
-        /*else if (playerDirection.GetBool("isIdleRight") || playerDirection.GetBool("isRight"))
+        else if (playerDirection.GetBool("isIdleRight") || playerDirection.GetBool("isRight"))
         {
           redCrystalRaySpawn = redCrystal.transform.GetChild(2);
           redCrystalBeamDirection = redCrystalRaySpawn.TransformDirection(Vector3.right);
@@ -156,7 +171,7 @@ public class L3P1Manager : MonoBehaviour
           redCrystalRaySpawn = redCrystal.transform.GetChild(4);
           redCrystalBeamDirection = redCrystalRaySpawn.TransformDirection(Vector3.left);
           rcPosMod = new Vector3(0, player.transform.position.y - redCrystal.transform.position.y, 0);
-        }*/
+        }
         else
         {
           return;
@@ -181,7 +196,7 @@ public class L3P1Manager : MonoBehaviour
           }
           
 
-          /*if (rcHit.collider.name == blueCrystal.name)
+          if (rcHit.collider.name == blueCrystal.name)
           {
             blueCrystalRaySpawn = blueCrystal.transform.GetChild(1);
             blueCrystalBeamDirection = blueCrystalRaySpawn.TransformDirection(Vector3.up);
@@ -242,11 +257,11 @@ public class L3P1Manager : MonoBehaviour
           {
             redCrystalHitPoint.transform.position = redCrystal.transform.position;
             return;
-          }*/
+          }
         }
       }
 
-      /*else if (pHit.name == blueCrystal.name)
+      else if (pHit.name == blueCrystal.name)
       {
         if (playerDirection.GetBool("isIdleUp") || playerDirection.GetBool("isUp"))
         {
@@ -418,7 +433,7 @@ public class L3P1Manager : MonoBehaviour
             }
           }
         }
-      }*/
+      }
       else
       {
         Debug.Log("here");
