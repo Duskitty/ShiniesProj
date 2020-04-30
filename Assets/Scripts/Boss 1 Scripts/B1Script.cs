@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StateStuff;
 using Pathfinding;
 
 public class B1Script : MonoBehaviour
@@ -9,15 +8,11 @@ public class B1Script : MonoBehaviour
     //public bool chargeState = false;
     //public bool dustState = false;
     //public bool flyState = false;
-    public static bool hit = false;
-    public static bool chargeHit = false;
-
-    public B1StateControl<B1Script> stateMachine { get; set; }
+    public static bool hit;
 
     public float invin; //invincibility timer
     public float switchTime; //max time before switch
     public float waiting; //time waiting between states
-    public int state;
 
     public GameObject mushroom;
     public GameObject tracker;
@@ -26,6 +21,9 @@ public class B1Script : MonoBehaviour
     public Animator anim;
     public GameObject chargeGem;
     public static int health = 12;
+    //TEST VARIABLES TO REPRESENT STATES
+    public bool nullState;
+    public bool chargeState;
     
     // Start is called before the first frame update
     void Start()
@@ -34,9 +32,10 @@ public class B1Script : MonoBehaviour
         invin = 0f;
         switchTime = 5f;
         waiting = 0f;
-        stateMachine = new B1StateControl<B1Script>(this);
         chargeGem = GameObject.Find("ChargeGem");
-        
+        hit = false;
+        nullState = true;
+        chargeState = false;
     }
 
     // Update is called once per frame
@@ -48,7 +47,7 @@ public class B1Script : MonoBehaviour
             {
                 invin -= Time.deltaTime;
             }
-            if (stateMachine.currentState == null || stateMachine.currentState == B1NullState.Instance)
+            if(nullState == true)
             {
                 waiting += Time.deltaTime;
             }
@@ -57,27 +56,20 @@ public class B1Script : MonoBehaviour
                 waiting = 0f;
                 trackerCopy = Instantiate(tracker, GameObject.Find("Player").transform);
                 GameObject.Find("Controller").GetComponent<AIDestinationSetter>().target = trackerCopy.transform;
-                stateMachine.ChangeState(B1ChargeState.Instance);
+                nullState = false;
+                chargeState = true;
             }
-            if(chargeHit == true)
+            if(chargeState == true)
             {
-                chargeHit = false;
-                anim.SetBool("isFlying", true);
-                stateMachine.ChangeState(B1FlyState.Instance);
+                EnterCharge();
             }
-            if(stateMachine.currentState == B1FlyState.Instance)
+            if(hit == true)
             {
-                waiting += Time.deltaTime;
-                if(waiting >= 1.25f)
-                {
-                    anim.SetBool("isFlying", false);
-                    waiting = 0f;
-                    Instantiate(mushroom, new Vector3(Random.Range(-5, 6), Random.Range(-2, 5)), Quaternion.identity);
-                    Instantiate(mushroom, new Vector3(Random.Range(-5, 6), Random.Range(-2, 5)), Quaternion.identity);
-                    Instantiate(mushroom, new Vector3(Random.Range(-5, 6), Random.Range(-2, 5)), Quaternion.identity);
-                    GameObject.Find("Controller").GetComponent<AIDestinationSetter>().target = GameObject.Find("Player").transform;
-                    stateMachine.ChangeState(B1NullState.Instance);
-                }
+                hit = false;
+                chargeState = false;
+                nullState = true;
+                ExitCharge();
+
             }
             if (health <= 0)
             {
@@ -85,13 +77,22 @@ public class B1Script : MonoBehaviour
                 
             }
 
-            stateMachine.Update();
         }
     }
     
+    public void EnterCharge()
+    {
+        GameObject.Find("Controller").GetComponent<AIPath>().maxSpeed = 3;
+    }
+    public void ExitCharge()
+    {
+        GameObject.Find("Controller").GetComponent<AIPath>().maxSpeed = 1;
+        GameObject.Find("Controller").GetComponent<AIDestinationSetter>().target = GameObject.Find("Player").transform;
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        hit = true;
+        
         if (col.gameObject.CompareTag("Player"))
         {
             if (SheildBash.isSheildBashing == true)
@@ -105,7 +106,7 @@ public class B1Script : MonoBehaviour
                     GameObject.Find("Controller").SetActive(false);
                 }
             }
-            else if (invin > 0 || B1ChargeState.stunned == true)
+            else if (invin > 0)
             {
                 Debug.Log("no damage");
                 //no damage taken
@@ -121,6 +122,7 @@ public class B1Script : MonoBehaviour
                 StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
             }
         }
+        
     }
 
 }
