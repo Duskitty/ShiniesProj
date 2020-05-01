@@ -26,15 +26,15 @@ public class L3BossLight : MonoBehaviour
   void Update()
   {
     inSun = checkInSun();
-    player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(null);
+    player.transform.GetChild(11).GetComponent<castBeam>().clearBeams(null);
 
     if (inSun)
     {
-      lightHitObj = player.transform.GetChild(10).GetComponent<castBeam>().reflect();
+      lightHitObj = player.transform.GetChild(11).GetComponent<castBeam>().reflect();
     }
     else
     {
-      lightHitObj = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
+      lightHitObj = player.transform.GetChild(11).GetComponent<castBeam>().getPlayerHitCollider();
     }
 
   }
