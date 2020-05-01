@@ -8,6 +8,7 @@ public class Right : MonoBehaviour
     GameObject player;
     Animator animator;
     private float speed = 5f;
+    bool isRight = false;
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -17,12 +18,22 @@ public class Right : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isRight&& Input.GetMouseButtonDown(0))
+        {
 
+            OnMouseDown();
+
+        }
+        if (Input.GetMouseButtonUp(0)) {
+
+            isRight = false;
+        }
     }
 
     void OnMouseDown()
     {
         player.transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
+
 
 
         animator.SetBool("isRight", true);
@@ -35,7 +46,7 @@ public class Right : MonoBehaviour
        PlayerMovement. isMovingDown = false;
        PlayerMovement. isMovingLeft = false;
         PlayerMovement.isMovingRight = true;
-
+        isRight = true;
 
     }
 }
