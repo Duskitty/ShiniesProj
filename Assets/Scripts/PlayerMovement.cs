@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalMove = 0f;
     private float verticalMove = 0f;
     public Animator animator;
-    public float speed = 0f;
+    public static float speed = 5f;
     public Animator textBoxAnimator;
     public Rigidbody2D player;
     public bool bridgeSafe = false;
