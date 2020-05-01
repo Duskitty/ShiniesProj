@@ -28,7 +28,7 @@ TextureImporter:
     second: BoomFlowerAnimation_7
   - first:
       213: -3598794375479300986
-    second: BoomFlowerAnimation_8
+    second: BoomFlowerBlank
   - first:
       213: -7477353437246018355
     second: BoomFlowerAnimation_9
@@ -203,12 +203,12 @@ TextureImporter:
       name: BoomFlowerAnimation_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 52
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 9
+        y: 41
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.48599443, y: 0.55602247}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,10 +224,10 @@ TextureImporter:
       name: BoomFlowerAnimation_1
       rect:
         serializedVersion: 2
-        x: 65
-        y: 50
-        width: 31
-        height: 26
+        x: 57
+        y: 41
+        width: 48
+        height: 46
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: BoomFlowerAnimation_2
       rect:
         serializedVersion: 2
-        x: 109
-        y: 51
-        width: 33
-        height: 27
+        x: 105
+        y: 41
+        width: 48
+        height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: BoomFlowerAnimation_3
       rect:
         serializedVersion: 2
-        x: 152
-        y: 49
-        width: 34
-        height: 28
+        x: 144
+        y: 41
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,9 +288,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
-        width: 14
-        height: 12
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,9 +309,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 2
-        width: 31
-        height: 26
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,10 +329,10 @@ TextureImporter:
       name: BoomFlowerAnimation_6
       rect:
         serializedVersion: 2
-        x: 98
-        y: 3
-        width: 33
-        height: 27
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,10 +350,10 @@ TextureImporter:
       name: BoomFlowerAnimation_7
       rect:
         serializedVersion: 2
-        x: 150
-        y: 1
-        width: 34
-        height: 28
+        x: 144
+        y: 0
+        width: 42
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,6 +363,27 @@ TextureImporter:
       bones: []
       spriteID: d754525a4cf5f3c4ca6e51db6fb9203f
       internalID: 5566305610764386946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomFlowerBlank
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 21
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba77e61196e52be45a3121041a3fa2ce
+      internalID: -3598794375479300986
       vertices: []
       indices: 
       edges: []
