@@ -13852,6 +13852,7 @@ GameObject:
   - component: {fileID: 692984170}
   - component: {fileID: 692984169}
   - component: {fileID: 692984168}
+  - component: {fileID: 692984172}
   m_Layer: 5
   m_Name: Right
   m_TagString: Untagged
@@ -13955,12 +13956,20 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692984167}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 98.3, y: 54.7, z: -10}
-  m_LocalScale: {x: 146.71939, y: 141.77748, z: 2.6942}
+  m_LocalPosition: {x: -2.36, y: 0.85, z: 0}
+  m_LocalScale: {x: 5.1743746, y: 2.9438024, z: 2.6942}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 1161246451}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!222 &692984172
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692984167}
+  m_CullTransparentMesh: 0
 --- !u!1 &811770715
 GameObject:
   m_ObjectHideFlags: 0
