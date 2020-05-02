@@ -5,6 +5,7 @@ using UnityEngine;
 public class Right1 : MonoBehaviour
 {
     // Start is called before the first frame update
+    Collider rightButtonCollider;
     public static bool isUsingDPad = false;
     GameObject player;
     Animator animator;
@@ -13,6 +14,7 @@ public class Right1 : MonoBehaviour
     Touch touch;
     void Start()
     {
+        rightButtonCollider = GetComponent<Collider>();
         player = GameObject.FindWithTag("Player");
         animator = GameObject.FindWithTag("Player").GetComponent<Animator>();
     }
@@ -20,25 +22,38 @@ public class Right1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      /*  if (Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
-            touch = Input.GetTouch(0);
-            if (Input.GetMouseButtonDown(0) && touch.position.x == transform.position.x && touch.position.y == transform.position.y)
+            Touch touch = Input.GetTouch(0);
+
+            Vector3 pos = touch.position;
+
+            if (rightButtonCollider.bounds.Contains(pos))
             {
-                Debug.Log("true");
-                OnMouseDown();
+               OnMouseDown();
+                //here you could call the function of the script on the right button to move the character
 
             }
-            if (Input.GetMouseButtonUp(0))
-            {
+        }
+        /*  if (Input.touchCount > 0)
+          {
+              touch = Input.GetTouch(0);
+              if (Input.GetMouseButtonDown(0) && touch.position.x == transform.position.x && touch.position.y == transform.position.y)
+              {
+                  Debug.Log("true");
+                  OnMouseDown();
 
-                isRight = false;
-                isUsingDPad = false;
-            }
-        }*/
+              }
+              if (Input.GetMouseButtonUp(0))
+              {
+
+                  isRight = false;
+                  isUsingDPad = false;
+              }
+          }*/
     }
 
-  public  void OnMouseDown()
+    void OnMouseDown()
     {
         player.transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
 

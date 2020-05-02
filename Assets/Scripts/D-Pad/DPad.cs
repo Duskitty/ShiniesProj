@@ -43,7 +43,7 @@ public class DPad : MonoBehaviour
 
             if (rightButtonCollider.bounds.Contains(pos))
             {
-                right.OnMouseDown();
+               // right.OnMouseDown();
                 //here you could call the function of the script on the right button to move the character
 
             }
