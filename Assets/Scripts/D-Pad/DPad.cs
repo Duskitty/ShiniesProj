@@ -11,7 +11,7 @@ public class DPad : MonoBehaviour
     Collider upButtonCollider;
     Collider downButtonCollider;
     //class varriables
-    Right right;
+    Right1 right;
     Left left;
     Up up;
     Down down;

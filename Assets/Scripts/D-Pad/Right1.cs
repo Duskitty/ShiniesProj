@@ -20,7 +20,7 @@ public class Right1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+      /*  if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
             if (Input.GetMouseButtonDown(0) && touch.position.x == transform.position.x && touch.position.y == transform.position.y)
@@ -35,10 +35,10 @@ public class Right1 : MonoBehaviour
                 isRight = false;
                 isUsingDPad = false;
             }
-        }
+        }*/
     }
 
-    void OnMouseDown()
+  public  void OnMouseDown()
     {
         player.transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
 
