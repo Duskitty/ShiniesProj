@@ -38,7 +38,7 @@ public class Right : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+   public void OnMouseDown()
     {
         player.transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
 
