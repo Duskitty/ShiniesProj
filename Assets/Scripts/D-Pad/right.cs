@@ -5,10 +5,12 @@ using UnityEngine;
 public class Right : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static bool isUsingDPad = false;
     GameObject player;
     Animator animator;
     private float speed = 5f;
     bool isRight = false;
+    Touch touch;
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -18,15 +20,21 @@ public class Right : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isRight&& Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
+            touch = Input.GetTouch(0);
+            if (Input.GetMouseButtonDown(0) && touch.position.x==transform.position.x && touch.position.y==transform.position.y)
+            {
+                Debug.Log("true");
+                OnMouseDown();
 
-            OnMouseDown();
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
 
-        }
-        if (Input.GetMouseButtonUp(0)) {
-
-            isRight = false;
+                isRight = false;
+                isUsingDPad = false;
+            }
         }
     }
 
@@ -35,7 +43,7 @@ public class Right : MonoBehaviour
         player.transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
 
 
-
+        isUsingDPad = true;
         animator.SetBool("isRight", true);
         animator.SetBool("isLeft", false);
         animator.SetBool("isDown", false);

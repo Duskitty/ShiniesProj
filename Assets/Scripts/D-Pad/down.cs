@@ -21,6 +21,8 @@ public class Down : MonoBehaviour
 
     void OnMouseDown()
     {
+        Right.isUsingDPad = true;
+
         player.transform.Translate(new Vector3(0f, -speed * Time.deltaTime, 0f));
 
 
