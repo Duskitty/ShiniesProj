@@ -28404,16 +28404,6 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6938940007244699562, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1363524479}
-    - target: {fileID: 6938940007244699562, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: IceGem
-      objectReference: {fileID: 0}
     - target: {fileID: 7600202647428613827, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -28447,6 +28437,16 @@ PrefabInstance:
     - target: {fileID: 360045416, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938940007244699562, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1363524479}
+    - target: {fileID: 6938940007244699562, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IceGem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
@@ -29589,6 +29589,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign
       objectReference: {fileID: 0}
+    - target: {fileID: 2199577797272764450, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
+        type: 3}
+      propertyPath: m_TagString
+      value: sign
+      objectReference: {fileID: 0}
     - target: {fileID: 2199577797272764473, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29644,17 +29649,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 678ffb5eb5bf6944d9398788b55b6210,
-        type: 3}
     - target: {fileID: 2199577797272764452, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
         type: 3}
       propertyPath: dialogue.dialogueLines.Array.size
@@ -29670,6 +29664,17 @@ PrefabInstance:
       propertyPath: dialogue.dialogueLines.Array.data[1]
       value: Ice is very slippery
       objectReference: {fileID: 0}
+    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 678ffb5eb5bf6944d9398788b55b6210,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9de0d6c73bcfd45a05371eb95393e7, type: 3}
 --- !u!1001 &461304381
@@ -89319,11 +89324,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4307985030904758356, guid: 87f3cf44298fec34280ea90d76680135,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4022266914105009392, guid: 87f3cf44298fec34280ea90d76680135,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -89377,6 +89377,11 @@ PrefabInstance:
     - target: {fileID: 4022266914105009392, guid: 87f3cf44298fec34280ea90d76680135,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307985030904758356, guid: 87f3cf44298fec34280ea90d76680135,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -93752,17 +93757,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 678ffb5eb5bf6944d9398788b55b6210,
-        type: 3}
     - target: {fileID: 2199577797272764452, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
         type: 3}
       propertyPath: dialogue.dialogueLines.Array.size
@@ -93778,6 +93772,17 @@ PrefabInstance:
       propertyPath: dialogue.dialogueLines.Array.data[1]
       value: You'll need to slow the water to move across safely.
       objectReference: {fileID: 0}
+    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 678ffb5eb5bf6944d9398788b55b6210,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9de0d6c73bcfd45a05371eb95393e7, type: 3}
 --- !u!1 &1832088160
