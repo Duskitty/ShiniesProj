@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -26076,49 +26076,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 529635248}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1360373456
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1360373458}
-  - component: {fileID: 1360373457}
-  m_Layer: 0
-  m_Name: DPad Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1360373457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360373456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95d2a2f2a16ae9f4e93026b35224bb23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1360373458
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360373456}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.165695, y: -12.692169, z: -37.779816}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377586696 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1789474015449518740, guid: d51aecc35884a8145a1c259ed7f0bc66,
@@ -27856,6 +27813,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1752058734}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2140291413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140291412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d2a2f2a16ae9f4e93026b35224bb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2140291417 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8555565596357876761, guid: d51aecc35884a8145a1c259ed7f0bc66,
