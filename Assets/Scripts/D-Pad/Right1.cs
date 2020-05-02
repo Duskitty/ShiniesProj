@@ -22,7 +22,7 @@ public class Right1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        /*if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
@@ -53,7 +53,7 @@ public class Right1 : MonoBehaviour
           }*/
     }
 
-    void OnMouseDown()
+   public void OnMouseDown()
     {
         player.transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
 

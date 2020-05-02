@@ -6,10 +6,10 @@ public class DPad : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    Collider rightButtonCollider;
-    Collider leftButtonCollider;
-    Collider upButtonCollider;
-    Collider downButtonCollider;
+    BoxCollider2D rightButtonCollider;
+    BoxCollider2D leftButtonCollider;
+    BoxCollider2D upButtonCollider;
+    BoxCollider2D downButtonCollider;
     //class varriables
     Right1 right;
     Left left;
@@ -20,10 +20,11 @@ public class DPad : MonoBehaviour
 
     void Start()
     {
-        rightButtonCollider = GameObject.Find("Right").GetComponent<Collider>();
-        leftButtonCollider = GameObject.Find("Left").GetComponent<Collider>();
-        upButtonCollider = GameObject.Find("Up").GetComponent<Collider>();
-        downButtonCollider = GameObject.Find("Down").GetComponent<Collider>();
+
+        rightButtonCollider = GameObject.Find("Right").GetComponent<BoxCollider2D>();
+        leftButtonCollider = GameObject.Find("Left").GetComponent<BoxCollider2D>();
+        upButtonCollider = GameObject.Find("Up").GetComponent<BoxCollider2D>();
+        downButtonCollider = GameObject.Find("Down").GetComponent<BoxCollider2D>();
         //Here you could grab the script on the right button and assign it to a class variable
     }
 
@@ -43,7 +44,7 @@ public class DPad : MonoBehaviour
 
             if (rightButtonCollider.bounds.Contains(pos))
             {
-               // right.OnMouseDown();
+                right.OnMouseDown();
                 //here you could call the function of the script on the right button to move the character
 
             }
