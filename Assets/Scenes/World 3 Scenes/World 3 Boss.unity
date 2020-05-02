@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -27863,7 +27863,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140291412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95d2a2f2a16ae9f4e93026b35224bb23, type: 3}
   m_Name: 
@@ -27980,27 +27980,27 @@ PrefabInstance:
     - target: {fileID: 6398755880107901078, guid: e50cb21f1abc95a4f934484a3b508efd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.35
+      value: -2.66
       objectReference: {fileID: 0}
     - target: {fileID: 6398755880365489029, guid: e50cb21f1abc95a4f934484a3b508efd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1539998
+      value: -1.4640002
       objectReference: {fileID: 0}
     - target: {fileID: 6398755880572905375, guid: e50cb21f1abc95a4f934484a3b508efd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7519994
+      value: -2.0619998
       objectReference: {fileID: 0}
     - target: {fileID: 6398755880347870217, guid: e50cb21f1abc95a4f934484a3b508efd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.77
+      value: -2.0800004
       objectReference: {fileID: 0}
     - target: {fileID: 1448240111201499138, guid: e50cb21f1abc95a4f934484a3b508efd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7614996
+      value: -2.0715
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6398755880107901079, guid: e50cb21f1abc95a4f934484a3b508efd, type: 3}
