@@ -5,40 +5,40 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Title Scene.unity
     guid: 139ae87b8e8351243ab3e63b4638a3bf
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/World 1 Scenes/World_1.unity
     guid: 8642d8722712bfd4da089060074d28fa
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/World 1 Scenes/World_1_Boss.unity
     guid: 8ed00b5cb5d912240a85a99e51ba5cf2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/World 2 Scenes/World 2 P1.unity
     guid: 8d555457147993c498c7ddbc180a8860
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/World 2 Scenes/World 2 P2.unity
     guid: 10e34bf25eaef064dbea4abf5716d6fa
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/World 2 Scenes/World 2 Boss.unity
     guid: 57b203137eb0b0046ad97c477d087023
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/World 3 Scenes/World 3 P1.unity
     guid: 4ef9d650ac66d4243b78f127b725b36e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/World 3 Scenes/World 3 P2.unity
     guid: 3b13cc45a34f61f48b19e3741b406046
   - enabled: 1
     path: Assets/Scenes/World 3 Scenes/World 3 Boss.unity
     guid: 60580328ed9a1154f83332193f10e0cc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Death Scene.unity
     guid: 81de6f0c3b178b04783d61371adfceee
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/You Win Scene.unity
     guid: 83d1f97c93417084cb713f0de2bd41b7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Textures/entities/forest/BeedleBro/EasterEgg.unity
     guid: fc3f98b40419d2d41a8445437f68c14e
   m_configObjects: {}

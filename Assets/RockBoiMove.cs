@@ -29,5 +29,17 @@ public class RockBoiMove : MonoBehaviour
         }
         
     }
+    
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+       if (col.gameObject.name == "Player" && SheildBash.isSheildBashing == false && Invincible.isHit == false)
+        {
+            Invincible.isHit = true;
+            GameControlScript.health -= 1;
+            StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
+            Invincible.isHit = true;
 
+        }
+    }
+    
 }
