@@ -21,10 +21,10 @@ public class DPad : MonoBehaviour
     void Start()
     {
 
-        rightButtonCollider = GameObject.Find("Right").GetComponent<BoxCollider2D>();
-        leftButtonCollider = GameObject.Find("Left").GetComponent<BoxCollider2D>();
-        upButtonCollider = GameObject.Find("Up").GetComponent<BoxCollider2D>();
-        downButtonCollider = GameObject.Find("Down").GetComponent<BoxCollider2D>();
+        rightButtonCollider = GameObject.Find("RightButton").GetComponent<BoxCollider2D>();
+        leftButtonCollider = GameObject.Find("LeftButton").GetComponent<BoxCollider2D>();
+        upButtonCollider = GameObject.Find("UpButton").GetComponent<BoxCollider2D>();
+        downButtonCollider = GameObject.Find("DownButon").GetComponent<BoxCollider2D>();
         //Here you could grab the script on the right button and assign it to a class variable
     }
 
