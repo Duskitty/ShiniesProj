@@ -449,6 +449,11 @@ public class castBeam : MonoBehaviour
     {
       for (int i = 0; i < iceHits.Length; i++)
       {
+        if(iceHits[i].collider == null)
+        {
+          Debug.Log("here");
+          continue;
+        }
         hitObj = GameObject.Find(iceHits[i].collider.name);
         if (hitObj != null)
         {
@@ -458,9 +463,10 @@ public class castBeam : MonoBehaviour
           }
           else
           {
-            continue;
+             continue;
           }
         }
+        
       }
     }
     yield return null;
