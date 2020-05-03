@@ -212,9 +212,9 @@ public class castBeam : MonoBehaviour
       }
 
       iceHits = Physics2D.BoxCastAll(player.transform.position, new Vector2(1f, 1.5f), 0f, iceDirection, 1f);
-      ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
-      ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
-      ice.GetComponent<LineRenderer>().enabled = true;
+      //ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
+      //ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
+      //ice.GetComponent<LineRenderer>().enabled = true;
       StartCoroutine(iceBurst());
 
       if(iceHits != null)
@@ -284,6 +284,10 @@ public class castBeam : MonoBehaviour
                     {
                       StopCoroutine(meltEnemy(hitObj));
                       StartCoroutine(meltEnemyWithFire(hitObj));
+                    }
+                    else if(hitObj != null && hitObj.tag == "enemy")
+                    {
+                      // Damage enemy here
                     }
                     //BRENDAN ADD CODE FOR BOSS 2 FIRE HERE
                     else if (hitObj != null && hitObj.tag == "Boss2")
@@ -467,10 +471,10 @@ public class castBeam : MonoBehaviour
     block.GetComponent<containsEnemy>().enemy = enemy;
     enemy.SetActive(false);
 
-    yield return new WaitForSeconds(75f);
-
+    yield return new WaitForSeconds(74f);
     enemy.SetActive(true);
     enemy.transform.position = block.transform.position;
+    yield return new WaitForSeconds(1f);
     Destroy(block);
     yield return null;
   }
