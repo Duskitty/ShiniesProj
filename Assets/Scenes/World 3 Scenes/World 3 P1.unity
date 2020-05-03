@@ -986,6 +986,75 @@ MonoBehaviour:
   m_CropFrameX: 1
   m_CropFrameY: 1
   m_StretchFill: 0
+--- !u!1001 &571980036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5349858739875793289, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_Name
+      value: SetDPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537262760092885445, guid: 142e5d2689429fb4b92e249cc2045379,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 142e5d2689429fb4b92e249cc2045379, type: 3}
 --- !u!1 &623527363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,17 +3012,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 678ffb5eb5bf6944d9398788b55b6210,
-        type: 3}
-    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 2199577797272764452, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
         type: 3}
       propertyPath: dialogue.dialogueLines.Array.size
@@ -2969,6 +3027,17 @@ PrefabInstance:
       propertyPath: dialogue.dialogueLines.Array.data[1]
       value: This changes the color of the light
       objectReference: {fileID: 0}
+    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 678ffb5eb5bf6944d9398788b55b6210,
+        type: 3}
+    - target: {fileID: 2199577797272764454, guid: 8c9de0d6c73bcfd45a05371eb95393e7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9de0d6c73bcfd45a05371eb95393e7, type: 3}
 --- !u!1 &1251677861
@@ -3912,6 +3981,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: iceBlock
+      value: 
+      objectReference: {fileID: 2420306915886529944, guid: b8e1a7ae6fc0b3642882411d3e606983,
+        type: 3}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: iceSpawn
+      value: 
+      objectReference: {fileID: 8837495616301759878, guid: cd629cdde83867044ad51476d27e1c2b,
+        type: 3}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: enemyIceBlock
+      value: 
+      objectReference: {fileID: 1415605596157866762, guid: 48acc1347d42df145afaa1a9dc1f2145,
+        type: 3}
+    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: sunPatches.Array.data[0]
+      value: 
+      objectReference: {fileID: 255631737596379566}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3972,59 +4064,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: iceBlock
-      value: 
-      objectReference: {fileID: 2420306915886529944, guid: b8e1a7ae6fc0b3642882411d3e606983,
-        type: 3}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: iceSpawn
-      value: 
-      objectReference: {fileID: 8837495616301759878, guid: cd629cdde83867044ad51476d27e1c2b,
-        type: 3}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: enemyIceBlock
-      value: 
-      objectReference: {fileID: 1415605596157866762, guid: 48acc1347d42df145afaa1a9dc1f2145,
-        type: 3}
-    - target: {fileID: 1789474015637790172, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: sunPatches.Array.data[0]
-      value: 
-      objectReference: {fileID: 255631737596379566}
-    - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: sheild
-      value: 
-      objectReference: {fileID: 1063662796}
-    - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: beamButton
-      value: 
-      objectReference: {fileID: 1063662795}
-    - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: reflectGem
-      value: 
-      objectReference: {fileID: 1063662794}
-    - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: bashbutton
-      value: 
-      objectReference: {fileID: 1063662794}
-    - target: {fileID: 1789474016177757689, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: textBoxAnimator
-      value: 
-      objectReference: {fileID: 1063662793}
-    - target: {fileID: 8555565596357876761, guid: d51aecc35884a8145a1c259ed7f0bc66,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6176802839145180930, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -4045,10 +4084,40 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1789474016177757689, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: textBoxAnimator
+      value: 
+      objectReference: {fileID: 1063662793}
     - target: {fileID: 2834885300663314857, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: sheild
+      value: 
+      objectReference: {fileID: 1063662796}
+    - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: beamButton
+      value: 
+      objectReference: {fileID: 1063662795}
+    - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: reflectGem
+      value: 
+      objectReference: {fileID: 1063662794}
+    - target: {fileID: 6176802839701936798, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: bashbutton
+      value: 
+      objectReference: {fileID: 1063662794}
+    - target: {fileID: 8555565596357876761, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6176802839145180931, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
