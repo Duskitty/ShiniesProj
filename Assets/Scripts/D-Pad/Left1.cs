@@ -16,12 +16,16 @@ public class Left1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetMouseButtonUp(0))
+        {
+            DPad.isUsingDPad = false;
+            //to do add idle animations
+        }
     }
 
-    void OnMouseDown()
+    void OnMouseDrag()
     {
-        Right.isUsingDPad = true;
+        DPad.isUsingDPad = true;
 
         player.transform.Translate(new Vector3(-speed * Time.deltaTime, 0f, 0f));
 

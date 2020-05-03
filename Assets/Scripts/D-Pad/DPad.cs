@@ -12,10 +12,10 @@ public class DPad : MonoBehaviour
     BoxCollider2D downButtonCollider;
     //class varriables
     Right1 right;
-    Left left;
-    Up up;
-    Down down;
-
+    Left1 left;
+    Up1 up;
+    Down1 down;
+    public static bool isUsingDPad = false;
     //Here you could declare a variable for the script on the right button
 
     void Start()
