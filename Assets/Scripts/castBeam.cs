@@ -39,6 +39,8 @@ public class castBeam : MonoBehaviour
     public SunlightTrigger[] sunPatches;
     private bool fireHitSomething;
     private bool iceHitSomething;
+  private Transform enemyLeftPoint;
+  private Transform enemyRightPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -466,6 +468,8 @@ public class castBeam : MonoBehaviour
 
   IEnumerator meltEnemy(GameObject enemy)
   {
+    enemyLeftPoint = GameObject.Find("EnemyPointLeft").transform;
+    enemyRightPoint = GameObject.Find("EnemyPointRight").transform;
     yield return new WaitForSeconds(0.1f);
     GameObject block = Instantiate(enemyIceBlock, enemy.transform.position, enemy.transform.rotation);
     block.GetComponent<containsEnemy>().enemy = enemy;
@@ -474,6 +478,8 @@ public class castBeam : MonoBehaviour
     yield return new WaitForSeconds(74f);
     enemy.SetActive(true);
     enemy.transform.position = block.transform.position;
+    enemyLeftPoint.position = new Vector3(enemyLeftPoint.position.x, enemy.transform.position.y, 0);
+    enemyRightPoint.position = new Vector3(enemyRightPoint.position.x, enemy.transform.position.y, 0);
     yield return new WaitForSeconds(1f);
     Destroy(block);
     yield return null;
@@ -485,6 +491,8 @@ public class castBeam : MonoBehaviour
     yield return new WaitForSeconds(.45f);
     iceBlock.GetComponent<containsEnemy>().enemy.transform.position = iceBlock.transform.position;
     iceBlock.GetComponent<containsEnemy>().enemy.SetActive(true);
+    enemyLeftPoint.position = new Vector3(enemyLeftPoint.position.x, iceBlock.GetComponent<containsEnemy>().enemy.transform.position.y, 0);
+    enemyRightPoint.position = new Vector3(enemyRightPoint.position.x, iceBlock.GetComponent<containsEnemy>().enemy.transform.position.y, 0);
     Destroy(iceBlock);
     yield return null;
   }
