@@ -95,7 +95,7 @@ public class SheildBash : MonoBehaviour
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
             isSheildBashing = true;
             hasPressedBar = true;
-            GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
+          //  GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
             PlayerDirection();
 
 
