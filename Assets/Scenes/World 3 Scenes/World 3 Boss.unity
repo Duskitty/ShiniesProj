@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -28049,31 +28049,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Max.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1262660602358443264, guid: 49633c2548e83e14b8539fa90607f164,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723877575024809355, guid: 49633c2548e83e14b8539fa90607f164,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723877575321727240, guid: 49633c2548e83e14b8539fa90607f164,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723877575341895300, guid: 49633c2548e83e14b8539fa90607f164,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723877575538176658, guid: 49633c2548e83e14b8539fa90607f164,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49633c2548e83e14b8539fa90607f164, type: 3}
