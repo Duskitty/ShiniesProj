@@ -20,8 +20,6 @@ public class IceControl : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<SheildBash>().enabled = false;
-        GameObject.Find("SetDPad").GetComponent<SetDPad>().DisablePad();
-
         float speed = 20f;
         
         if (PlayerMovement.isMovingLeft)
@@ -72,8 +70,6 @@ public class IceControl : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<SheildBash>().enabled = true;
         controller.velocity = Vector2.zero;
-        GameObject.Find("SetDPad").GetComponent<SetDPad>().EnablePad();
-
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
