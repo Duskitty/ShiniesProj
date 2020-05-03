@@ -287,7 +287,7 @@ public class castBeam : MonoBehaviour
                     }
                     else if(hitObj != null && hitObj.tag == "enemy")
                     {
-                      // Damage enemy here
+                      Destroy(hitObj);
                     }
                     //BRENDAN ADD CODE FOR BOSS 2 FIRE HERE
                     else if (hitObj != null && hitObj.tag == "Boss2")
