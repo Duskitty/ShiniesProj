@@ -20,7 +20,7 @@ public class B1Script : MonoBehaviour
 
     public Animator anim;
     public GameObject chargeGem;
-    public static int health = 12;
+    public static int health = 10;
     //TEST VARIABLES TO REPRESENT STATES
     public bool nullState;
     public bool chargeState;
@@ -99,7 +99,7 @@ public class B1Script : MonoBehaviour
             {
                 Debug.Log("boss took damage");
                 health--;
-                GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((health / 12.0f), 1f, 1f);
+                GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((health / 10.0f), 1f, 1f);
                 GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
                 if(health == 0)
                 {
