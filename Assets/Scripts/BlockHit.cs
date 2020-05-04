@@ -52,7 +52,9 @@ public class BlockHit : MonoBehaviour
 
 
           player.GetComponent<PlayerMovement>().enabled = true;
-          player.GetComponent<SheildBash>().enabled = true;
+           // GameObject.Find("DPadController").GetComponent<SetDPad>().EnablePad();
+
+            player.GetComponent<SheildBash>().enabled = true;
           // isOnIce = false;
           controller.velocity = Vector2.zero;
         }
@@ -69,7 +71,9 @@ public class BlockHit : MonoBehaviour
 
 
       player.GetComponent<PlayerMovement>().enabled = false;
-      player.GetComponent<SheildBash>().enabled = false; ;
+         //   GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
+
+            player.GetComponent<SheildBash>().enabled = false; ;
       // isOnIce = false;
       //controller.velocity = Vector2.zero;
     }

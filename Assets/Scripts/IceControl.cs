@@ -20,30 +20,43 @@ public class IceControl : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<SheildBash>().enabled = false;
-        float speed = 20f;
+     //   GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
+
+        float speed = 15f;
         
         if (PlayerMovement.isMovingLeft)
         {
             controller.AddForce(new Vector2(-speed, 0f));
+            GetComponent<IceControl>().enabled = false;
+            StartCoroutine(StopMove());
         }
         if (PlayerMovement.isMovingRight)
         {
             controller.AddForce(new Vector2(speed, 0f));
+            GetComponent<IceControl>().enabled = false;
+
+            StartCoroutine(StopMove());
 
 
         }
         if (PlayerMovement.isMovingUp)
         {
             controller.AddForce(new Vector2(0f, speed));
+            GetComponent<IceControl>().enabled = false;
+
+            StartCoroutine(StopMove());
 
         }
         if (PlayerMovement.isMovingDown)
         {
             controller.AddForce(new Vector2(0f, -speed));
+            GetComponent<IceControl>().enabled = false;
+
+            StartCoroutine(StopMove());
 
 
         }
-     //   RestoreMovment();
+        //  RestoreMovment();
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -70,6 +83,8 @@ public class IceControl : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<SheildBash>().enabled = true;
         controller.velocity = Vector2.zero;
+      //  GameObject.Find("DPadController").GetComponent<SetDPad>().EnablePad();
+
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -80,5 +95,11 @@ public class IceControl : MonoBehaviour
     {
         RestoreMovment();
     }
+    public IEnumerator StopMove() {
+        yield return new WaitForSeconds(1.5f);
+        GetComponent<IceControl>().enabled = true;
+        RestoreMovment();
 
+
+    }
 }
