@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2509481864753392402}
   - component: {fileID: 7961300483954801539}
   - component: {fileID: 4137887967083148970}
+  - component: {fileID: 5924116091812774452}
   m_Layer: 0
   m_Name: EnemyIceBlock
   m_TagString: EnemyIceBlock
@@ -164,3 +165,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5924116091812774452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829082785237258233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f50aad0e02514e4fabe6910c5b794e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFalling: 0

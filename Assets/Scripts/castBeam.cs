@@ -213,7 +213,7 @@ public class castBeam : MonoBehaviour
         return;
       }
 
-      iceHits = Physics2D.BoxCastAll(player.transform.position, new Vector2(1f, 1.5f), 0f, iceDirection, 1f);
+      iceHits = Physics2D.BoxCastAll(player.transform.position, new Vector2(1.3f, 1.5f), 0f, iceDirection, 1f);
       //ice.GetComponent<LineRenderer>().SetPosition(0, ice.transform.position);
       //ice.GetComponent<LineRenderer>().SetPosition(1, ice.transform.position + iceEndMod);
       //ice.GetComponent<LineRenderer>().enabled = true;
@@ -426,7 +426,7 @@ public class castBeam : MonoBehaviour
       iceRaySpawn.transform.GetChild(i+1).gameObject.GetComponent<SpriteRenderer>().enabled = true;
       yield return new WaitForSeconds(.1f);
     }
-    yield return new WaitForSeconds(5);
+    yield return new WaitForSeconds(10);
     //iceRaySpawn.GetComponent<BoxCollider2D>().enabled = false;
     if (ice.tag != "EnemyIceBlock")
     {

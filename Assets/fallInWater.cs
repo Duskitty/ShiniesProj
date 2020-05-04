@@ -31,23 +31,21 @@ public class fallInWater : MonoBehaviour
   void OnTriggerStay2D(Collider2D col)
   {
     fallingObj = GameObject.Find(col.name);
-    if (!isFalling && (fallingObj.tag == "EnemyIceBlock" || (fallingObj.name == player.name && !player.GetComponent<falling>().isFalling)))
+    if ((fallingObj.tag == "EnemyIceBlock" || fallingObj.name == player.name) && !fallingObj.GetComponent<falling>().isFalling)
     {
-      if (fallingObj == player || fallingObj.tag == "IceBlock" || fallingObj.tag == "EnemyIceBlock")
+      if (fallingObj.GetComponent<SpriteRenderer>().color.a == 1)
       {
-        if (fallingObj.GetComponent<SpriteRenderer>().color.a == 1)
-        {
-          player.GetComponent<falling>().isFalling = true;
-          psColor = fallingObj.GetComponent<SpriteRenderer>().color;
-          StartCoroutine(playerFall(fallingObj));
-        }
+        Debug.Log(fallingObj.name);
+        fallingObj.GetComponent<falling>().isFalling = true;
+        psColor = fallingObj.GetComponent<SpriteRenderer>().color;
+        StartCoroutine(playerFall(fallingObj));
       }
     }
   }
 
   IEnumerator playerFall(GameObject fallingObj)
   {
-    isFalling = true;
+    //isFalling = true;
       if (fallingObj == player)
       {
         player.GetComponent<PlayerMovement>().enabled = false;
@@ -73,7 +71,6 @@ public class fallInWater : MonoBehaviour
         
         playerSprite.color = psColor;
         GameControlScript.health -= 1;
-        player.GetComponent<falling>().isFalling = false;
       }
       else if(fallingObj.tag == "EnemyIceBlock")
       {
@@ -84,8 +81,8 @@ public class fallInWater : MonoBehaviour
       {
         Destroy(fallingObj);
       }
-    
-    isFalling = false;
+    fallingObj.GetComponent<falling>().isFalling = false;
+    //isFalling = false;
     yield return null;
   }
 }
