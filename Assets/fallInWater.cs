@@ -31,12 +31,13 @@ public class fallInWater : MonoBehaviour
   void OnTriggerStay2D(Collider2D col)
   {
     fallingObj = GameObject.Find(col.name);
-    if (!isFalling)
+    if (!isFalling && (fallingObj.tag == "EnemyIceBlock" || (fallingObj.name == player.name && !player.GetComponent<falling>().isFalling)))
     {
       if (fallingObj == player || fallingObj.tag == "IceBlock" || fallingObj.tag == "EnemyIceBlock")
       {
         if (fallingObj.GetComponent<SpriteRenderer>().color.a == 1)
         {
+          player.GetComponent<falling>().isFalling = true;
           psColor = fallingObj.GetComponent<SpriteRenderer>().color;
           StartCoroutine(playerFall(fallingObj));
         }
@@ -68,20 +69,16 @@ public class fallInWater : MonoBehaviour
       if (fallingObj == player)
       {
         player.GetComponent<PlayerMovement>().enabled = true;
-        /*if (SceneManager.GetActiveScene().name == "World 3 P2" && player.transform.position.y > 11.5)
-        {
-          Debug.Log("respawn 2");
-          player.transform.position = secondRespawn.transform.position;
-          isFalling = false;
-        StopCoroutine(playerFall(fallingObj));
-        }
-        else
-        {*/
-          //Debug.Log("In else statement");
-          player.transform.position = respawnPoint.transform.position;
-        //}
+        player.transform.position = respawnPoint.transform.position;
+        
         playerSprite.color = psColor;
         GameControlScript.health -= 1;
+        player.GetComponent<falling>().isFalling = false;
+      }
+      else if(fallingObj.tag == "EnemyIceBlock")
+      {
+        Destroy(fallingObj.GetComponent<containsEnemy>().enemy);
+        Destroy(fallingObj);
       }
       else
       {

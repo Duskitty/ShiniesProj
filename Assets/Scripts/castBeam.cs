@@ -449,16 +449,19 @@ public class castBeam : MonoBehaviour
     {
       for (int i = 0; i < iceHits.Length; i++)
       {
-        hitObj = GameObject.Find(iceHits[i].collider.name);
-        if (hitObj != null)
+        if (iceHits[i].collider != null)
         {
-          if (hitObj.tag == "WaterCollider")
+          hitObj = GameObject.Find(iceHits[i].collider.name);
+          if (hitObj != null)
           {
-            hitObj.GetComponent<BoxCollider2D>().enabled = true;
-          }
-          else
-          {
-            continue;
+            if (hitObj.tag == "WaterCollider")
+            {
+              hitObj.GetComponent<BoxCollider2D>().enabled = true;
+            }
+            else
+            {
+              continue;
+            }
           }
         }
       }
@@ -487,7 +490,7 @@ public class castBeam : MonoBehaviour
 
   IEnumerator meltEnemyWithFire(GameObject iceBlock)
   {
-    iceBlock.GetComponent<Animator>().SetBool("hirWithFire", true);
+    iceBlock.GetComponent<Animator>().SetBool("hitWithFire", true);
     yield return new WaitForSeconds(.45f);
     iceBlock.GetComponent<containsEnemy>().enemy.transform.position = iceBlock.transform.position;
     iceBlock.GetComponent<containsEnemy>().enemy.SetActive(true);
