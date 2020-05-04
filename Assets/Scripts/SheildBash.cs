@@ -16,7 +16,7 @@ public class SheildBash : MonoBehaviour
     {
         horzMov = Input.GetAxis("Horizontal");
         verticalMov = Input.GetAxis("Vertical");
-        Debug.Log(pickUpMirror.hasSheild);
+       // Debug.Log(pickUpMirror.hasSheild);
         if (Input.GetKey(KeyCode.Space) && pickUpMirror.hasSheild == true && hasPressedBar == false)
         {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
@@ -62,7 +62,7 @@ public class SheildBash : MonoBehaviour
             //do nothing else statment is to pervent sticking to things
 
         }
-        else if (col.gameObject.CompareTag("Cactus") || col.gameObject.CompareTag("rock") || col.gameObject.CompareTag("orb") || col.gameObject.CompareTag("sunbeam") || col.gameObject.CompareTag("mirage")|| col.gameObject.CompareTag("Boss3")|| col.gameObject.CompareTag("Boss")|| col.gameObject.CompareTag("button")|| col.gameObject.CompareTag("sign"))
+        else if (col.gameObject.CompareTag("Cactus") || col.gameObject.CompareTag("rock") || col.gameObject.CompareTag("orb") || col.gameObject.CompareTag("sunbeam") || col.gameObject.CompareTag("mirage")|| col.gameObject.CompareTag("Boss3")|| col.gameObject.CompareTag("Boss")|| col.gameObject.CompareTag("button")|| col.gameObject.CompareTag("sign")|| col.gameObject.CompareTag("Torch"))
         {
             RestoreMovment();
         }
