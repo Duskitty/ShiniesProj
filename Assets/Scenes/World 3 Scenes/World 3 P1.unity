@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2271,6 +2271,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 6503770276388146336, guid: 1f4f19c61df764c4a9f09240dfef6870,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1240917274288420340, guid: 216c400f2f423694692c7635846714cd,
+        type: 3}
     - target: {fileID: 6503770276388146342, guid: 1f4f19c61df764c4a9f09240dfef6870,
         type: 3}
       propertyPath: m_Offset.y
@@ -2309,6 +2315,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIController Variant(with fire gem)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307985030904758356, guid: 87f3cf44298fec34280ea90d76680135,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4022266914105009392, guid: 87f3cf44298fec34280ea90d76680135,
         type: 3}
@@ -2363,11 +2374,6 @@ PrefabInstance:
     - target: {fileID: 4022266914105009392, guid: 87f3cf44298fec34280ea90d76680135,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4307985030904758356, guid: 87f3cf44298fec34280ea90d76680135,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4307985031992076374, guid: 87f3cf44298fec34280ea90d76680135,
