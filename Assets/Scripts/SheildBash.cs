@@ -16,6 +16,7 @@ public class SheildBash : MonoBehaviour
     {
         horzMov = Input.GetAxis("Horizontal");
         verticalMov = Input.GetAxis("Vertical");
+        Debug.Log(pickUpMirror.hasSheild);
         if (Input.GetKey(KeyCode.Space) && pickUpMirror.hasSheild == true && hasPressedBar == false)
         {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
