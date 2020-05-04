@@ -16,6 +16,12 @@ public class L3P2Manager : MonoBehaviour
     private GameObject button2;
     private bool iceGemAvailable;
     private GameObject iceGem;
+    private bool isCreatingEnemy;
+    public GameObject rockBugPrefab;
+    private GameObject rockBug;
+    private Transform rockBugSpawn;
+    private Transform enemyPointLeft;
+    private Transform enemyPointRight;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +33,11 @@ public class L3P2Manager : MonoBehaviour
       iceGem = GameObject.Find("iceGem");
       button1 = GameObject.Find("exitButton0");
       button2 = GameObject.Find("exitButton1");
+      rockBug = GameObject.Find("RockBug");
+      rockBugSpawn = GameObject.Find("RockBugSpawn").transform;
+      isCreatingEnemy = false;
+      enemyPointLeft = GameObject.Find("EnemyPointLeft").transform;
+      enemyPointRight = GameObject.Find("EnemyPointRight").transform;
     }
 
     // Update is called once per frame
@@ -36,6 +47,11 @@ public class L3P2Manager : MonoBehaviour
       button2Pressed = button2.GetComponent<pressButton>().getIsPressed();
       player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(null);
       inSun = checkInSun();
+
+      if(rockBug == null  && !isCreatingEnemy)
+      {
+        StartCoroutine(createEnemy());
+      }
 
       if (inSun)
       {
@@ -68,6 +84,19 @@ public class L3P2Manager : MonoBehaviour
     yield return new WaitForSeconds(0.2f);
 
     Destroy(door);
+    yield return null;
+  }
+
+  IEnumerator createEnemy()
+  {
+    isCreatingEnemy = true;
+    yield return new WaitForSeconds(7f);
+    rockBug = Instantiate(rockBugPrefab, rockBugSpawn.transform.position, rockBugSpawn.transform.rotation);
+    rockBug.GetComponent<WaypointFinder>().waypoints[0] = enemyPointRight;
+    rockBug.GetComponent<WaypointFinder>().waypoints[1] = enemyPointLeft;
+    enemyPointLeft.position = new Vector3(enemyPointLeft.position.x, rockBug.transform.position.y, 0);
+    enemyPointRight.position = new Vector3(enemyPointRight.position.x, rockBug.transform.position.y, 0);
+    isCreatingEnemy = false;
     yield return null;
   }
 }
