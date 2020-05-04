@@ -135,7 +135,7 @@ public class L3P1Manager : MonoBehaviour
       pHit = player.transform.GetChild(10).GetComponent<castBeam>().getPlayerHitCollider();
       if(pHit != null && !player.transform.GetChild(10).GetComponent<LineRenderer>().enabled)
       {
-        Debug.Log("pHit should be null");
+       // Debug.Log("pHit should be null");
         pHit = null;
 
       }
