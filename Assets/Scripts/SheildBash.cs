@@ -19,7 +19,7 @@ public class SheildBash : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && pickUpMirror.hasSheild == true && hasPressedBar == false)
         {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
-            GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
+           // GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
 
             isSheildBashing = true;
             hasPressedBar = true;
@@ -84,7 +84,7 @@ public class SheildBash : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
         isSheildBashing = false;
         hasPressedBar = false;
-        GameObject.Find("DPadController").GetComponent<SetDPad>().EnablePad();
+      //  GameObject.Find("DPadController").GetComponent<SetDPad>().EnablePad();
 
 
     }
