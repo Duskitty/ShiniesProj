@@ -92,7 +92,7 @@ public class Boss : MonoBehaviour
 	}
 	public IEnumerator IdleToWalk()
 	{
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(2f);
 		ani.SetTrigger("Walk");
 		GetComponent<BossFollow>().enabled = true;
 	}
@@ -101,7 +101,7 @@ public class Boss : MonoBehaviour
 	{
 
 
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(2f);
 		animator.SetBool("isWalking", true);
 		animator.SetBool("ice", false);
 
@@ -111,7 +111,7 @@ public class Boss : MonoBehaviour
 	}
 	public IEnumerator FireAttack()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(2f);
 		animator.SetBool("isWalking", true);
 		animator.SetBool("fire", false);
 
