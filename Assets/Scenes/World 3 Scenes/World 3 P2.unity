@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -21441,7 +21441,7 @@ GameObject:
   - component: {fileID: 675920168}
   - component: {fileID: 675920167}
   - component: {fileID: 675920166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31487,7 +31487,7 @@ GameObject:
   - component: {fileID: 826715734}
   - component: {fileID: 826715733}
   - component: {fileID: 826715732}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DownButon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32730,7 +32730,7 @@ GameObject:
   - component: {fileID: 982627551}
   - component: {fileID: 982627550}
   - component: {fileID: 982627549}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33266,7 +33266,7 @@ GameObject:
   - component: {fileID: 1003912132}
   - component: {fileID: 1003912131}
   - component: {fileID: 1003912130}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34267,6 +34267,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0052218437
+      objectReference: {fileID: 0}
+    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.6171112
+      objectReference: {fileID: 0}
+    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.007173538
+      objectReference: {fileID: 0}
+    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8592186
+      objectReference: {fileID: 0}
+    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2302897497021888049, guid: 620cb67ba130047478175e80164215c4,
         type: 3}
       propertyPath: m_Name
@@ -34357,36 +34387,6 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1013641116}
-    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0052218437
-      objectReference: {fileID: 0}
-    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.6171112
-      objectReference: {fileID: 0}
-    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.007173538
-      objectReference: {fileID: 0}
-    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.8592186
-      objectReference: {fileID: 0}
-    - target: {fileID: -2604099706663124650, guid: 620cb67ba130047478175e80164215c4,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620cb67ba130047478175e80164215c4, type: 3}
 --- !u!1 &1116908528
@@ -60646,6 +60646,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536573377939550692, guid: ba6e73c82af5306458bc3833c4702eb1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5536573377939550696, guid: ba6e73c82af5306458bc3833c4702eb1,
         type: 3}
