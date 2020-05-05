@@ -24,6 +24,8 @@ public class B1Script : MonoBehaviour
     //TEST VARIABLES TO REPRESENT STATES
     public bool nullState;
     public bool chargeState;
+
+    public static bool vibeCheck;
     
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,7 @@ public class B1Script : MonoBehaviour
         hit = false;
         nullState = true;
         chargeState = false;
+        vibeCheck = false;
     }
 
     // Update is called once per frame
@@ -92,10 +95,10 @@ public class B1Script : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        
+        Debug.Log(vibeCheck);
         if (col.gameObject.CompareTag("Player"))
         {
-            if (SheildBash.isSheildBashing == true)
+            if (vibeCheck == true)
             {
                 Debug.Log("boss took damage");
                 health--;
