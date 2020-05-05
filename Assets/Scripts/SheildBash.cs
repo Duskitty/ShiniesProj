@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class SheildBash : MonoBehaviour
 {
@@ -101,6 +103,11 @@ public class SheildBash : MonoBehaviour
     }
     public void AttackButton()
     {
+        if(SceneManager.GetActiveScene().name=="World 2 P2")
+        {
+            return;
+
+        }
         if (pickUpMirror.hasSheild == true && hasPressedBar==false)
         {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
