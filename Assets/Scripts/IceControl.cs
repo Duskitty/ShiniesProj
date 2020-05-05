@@ -22,7 +22,7 @@ public class IceControl : MonoBehaviour
         player.GetComponent<SheildBash>().enabled = false;
      //   GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
 
-        float speed = 15f;
+        float speed = 50f;
         
         if (PlayerMovement.isMovingLeft)
         {
