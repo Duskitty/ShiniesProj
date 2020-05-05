@@ -21,6 +21,7 @@ public class L3P1Manager : MonoBehaviour
   private RaycastHit2D rcHit;
   private Vector3 rcPosMod;
   private Color rcColor;
+  private bool redBeenHit;
 
   private GameObject blueCrystal;
   private LineRenderer blueCrystalBeam;
@@ -31,6 +32,7 @@ public class L3P1Manager : MonoBehaviour
   private RaycastHit2D bcHit;
   private Vector3 bcPosMod;
   private Color bcColor;
+  private bool blueBeenHit;
 
   private GameObject greenCrystal;
   private LineRenderer greenCrystalBeam;
@@ -41,6 +43,7 @@ public class L3P1Manager : MonoBehaviour
   private RaycastHit2D gcHit;
   private Vector3 gcPosMod;
   private Color gcColor;
+  private bool greenBeenHit;
 
   private LayerMask layerMask;
   private LineRenderer[] hittableObjBeams;
@@ -96,6 +99,10 @@ public class L3P1Manager : MonoBehaviour
     doorCrystals[3] = GameObject.Find("whiteCrystal");
 
     doorOpenBool = false;
+
+    redBeenHit = false;
+    blueBeenHit = false;
+    greenBeenHit = false;
   }
 
   // Update is called once per frame
@@ -147,6 +154,7 @@ public class L3P1Manager : MonoBehaviour
     {
       if (pHit.name == redCrystal.name)
       {
+        redBeenHit = true;
         //Debug.Log("hit red crystal");
         if (playerDirection.GetBool("isIdleUp"))
         {
@@ -182,6 +190,7 @@ public class L3P1Manager : MonoBehaviour
 
         if (rcHit != null)
         {
+          //Debug.Log(rcHit.collider.name);
           redCrystalBeam.startColor = Color.red;
           redCrystalBeam.endColor = Color.red;
           rcColor = Color.red;
@@ -198,6 +207,7 @@ public class L3P1Manager : MonoBehaviour
 
           if (rcHit.collider.name == blueCrystal.name)
           {
+            blueBeenHit = true;
             blueCrystalRaySpawn = blueCrystal.transform.GetChild(1);
             blueCrystalBeamDirection = blueCrystalRaySpawn.TransformDirection(Vector3.up);
             bcPosMod = new Vector3(player.transform.position.x - blueCrystal.transform.position.x, 0, 0);
@@ -216,6 +226,7 @@ public class L3P1Manager : MonoBehaviour
 
               if (bcHit.collider.name == greenCrystal.name)
               {
+                greenBeenHit = true;
                 greenCrystalRaySpawn = greenCrystal.transform.GetChild(1);
                 greenCrystalBeamDirection = greenCrystalRaySpawn.TransformDirection(Vector3.up);
                 gcPosMod = new Vector3(player.transform.position.x - greenCrystal.transform.position.x, 0, 0);
@@ -237,6 +248,7 @@ public class L3P1Manager : MonoBehaviour
           }
           else if (rcHit.collider.name == greenCrystal.name)
           {
+            greenBeenHit = true;
             greenCrystalRaySpawn = greenCrystal.transform.GetChild(1);
             greenCrystalBeamDirection = greenCrystalRaySpawn.TransformDirection(Vector3.up);
             gcPosMod = new Vector3(player.transform.position.x - greenCrystal.transform.position.x, 0, 0);
@@ -263,6 +275,7 @@ public class L3P1Manager : MonoBehaviour
 
       else if (pHit.name == blueCrystal.name)
       {
+        blueBeenHit = true;
         if (playerDirection.GetBool("isIdleUp") || playerDirection.GetBool("isUp"))
         {
           blueCrystalRaySpawn = blueCrystal.transform.GetChild(1);
@@ -303,6 +316,7 @@ public class L3P1Manager : MonoBehaviour
 
           if (bcHit.collider.name == redCrystal.name)
           {
+            redBeenHit = true;
             redCrystalRaySpawn = redCrystal.transform.GetChild(3);
             redCrystalBeamDirection = redCrystalRaySpawn.TransformDirection(Vector3.down);
             rcPosMod = new Vector3(player.transform.position.x - redCrystal.transform.position.x, 0, 0);
@@ -320,6 +334,7 @@ public class L3P1Manager : MonoBehaviour
           }
           else if (bcHit.collider.name == greenCrystal.name)
           {
+            greenBeenHit = true;
             greenCrystalRaySpawn = greenCrystal.transform.GetChild(1);
             greenCrystalBeamDirection = greenCrystalRaySpawn.TransformDirection(Vector3.up);
             gcPosMod = new Vector3(player.transform.position.x - greenCrystal.transform.position.x, 0, 0);
@@ -340,6 +355,7 @@ public class L3P1Manager : MonoBehaviour
       }
       else if (pHit.name == greenCrystal.name)
       {
+        greenBeenHit = true;
         if (playerDirection.GetBool("isIdleUp") || playerDirection.GetBool("isUp"))
         {
           greenCrystalRaySpawn = greenCrystal.transform.GetChild(1);
@@ -380,6 +396,7 @@ public class L3P1Manager : MonoBehaviour
 
           if (gcHit.collider.name == blueCrystal.name)
           {
+            blueBeenHit = true;
             blueCrystalRaySpawn = blueCrystal.transform.GetChild(3);
             blueCrystalBeamDirection = blueCrystalRaySpawn.TransformDirection(Vector3.down);
             bcPosMod = new Vector3(player.transform.position.x - blueCrystal.transform.position.x, 0, 0);
@@ -397,6 +414,7 @@ public class L3P1Manager : MonoBehaviour
 
               if (bcHit.collider.name == redCrystal.name)
               {
+                redBeenHit = true;
                 redCrystalRaySpawn = redCrystal.transform.GetChild(3);
                 redCrystalBeamDirection = redCrystalRaySpawn.TransformDirection(Vector3.down);
                 rcPosMod = new Vector3(player.transform.position.x - redCrystal.transform.position.x, 0, 0);
@@ -416,6 +434,7 @@ public class L3P1Manager : MonoBehaviour
           }
           else if (gcHit.collider.name == redCrystal.name)
           {
+            redBeenHit = true;
             redCrystalRaySpawn = redCrystal.transform.GetChild(3);
             redCrystalBeamDirection = redCrystalRaySpawn.TransformDirection(Vector3.down);
             rcPosMod = new Vector3(player.transform.position.x - redCrystal.transform.position.x, 0, 0);
@@ -436,10 +455,24 @@ public class L3P1Manager : MonoBehaviour
       }
       else
       {
-        Debug.Log("here");
+        //Debug.Log("here");
         redCrystalBeam.enabled = false;
       }
     }
+
+    if (redBeenHit && !redCrystalBeam.enabled)
+    {
+      rcHit = Physics2D.Raycast(redCrystalRaySpawn.position + rcPosMod, redCrystalBeamDirection, 0.1f, ~layerMask);
+    }
+    if (blueBeenHit && !blueCrystalBeam.enabled)
+    {
+      bcHit = Physics2D.Raycast(blueCrystalRaySpawn.position + bcPosMod, blueCrystalBeamDirection, 0f, ~layerMask);
+    }
+    if (greenBeenHit && !greenCrystalBeam.enabled)
+    {
+      gcHit = Physics2D.Raycast(greenCrystalRaySpawn.position + gcPosMod, greenCrystalBeamDirection, 0f, ~layerMask);
+    }
+
     //player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
     if (rcHit.collider != null && door != null && rcHit.collider.name == door.name)
     {
@@ -448,17 +481,19 @@ public class L3P1Manager : MonoBehaviour
     }
     else if (bcHit.collider != null && door != null && bcHit.collider.name == door.name)
     {
+      //Debug.Log(bcHit.collider.name);
       hitDoor(bcColor);
     }
     else if (gcHit.collider != null && door != null && gcHit.collider.name == door.name)
     {
+      //Debug.Log(gcHit.collider.name);
       hitDoor(gcColor);
     }
   }
 
   private void hitDoor(Color colorName)
   {
-    if (colorName == colorOrder[gemsHit])
+    if (colorName == colorOrder[gemsHit] && (redCrystalBeam.enabled || blueCrystalBeam.enabled || greenCrystalBeam.enabled))
     {
       currentColors[gemsHit] = colorName;
       Debug.Log(colorName + " lit");
@@ -494,6 +529,7 @@ public class L3P1Manager : MonoBehaviour
     door.GetComponent<Animator>().SetBool("isOpening", false);
     yield return null;
     door.GetComponent<BoxCollider2D>().enabled = false;
+    door.transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = false;
   }
 
   public void resetDoor()
