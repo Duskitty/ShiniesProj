@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8745,12 +8745,12 @@ PrefabInstance:
     - target: {fileID: 255631738223855410, guid: e4963dfe758fc9346974d5469477665f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.36
+      value: 4.91
       objectReference: {fileID: 0}
     - target: {fileID: 255631738223855410, guid: e4963dfe758fc9346974d5469477665f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.89
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 255631738223855410, guid: e4963dfe758fc9346974d5469477665f,
         type: 3}
@@ -23632,7 +23632,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 14ba0944859922648800faca2e803fe1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -23652,7 +23652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104163566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.72, y: 1.14, z: -3598.8691}
+  m_LocalPosition: {x: 3.72, y: 1.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -23723,6 +23723,26 @@ PrefabInstance:
     - target: {fileID: 5403889825917253327, guid: 4e112da395c98fd4787bef21641eaa6a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403889825917253326, guid: 4e112da395c98fd4787bef21641eaa6a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403889825917253326, guid: 4e112da395c98fd4787bef21641eaa6a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403889825917253326, guid: 4e112da395c98fd4787bef21641eaa6a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403889825917253326, guid: 4e112da395c98fd4787bef21641eaa6a,
+        type: 3}
+      propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -24986,7 +25006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226cc94e9f78e2b4db3118dfa3e1a7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invin: 0
   switchTime: 0
   waiting: 0
   mushroom: {fileID: 8846893800798288045, guid: 685402d14b2aff14f952e8d36b890aad,
@@ -24996,6 +25015,8 @@ MonoBehaviour:
   chargeGem: {fileID: 0}
   nullState: 0
   chargeState: 0
+  stunTimer: 0
+  wasStunned: 0
 --- !u!212 &1695017124
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25075,7 +25096,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.28}
-  m_Size: {x: 2.4, y: 3.4}
+  m_Size: {x: 2, y: 3}
   m_Direction: 0
 --- !u!1001 &1752058734
 PrefabInstance:

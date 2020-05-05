@@ -33,7 +33,8 @@ namespace Pathfinding
 
           if (hitObj.transform.tag == "Boss")
           {
-            // do something when it hits the boss
+                  // do something when it hits the boss
+                  B1Script.gotStunned = true;
           }
           else if (hitObj.transform.tag == "enemy")
           {

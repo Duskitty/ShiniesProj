@@ -16,12 +16,13 @@ public class SheildBash : MonoBehaviour
     private bool hasPressedBar = false;//checking if space bar has been pressed bar more than once to prevent double pressing
     void Update()
     {
-       /* if (isSheildBashing==true&&pickUpMirror.hasSheild == true && hasPressedBar == true && GetComponent<PlayerMovement>().enabled == false)
+        
+        if (isSheildBashing==true&&pickUpMirror.hasSheild == true && hasPressedBar == true && GetComponent<PlayerMovement>().enabled == false)
         {
             RestoreMovment();
 
-        }*/
-        {
+        }
+        //{
             if (Input.GetKeyDown(KeyCode.Q))
             {
 
@@ -43,28 +44,28 @@ public class SheildBash : MonoBehaviour
             }
 
 
-        }
+        //}
     }
         public void PlayerDirection()
         {//figure out what way the player is facing then apply the right force
             if (PlayerMovement.isMovingLeft)
             {
-                controller.AddForce(new Vector2(-speed, 0f));
+                controller.AddForce(new Vector2(-speed, 0f), ForceMode2D.Force);
             }
             if (PlayerMovement.isMovingRight)
             {
-                controller.AddForce(new Vector2(speed, 0f));
+                controller.AddForce(new Vector2(speed, 0f), ForceMode2D.Force);
 
 
             }
             if (PlayerMovement.isMovingUp)
             {
-                controller.AddForce(new Vector2(0f, speed));
+                controller.AddForce(new Vector2(0f, speed), ForceMode2D.Force);
 
             }
             if (PlayerMovement.isMovingDown)
             {
-                controller.AddForce(new Vector2(0f, -speed));
+                controller.AddForce(new Vector2(0f, -speed), ForceMode2D.Force);
 
 
             }
@@ -73,7 +74,7 @@ public class SheildBash : MonoBehaviour
         {
             if(col.gameObject.CompareTag("Boss"))
             {
-                B1Script.vibeCheck = true;
+                TestBoss1();
                 RestoreMovment();
             }
             if (col.gameObject.CompareTag("enemy") || col.gameObject.CompareTag("bridge")  )
@@ -139,6 +140,37 @@ public class SheildBash : MonoBehaviour
         {
             RestoreMovment();
         }
+
+    public void TestBoss1()
+    {
+        if (isSheildBashing == true)
+        {
+            Debug.Log("boss took damage");
+            B1Script.health--;
+            GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((B1Script.health / 10.0f), 1f, 1f);
+            GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
+            if (B1Script.health <= 0)
+            {
+                GameObject.Find("Controller").SetActive(false);
+                SpawnChargeGem.deadBoss = true;
+            }
+        }
+        else if (B1Script.invin > 0)
+        {
+            Debug.Log("no damage");
+            //no damage taken
+        }
+        else
+        {
+            B1Script.invin = 1f;
+            Debug.Log("damage");
+            // no shield bash = 1 less heart
+            GameControlScript.health -= 1;
+            print(GameControlScript.health);
+            //print(col.name);
+            //StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
+        }
+    }
 
    
 }

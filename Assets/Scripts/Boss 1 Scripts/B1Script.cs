@@ -10,7 +10,7 @@ public class B1Script : MonoBehaviour
     //public bool flyState = false;
     public static bool hit;
 
-    public float invin; //invincibility timer
+    public static float invin; //invincibility timer
     public float switchTime; //max time before switch
     public float waiting; //time waiting between states
 
@@ -25,7 +25,10 @@ public class B1Script : MonoBehaviour
     public bool nullState;
     public bool chargeState;
 
-    public static bool vibeCheck;
+    public static bool vibeCheck; // check to see if player is shield bashing
+    public static bool gotStunned;
+    public float stunTimer;
+    public bool wasStunned;
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,9 @@ public class B1Script : MonoBehaviour
         nullState = true;
         chargeState = false;
         vibeCheck = false;
+        gotStunned = false;
+        stunTimer = 0f;
+        wasStunned = false;
     }
 
     // Update is called once per frame
@@ -50,7 +56,7 @@ public class B1Script : MonoBehaviour
             {
                 invin -= Time.deltaTime;
             }
-            if(nullState == true)
+            if(nullState == true && wasStunned == false)
             {
                 waiting += Time.deltaTime;
             }
@@ -74,11 +80,25 @@ public class B1Script : MonoBehaviour
                 ExitCharge();
 
             }
+            if(gotStunned == true)
+            {
+                gotStunned = false;
+                StunBoss();
+            }
+            if(wasStunned == true)
+            {
+                stunTimer -= Time.deltaTime;
+            }
+            if(wasStunned == true && stunTimer < 0f)
+            {
+                Recover();
+            }
+            /*
             if (health <= 0)
             {
                 GameObject.Find("Controller").SetActive(false);
                 SpawnChargeGem.deadBoss = true;
-            }
+            }*/
 
         }
     }
@@ -93,18 +113,31 @@ public class B1Script : MonoBehaviour
         GameObject.Find("Controller").GetComponent<AIDestinationSetter>().target = GameObject.Find("Player").transform;
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    public void StunBoss()
     {
+        stunTimer = 3f;
+        GameObject.Find("Controller").GetComponent<AIPath>().maxSpeed = 0;
+        wasStunned = true;
+    }
+    public void Recover() // recovers the boss from being stunned
+    {
+        GameObject.Find("Controller").GetComponent<AIPath>().maxSpeed = 1;
+        wasStunned = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {/*
         Debug.Log(vibeCheck);
         if (col.gameObject.CompareTag("Player"))
         {
             if (vibeCheck == true)
             {
+                vibeCheck = false;
                 Debug.Log("boss took damage");
                 health--;
                 GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((health / 10.0f), 1f, 1f);
                 GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
-                if(health == 0)
+                if(health <= 0)
                 {
                     GameObject.Find("Controller").SetActive(false);
                     SpawnChargeGem.deadBoss = true;
@@ -126,7 +159,7 @@ public class B1Script : MonoBehaviour
                 StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
             }
         }
-        
+        */
     }
 
 }
