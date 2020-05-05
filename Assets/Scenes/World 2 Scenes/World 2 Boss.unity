@@ -2848,7 +2848,7 @@ GameObject:
   - component: {fileID: 184711105}
   - component: {fileID: 184711104}
   - component: {fileID: 184711103}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3941,6 +3941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536573377939550692, guid: ba6e73c82af5306458bc3833c4702eb1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5536573377939550696, guid: ba6e73c82af5306458bc3833c4702eb1,
         type: 3}
@@ -5486,7 +5491,7 @@ GameObject:
   - component: {fileID: 1008260850}
   - component: {fileID: 1008260849}
   - component: {fileID: 1008260848}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DownButon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24645,7 +24650,7 @@ GameObject:
   - component: {fileID: 1487678245}
   - component: {fileID: 1487678244}
   - component: {fileID: 1487678243}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25161,7 +25166,7 @@ GameObject:
   - component: {fileID: 1672557927}
   - component: {fileID: 1672557926}
   - component: {fileID: 1672557925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
