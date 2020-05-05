@@ -2873,6 +2873,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 5536573377939550692, guid: ba6e73c82af5306458bc3833c4702eb1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5536573377939550696, guid: ba6e73c82af5306458bc3833c4702eb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5782,12 +5787,12 @@ PrefabInstance:
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -132.2
+      value: -142.9
       objectReference: {fileID: 0}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.2
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 1789474016177757688, guid: d51aecc35884a8145a1c259ed7f0bc66,
         type: 3}
@@ -6380,7 +6385,7 @@ GameObject:
   - component: {fileID: 523593814}
   - component: {fileID: 523593813}
   - component: {fileID: 523593812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DownButon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6697,7 +6702,7 @@ GameObject:
   - component: {fileID: 601772477}
   - component: {fileID: 601772476}
   - component: {fileID: 601772475}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26427,7 +26432,7 @@ GameObject:
   - component: {fileID: 1271497398}
   - component: {fileID: 1271497397}
   - component: {fileID: 1271497396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27317,7 +27322,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12592316, y: 0.100735664}
+  m_Offset: {x: 0.1, y: 0.100735664}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -27328,7 +27333,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7481537, y: 1.7985287}
+  m_Size: {x: 1, y: 6}
   m_EdgeRadius: 0
 --- !u!212 &1411504821
 SpriteRenderer:
@@ -27387,7 +27392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411504819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -140.04, y: -2.76, z: 0}
+  m_LocalPosition: {x: -140.062, y: -2.695, z: 0}
   m_LocalScale: {x: 0.7, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -28128,11 +28133,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1367647736694420395, guid: 466328bd9dabbbe4896822575f17196b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2225380352154130191, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28188,6 +28188,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1367647736694420395, guid: 466328bd9dabbbe4896822575f17196b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1367647735609072553, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -28212,6 +28217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367647735609072558, guid: 466328bd9dabbbe4896822575f17196b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 283773470, guid: 466328bd9dabbbe4896822575f17196b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -28289,11 +28299,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AttackButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 1367647735609072558, guid: 466328bd9dabbbe4896822575f17196b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4737387277882167007, guid: 466328bd9dabbbe4896822575f17196b,
         type: 3}
@@ -29473,7 +29478,7 @@ GameObject:
   - component: {fileID: 1959459806}
   - component: {fileID: 1959459805}
   - component: {fileID: 1959459804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
