@@ -67,15 +67,20 @@ public class SheildBash : MonoBehaviour
             RestoreMovment();
 
         }
-        else if (col.gameObject.name == "RockBug") {
+        else if (col.gameObject.name == "RockBug" || col.gameObject.CompareTag("stairs") || col.gameObject.CompareTag("break rock")) {
             RestoreMovment();
         }
+       
+
+
+            
         else
         {//for other things without a tag
             RestoreMovment();
 
         }
     }
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("bridge"))
