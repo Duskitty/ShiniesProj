@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -26154,6 +26154,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6561559051480281454, guid: 068a121ff39a7eb44a914171885bb3c9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6561559051480281457, guid: 068a121ff39a7eb44a914171885bb3c9,
         type: 3}
       propertyPath: m_Sprite
@@ -26168,17 +26173,27 @@ PrefabInstance:
     - target: {fileID: 6561559050944890315, guid: 068a121ff39a7eb44a914171885bb3c9,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.99215686
       objectReference: {fileID: 0}
     - target: {fileID: 6561559050944890315, guid: 068a121ff39a7eb44a914171885bb3c9,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.990566
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6561559050944890315, guid: 068a121ff39a7eb44a914171885bb3c9,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.064433135
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561559050944890312, guid: 068a121ff39a7eb44a914171885bb3c9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561559050279424785, guid: 068a121ff39a7eb44a914171885bb3c9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 068a121ff39a7eb44a914171885bb3c9, type: 3}

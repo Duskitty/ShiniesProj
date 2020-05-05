@@ -8518,7 +8518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454333563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.37, y: 2.88, z: 0}
+  m_LocalPosition: {x: 2.37, y: 3.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1629207780}
@@ -8548,7 +8548,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 4}
+  m_Size: {x: 1, y: 6}
   m_EdgeRadius: 0
 --- !u!1 &472433438
 GameObject:
@@ -38106,7 +38106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891939409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.42, y: -3.72, z: 0}
+  m_LocalPosition: {x: 2.36, y: -4.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1629207780}
@@ -38136,7 +38136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 4}
+  m_Size: {x: 1, y: 6}
   m_EdgeRadius: 0
 --- !u!1 &900337035
 GameObject:
@@ -72367,7 +72367,7 @@ GameObject:
   - component: {fileID: 1036301062}
   - component: {fileID: 1036301061}
   - component: {fileID: 1036301060}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DownButon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76037,6 +76037,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 5536573377939550692, guid: ba6e73c82af5306458bc3833c4702eb1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5536573377939550696, guid: ba6e73c82af5306458bc3833c4702eb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -76481,7 +76486,7 @@ GameObject:
   - component: {fileID: 1408017880}
   - component: {fileID: 1408017879}
   - component: {fileID: 1408017878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77395,7 +77400,7 @@ GameObject:
   - component: {fileID: 1470264619}
   m_Layer: 0
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77425,7 +77430,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.051662534, y: 0}
+  m_Offset: {x: 0.03, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -77495,8 +77500,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470264618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -157.06, y: -0.48, z: 0}
-  m_LocalScale: {x: 2.5, y: 5, z: 1}
+  m_LocalPosition: {x: -157.168, y: -0.36, z: 0}
+  m_LocalScale: {x: 2.5, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
@@ -78716,7 +78721,7 @@ GameObject:
   - component: {fileID: 1602702433}
   - component: {fileID: 1602702432}
   - component: {fileID: 1602702431}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83439,7 +83444,7 @@ GameObject:
   - component: {fileID: 1951061120}
   - component: {fileID: 1951061119}
   - component: {fileID: 1951061118}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85958,6 +85963,11 @@ PrefabInstance:
     - target: {fileID: 2684674689620977052, guid: e72a6703e1464d140b6608afe0e758c9,
         type: 3}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137742210788361260, guid: e72a6703e1464d140b6608afe0e758c9,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
