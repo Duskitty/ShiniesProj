@@ -35,7 +35,7 @@ public class pickUpMirror : MonoBehaviour
     {
         //if (thing.gameObject.name == "Sheild")
         //{
-            Debug.Log("Picked Up the mirror!");
+            //Debug.Log("Picked Up the mirror!");
             hasSheild = true;
             GameObject.Find("Player").GetComponent<PlayerMovement>().animator.SetBool("HasShield", true);
             Destroy(mirror);
