@@ -28,6 +28,7 @@ namespace Pathfinding
     private Collider2D orb0Hit;
     private GameObject orb1;
     private Collider2D orb1Hit;
+    private bool orb1HasBeenHit;
     private GameObject orb;
     private Transform orbHitPoint;
     private Transform orbRaySpawn;
@@ -83,11 +84,19 @@ namespace Pathfinding
       mirageAnimator = mirage.GetComponent<Animator>();
 
       snake = GameObject.Find("EnemyTrack");
+
+      orb1HasBeenHit = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+      if (orb1HasBeenHit)
+      {
+        setOrbLight(orb1);
+      }
+
+      Debug.Log(orb1.transform.GetChild(0).GetComponent<LineRenderer>().enabled);
       inSun = GameObject.Find("SunPatch01").GetComponent<SunlightTrigger>().inSunlight;
       player.transform.GetChild(10).GetComponent<castBeam>().clearBeams(hittableObjBeams);
 
@@ -136,6 +145,7 @@ namespace Pathfinding
         else if (playerHitObj.name == orb1.name)
         {
           orb1Hit = setOrbLight(orb1);
+          orb1HasBeenHit = true;
         }
         else if (playerHitObj.name == pyramid0.name && playerDirection.GetBool("isIdleUp") && !pyramid0Beam.enabled)
         {
