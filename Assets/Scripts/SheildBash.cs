@@ -73,7 +73,7 @@ public class SheildBash : MonoBehaviour
         {
             if (col.gameObject.CompareTag("enemy") || col.gameObject.CompareTag("bridge"))
             {
-                //do nothing else statment is to pervent sticking to things
+            //do nothing else statment is to pervent sticking to things
 
             }
             else if (col.gameObject.CompareTag("Cactus") || col.gameObject.CompareTag("rock") || col.gameObject.CompareTag("orb") || col.gameObject.CompareTag("sunbeam") || col.gameObject.CompareTag("mirage") || col.gameObject.CompareTag("Boss3") || col.gameObject.CompareTag("Boss") || col.gameObject.CompareTag("button") || col.gameObject.CompareTag("sign") || col.gameObject.CompareTag("Torch"))
@@ -91,7 +91,6 @@ public class SheildBash : MonoBehaviour
             else
             {//for other things without a tag
                 RestoreMovment();
-
             }
         }
 
@@ -136,6 +135,13 @@ public class SheildBash : MonoBehaviour
             RestoreMovment();
         }
 
-    
+    void SeeIfStuck() {
+
+        if (pickUpMirror.hasSheild == true && hasPressedBar == true && GetComponent<PlayerMovement>().enabled == false)
+        {
+            RestoreMovment();
+
+        }
+    }
 }
 
