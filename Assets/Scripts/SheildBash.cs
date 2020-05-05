@@ -16,7 +16,7 @@ public class SheildBash : MonoBehaviour
     private bool hasPressedBar = false;//checking if space bar has been pressed bar more than once to prevent double pressing
     void Update()
     {
-        if (pickUpMirror.hasSheild == true && hasPressedBar == true && GetComponent<PlayerMovement>().enabled == false)
+        if (isSheildBashing==true&&pickUpMirror.hasSheild == true && hasPressedBar == true && GetComponent<PlayerMovement>().enabled == false)
         {
             RestoreMovment();
 
@@ -135,13 +135,6 @@ public class SheildBash : MonoBehaviour
             RestoreMovment();
         }
 
-    void SeeIfStuck() {
-
-        if (pickUpMirror.hasSheild == true && hasPressedBar == true && GetComponent<PlayerMovement>().enabled == false)
-        {
-            RestoreMovment();
-
-        }
-    }
+   
 }
 
