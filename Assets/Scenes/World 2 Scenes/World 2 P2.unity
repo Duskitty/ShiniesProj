@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4504,7 +4504,7 @@ GameObject:
   - component: {fileID: 261833690}
   - component: {fileID: 261833689}
   - component: {fileID: 261833688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DownButon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8006,7 +8006,7 @@ GameObject:
   - component: {fileID: 515716327}
   - component: {fileID: 515716326}
   - component: {fileID: 515716325}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8442,6 +8442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536573377939550692, guid: ba6e73c82af5306458bc3833c4702eb1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5536573377939550696, guid: ba6e73c82af5306458bc3833c4702eb1,
         type: 3}
@@ -67215,7 +67220,7 @@ GameObject:
   - component: {fileID: 1688575331}
   - component: {fileID: 1688575330}
   - component: {fileID: 1688575329}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70928,7 +70933,7 @@ GameObject:
   - component: {fileID: 1950753284}
   - component: {fileID: 1950753283}
   - component: {fileID: 1950753282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74994,6 +74999,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6014511854140651774, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 181020974, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -75008,6 +75018,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 453612974}
+    - target: {fileID: 8976070229838707424, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2522878772134384426}
     - target: {fileID: 4723443630514071886, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -75022,16 +75037,6 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6014511854140651774, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8976070229838707424, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2522878772134384426}
     - target: {fileID: 1029798626, guid: 21a78846ec5d1fb40ab4b2bf89d5e4ac, type: 3}
       propertyPath: m_Color.a
       value: 0.5882353
