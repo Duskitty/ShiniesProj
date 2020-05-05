@@ -94,19 +94,19 @@ public class SheildBash : MonoBehaviour
 
 
 
-            else
-            {//for other things without a tag
-                RestoreMovment();
-            }
+           
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("bridge"))
-            {
+        if (other.gameObject.CompareTag("bridge"))
+        {
 
-                RestoreMovment();
-            }
+            RestoreMovment();
+        }
+        else {
+            RestoreMovment();
+        }
         }
         public void RestoreMovment()
         {
@@ -136,10 +136,7 @@ public class SheildBash : MonoBehaviour
 
             }
         }
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            RestoreMovment();
-        }
+      
 
     public void TestBoss1()
     {
@@ -148,7 +145,7 @@ public class SheildBash : MonoBehaviour
             Debug.Log("boss took damage");
             B1Script.health--;
             GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((B1Script.health / 10.0f), 1f, 1f);
-            GameObject.Find("Player").GetComponent<SheildBash>().RestoreMovment();
+            RestoreMovment();
             if (B1Script.health <= 0)
             {
                 GameObject.Find("Controller").SetActive(false);
