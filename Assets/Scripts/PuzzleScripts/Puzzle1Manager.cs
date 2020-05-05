@@ -8,6 +8,7 @@ public class Puzzle1Manager : MonoBehaviour
     private GameObject stairs;
     private RaycastHit2D hit;
     private SpriteRenderer orb;
+    private LayerMask layerMask;
 
     public Sprite litOrb;
 
@@ -20,12 +21,13 @@ public class Puzzle1Manager : MonoBehaviour
       frozenRock.transform.GetChild(0).GetComponent<LineRenderer>().SetPosition(0, frozenRock.transform.GetChild(0).position);
       frozenRock.transform.GetChild(0).GetComponent<LineRenderer>().SetPosition(1, frozenRock.transform.GetChild(1).position);
       orb = GameObject.Find("Puzzle1Button").GetComponent<SpriteRenderer>();
+      layerMask = LayerMask.GetMask("UI");
     }
 
     // Update is called once per frame
     void Update()
     {
-      hit = Physics2D.Raycast(frozenRock.transform.GetChild(2).position, frozenRock.transform.GetChild(2).TransformDirection(Vector3.right));
+      hit = Physics2D.Raycast(frozenRock.transform.GetChild(2).position, frozenRock.transform.GetChild(2).TransformDirection(Vector3.right), 20f, ~layerMask);
       frozenRock.transform.GetChild(1).position = hit.point;
       frozenRock.transform.GetChild(0).GetComponent<LineRenderer>().SetPosition(0, frozenRock.transform.GetChild(0).position);
       frozenRock.transform.GetChild(0).GetComponent<LineRenderer>().SetPosition(1, frozenRock.transform.GetChild(1).position);
