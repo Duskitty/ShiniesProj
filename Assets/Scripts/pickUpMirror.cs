@@ -11,6 +11,7 @@ public class pickUpMirror : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 300;
         sheild.gameObject.SetActive(false);
         beamButton.gameObject.SetActive(false);
         reflectGem.gameObject.SetActive(false);
