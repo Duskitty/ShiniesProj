@@ -16,17 +16,23 @@ public class SheildBash : MonoBehaviour
     private bool hasPressedBar = false;//checking if space bar has been pressed bar more than once to prevent double pressing
     void Update()
     {
-        
+        Debug.Log(isSheildBashing);
+        /*
         if (isSheildBashing==true&&pickUpMirror.hasSheild == true && hasPressedBar == true && GetComponent<PlayerMovement>().enabled == false)
         {
             RestoreMovment();
 
         }
+        if (isSheildBashing == true && pickUpMirror.hasSheild == true && GetComponent<PlayerMovement>().enabled == false)
+        {
+            RestoreMovment();
+
+        }*/
         //{
-            if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
             {
 
-                RestoreMovment();
+                //RestoreMovment();
             }
             horzMov = Input.GetAxis("Horizontal");
             verticalMov = Input.GetAxis("Vertical");
@@ -87,9 +93,18 @@ public class SheildBash : MonoBehaviour
                 RestoreMovment();
 
             }
-            else if (col.gameObject.name == "RockBug" || col.gameObject.CompareTag("stairs") || col.gameObject.CompareTag("break rock")) {
+            else if (col.gameObject.name == "RockBug" || col.gameObject.CompareTag("stairs")) {
                 RestoreMovment();
             }
+            else if (col.gameObject.CompareTag("break rock"))
+            {
+            RestoreMovment();
+            RockSmash.charge = true;
+            }
+        else
+        {
+            RestoreMovment();
+        }
 
 
 
@@ -102,14 +117,13 @@ public class SheildBash : MonoBehaviour
         if (other.gameObject.CompareTag("bridge"))
         {
 
-            RestoreMovment();
+            //RestoreMovment();
         }
-        else {
-            RestoreMovment();
-        }
+        
         }
         public void RestoreMovment()
         {
+            
             controller.velocity = Vector2.zero;//remove the forces of the sheild bash
             player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
             isSheildBashing = false;
@@ -145,7 +159,7 @@ public class SheildBash : MonoBehaviour
             Debug.Log("boss took damage");
             B1Script.health--;
             GameObject.FindGameObjectWithTag("HealthBar").transform.localScale = new Vector3((B1Script.health / 10.0f), 1f, 1f);
-            RestoreMovment();
+            //RestoreMovment();
             if (B1Script.health <= 0)
             {
                 GameObject.Find("Controller").SetActive(false);
