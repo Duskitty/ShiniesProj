@@ -15,16 +15,12 @@ public class RockSmash : MonoBehaviour
        if(charge == true)
         {
             charge = false;
-            if (SheildBash.isSheildBashing == true)
-            {
-                KillRock();
-            }
-            
+            KillRock();
         }
     }
     public void OnCollisionEnter2D(Collision2D col)
     {
-        if (SheildBash.isSheildBashing==true  && pickUpMirror.hasSheild==true ) { 
+        if (SheildBash.isSheildBashing==true ) { 
             
                 animi.SetBool("Break", true);
                 StartCoroutine(RockDie());

@@ -32,7 +32,7 @@ public class SheildBash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
             {
 
-                //RestoreMovment();
+                RestoreMovment();
             }
             horzMov = Input.GetAxis("Horizontal");
             verticalMov = Input.GetAxis("Vertical");
@@ -114,11 +114,11 @@ public class SheildBash : MonoBehaviour
 
         private void OnTriggerEnter(Collider other)
         {
-        if (other.gameObject.CompareTag("bridge"))
-        {
+        //if (other.gameObject.CompareTag("bridge"))
+        //{
 
-            //RestoreMovment();
-        }
+            RestoreMovment();
+        //}
         
         }
         public void RestoreMovment()
