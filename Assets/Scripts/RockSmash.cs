@@ -12,7 +12,7 @@ public class RockSmash : MonoBehaviour
     {
         Debug.Log("is bashing is " + SheildBash.isSheildBashing);
        // Debug.Log("has sheild is" + pickUpMirror.hasSheild);
-       if(charge == true)
+       if(charge == true&& SheildBash.isSheildBashing==true)
         {
             charge = false;
             KillRock();
