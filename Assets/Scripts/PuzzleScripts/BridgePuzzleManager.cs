@@ -128,9 +128,9 @@ namespace Pathfinding
       Transform hitObjLightSpawn;
       LineRenderer hitObjBeam;
       RaycastHit2D objRayHit;
-
+    
       objectHit = GameObject.Find(objectHitName);
-
+      Debug.Log(objectHit.name);
       if (objectHit.transform.tag == "enemy" && objectHit.name != "BreakableRock")
       {
         //Debug.Log("Enemy Hit");
