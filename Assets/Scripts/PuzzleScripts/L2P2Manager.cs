@@ -71,6 +71,7 @@ namespace Pathfinding
 
       orb1 = GameObject.Find("mirageOrb01");
       orb1.transform.GetChild(0).GetComponent<LineRenderer>().enabled = false;
+      orb1.GetComponent<Animator>().SetBool("isLit", false);
 
       hittableObjBeams = new LineRenderer[2];
       hittableObjBeams[0] = pyramid0Beam;
