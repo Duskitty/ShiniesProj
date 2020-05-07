@@ -14,6 +14,13 @@ public class SheildBash : MonoBehaviour
     public Rigidbody2D controller;
     public static bool isSheildBashing = false;
     private bool hasPressedBar = false;//checking if space bar has been pressed bar more than once to prevent double pressing
+    private Vector2 notMoving;
+
+    private void Start()
+    {
+        controller = this.GetComponent<Rigidbody2D>();
+        notMoving = new Vector2(0.1f, 0.1f);
+    }
     void Update()
     {
         Debug.Log(isSheildBashing);
@@ -29,6 +36,13 @@ public class SheildBash : MonoBehaviour
 
         }*/
         //{
+   
+        if(controller.velocity.x  < notMoving.x && controller.velocity.y < notMoving.y)
+        {
+            //player is not moving
+            RestoreMovment();
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
             {
 
