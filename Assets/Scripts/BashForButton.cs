@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class SheildBash : MonoBehaviour
+public class BashForButton : MonoBehaviour
 {
     public GameObject player;
     public float speed = 10f;
@@ -14,13 +14,6 @@ public class SheildBash : MonoBehaviour
     public Rigidbody2D controller;
     public static bool isSheildBashing = false;
     private bool hasPressedBar = false;//checking if space bar has been pressed bar more than once to prevent double pressing
-    private Vector2 notMoving;
-
-    private void Start()
-    {
-        controller = this.GetComponent<Rigidbody2D>();
-        notMoving = new Vector2(0.1f, 0.1f);
-    }
     void Update()
     {
         Debug.Log(isSheildBashing);
@@ -36,13 +29,6 @@ public class SheildBash : MonoBehaviour
  
         }*/
         //{
-
-        if (controller.velocity.x < notMoving.x && controller.velocity.y < notMoving.y)
-        {
-            //player is not moving
-            RestoreMovment();
-        }
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
 
@@ -51,7 +37,7 @@ public class SheildBash : MonoBehaviour
         horzMov = Input.GetAxis("Horizontal");
         verticalMov = Input.GetAxis("Vertical");
         // Debug.Log(pickUpMirror.hasSheild);
-       if (Input.GetKey(KeyCode.LeftAlt) && pickUpMirror.hasSheild == true && hasPressedBar == false)
+        if (Input.GetKey(KeyCode.Space) && pickUpMirror.hasSheild == true && hasPressedBar == false)
         {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
                                                                   // GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
@@ -143,6 +129,7 @@ public class SheildBash : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
         isSheildBashing = false;
         hasPressedBar = false;
+
         //  GameObject.Find("DPadController").GetComponent<SetDPad>().EnablePad();
 
 
