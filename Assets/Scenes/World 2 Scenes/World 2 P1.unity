@@ -5902,6 +5902,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8555565596357876761, guid: d51aecc35884a8145a1c259ed7f0bc66,
+        type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1789474016177757691, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}
     - {fileID: 2834885300663314857, guid: d51aecc35884a8145a1c259ed7f0bc66, type: 3}

@@ -8,10 +8,8 @@ public class SheildBash : MonoBehaviour
 {
     private bool isPressingButton = false;
     public GameObject player;
-    public float speed = 10f;
-    private Vector3 dir;
-    private float horzMov;
-    private float verticalMov;
+    private float speed = 650f;
+    private float buttonSpeed = 100f;
     public Rigidbody2D controller;
     public static bool isSheildBashing = false;
     private bool hasPressedBar = false;//checking if space bar has been pressed bar more than once to prevent double pressing
@@ -64,8 +62,6 @@ public class SheildBash : MonoBehaviour
 
             RestoreMovment();
         }
-        horzMov = Input.GetAxis("Horizontal");
-        verticalMov = Input.GetAxis("Vertical");
         // Debug.Log(pickUpMirror.hasSheild);
         if (Input.GetKey(KeyCode.LeftAlt) && pickUpMirror.hasSheild == true && hasPressedBar == false)
         {
@@ -225,13 +221,38 @@ public class SheildBash : MonoBehaviour
     public IEnumerator TimeOfButton()
     {
         int timer = 0;
-        while (timer <= 8)
+        while (timer <= 10)
         {
-            PlayerDirection();
+            ButtonDirection();
             ++timer;
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(.02f);
 
         }
     }
+    public void ButtonDirection() {
 
+        if (PlayerMovement.isMovingLeft)
+        {
+            controller.AddForce(new Vector2(-buttonSpeed, 0f), ForceMode2D.Force);
+        }
+        if (PlayerMovement.isMovingRight)
+        {
+            controller.AddForce(new Vector2(buttonSpeed, 0f), ForceMode2D.Force);
+
+
+        }
+        if (PlayerMovement.isMovingUp)
+        {
+            controller.AddForce(new Vector2(0f, buttonSpeed), ForceMode2D.Force);
+
+        }
+        if (PlayerMovement.isMovingDown)
+        {
+            controller.AddForce(new Vector2(0f, buttonSpeed), ForceMode2D.Force);
+
+
+        }
+
+
+    }
 }
