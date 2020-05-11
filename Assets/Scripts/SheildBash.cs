@@ -8,10 +8,8 @@ public class SheildBash : MonoBehaviour
 {
     private bool isPressingButton = false;
     public GameObject player;
-    public float speed = 10f;
-    private Vector3 dir;
-    private float horzMov;
-    private float verticalMov;
+    private float speed = 650f;
+    private float buttonSpeed = 100f;
     public Rigidbody2D controller;
     public static bool isSheildBashing = false;
     private bool hasPressedBar = false;//checking if space bar has been pressed bar more than once to prevent double pressing
@@ -22,7 +20,7 @@ public class SheildBash : MonoBehaviour
     {
         controller = this.GetComponent<Rigidbody2D>();
         notMovingPositive = new Vector2(0.1f, 0.1f);
-        notMovingNegative = new Vector2(-0.1f, 0.1f);
+        notMovingNegative = new Vector2(-0.1f, -0.1f);
     }
     void Update()
     {
@@ -40,22 +38,28 @@ public class SheildBash : MonoBehaviour
         }*/
         //{
 
+        /*
         bool movingPositive = true;
         bool movingNegative = true;
 
         if (controller.velocity.x < notMovingPositive.x && controller.velocity.y < notMovingPositive.y)
         {
+            Debug.Log("movingPosFalse");
             movingPositive = false;
         }
 
-        if(controller.velocity.x > notMovingNegative.x && controller.velocity.y > notMovingNegative.y)
+        if (controller.velocity.x > notMovingNegative.x && controller.velocity.y > notMovingNegative.y)
         {
+            Debug.Log("movingNegativeFalse");
             movingNegative = false;
         }
 
-        if (movingNegative == false && movingPositive == false)
+    */
+
+        if (controller.velocity.x < notMovingPositive.x && controller.velocity.x > notMovingNegative.x && controller.velocity.y < notMovingPositive.y && controller.velocity.y > notMovingNegative.y)
         {
             //player is not moving
+            Debug.Log("PLAYER IS NOT MOVING. RESTORE MOVEMENT");
             RestoreMovment();
         }
 
@@ -64,10 +68,8 @@ public class SheildBash : MonoBehaviour
 
             RestoreMovment();
         }
-        horzMov = Input.GetAxis("Horizontal");
-        verticalMov = Input.GetAxis("Vertical");
         // Debug.Log(pickUpMirror.hasSheild);
-       if (Input.GetKey(KeyCode.LeftAlt) && pickUpMirror.hasSheild == true && hasPressedBar == false)
+        if (Input.GetKey(KeyCode.LeftAlt) && pickUpMirror.hasSheild == true && hasPressedBar == false)
         {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
                                                                   // GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
@@ -177,13 +179,13 @@ public class SheildBash : MonoBehaviour
             return;
 
         }
-       else if (pickUpMirror.hasSheild == true && hasPressedBar == false)
+        else if (pickUpMirror.hasSheild == true && hasPressedBar == false)
         {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
             isSheildBashing = true;
             hasPressedBar = true;
             isPressingButton = true;
-           // Debug.Log("Pressed the button");
+            // Debug.Log("Pressed the button");
 
             StartCoroutine(TimeOfButton());
 
@@ -225,13 +227,39 @@ public class SheildBash : MonoBehaviour
     public IEnumerator TimeOfButton()
     {
         int timer = 0;
-        while (timer<=8)
+        while (timer <= 10)
         {
-            PlayerDirection();
+            ButtonDirection();
             ++timer;
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(.02f);
 
         }
     }
+    public void ButtonDirection()
+    {
 
+        if (PlayerMovement.isMovingLeft)
+        {
+            controller.AddForce(new Vector2(-buttonSpeed, 0f), ForceMode2D.Force);
+        }
+        if (PlayerMovement.isMovingRight)
+        {
+            controller.AddForce(new Vector2(buttonSpeed, 0f), ForceMode2D.Force);
+
+
+        }
+        if (PlayerMovement.isMovingUp)
+        {
+            controller.AddForce(new Vector2(0f, buttonSpeed), ForceMode2D.Force);
+
+        }
+        if (PlayerMovement.isMovingDown)
+        {
+            controller.AddForce(new Vector2(0f, -buttonSpeed), ForceMode2D.Force);
+
+
+        }
+
+
+    }
 }
