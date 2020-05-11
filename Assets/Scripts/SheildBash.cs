@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SheildBash : MonoBehaviour
 {
+    private bool isPressingButton = false;
     public GameObject player;
     public float speed = 10f;
     private Vector3 dir;
@@ -143,7 +144,7 @@ public class SheildBash : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = true;//enable player movment again
         isSheildBashing = false;
         hasPressedBar = false;
-        //  GameObject.Find("DPadController").GetComponent<SetDPad>().EnablePad();
+        isPressingButton = false;
 
 
     }
@@ -151,16 +152,19 @@ public class SheildBash : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "World 2 P2")
         {
+            Debug.Log("Return");
             return;
 
         }
-        if (pickUpMirror.hasSheild == true && hasPressedBar == false)
+       else if (pickUpMirror.hasSheild == true && hasPressedBar == false)
         {
             player.GetComponent<PlayerMovement>().enabled = false;//disable player input
             isSheildBashing = true;
             hasPressedBar = true;
-            //  GameObject.Find("DPadController").GetComponent<SetDPad>().DisablePad();
-            PlayerDirection();
+            isPressingButton = true;
+            Debug.Log("Pressed the button");
+
+            StartCoroutine(TimeOfButton());
 
 
         }
@@ -197,6 +201,16 @@ public class SheildBash : MonoBehaviour
             //StartCoroutine(col.GetComponent<KnockBack>().KnockCo());
         }
     }
+    public IEnumerator TimeOfButton()
+    {
+        int timer = 0;
+        while (timer<=8)
+        {
+            PlayerDirection();
+            ++timer;
+            yield return new WaitForSeconds(100f);
 
+        }
+    }
 
 }
