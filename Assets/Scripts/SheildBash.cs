@@ -15,16 +15,18 @@ public class SheildBash : MonoBehaviour
     public Rigidbody2D controller;
     public static bool isSheildBashing = false;
     private bool hasPressedBar = false;//checking if space bar has been pressed bar more than once to prevent double pressing
-    private Vector2 notMoving;
+    private Vector2 notMovingPositive;
+    private Vector2 notMovingNegative;
 
     private void Start()
     {
         controller = this.GetComponent<Rigidbody2D>();
-        notMoving = new Vector2(0.1f, 0.1f);
+        notMovingPositive = new Vector2(0.1f, 0.1f);
+        notMovingNegative = new Vector2(-0.1f, 0.1f);
     }
     void Update()
     {
-        Debug.Log(isSheildBashing);
+        //Debug.Log(isSheildBashing);
         /*
         if (isSheildBashing==true&&pickUpMirror.hasSheild == true && hasPressedBar == true && GetComponent<PlayerMovement>().enabled == false)
         {
@@ -38,7 +40,20 @@ public class SheildBash : MonoBehaviour
         }*/
         //{
 
-        if (controller.velocity.x < notMoving.x && controller.velocity.y < notMoving.y)
+        bool movingPositive = true;
+        bool movingNegative = true;
+
+        if (controller.velocity.x < notMovingPositive.x && controller.velocity.y < notMovingPositive.y)
+        {
+            movingPositive = false;
+        }
+
+        if(controller.velocity.x > notMovingNegative.x && controller.velocity.y > notMovingNegative.y)
+        {
+            movingNegative = false;
+        }
+
+        if (movingNegative == false && movingPositive == false)
         {
             //player is not moving
             RestoreMovment();
@@ -69,6 +84,12 @@ public class SheildBash : MonoBehaviour
     }
     public void PlayerDirection()
     {//figure out what way the player is facing then apply the right force
+        Debug.Log("PLAYER DIRECTION CALLED");
+        Debug.Log("Left:" + PlayerMovement.isMovingLeft);
+        Debug.Log("Right:" + PlayerMovement.isMovingRight);
+        Debug.Log("Up:" + PlayerMovement.isMovingUp);
+        Debug.Log("Down:" + PlayerMovement.isMovingDown);
+
         if (PlayerMovement.isMovingLeft)
         {
             controller.AddForce(new Vector2(-speed, 0f), ForceMode2D.Force);
@@ -152,7 +173,7 @@ public class SheildBash : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "World 2 P2")
         {
-            Debug.Log("Return");
+            //Debug.Log("Return");
             return;
 
         }
@@ -162,7 +183,7 @@ public class SheildBash : MonoBehaviour
             isSheildBashing = true;
             hasPressedBar = true;
             isPressingButton = true;
-            Debug.Log("Pressed the button");
+           // Debug.Log("Pressed the button");
 
             StartCoroutine(TimeOfButton());
 
@@ -208,7 +229,7 @@ public class SheildBash : MonoBehaviour
         {
             PlayerDirection();
             ++timer;
-            yield return new WaitForSeconds(100f);
+            yield return new WaitForSeconds(.2f);
 
         }
     }
