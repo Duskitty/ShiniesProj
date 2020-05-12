@@ -20,7 +20,7 @@ public class SheildBash : MonoBehaviour
     {
         controller = this.GetComponent<Rigidbody2D>();
         notMovingPositive = new Vector2(0.1f, 0.1f);
-        notMovingNegative = new Vector2(-0.1f, 0.1f);
+        notMovingNegative = new Vector2(-0.1f, -0.1f);
     }
     void Update()
     {
@@ -38,22 +38,28 @@ public class SheildBash : MonoBehaviour
         }*/
         //{
 
+        /*
         bool movingPositive = true;
         bool movingNegative = true;
 
         if (controller.velocity.x < notMovingPositive.x && controller.velocity.y < notMovingPositive.y)
         {
+            Debug.Log("movingPosFalse");
             movingPositive = false;
         }
 
         if (controller.velocity.x > notMovingNegative.x && controller.velocity.y > notMovingNegative.y)
         {
+            Debug.Log("movingNegativeFalse");
             movingNegative = false;
         }
 
-        if (movingNegative == false && movingPositive == false)
+    */
+
+        if (controller.velocity.x < notMovingPositive.x && controller.velocity.x > notMovingNegative.x && controller.velocity.y < notMovingPositive.y && controller.velocity.y > notMovingNegative.y)
         {
             //player is not moving
+            Debug.Log("PLAYER IS NOT MOVING. RESTORE MOVEMENT");
             RestoreMovment();
         }
 
@@ -229,7 +235,8 @@ public class SheildBash : MonoBehaviour
 
         }
     }
-    public void ButtonDirection() {
+    public void ButtonDirection()
+    {
 
         if (PlayerMovement.isMovingLeft)
         {
@@ -248,7 +255,7 @@ public class SheildBash : MonoBehaviour
         }
         if (PlayerMovement.isMovingDown)
         {
-            controller.AddForce(new Vector2(0f, buttonSpeed), ForceMode2D.Force);
+            controller.AddForce(new Vector2(0f, -buttonSpeed), ForceMode2D.Force);
 
 
         }
