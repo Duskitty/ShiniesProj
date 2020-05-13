@@ -131,10 +131,10 @@ namespace Pathfinding
     
       objectHit = GameObject.Find(objectHitName);
       Debug.Log(objectHit.name);
-      if (objectHit.transform.tag == "enemy" && objectHit.name != "BreakableRock" && objectHit.transform.GetChild(0).GetComponent<LineRenderer>().enabled)
+      if (objectHit.transform.tag == "enemy" && objectHit.name != "BreakableRock")
       {
         //Debug.Log("Enemy Hit");
-        objectHit.GetComponent<StunEnemy>().stun(objectHit);
+        objectHit.GetComponent<StunEnemy>().stun(objectHit); 
       }
 
       if (checkObjHit(objectHitName))
